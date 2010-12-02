@@ -1,0 +1,11 @@
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\chiusb.exe
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\chiusb.pdb
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\chiusb.xml
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ResolveAssemblyReference.cache
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\WindowsApplication1.MainFrm.resources
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\WindowsApplication1.Resources.resources
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\GenerateResource.read.1.tlog
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\GenerateResource.write.1.tlog
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\chiusb.exe
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\chiusb.xml
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\chiusb.pdb
