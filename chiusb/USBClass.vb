@@ -88,6 +88,16 @@ Public Class USBClass
         'add event handler
         AddHandler comPort.DataReceived, AddressOf comPort_DataReceived
     End Sub
+
+
+
+
+    Protected Overrides Sub Finalize()
+        ' Destructor
+        ClosePort()
+    End Sub
+
+
 #End Region
 
 #Region "WriteData"
@@ -179,7 +189,7 @@ Public Class USBClass
 
     Public Sub ClosePort()
         If comPort.IsOpen Then
-            _msg = "Port closed at " + DateTime.Now + "" + Environment.NewLine + ""
+            '_msg = "Port closed at " + DateTime.Now + "" + Environment.NewLine + ""
 
             comPort.Close()
         End If
@@ -199,6 +209,94 @@ Public Class USBClass
     End Sub
 #End Region
 
+
+    Private Function SendPkt(ByVal _arrbytes As Byte(), ByVal _lenar As Byte) As Boolean
+        Dim byteToSend As Byte
+        Dim ChkSum As Byte
+        Try
+
+            ChkSum = 0
+            byteToSend = &H80
+            If _lenar = 1 Then byteToSend = byteToSend Or &H1
+
+            comPort.Write(byteToSend)
+            ChkSum = byteToSend
+
+            comPort.Write(_lenar)
+            ChkSum += _lenar
+
+            comPort.Write(_arrbytes, 0, _lenar)
+            For cnt = 0 To _lenar - 1
+                ChkSum += _arrbytes(cnt)
+            Next
+
+            comPort.Write(ChkSum)
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+
+    End Function
+
+
+    Private Function ReadPkt(ByRef _arrbytes As Byte()) As Boolean
+        Dim ChkSum As Byte
+        Dim _arrRead As Byte()
+        Dim ReadingInProgress As Boolean
+        Dim CntBytes As Integer
+        Dim NumBytesLen As Byte
+        Dim payloadLen As Byte
+        Try
+
+            ReDim _arrbytes(1)
+            comPort.ReadTimeout = 200
+            ReadingInProgress = True
+            CntBytes = 0
+            Do While ReadingInProgress
+                comPort.Read(_arrRead, 0, 1)
+                If CntBytes = 0 Then
+                    If (_arrRead(CntBytes) And &HF0) <> &H80 Then
+                        ReadingInProgress = False
+                    Else
+                        NumBytesLen = _arrRead(CntBytes) And &H1
+                    End If
+                ElseIf (NumBytesLen = 1) And (CntBytes = 1) Then
+                    payloadLen = _arrRead(CntBytes)
+                End If
+
+
+                CntBytes += 1
+                ReDim Preserve _arrRead(CntBytes + 1)
+            Loop
+
+            _arrbytes = _arrRead
+
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+
+    End Function
+
+    Public Function RequestError(Optional ByVal _typeData1 As Byte = 0, Optional ByVal _typeData2 As Byte = 0) As String
+        Dim pkt As Byte()
+        Dim ret As Byte()
+
+        ReDim pkt(3)
+        pkt(0) = &H41
+        pkt(1) = _typeData1
+        pkt(2) = _typeData2
+        If SendPkt(pkt, pkt.Length) Then
+            If ReadPkt(ret) Then
+                Return ret.ToString
+            End If
+
+        Else
+            Return "ERR"
+        End If
+
+        Return "ENDING"
+    End Function
 
 #Region "CmdSend"
     Public Sub SendSimpleCmd(ByVal _cmdtosend As String)

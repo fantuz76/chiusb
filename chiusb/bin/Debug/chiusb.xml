@@ -6,23 +6,7 @@ chiusb
 </name>
 </assembly>
 <members>
-<member name="P:WindowsApplication1.USBClass.BaudRate">
- Property to hold the BaudRate
- of our manager class
-
-</member><member name="P:WindowsApplication1.USBClass.Parity">
- property to hold the Parity
- of our manager class
-
-</member><member name="P:WindowsApplication1.USBClass.StopBits">
- property to hold the StopBits
- of our manager class
-
-</member><member name="P:WindowsApplication1.USBClass.DataBits">
- property to hold the DataBits
- of our manager class
-
-</member><member name="P:WindowsApplication1.USBClass.PortName">
+<member name="P:WindowsApplication1.USBClass.PortName">
  property to hold the PortName
  of our manager class
 

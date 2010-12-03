@@ -9,3 +9,18 @@ h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\GenerateResource.write.
 h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\chiusb.exe
 h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\chiusb.xml
 h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\chiusb.pdb
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\chiusb.exe
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\chiusb.xml
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\chiusb.pdb
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\WindowsApplication1.MainFrm.resources
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\WindowsApplication1.Resources.resources
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\chiusb.exe
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\chiusb.pdb
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\chiusb.xml
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\chiusb.exe.config
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\GenerateResource-ResGen.read.4.tlog
