@@ -1,5 +1,5 @@
 ﻿Public Class MainFrm
-    Dim Comusb As New USBClass("COM15")
+    Dim Comusb As USBClass
 
     Private Sub MainFrm_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
         CloseProgram()
@@ -8,9 +8,10 @@
 
     Private Sub MainFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
+        Comusb = New USBClass("COM15", Me.ListBox1)
+        ListBox1.Items.Add("")
         'Dim arr As Byte() = {2, 3}
 
-        Comusb.PortName = "Com15"
 
 
 

@@ -6,26 +6,12 @@ chiusb
 </name>
 </assembly>
 <members>
-<member name="P:WindowsApplication1.USBClass.PortName">
- property to hold the PortName
- of our manager class
-
-</member><member name="P:WindowsApplication1.USBClass.Message">
- Property to hold the message being sent
- through the serial port
-
-</member><member name="M:WindowsApplication1.USBClass.#ctor(System.String)">
+<member name="M:WindowsApplication1.USBClass.#ctor(System.String,System.Object)">
  Constructor to set the properties of our Manager Class
 
 </member><member name="M:WindowsApplication1.USBClass.#ctor">
  Constructor to set the properties of our
  serial port communicator to nothing
-
-</member><member name="M:WindowsApplication1.USBClass.HexToByte(System.String)">
- method to convert hex string into a byte array
-
-</member><member name="M:WindowsApplication1.USBClass.ByteToHex(System.Byte[])">
- method to convert a byte array into a hex string
 
 </member><member name="M:WindowsApplication1.USBClass.comPort_DataReceived(System.Object,System.IO.Ports.SerialDataReceivedEventArgs)">
  method that will be called when theres data waiting in the buffer
