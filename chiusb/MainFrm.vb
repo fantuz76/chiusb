@@ -33,4 +33,12 @@
     Private Sub btnRead_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRead.Click
         TextBox1.Text = Comusb.RequestError(1, 2)
     End Sub
+
+    Private Sub btnHello_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnHello.Click
+        TextBox1.Text = Comusb.RequestHello(1, 2)
+    End Sub
+
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+        TextBox1.Text = Comusb.RequestInterventi(1, 2)
+    End Sub
 End Class

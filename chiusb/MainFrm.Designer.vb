@@ -34,6 +34,8 @@ Partial Class MainFrm
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnRead = New System.Windows.Forms.Button()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.btnHello = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -49,7 +51,7 @@ Partial Class MainFrm
         Me.TabControl1.Location = New System.Drawing.Point(5, 72)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(584, 268)
+        Me.TabControl1.Size = New System.Drawing.Size(609, 268)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage1
@@ -58,7 +60,7 @@ Partial Class MainFrm
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(576, 242)
+        Me.TabPage1.Size = New System.Drawing.Size(601, 242)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "TabPage1"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -76,14 +78,14 @@ Partial Class MainFrm
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(648, 242)
+        Me.TabPage2.Size = New System.Drawing.Size(576, 242)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "TabPage2"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'btnExit
         '
-        Me.btnExit.Location = New System.Drawing.Point(694, 301)
+        Me.btnExit.Location = New System.Drawing.Point(771, 305)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(90, 35)
         Me.btnExit.TabIndex = 1
@@ -94,7 +96,7 @@ Partial Class MainFrm
         '
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 348)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(794, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(873, 22)
         Me.StatusStrip1.TabIndex = 3
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -103,7 +105,7 @@ Partial Class MainFrm
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(794, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(873, 24)
         Me.MenuStrip1.TabIndex = 4
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -131,7 +133,7 @@ Partial Class MainFrm
         '
         'btnRead
         '
-        Me.btnRead.Location = New System.Drawing.Point(595, 250)
+        Me.btnRead.Location = New System.Drawing.Point(771, 185)
         Me.btnRead.Name = "btnRead"
         Me.btnRead.Size = New System.Drawing.Size(90, 35)
         Me.btnRead.TabIndex = 6
@@ -140,17 +142,40 @@ Partial Class MainFrm
         '
         'ListBox1
         '
+        Me.ListBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ListBox1.FormattingEnabled = True
         Me.ListBox1.Location = New System.Drawing.Point(646, 27)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(138, 134)
+        Me.ListBox1.Size = New System.Drawing.Size(217, 134)
         Me.ListBox1.TabIndex = 7
+        '
+        'btnHello
+        '
+        Me.btnHello.Location = New System.Drawing.Point(771, 226)
+        Me.btnHello.Name = "btnHello"
+        Me.btnHello.Size = New System.Drawing.Size(90, 35)
+        Me.btnHello.TabIndex = 8
+        Me.btnHello.Text = "Hello"
+        Me.btnHello.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(771, 264)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(90, 35)
+        Me.Button2.TabIndex = 9
+        Me.Button2.Text = "Interventi"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'MainFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(794, 370)
+        Me.ClientSize = New System.Drawing.Size(873, 370)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.btnHello)
         Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.btnRead)
         Me.Controls.Add(Me.btnExit)
@@ -182,5 +207,7 @@ Partial Class MainFrm
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents btnRead As System.Windows.Forms.Button
     Friend WithEvents ListBox1 As System.Windows.Forms.ListBox
+    Friend WithEvents btnHello As System.Windows.Forms.Button
+    Friend WithEvents Button2 As System.Windows.Forms.Button
 
 End Class

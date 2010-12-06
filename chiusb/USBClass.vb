@@ -328,6 +328,65 @@ Public Class USBClass
         Return "ENDING"
     End Function
 
+    Public Function RequestHello(Optional ByVal _typeData1 As Byte = 0, Optional ByVal _typeData2 As Byte = 0) As String
+        Dim pkt As Byte()
+        Dim ret As Byte()
+
+        ReDim pkt(3)
+        ReDim ret(0)
+        pkt(0) = &H21
+        pkt(1) = _typeData1
+        pkt(2) = _typeData2
+        If SendPkt(pkt, pkt.Length) Then
+            If ReadPkt(ret) Then
+                Dim strModified As String = System.Text.Encoding.ASCII.GetString(ret)
+                Return strModified
+            End If
+
+        Else
+            Return "ERR"
+        End If
+
+        Return "ENDING"
+    End Function
+
+
+
+    Public Function RequestInterventi(Optional ByVal _typeData1 As Byte = 0, Optional ByVal _typeData2 As Byte = 0) As String
+        Dim pkt As Byte()
+        Dim ret As Byte()
+        Dim cnt As Integer
+        Dim LetturaOK As Boolean
+
+        ReDim pkt(3)
+        ReDim ret(0)
+        pkt(0) = &H31
+        pkt(1) = _typeData1
+        pkt(2) = _typeData2
+        cnt = 0
+        LetturaOK = True
+        If SendPkt(pkt, pkt.Length) Then
+
+            While LetturaOK
+                LetturaOK = ReadPkt(ret)
+                If LetturaOK And (ret.Length > 5) Then
+                    If (ret(2) = &HFF And ret(3) = &HFF And ret(4) = &HFF) Then
+                        ' fine OK
+                        Return " FINE numero = " & cnt
+                        Exit Function
+                    End If
+                    cnt += 1
+                End If
+            End While
+
+            Return "ERR"
+        Else
+            Return "ERR"
+        End If
+
+        Return "ENDING"
+    End Function
+
 #Region "CmdSend"
     Public Sub SendSimpleCmd(ByVal _cmdtosend As String)
 
