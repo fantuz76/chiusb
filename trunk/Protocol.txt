@@ -1,0 +1,46 @@
+Invio messaggi su USB come pacchetti di byte:
+
+HEADER+LENGHT+ ... payload .... + CHECKSUM
+
+oppure
+
+HEDAER+CHECKSUM		(Se messaggio da inviare ha lunghezza zero)
+
+
+-----------------------------------------------------------------------------------------------------------
+
+SE LENGTH > 0
+
+
+HEADER
+BYTE0 = 0x81    se ho un byte che indica lunghezza messaggio (lunghezza >0 e < 256)
+
+altri valori per ora non gestiti
+
+
+LENGTH
+se lunghezza>0
+BYTE1 = length payload del messaggio (numero dei byte di payload da inviare esclusi HEADER, LENGTH e CHECKSUM)
+
+PAYLOAD
+BYTE2,BYTE3.... payload (dati da inviare, vedere ulteriore descrizione)
+
+
+CHECKSUM
+ultimo BYTE= Somma byte a byte di tutti i byte precendenti compresi HEADER e LENGTH
+
+-----------------------------------------------------------------------------------------------------------
+
+SE LENGTH = 0
+
+messaggio che invio non ha length e nessun payload quindi è semplicemente
+0x80 - 0x80
+
+
+
+
+
+
+***********************************************************************************************************
+
+
