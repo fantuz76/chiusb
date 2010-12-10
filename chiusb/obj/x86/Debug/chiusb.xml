@@ -6,7 +6,10 @@ chiusb
 </name>
 </assembly>
 <members>
-<member name="M:WindowsApplication1.USBClass.#ctor(System.String,System.Object)">
+<member name="M:WindowsApplication1.InterventList.#ctor">
+ Constructor to set the properties of our    
+
+</member><member name="M:WindowsApplication1.USBClass.#ctor(System.String,System.Object)">
  Constructor to set the properties of our Manager Class
 
 </member><member name="M:WindowsApplication1.USBClass.#ctor">
