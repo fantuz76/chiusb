@@ -4,12 +4,80 @@ Imports System.Drawing
 Imports System.IO.Ports
 Imports System.Windows.Forms
 
+Public Structure InterventSingle
+    Public _intType As Byte
+    Public _intTime As UInt32
+    Public _intVolt1 As UInt16
+    Public _intVolt2 As UInt16
+    Public _intVolt3 As UInt16
+    Public _intCurr1 As UInt16
+    Public _intCurr2 As UInt16
+    Public _intCurr3 As UInt16
+    Public _intPower As UInt16
+    Public _intPress As UInt16
+    Public _intCosfi As Byte
+    Public _intTemp As UInt16
+
+End Structure
+
+Public Class InterventList
+    Private _SingleInt As InterventSingle()
+
+    Public Property SingleInt As InterventSingle()
+        Get
+            Return _SingleInt
+        End Get
+        Set(ByVal value As InterventSingle())
+            _SingleInt = value
+        End Set
+    End Property
+
+    Public ReadOnly Property Length As UInt16
+        Get
+            Return _SingleInt.Length
+        End Get        
+    End Property
+
+
+    ''' Constructor to set the properties of our    
+    Public Sub New()        
+        ReDim _SingleInt(-1)
+    End Sub
+
+    Public Function AddArrToInt(ByVal _arrToParse As Byte()) As Boolean
+        If _arrToParse.Length < 24 Then
+            Return False
+        End If
+
+        ' Aumenta lunghezza di un campo
+        ReDim Preserve _SingleInt(_SingleInt.Length)
+
+        _SingleInt(_SingleInt.Length - 1)._intType = _arrToParse(0)
+        _SingleInt(_SingleInt.Length - 1)._intTime = _arrToParse(1) * 256 ^ 3 + _arrToParse(2) * 256 ^ 2 + _arrToParse(3) * 256 ^ 1 + _arrToParse(4) * 256 ^ 0
+        _SingleInt(_SingleInt.Length - 1)._intVolt1 = _arrToParse(5) * 256 ^ 1 + _arrToParse(6) * 256 ^ 0
+        _SingleInt(_SingleInt.Length - 1)._intVolt2 = _arrToParse(7) * 256 ^ 1 + _arrToParse(8) * 256 ^ 0
+        _SingleInt(_SingleInt.Length - 1)._intVolt3 = _arrToParse(9) * 256 ^ 1 + _arrToParse(10) * 256 ^ 0
+        _SingleInt(_SingleInt.Length - 1)._intCurr1 = _arrToParse(11) * 256 ^ 1 + _arrToParse(12) * 256 ^ 0
+        _SingleInt(_SingleInt.Length - 1)._intCurr2 = _arrToParse(13) * 256 ^ 1 + _arrToParse(14) * 256 ^ 0
+        _SingleInt(_SingleInt.Length - 1)._intCurr3 = _arrToParse(15) * 256 ^ 1 + _arrToParse(16) * 256 ^ 0
+        _SingleInt(_SingleInt.Length - 1)._intPower = _arrToParse(17) * 256 ^ 1 + _arrToParse(18) * 256 ^ 0
+        _SingleInt(_SingleInt.Length - 1)._intPress = _arrToParse(19) * 256 ^ 1 + _arrToParse(20) * 256 ^ 0
+        _SingleInt(_SingleInt.Length - 1)._intCosfi = _arrToParse(21)
+        _SingleInt(_SingleInt.Length - 1)._intTemp = _arrToParse(22) * 256 ^ 1 + _arrToParse(23) * 256 ^ 0
+
+        Return True
+    End Function
+End Class
+
 
 
 
 Public Class USBClass
 
+
 #Region "Manager Variables"
+
+    Private _myint As New InterventList
     'property variables
     Private _portName As String = String.Empty
     'Private _msg As String
@@ -19,6 +87,8 @@ Public Class USBClass
 
     Private comPort As New SerialPort()
     Private write As Boolean = True
+
+    Private _InterventiArList()() As Byte
 #End Region
 
 #Region "Manager Properties"
@@ -50,6 +120,15 @@ Public Class USBClass
         End Set
     End Property
 
+    Public Property InterventiArList As Byte()()
+
+        Get
+            Return _InterventiArList
+        End Get
+        Set(ByVal value As Byte()())
+            _InterventiArList = value
+        End Set
+    End Property
 
 #End Region
 
@@ -371,8 +450,10 @@ Public Class USBClass
                 LetturaOK = ReadPkt(ret)
                 If LetturaOK And (ret.Length > 5) Then
                     If (ret(2) = &HFF And ret(3) = &HFF And ret(4) = &HFF) Then
-                        ' fine OK
-                        Return " FINE numero = " & cnt
+                        ' fine OK                        
+                        _myint.AddArrToInt(ret)
+
+                        Return (" FINE numero = " & _myint.Length)
                         Exit Function
                     End If
                     cnt += 1
@@ -387,14 +468,7 @@ Public Class USBClass
         Return "ENDING"
     End Function
 
-#Region "CmdSend"
-    Public Sub SendSimpleCmd(ByVal _cmdtosend As String)
 
-
-    End Sub
-
-
-#End Region
 
 End Class
 

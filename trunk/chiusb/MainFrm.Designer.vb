@@ -70,7 +70,7 @@ Partial Class MainFrm
         Me.TextBox1.Location = New System.Drawing.Point(6, 6)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(349, 230)
+        Me.TextBox1.Size = New System.Drawing.Size(589, 230)
         Me.TextBox1.TabIndex = 2
         '
         'TabPage2
@@ -78,7 +78,7 @@ Partial Class MainFrm
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(576, 242)
+        Me.TabPage2.Size = New System.Drawing.Size(601, 242)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "TabPage2"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -126,7 +126,7 @@ Partial Class MainFrm
         '
         Me.GroupBox1.Location = New System.Drawing.Point(5, 27)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(635, 39)
+        Me.GroupBox1.Size = New System.Drawing.Size(609, 39)
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "GroupBox1"
@@ -146,9 +146,9 @@ Partial Class MainFrm
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(646, 27)
+        Me.ListBox1.Location = New System.Drawing.Point(616, 27)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(217, 134)
+        Me.ListBox1.Size = New System.Drawing.Size(247, 134)
         Me.ListBox1.TabIndex = 7
         '
         'btnHello
