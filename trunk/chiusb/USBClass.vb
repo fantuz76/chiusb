@@ -44,7 +44,11 @@ Public Class InterventList
         ReDim _SingleInt(-1)
     End Sub
 
-    Public Function AddArrToInt(ByVal _arrToParse As Byte()) As Boolean
+    Public Sub ClearArrToInt()
+        ReDim _SingleInt(-1)
+    End Sub
+
+    Public Function AddArrInt(ByVal _arrToParse As Byte()) As Boolean
         If _arrToParse.Length < 24 Then
             Return False
         End If
@@ -64,6 +68,30 @@ Public Class InterventList
         _SingleInt(_SingleInt.Length - 1)._intPress = _arrToParse(19) * 256 ^ 1 + _arrToParse(20) * 256 ^ 0
         _SingleInt(_SingleInt.Length - 1)._intCosfi = _arrToParse(21)
         _SingleInt(_SingleInt.Length - 1)._intTemp = _arrToParse(22) * 256 ^ 1 + _arrToParse(23) * 256 ^ 0
+
+        Return True
+    End Function
+
+
+    Private Sub SwapInterventi(ByRef _int1 As InterventSingle, ByRef _int2 As InterventSingle)
+        Dim _inttmp As InterventSingle
+        _inttmp = _int2
+        _int2 = _int1
+        _int1 = _inttmp
+    End Sub
+
+    ' Bubble Sort degli interventi in base al tempo
+    Public Function SortArrIntTime() As Boolean
+        Dim alto As Integer = _SingleInt.Length - 1
+
+        While (alto > 0)
+            For i As Integer = 0 To alto - 1
+                If _SingleInt(i)._intTime > _SingleInt(i + 1)._intTime Then
+                    SwapInterventi(_SingleInt(i), _SingleInt(i + 1))
+                End If
+            Next
+            alto = alto - 1
+        End While
 
         Return True
     End Function
@@ -196,6 +224,11 @@ Public Class USBClass
             _logWindow.Text &= msg & vbCrLf
         ElseIf (TypeOf _logWindow Is ListBox) Then
             _logWindow.items.add(msg)
+            If _logWindow.Items.Count <> 0 Then
+                _logWindow.SetSelected(_logWindow.Items.Count - 1, True)
+                'This unhighlights the last line
+                _logWindow.SetSelected(_logWindow.Items.Count - 1, False)
+            End If
         End If
 
     End Sub
@@ -280,6 +313,9 @@ Public Class USBClass
         Dim cntar As Byte
 
         Try
+            ' Cancella tutto nei buffer
+            comPort.DiscardInBuffer()
+            comPort.DiscardOutBuffer()
             ChkSum = 0
             cntar = 0
             FirstbyteToSend = &H80
@@ -325,33 +361,52 @@ Public Class USBClass
     End Function
 
 
-    Private Function ReadPkt(ByRef _arrbytes As Byte()) As Boolean
+
+    ' Legge il pkt ricevuto 
+    Private Function ReadPkt(ByRef _arrbytes As Byte(), Optional ByVal OnlyPayload As Boolean = True) As Boolean
         Dim _arrRead As Byte()
         Dim ReadingInProgress, ReadOK As Boolean
-        Dim CntBytes, cnti, cks As Integer
+        Dim CntBytes, cnti, cks, CntReadArray As Integer
         Dim NumBytesLen As Byte
         Dim payloadLen As Byte
+
+        Dim byteRead As Byte
+
         Try
 
-            ReDim _arrRead(1)
+            ReDim _arrRead(-1)
 
             comPort.ReadTimeout = 1000
             ReadingInProgress = True
             ReadOK = False
+            CntReadArray = 0
             CntBytes = 0
             Do While ReadingInProgress
-                _arrRead(CntBytes) = comPort.ReadByte
+
+                byteRead = comPort.ReadByte
+
+                ' Tutto il pkt ricevuto byte per byte viene incapsulato in _arrRead
+                ReDim Preserve _arrRead(CntBytes)
+                _arrRead(CntBytes) = byteRead
                 If CntBytes = 0 Then
+                    ' Primo byte letto
                     If (_arrRead(CntBytes) And &HF0) <> &H80 Then
                         ReadingInProgress = False
                     Else
                         NumBytesLen = _arrRead(CntBytes) And &H1
                     End If
                 ElseIf (CntBytes = 1) And (NumBytesLen = 1) Then
+                    ' Se sono qui c'è byte Length
                     payloadLen = _arrRead(CntBytes)
 
                 ElseIf ((CntBytes >= NumBytesLen + 1) And (CntBytes < payloadLen + NumBytesLen + 1)) Then
                     ' Payload
+                    If OnlyPayload Then
+                        ' Se voglio ritornare solo il payload carico qua l'array
+                        ReDim Preserve _arrbytes(CntReadArray)
+                        _arrbytes(CntReadArray) = byteRead
+                        CntReadArray += 1
+                    End If
                 ElseIf (CntBytes = payloadLen + NumBytesLen + 1) Then
                     ' CheckSum
                     cks = 0
@@ -369,16 +424,24 @@ Public Class USBClass
 
                 End If
 
-                CntBytes += 1
-                ReDim Preserve _arrRead(CntBytes + 1)
-            Loop
-            _arrbytes = _arrRead
 
-            DisplayLogData("Read OK")
+                CntBytes += 1
+
+            Loop
+
+            ' Se voglio ritornare tutto il pkr ricevuto lo faccio qua
+            If Not OnlyPayload Then _arrbytes = _arrRead
+
+            If ReadOK Then
+                DisplayLogData("Read OK")
+            Else
+                DisplayLogData("Read Error")
+            End If
+
             Return ReadOK
         Catch ex As Exception
             DisplayLogData("Read " & CntBytes & ex.Message)
-            
+
 
             Return False
         End Try
@@ -445,17 +508,21 @@ Public Class USBClass
         cnt = 0
         LetturaOK = True
         If SendPkt(pkt, pkt.Length) Then
-
+            _myint.ClearArrToInt()
             While LetturaOK
                 LetturaOK = ReadPkt(ret)
                 If LetturaOK And (ret.Length > 5) Then
                     If (ret(2) = &HFF And ret(3) = &HFF And ret(4) = &HFF) Then
+                        _myint.SortArrIntTime()
                         ' fine OK                        
-                        _myint.AddArrToInt(ret)
-
                         Return (" FINE numero = " & _myint.Length)
+
+
                         Exit Function
+                    Else
+                        _myint.AddArrInt(ret)
                     End If
+
                     cnt += 1
                 End If
             End While
@@ -467,6 +534,14 @@ Public Class USBClass
 
         Return "ENDING"
     End Function
+
+    Private Sub ExtractPayload(ByRef _arrtoParse As Byte())
+
+        For cnti As Integer = 0 To _arrtoParse.Length - 1
+
+        Next
+
+    End Sub
 
 
 

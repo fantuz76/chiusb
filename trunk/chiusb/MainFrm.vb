@@ -14,9 +14,9 @@
         Dim arr As Byte() = {0, &HFF, &HFF, &HFF, &HFF, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23}
         Dim arr2 As Byte() = {&HF3, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23}
 
-        Inter.AddArrToInt(arr)
+        Inter.AddArrInt(arr)
 
-        Inter.AddArrToInt(arr2)
+        Inter.AddArrInt(arr2)
 
         'TextBox1.Text = arr(0) & arr(1)
     End Sub
