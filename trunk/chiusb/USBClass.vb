@@ -153,7 +153,7 @@ Public Class USBClass
 
     ' Destructor
     Protected Overrides Sub Finalize()
-        'ClosePort()
+        ClosePort()
     End Sub
 #End Region
 
@@ -173,6 +173,9 @@ Public Class USBClass
 
         ElseIf (TypeOf _logWindow Is TextBox) Then
             _logWindow.Text = _logWindow.Text + msg + Environment.NewLine
+            _logWindow.SelectionStart = _logWindow.Text.Length
+            _logWindow.ScrollToCaret()
+
         ElseIf (TypeOf _logWindow Is ListBox) Then
             _logWindow.items.add(msg)
             If _logWindow.Items.Count <> 0 Then
@@ -189,9 +192,7 @@ Public Class USBClass
 
 #Region "OpenCloseConnect"
 
-    Public Function DisconnectDevice()
 
-    End Function
     Public Function ConnectDevice() As Boolean
         Dim i As Integer = 0
 
@@ -202,9 +203,10 @@ Public Class USBClass
 
         For i = 0 To System.IO.Ports.SerialPort.GetPortNames.Length - 1
             If ConfigAndOpenPort(System.IO.Ports.SerialPort.GetPortNames(i)) Then
-
-                DisplayLogData("Device OK on " + System.IO.Ports.SerialPort.GetPortNames(i))
+                DisplayLogData("Connection established on " + System.IO.Ports.SerialPort.GetPortNames(i))
                 Return True
+            Else
+                DisplayLogData("Connection not possible on " + System.IO.Ports.SerialPort.GetPortNames(i))
             End If
 
         Next
@@ -259,8 +261,6 @@ Public Class USBClass
     End Function
 
 
-
-
     Public Sub ClosePort()
         If comPort.IsOpen Then            
             comPort.Close()
@@ -268,18 +268,6 @@ Public Class USBClass
     End Sub
 #End Region
 
-
-#Region "comPort_DataReceived"
-
-    ''' method that will be called when theres data waiting in the buffer
-    Private Sub comPort_DataReceived(ByVal sender As Object, ByVal e As SerialDataReceivedEventArgs)
-        'read data waiting in the buffer
-        'Dim msg As String = comPort.ReadExisting()
-        'display the data to the user
-        'DisplayLogData(msg)
-
-    End Sub
-#End Region
 
 
     Private Function SendPkt(ByVal _arrbytes As Byte(), ByVal _lenar As Byte) As Boolean
@@ -326,7 +314,7 @@ Public Class USBClass
             comPort.Write(arrSendComplete, 0, arrSendComplete.Length)
             'ReDim arrSendComplete(_lenar + 3)
             'comPort.Write(ChkSum)
-            DisplayLogData("Send OK")
+
 
             Return True
         Catch ex As Exception
@@ -411,11 +399,11 @@ Public Class USBClass
             ' Se voglio ritornare tutto il pkr ricevuto lo faccio qua
             If Not OnlyPayload Then _arrbytes = _arrRead
 
-            If ReadOK Then
-                DisplayLogData("Read OK")
-            Else
-                DisplayLogData("Read Error")
-            End If
+            'If ReadOK Then
+            '    DisplayLogData("Read OK")
+            'Else
+            '    DisplayLogData("Read Error")
+            'End If
 
             Return ReadOK
         Catch ex As Exception
@@ -462,7 +450,7 @@ Public Class USBClass
             If SendPkt(pkt, pkt.Length) Then
                 If ReadPkt(ret) Then
                     If ret(0) = &H21 Then
-                        DisplayLogData("HELLO OK")
+                        ' DisplayLogData("HELLO OK")
                         Return True
                     Else
                         Return False
@@ -512,10 +500,10 @@ Public Class USBClass
                 If LetturaOK And (ret.Length > 5) Then
                     If (ret(2) = &HFF And ret(3) = &HFF And ret(4) = &HFF) Then
                         _myint.SortArrIntTime(False)
-                        ' fine OK                        
+                        ' fine OK
+
+                        DisplayLogData("Read Events #" + _myint.Length.ToString)
                         Return _myint
-
-
                         Exit Function
                     Else
                         _myint.AddArrInt(ret)

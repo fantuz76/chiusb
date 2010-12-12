@@ -15,9 +15,6 @@ chiusb
 </member><member name="M:WindowsApplication1.USBClass.#ctor">
  Constructor to set the properties of our serial port communicator to nothing
 
-</member><member name="M:WindowsApplication1.USBClass.comPort_DataReceived(System.Object,System.IO.Ports.SerialDataReceivedEventArgs)">
- method that will be called when theres data waiting in the buffer
-
 </member><member name="P:WindowsApplication1.My.Resources.Resources.ResourceManager">
 	<summary>
   Returns the cached ResourceManager instance used by this class.

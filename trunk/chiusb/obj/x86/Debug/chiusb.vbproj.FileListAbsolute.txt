@@ -28,3 +28,4 @@ h:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\chiusb.exe.config
 h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
 h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\GenerateResource-ResGen.read.4.tlog
 h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+h:\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\GenerateResource-ResGen.read.6.tlog
