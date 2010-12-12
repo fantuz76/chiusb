@@ -9,12 +9,11 @@ chiusb
 <member name="M:WindowsApplication1.InterventList.#ctor">
  Constructor to set the properties of our    
 
-</member><member name="M:WindowsApplication1.USBClass.#ctor(System.String,System.Object)">
+</member><member name="M:WindowsApplication1.USBClass.#ctor(System.Object)">
  Constructor to set the properties of our Manager Class
 
 </member><member name="M:WindowsApplication1.USBClass.#ctor">
- Constructor to set the properties of our
- serial port communicator to nothing
+ Constructor to set the properties of our serial port communicator to nothing
 
 </member><member name="M:WindowsApplication1.USBClass.comPort_DataReceived(System.Object,System.IO.Ports.SerialDataReceivedEventArgs)">
  method that will be called when theres data waiting in the buffer
