@@ -115,9 +115,13 @@ Public Class USBClass
 #Region "Manager Variables"
     ' Property VAR    
     Private _logWindow As Object 'Control
-
-    'global manager variables
+    Private _Matricola As String
+    Private _OreLav As UInt32
     Private _myint As New InterventList
+    Private _FwVer As UInt16
+    Private _HwVer As UInt16
+
+    'global manager variables    
     Private comPort As New SerialPort()
 #End Region
 
@@ -132,12 +136,46 @@ Public Class USBClass
         End Set
     End Property
 
+    Public ReadOnly Property Matricola As String
+        Get
+            Return _Matricola
+        End Get
+    End Property
+
+    Public ReadOnly Property OreLav As UInt32
+        Get
+            Return _OreLav
+        End Get
+    End Property
+
+    Public ReadOnly Property InterventiLetti As InterventList
+        Get
+            Return _myint
+        End Get
+    End Property
+
+    Public ReadOnly Property FwVer As UInt16
+        Get
+            Return _FwVer
+        End Get
+    End Property
+
+    Public ReadOnly Property HwVer As UInt16
+        Get
+            Return _HwVer
+        End Get
+    End Property
 #End Region
 
 #Region "Manager Constructors"
     ''' Constructor to set the properties of our Manager Class
     Public Sub New(ByVal logcontrol As Object)
         _logWindow = logcontrol
+
+        _OreLav = 0
+        _FwVer = 0
+        _HwVer = 0
+        _Matricola = ""
 
         'now add an event handler
         'AddHandler comPort.DataReceived, AddressOf comPort_DataReceived
@@ -146,6 +184,11 @@ Public Class USBClass
     ''' Constructor to set the properties of our serial port communicator to nothing
     Public Sub New()
         _logWindow = Nothing
+
+        _OreLav = 0
+        _FwVer = 0
+        _HwVer = 0
+        _Matricola = ""
 
         'add event handler
         'AddHandler comPort.DataReceived, AddressOf comPort_DataReceived
@@ -203,8 +246,16 @@ Public Class USBClass
 
         For i = 0 To System.IO.Ports.SerialPort.GetPortNames.Length - 1
             If ConfigAndOpenPort(System.IO.Ports.SerialPort.GetPortNames(i)) Then
-                DisplayLogData("Connection established on " + System.IO.Ports.SerialPort.GetPortNames(i))
-                Return True
+                ' HELLO
+                If RequestHello() Then
+                    DisplayLogData("Connection established on " + System.IO.Ports.SerialPort.GetPortNames(i))
+                    comPort.Close()
+                    Return True
+                Else
+                    DisplayLogData("Hello not received from " + System.IO.Ports.SerialPort.GetPortNames(i))
+                End If
+
+
             Else
                 DisplayLogData("Connection not possible on " + System.IO.Ports.SerialPort.GetPortNames(i))
             End If
@@ -243,14 +294,8 @@ Public Class USBClass
             End If
 
 
-            ' HELLO
-            If RequestHello() Then
-                comPort.Close()
-                Return True
-            End If
-
             comPort.Close()
-            Return False
+            Return True
 
 
         Catch ex As Exception
@@ -450,7 +495,11 @@ Public Class USBClass
             If SendPkt(pkt, pkt.Length) Then
                 If ReadPkt(ret) Then
                     If ret(0) = &H21 Then
-                        ' DisplayLogData("HELLO OK")
+                        _Matricola = Chr(ret(1)) + Chr(ret(2)) + Chr(ret(3)) + Chr(ret(4))
+                        _OreLav = ret(5) * 256 ^ 3 + ret(6) * 256 ^ 2 + ret(7) * 256 ^ 1 + ret(8) * 256 ^ 0
+                        _FwVer = ret(9) * 256 + ret(10)
+                        _HwVer = ret(11) * 256 + ret(12)
+
                         Return True
                     Else
                         Return False
@@ -477,7 +526,7 @@ Public Class USBClass
 
 
 
-    Public Function RequestInterventi(Optional ByVal _typeData1 As Byte = 0, Optional ByVal _typeData2 As Byte = 0) As InterventList
+    Public Function RequestInterventi(Optional ByVal _typeData1 As Byte = 0, Optional ByVal _typeData2 As Byte = 0) As Boolean
         Dim pkt As Byte()
         Dim ret As Byte()
         Dim cnt As Integer
@@ -502,9 +551,9 @@ Public Class USBClass
                         _myint.SortArrIntTime(False)
                         ' fine OK
 
-                        DisplayLogData("Read Events #" + _myint.Length.ToString)
-                        Return _myint
-                        Exit Function
+                        DisplayLogData("Read Faults #" + _myint.Length.ToString)
+                        Return True
+
                     Else
                         _myint.AddArrInt(ret)
                     End If
@@ -513,18 +562,17 @@ Public Class USBClass
                 End If
             End While
 
-            Return Nothing
+
+            Return False
         Else
-            Return Nothing
+
+            Return False
         End If
 
-        Return Nothing
+
+        Return False
         If comPort.IsOpen Then comPort.Close()
     End Function
-
-    
-
-
 
 
 End Class

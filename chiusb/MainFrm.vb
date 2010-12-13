@@ -23,18 +23,18 @@
 
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        myIntList = ConnectionUSB.RequestInterventi(0, 0)
-        If myIntList Is Nothing Then
-            EnableControlsInterventi(False)
-            lblNotify.Text = "No Events"
-        Else
+        If ConnectionUSB.RequestInterventi(0, 0) Then
             EnableControlsInterventi(True)
-            lblNotify.Text = "Events found " & myIntList.Length
+            lblNotify.Text = "Faults found " & ConnectionUSB.InterventiLetti.Length
+        Else
+            EnableControlsInterventi(False)
+            lblNotify.Text = "No Faults"
         End If
 
     End Sub
 
     Private Sub btnConn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnConn.Click
+        Me.Cursor = Cursors.WaitCursor
         If ConnectionActive Then
             If Not ConnectionUSB Is Nothing Then
                 ConnectionUSB.ClosePort()
@@ -49,9 +49,16 @@
             If ConnectionUSB.ConnectDevice() Then
                 SetConn(True)
 
-                Button2.PerformClick()
+                If ConnectionUSB.RequestInterventi(0, 0) Then
+                    EnableControlsInterventi(True)
+                    lblNotify.Text = "Faults found " & ConnectionUSB.InterventiLetti.Length
+                Else
+                    EnableControlsInterventi(False)
+                    lblNotify.Text = "No Faults"
+                End If                
             End If
         End If
+        Me.Cursor = Cursors.Default
     End Sub
 
 
@@ -59,7 +66,7 @@
     Private Sub HscrollInterventi_Scroll(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ScrollEventArgs) Handles HscrollInterventi.Scroll
 
         lblNumInt.Text = e.NewValue & "/" & HscrollInterventi.Maximum
-        FillIntData(myIntList.IntItems(e.NewValue - 1))
+        FillIntData(ConnectionUSB.InterventiLetti.IntItems(e.NewValue - 1))
 
     End Sub
 
@@ -67,15 +74,38 @@
 
 
     Private Sub Draw_header()
+        Dim toolTip1 As New ToolTip()
+
+
+        ' Blocca dimensione minima finestra
+        Me.MinimumSize = Me.Size
+
+        btnRead.Visible = False
+        Button2.Visible = False
+        StatusStrip1.Items.Clear()
         ListBoxLog.Items.Clear()
         EnableControlsInterventi(False)
         SetConn(False)
         Me.Text = "USB Configuration " + SwVersion
 
+
+
+        ' Set up the delays for the ToolTip.
+        toolTip1.AutoPopDelay = 5000
+        toolTip1.InitialDelay = 800
+        toolTip1.ReshowDelay = 500
+        ' Force the ToolTip text to be displayed whether or not the form is active.
+        toolTip1.ShowAlways = True
+
+        ' Set up the ToolTip text for the Button and Checkbox.
+        toolTip1.SetToolTip(Me.btnSaveInt, "Save all Faults on a file")
+        toolTip1.SetToolTip(Me.btnConn, "Connect to Device")
+        toolTip1.SetToolTip(Me.HscrollInterventi, "Scroll Faults here")
+
     End Sub
 
     Private Sub FillIntData(ByVal intToFill As InterventSingle)
-        Dim _ore, _minuti, _secondi As Integer
+
 
         Select Case intToFill._intType
             Case 1
@@ -126,10 +156,7 @@
         End Select
 
 
-        _ore = intToFill._intTime \ 3600
-        _minuti = (intToFill._intTime Mod 3600) \ 60
-        _secondi = ((intToFill._intTime Mod 3600) Mod 60)
-        lblIntTimeVal.Text = _ore & "h " & _minuti & "' " & _secondi & "''"
+        lblIntTimeVal.Text = GetHours(intToFill._intTime) & "h " & GetMinutes(intToFill._intTime) & "' " & GetSeconds(intToFill._intTime) & "''"
 
         lblIntV1Val.Text = intToFill._intVolt1
         lblIntV2Val.Text = intToFill._intVolt2
@@ -157,12 +184,13 @@
 
             HscrollInterventi.Enabled = True
             HscrollInterventi.Minimum = 1
-            HscrollInterventi.Maximum = myIntList.Length
+            HscrollInterventi.Maximum = ConnectionUSB.InterventiLetti.Length
             HscrollInterventi.SmallChange = 1
             HscrollInterventi.LargeChange = 1
             HscrollInterventi.Value = HscrollInterventi.Minimum
+            lblNumIntTitle.Text = "Faults number"
             lblNumInt.Text = HscrollInterventi.Value & "/" & HscrollInterventi.Maximum
-            FillIntData(myIntList.IntItems(HscrollInterventi.Value - 1))
+            FillIntData(ConnectionUSB.InterventiLetti.IntItems(HscrollInterventi.Value - 1))
         Else
 
             lblIntTypeVal.Text = ""
@@ -181,6 +209,7 @@
             lblIntTempVal.Text = ""
 
             lblNumInt.Text = ""
+            lblNumIntTitle.Text = ""
         End If
 
 
@@ -188,16 +217,35 @@
 
 
     Private Sub SetConn(ByVal _ConnEnable As Boolean)
-
         If _ConnEnable Then
             btnConn.Image = WindowsApplication1.My.Resources.disc
             btnConn.Text = "Disconnect"
             ConnectionActive = True
+            StatusStrip1.Items.Clear()
+            StatusStrip1.Items.Add(Date.Now)
+            StatusStrip1.Items.Add(New ToolStripSeparator)
+            StatusStrip1.Items.Add("Serial number: " + ConnectionUSB.Matricola.ToUpper)
+            StatusStrip1.Items.Add(New ToolStripSeparator)
+
+            StatusStrip1.Items.Add("Fw Ver: " + ConnectionUSB.FwVer.ToString("X4"))
+            StatusStrip1.Items.Add(New ToolStripSeparator)
+
+            StatusStrip1.Items.Add("Hw Ver: " + ConnectionUSB.HwVer.ToString("X4"))
+            StatusStrip1.Items.Add(New ToolStripSeparator)
+
+            StatusStrip1.Items.Add("Worked hours: " + GetHours(ConnectionUSB.OreLav).ToString("") + "h " + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
+            StatusStrip1.Items.Add(New ToolStripSeparator)
+
         Else
-            lblNotify.Text = "Connect and Read Events"
+            lblNotify.Text = "Connect and Read Faults"
             btnConn.Image = WindowsApplication1.My.Resources.conn
             btnConn.Text = "Connect"
             ConnectionActive = False
+            StatusStrip1.Items.Clear()
+            StatusStrip1.Items.Add(Date.Now)
+            StatusStrip1.Items.Add(New ToolStripSeparator)
+            StatusStrip1.Items.Add("Device Not Connected")
+            StatusStrip1.Items.Add(New ToolStripSeparator)
         End If
 
 
@@ -220,5 +268,65 @@
     Private Sub ExitToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExitToolStripMenuItem1.Click
         CloseProgram()
         Me.Close()
+    End Sub
+
+    Private Sub btnSaveInt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSaveInt.Click
+        Dim file As System.IO.StreamWriter        
+        Dim FileLogName As String
+        Dim i As UInteger
+
+        SaveFileDialog1.FileName = ".txt"
+        SaveFileDialog1.DefaultExt = ".txt"
+        SaveFileDialog1.AddExtension = True
+        SaveFileDialog1.Filter = "All files|*.*" + "|" + "Text File (*.txt)|*.txt" + "|" + "Comma separated value (*.csv)|*.csv"
+        SaveFileDialog1.InitialDirectory = System.Windows.Forms.Application.StartupPath
+        SaveFileDialog1.Title = "Save Faults"
+
+
+
+        If Not (SaveFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK) Then Exit Sub
+        Try
+            FileLogName = SaveFileDialog1.FileName
+            file = New System.IO.StreamWriter(FileLogName, False)   ' No append
+
+            file.WriteLine("*************************************************************************")
+            file.WriteLine("* Faults recorded")
+            file.WriteLine("* Date: " + Date.Now)
+            file.WriteLine("* Serial number:" + ConnectionUSB.Matricola.ToUpper _
+                           + " Fw Ver:" + ConnectionUSB.FwVer.ToString("X4") _
+                           + " Hw Ver:" + ConnectionUSB.HwVer.ToString("X4") _
+                           + Environment.NewLine _
+                           + " Worked hours:" + GetHours(ConnectionUSB.OreLav).ToString + "h" + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
+            file.WriteLine("*************************************************************************")
+
+            For i = 0 To ConnectionUSB.InterventiLetti.Length - 1
+                file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intType.ToString + ",")
+                file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intTime.ToString + ",")
+                file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intVolt1.ToString + ",")
+                file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intVolt2.ToString + ",")
+                file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intVolt3.ToString + ",")
+                file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr1.ToString + ",")
+                file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr2.ToString + ",")
+                file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr3.ToString + ",")
+                file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intPower.ToString + ",")
+                file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intPress.ToString + ",")
+                file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intCosfi.ToString + ",")
+                file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intTemp.ToString)
+                file.Write(Environment.NewLine)
+            Next
+
+            file.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+
+        End Try
+
+
+    End Sub
+
+  
+    Private Sub PictureLogo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureLogo.Click
+        Process.Start("http://www.electroil.it/inglese/index.html")
     End Sub
 End Class
