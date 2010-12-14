@@ -4,6 +4,21 @@
     'Public myIntList As InterventList
     Public ConnectionActive As Boolean
 
+    Class OccorrenzeIntervento
+
+        Public NumTypeInt As Byte         ' Codice
+        Public StringTypeInt As String
+        Public OccInt As UInt16
+
+        Public Sub New(ByVal a As Byte, ByVal b As String, ByVal c As UInt16)
+            NumTypeInt = a
+            StringTypeInt = b
+            OccInt = c
+        End Sub
+
+    End Class
+
+
     Public Sub CloseProgram()
 
     End Sub
@@ -13,6 +28,8 @@
 
     Public Function GetTypeIntStr(ByVal _typeIntnum As Byte) As String
         Dim StrToRet As String
+     
+
         Select Case _typeIntnum
             Case 1
                 StrToRet = "ON"

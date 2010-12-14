@@ -23,6 +23,9 @@ Partial Class MainFrm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainFrm))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -61,6 +64,7 @@ Partial Class MainFrm
         Me.lblIntTypeVal = New System.Windows.Forms.Label()
         Me.lblIntTypeDesc = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.lblGenericTmp = New System.Windows.Forms.Label()
         Me.ListBoxLog = New System.Windows.Forms.ListBox()
         Me.ContextMenuLog = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.CopyLogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -83,7 +87,7 @@ Partial Class MainFrm
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.ClearLogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnExit = New System.Windows.Forms.Button()
-        Me.lblGenericTmp = New System.Windows.Forms.Label()
+        Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -95,6 +99,7 @@ Partial Class MainFrm
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureLogo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -106,7 +111,7 @@ Partial Class MainFrm
         Me.TabControl1.Location = New System.Drawing.Point(5, 84)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(591, 259)
+        Me.TabControl1.Size = New System.Drawing.Size(591, 286)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage1
@@ -118,7 +123,7 @@ Partial Class MainFrm
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(583, 233)
+        Me.TabPage1.Size = New System.Drawing.Size(583, 260)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Faults"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -496,13 +501,23 @@ Partial Class MainFrm
         Me.TabPage2.Text = "Other"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'lblGenericTmp
+        '
+        Me.lblGenericTmp.AutoSize = True
+        Me.lblGenericTmp.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblGenericTmp.Location = New System.Drawing.Point(18, 20)
+        Me.lblGenericTmp.Name = "lblGenericTmp"
+        Me.lblGenericTmp.Size = New System.Drawing.Size(232, 25)
+        Me.lblGenericTmp.TabIndex = 0
+        Me.lblGenericTmp.Text = "Under construction..."
+        '
         'ListBoxLog
         '
         Me.ListBoxLog.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.ListBoxLog.BackColor = System.Drawing.SystemColors.GrayText
         Me.ListBoxLog.ContextMenuStrip = Me.ContextMenuLog
         Me.ListBoxLog.FormattingEnabled = True
-        Me.ListBoxLog.Location = New System.Drawing.Point(5, 348)
+        Me.ListBoxLog.Location = New System.Drawing.Point(5, 375)
         Me.ListBoxLog.Name = "ListBoxLog"
         Me.ListBoxLog.Size = New System.Drawing.Size(587, 69)
         Me.ListBoxLog.TabIndex = 7
@@ -540,9 +555,9 @@ Partial Class MainFrm
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 425)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 452)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(675, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(798, 22)
         Me.StatusStrip1.TabIndex = 3
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -551,7 +566,7 @@ Partial Class MainFrm
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem1})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(675, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(798, 24)
         Me.MenuStrip1.TabIndex = 4
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -625,7 +640,7 @@ Partial Class MainFrm
         'btnRead
         '
         Me.btnRead.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnRead.Location = New System.Drawing.Point(603, 275)
+        Me.btnRead.Location = New System.Drawing.Point(726, 302)
         Me.btnRead.Name = "btnRead"
         Me.btnRead.Size = New System.Drawing.Size(60, 35)
         Me.btnRead.TabIndex = 6
@@ -635,7 +650,7 @@ Partial Class MainFrm
         'Button2
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.Location = New System.Drawing.Point(603, 316)
+        Me.Button2.Location = New System.Drawing.Point(726, 343)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(60, 35)
         Me.Button2.TabIndex = 9
@@ -657,28 +672,35 @@ Partial Class MainFrm
         '
         Me.btnExit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnExit.Image = Global.ApplicationChiUSB.My.Resources.Resources.Spegni
-        Me.btnExit.Location = New System.Drawing.Point(603, 357)
+        Me.btnExit.Location = New System.Drawing.Point(726, 384)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(60, 60)
         Me.btnExit.TabIndex = 1
         Me.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnExit.UseVisualStyleBackColor = True
         '
-        'lblGenericTmp
+        'Chart1
         '
-        Me.lblGenericTmp.AutoSize = True
-        Me.lblGenericTmp.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblGenericTmp.Location = New System.Drawing.Point(18, 20)
-        Me.lblGenericTmp.Name = "lblGenericTmp"
-        Me.lblGenericTmp.Size = New System.Drawing.Size(232, 25)
-        Me.lblGenericTmp.TabIndex = 0
-        Me.lblGenericTmp.Text = "Under construction..."
+        ChartArea1.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend1)
+        Me.Chart1.Location = New System.Drawing.Point(603, 97)
+        Me.Chart1.Name = "Chart1"
+        Series1.ChartArea = "ChartArea1"
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        Me.Chart1.Series.Add(Series1)
+        Me.Chart1.Size = New System.Drawing.Size(195, 187)
+        Me.Chart1.TabIndex = 11
+        Me.Chart1.Text = "Chart1"
         '
         'MainFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(675, 447)
+        Me.ClientSize = New System.Drawing.Size(798, 474)
+        Me.Controls.Add(Me.Chart1)
         Me.Controls.Add(Me.ListBoxLog)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.GroupBox1)
@@ -706,6 +728,7 @@ Partial Class MainFrm
         Me.MenuStrip1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.PictureLogo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -770,5 +793,6 @@ Partial Class MainFrm
     Friend WithEvents btnSaveInt As System.Windows.Forms.Button
     Friend WithEvents lblNumIntTitle As System.Windows.Forms.Label
     Friend WithEvents lblGenericTmp As System.Windows.Forms.Label
+    Friend WithEvents Chart1 As System.Windows.Forms.DataVisualization.Charting.Chart
 
 End Class

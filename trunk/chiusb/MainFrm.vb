@@ -1,4 +1,5 @@
-﻿Public Class MainFrm
+﻿Imports System.Windows.Forms.DataVisualization.Charting.Utilities
+Public Class MainFrm
 
 
     Private Sub MainFrm_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
@@ -55,7 +56,7 @@
                 Else
                     EnableControlsInterventi(False)
                     lblNotify.Text = "No Faults"
-                End If                
+                End If
             End If
         End If
         Me.Cursor = Cursors.Default
@@ -71,14 +72,21 @@
     End Sub
 
 
-
-
     Private Sub Draw_header()
         Dim toolTip1 As New ToolTip()
+  
 
 
         ' Blocca dimensione minima finestra
         Me.MinimumSize = Me.Size
+
+        Chart1.Series.Add("Gigione")
+        Chart1.Series.Add("Paolo")
+        Chart1.Series("Paolo").AxisLabel = "paoloin2"
+        Chart1.Series("Paolo").ResetIsValueShownAsLabel()
+        Chart1.Series("Paolo").Points.AddY(22)
+        Chart1.Series("Gigione").Points.AddY(55)
+        Chart1.Series("Series1").Points.AddY(23)
 
         lblGenericTmp.Text = "Program developing " + Environment.NewLine _
                             + "Sw Version " + SwVersion + "   " + "2010"
@@ -110,7 +118,7 @@
     End Sub
 
     Private Sub FillIntData(ByVal intToFill As InterventSingle)
-       
+
         lblIntTypeVal.Text = GetTypeIntStr(intToFill._intType)
 
         lblIntTimeVal.Text = GetHours(intToFill._intTime).ToString & "h " & GetMinutes(intToFill._intTime).ToString("00") & "' " & GetSeconds(intToFill._intTime).ToString("00") & "''"
@@ -210,7 +218,7 @@
     End Sub
 
 
-    
+
     Private Sub CopyLogToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CopyLogToolStripMenuItem.Click
         Dim strt As String = ""
         For i = 0 To ListBoxLog.Items.Count - 1
@@ -229,7 +237,7 @@
     End Sub
 
     Private Sub btnSaveInt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSaveInt.Click
-        Dim file As System.IO.StreamWriter        
+        Dim file As System.IO.StreamWriter
         Dim FileLogName As String
         Dim i As Integer
 
@@ -269,7 +277,7 @@
                     file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intTemp.ToString)
                     file.Write(Environment.NewLine)
                 Next
-            Else                        
+            Else
                 file.WriteLine(New String("*", 80))
                 file.WriteLine("* Faults recorded")
                 file.WriteLine("* Date: " + Date.Now)
@@ -320,7 +328,7 @@
 
 
             file.Close()
-        Catch ex As Exception            
+        Catch ex As Exception
             MsgBox(ex.Message)
         Finally
 
@@ -329,7 +337,7 @@
 
     End Sub
 
-  
+
     Private Sub PictureLogo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureLogo.Click
         Process.Start("http://www.electroil.it/inglese/index.html")
     End Sub

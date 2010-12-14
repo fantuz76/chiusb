@@ -2,29 +2,29 @@
 <doc>
 <assembly>
 <name>
-chiusb
+ChiUSB
 </name>
 </assembly>
 <members>
-<member name="M:WindowsApplication1.InterventList.#ctor">
+<member name="M:ApplicationChiUSB.InterventList.#ctor">
  Constructor to set the properties of our    
 
-</member><member name="M:WindowsApplication1.USBClass.#ctor(System.Object)">
+</member><member name="M:ApplicationChiUSB.USBClass.#ctor(System.Object)">
  Constructor to set the properties of our Manager Class
 
-</member><member name="M:WindowsApplication1.USBClass.#ctor">
+</member><member name="M:ApplicationChiUSB.USBClass.#ctor">
  Constructor to set the properties of our serial port communicator to nothing
 
-</member><member name="P:WindowsApplication1.My.Resources.Resources.ResourceManager">
+</member><member name="P:ApplicationChiUSB.My.Resources.Resources.ResourceManager">
 	<summary>
   Returns the cached ResourceManager instance used by this class.
 </summary>
-</member><member name="P:WindowsApplication1.My.Resources.Resources.Culture">
+</member><member name="P:ApplicationChiUSB.My.Resources.Resources.Culture">
 	<summary>
   Overrides the current thread's CurrentUICulture property for all
   resource lookups using this strongly typed resource class.
 </summary>
-</member><member name="T:WindowsApplication1.My.Resources.Resources">
+</member><member name="T:ApplicationChiUSB.My.Resources.Resources">
 	<summary>
   A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
