@@ -39,7 +39,7 @@ Namespace My.Resources
         Friend ReadOnly Property ResourceManager() As Global.System.Resources.ResourceManager
             Get
                 If Object.ReferenceEquals(resourceMan, Nothing) Then
-                    Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("WindowsApplication1.Resources", GetType(Resources).Assembly)
+                    Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("ApplicationChiUSB.Resources", GetType(Resources).Assembly)
                     resourceMan = temp
                 End If
                 Return resourceMan
@@ -81,9 +81,9 @@ Namespace My.Resources
             End Get
         End Property
         
-        Friend ReadOnly Property Save_as() As System.Drawing.Bitmap
+        Friend ReadOnly Property SaveAs() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("Save as", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("SaveAs", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
