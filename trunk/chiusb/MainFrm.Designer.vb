@@ -23,8 +23,10 @@ Partial Class MainFrm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainFrm))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.lblNumIntTitle = New System.Windows.Forms.Label()
         Me.lblNumInt = New System.Windows.Forms.Label()
         Me.HscrollInterventi = New System.Windows.Forms.HScrollBar()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -81,13 +83,14 @@ Partial Class MainFrm
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.ClearLogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnExit = New System.Windows.Forms.Button()
-        Me.lblNumIntTitle = New System.Windows.Forms.Label()
+        Me.lblGenericTmp = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
         Me.ContextMenuLog.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -96,15 +99,14 @@ Partial Class MainFrm
         '
         'TabControl1
         '
-        Me.TabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TabControl1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Location = New System.Drawing.Point(5, 84)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(602, 259)
+        Me.TabControl1.Size = New System.Drawing.Size(591, 259)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage1
@@ -116,10 +118,19 @@ Partial Class MainFrm
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(594, 233)
+        Me.TabPage1.Size = New System.Drawing.Size(583, 233)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Faults"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'lblNumIntTitle
+        '
+        Me.lblNumIntTitle.AutoSize = True
+        Me.lblNumIntTitle.Location = New System.Drawing.Point(494, 10)
+        Me.lblNumIntTitle.Name = "lblNumIntTitle"
+        Me.lblNumIntTitle.Size = New System.Drawing.Size(73, 13)
+        Me.lblNumIntTitle.TabIndex = 3
+        Me.lblNumIntTitle.Text = "Faults number"
         '
         'lblNumInt
         '
@@ -161,7 +172,7 @@ Partial Class MainFrm
         '
         'btnSaveInt
         '
-        Me.btnSaveInt.Image = Global.WindowsApplication1.My.Resources.Resources.Save_as
+        Me.btnSaveInt.Image = Global.ApplicationChiUSB.My.Resources.Resources.SaveAs
         Me.btnSaveInt.Location = New System.Drawing.Point(471, 36)
         Me.btnSaveInt.Name = "btnSaveInt"
         Me.btnSaveInt.Size = New System.Drawing.Size(45, 45)
@@ -476,23 +487,24 @@ Partial Class MainFrm
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.lblGenericTmp)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(594, 233)
+        Me.TabPage2.Size = New System.Drawing.Size(583, 233)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Other"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'ListBoxLog
         '
-        Me.ListBoxLog.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ListBoxLog.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.ListBoxLog.BackColor = System.Drawing.SystemColors.GrayText
         Me.ListBoxLog.ContextMenuStrip = Me.ContextMenuLog
         Me.ListBoxLog.FormattingEnabled = True
         Me.ListBoxLog.Location = New System.Drawing.Point(5, 348)
         Me.ListBoxLog.Name = "ListBoxLog"
-        Me.ListBoxLog.Size = New System.Drawing.Size(598, 69)
+        Me.ListBoxLog.Size = New System.Drawing.Size(587, 69)
         Me.ListBoxLog.TabIndex = 7
         '
         'ContextMenuLog
@@ -530,7 +542,7 @@ Partial Class MainFrm
         '
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 425)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(759, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(675, 22)
         Me.StatusStrip1.TabIndex = 3
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -539,7 +551,7 @@ Partial Class MainFrm
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem1})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(759, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(675, 24)
         Me.MenuStrip1.TabIndex = 4
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -573,10 +585,9 @@ Partial Class MainFrm
         '
         Me.GroupBox1.Controls.Add(Me.lblNotify)
         Me.GroupBox1.Controls.Add(Me.btnConn)
-        Me.GroupBox1.Controls.Add(Me.PictureLogo)
         Me.GroupBox1.Location = New System.Drawing.Point(5, 27)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(598, 57)
+        Me.GroupBox1.Size = New System.Drawing.Size(300, 57)
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         '
@@ -591,7 +602,7 @@ Partial Class MainFrm
         '
         'btnConn
         '
-        Me.btnConn.Image = Global.WindowsApplication1.My.Resources.Resources.conn
+        Me.btnConn.Image = Global.ApplicationChiUSB.My.Resources.Resources.conn
         Me.btnConn.Location = New System.Drawing.Point(4, 9)
         Me.btnConn.Name = "btnConn"
         Me.btnConn.Size = New System.Drawing.Size(107, 43)
@@ -603,10 +614,10 @@ Partial Class MainFrm
         'PictureLogo
         '
         Me.PictureLogo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureLogo.Image = Global.WindowsApplication1.My.Resources.Resources.logo
-        Me.PictureLogo.Location = New System.Drawing.Point(458, 9)
+        Me.PictureLogo.Image = Global.ApplicationChiUSB.My.Resources.Resources.logo
+        Me.PictureLogo.Location = New System.Drawing.Point(434, 27)
         Me.PictureLogo.Name = "PictureLogo"
-        Me.PictureLogo.Size = New System.Drawing.Size(134, 42)
+        Me.PictureLogo.Size = New System.Drawing.Size(162, 57)
         Me.PictureLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureLogo.TabIndex = 10
         Me.PictureLogo.TabStop = False
@@ -614,9 +625,9 @@ Partial Class MainFrm
         'btnRead
         '
         Me.btnRead.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnRead.Location = New System.Drawing.Point(660, 267)
+        Me.btnRead.Location = New System.Drawing.Point(603, 275)
         Me.btnRead.Name = "btnRead"
-        Me.btnRead.Size = New System.Drawing.Size(90, 35)
+        Me.btnRead.Size = New System.Drawing.Size(60, 35)
         Me.btnRead.TabIndex = 6
         Me.btnRead.Text = "Read"
         Me.btnRead.UseVisualStyleBackColor = True
@@ -624,9 +635,9 @@ Partial Class MainFrm
         'Button2
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.Location = New System.Drawing.Point(660, 308)
+        Me.Button2.Location = New System.Drawing.Point(603, 316)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(90, 35)
+        Me.Button2.Size = New System.Drawing.Size(60, 35)
         Me.Button2.TabIndex = 9
         Me.Button2.Text = "Faults"
         Me.Button2.UseVisualStyleBackColor = True
@@ -645,36 +656,39 @@ Partial Class MainFrm
         'btnExit
         '
         Me.btnExit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnExit.Image = Global.WindowsApplication1.My.Resources.Resources.Spegni
-        Me.btnExit.Location = New System.Drawing.Point(695, 362)
+        Me.btnExit.Image = Global.ApplicationChiUSB.My.Resources.Resources.Spegni
+        Me.btnExit.Location = New System.Drawing.Point(603, 357)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(60, 60)
         Me.btnExit.TabIndex = 1
         Me.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnExit.UseVisualStyleBackColor = True
         '
-        'lblNumIntTitle
+        'lblGenericTmp
         '
-        Me.lblNumIntTitle.AutoSize = True
-        Me.lblNumIntTitle.Location = New System.Drawing.Point(494, 10)
-        Me.lblNumIntTitle.Name = "lblNumIntTitle"
-        Me.lblNumIntTitle.Size = New System.Drawing.Size(73, 13)
-        Me.lblNumIntTitle.TabIndex = 3
-        Me.lblNumIntTitle.Text = "Faults number"
+        Me.lblGenericTmp.AutoSize = True
+        Me.lblGenericTmp.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblGenericTmp.Location = New System.Drawing.Point(18, 20)
+        Me.lblGenericTmp.Name = "lblGenericTmp"
+        Me.lblGenericTmp.Size = New System.Drawing.Size(232, 25)
+        Me.lblGenericTmp.TabIndex = 0
+        Me.lblGenericTmp.Text = "Under construction..."
         '
         'MainFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(759, 447)
+        Me.ClientSize = New System.Drawing.Size(675, 447)
         Me.Controls.Add(Me.ListBoxLog)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.Controls.Add(Me.btnRead)
+        Me.Controls.Add(Me.PictureLogo)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.btnExit)
+        Me.Controls.Add(Me.btnRead)
         Me.Controls.Add(Me.Button2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "MainFrm"
         Me.Text = "USB Configuration"
@@ -685,6 +699,8 @@ Partial Class MainFrm
         Me.Panel4.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
         Me.ContextMenuLog.ResumeLayout(False)
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
@@ -753,5 +769,6 @@ Partial Class MainFrm
     Friend WithEvents ExitToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents btnSaveInt As System.Windows.Forms.Button
     Friend WithEvents lblNumIntTitle As System.Windows.Forms.Label
+    Friend WithEvents lblGenericTmp As System.Windows.Forms.Label
 
 End Class

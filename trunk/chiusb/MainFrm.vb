@@ -80,6 +80,9 @@
         ' Blocca dimensione minima finestra
         Me.MinimumSize = Me.Size
 
+        lblGenericTmp.Text = "Program developing " + Environment.NewLine _
+                            + "Sw Version " + SwVersion + "   " + "2010"
+
         btnRead.Visible = False
         Button2.Visible = False
         StatusStrip1.Items.Clear()
@@ -101,74 +104,28 @@
         toolTip1.SetToolTip(Me.btnSaveInt, "Save all Faults on a file")
         toolTip1.SetToolTip(Me.btnConn, "Connect to Device")
         toolTip1.SetToolTip(Me.HscrollInterventi, "Scroll Faults here")
+        toolTip1.SetToolTip(Me.ListBoxLog, "Program events")
+        toolTip1.SetToolTip(Me.PictureLogo, "Electroil internet site")
 
     End Sub
 
     Private Sub FillIntData(ByVal intToFill As InterventSingle)
+       
+        lblIntTypeVal.Text = GetTypeIntStr(intToFill._intType)
 
-
-        Select Case intToFill._intType
-            Case 1
-                lblIntTypeVal.Text = "ON"
-            Case 2
-                lblIntTypeVal.Text = "OFF"
-
-            Case 10
-                lblIntTypeVal.Text = "Overcurrent" + " - Without Halt"
-            Case 11
-                lblIntTypeVal.Text = "Overvoltage" + " - Without Halt"
-            Case 12
-                lblIntTypeVal.Text = "Undervoltage" + " - Without Halt"
-            Case 13
-                lblIntTypeVal.Text = "Under Load" + " - Without Halt"
-            Case 14
-                lblIntTypeVal.Text = "Dry running" + " - Without Halt"
-            Case 15
-                lblIntTypeVal.Text = "Over Temperature" + " - Without Halt"
-            Case 16
-                lblIntTypeVal.Text = "Differential protection" + " - Without Halt"
-            Case 17
-                lblIntTypeVal.Text = "Current imbalance" + " - Without Halt"
-            Case 18
-                lblIntTypeVal.Text = "Asymmetry Voltages" + " - Without Halt"
-
-            Case 10 + 10
-                lblIntTypeVal.Text = "Overcurrent" + " - System Halt"
-            Case 11 + 10
-                lblIntTypeVal.Text = "Overvoltage" + " - System Halt"
-            Case 12 + 10
-                lblIntTypeVal.Text = "Undervoltage" + " - System Halt"
-            Case 13 + 10
-                lblIntTypeVal.Text = "Under Load" + " - System Halt"
-            Case 14 + 10
-                lblIntTypeVal.Text = "Dry running" + " - System Halt"
-            Case 15 + 10
-                lblIntTypeVal.Text = "Over Temperature" + " - System Halt"
-            Case 16 + 10
-                lblIntTypeVal.Text = "Differential protection" + " - System Halt"
-            Case 17 + 10
-                lblIntTypeVal.Text = "Current imbalance" + " - System Halt"
-            Case 18 + 10
-                lblIntTypeVal.Text = "Asymmetry Voltages" + " - System Halt"
-
-            Case Else
-                lblIntTypeVal.Text = intToFill._intType
-        End Select
-
-
-        lblIntTimeVal.Text = GetHours(intToFill._intTime) & "h " & GetMinutes(intToFill._intTime) & "' " & GetSeconds(intToFill._intTime) & "''"
+        lblIntTimeVal.Text = GetHours(intToFill._intTime).ToString & "h " & GetMinutes(intToFill._intTime).ToString("00") & "' " & GetSeconds(intToFill._intTime).ToString("00") & "''"
 
         lblIntV1Val.Text = intToFill._intVolt1
         lblIntV2Val.Text = intToFill._intVolt2
         lblIntV3Val.Text = intToFill._intVolt3
 
-        lblIntI1Val.Text = intToFill._intCurr1 / 10
-        lblIntI2Val.Text = intToFill._intCurr2 / 10
-        lblIntI3Val.Text = intToFill._intCurr3 / 10
+        lblIntI1Val.Text = GetCurrent(intToFill._intCurr1)
+        lblIntI2Val.Text = GetCurrent(intToFill._intCurr2)
+        lblIntI3Val.Text = GetCurrent(intToFill._intCurr3)
 
         lblIntPowVal.Text = intToFill._intPower
-        lblIntPressVal.Text = intToFill._intPress / 10
-        lblIntCosfiVal.Text = intToFill._intCosfi / 100
+        lblIntPressVal.Text = GetPressure(intToFill._intPress)
+        lblIntCosfiVal.Text = GetCosfi(intToFill._intCosfi)
         lblIntTempVal.Text = intToFill._intTemp
 
     End Sub
@@ -176,6 +133,7 @@
 
 
     Private Sub EnableControlsInterventi(ByVal _EvConEn As Boolean)
+
         Panel1.Enabled = _EvConEn
         HscrollInterventi.Enabled = _EvConEn
         lblNumInt.Visible = _EvConEn
@@ -218,7 +176,7 @@
 
     Private Sub SetConn(ByVal _ConnEnable As Boolean)
         If _ConnEnable Then
-            btnConn.Image = WindowsApplication1.My.Resources.disc
+            btnConn.Image = ApplicationChiUSB.My.Resources.disc
             btnConn.Text = "Disconnect"
             ConnectionActive = True
             StatusStrip1.Items.Clear()
@@ -238,7 +196,7 @@
 
         Else
             lblNotify.Text = "Connect and Read Faults"
-            btnConn.Image = WindowsApplication1.My.Resources.conn
+            btnConn.Image = ApplicationChiUSB.My.Resources.conn
             btnConn.Text = "Connect"
             ConnectionActive = False
             StatusStrip1.Items.Clear()
@@ -273,50 +231,96 @@
     Private Sub btnSaveInt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSaveInt.Click
         Dim file As System.IO.StreamWriter        
         Dim FileLogName As String
-        Dim i As UInteger
+        Dim i As Integer
 
-        SaveFileDialog1.FileName = ".txt"
+        SaveFileDialog1.FileName = "Faults"
         SaveFileDialog1.DefaultExt = ".txt"
         SaveFileDialog1.AddExtension = True
-        SaveFileDialog1.Filter = "All files|*.*" + "|" + "Text File (*.txt)|*.txt" + "|" + "Comma separated value (*.csv)|*.csv"
+        SaveFileDialog1.Filter = "Text File (*.txt)|*.txt" + "|" + "Comma separated value (*.csv)|*.csv" + "|" + "All files|*.*"
         SaveFileDialog1.InitialDirectory = System.Windows.Forms.Application.StartupPath
         SaveFileDialog1.Title = "Save Faults"
+        SaveFileDialog1.CheckPathExists = True
+        SaveFileDialog1.OverwritePrompt = True
 
 
 
         If Not (SaveFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK) Then Exit Sub
+
         Try
             FileLogName = SaveFileDialog1.FileName
             file = New System.IO.StreamWriter(FileLogName, False)   ' No append
 
-            file.WriteLine("*************************************************************************")
-            file.WriteLine("* Faults recorded")
-            file.WriteLine("* Date: " + Date.Now)
-            file.WriteLine("* Serial number:" + ConnectionUSB.Matricola.ToUpper _
-                           + " Fw Ver:" + ConnectionUSB.FwVer.ToString("X4") _
-                           + " Hw Ver:" + ConnectionUSB.HwVer.ToString("X4") _
-                           + Environment.NewLine _
-                           + " Worked hours:" + GetHours(ConnectionUSB.OreLav).ToString + "h" + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
-            file.WriteLine("*************************************************************************")
+            ' Se CSV faccio in un modo altrimenti riempio come file txt
+            If Strings.Right(FileLogName, 3).ToUpper = "CSV" Then
+                file.WriteLine("")
+                file.WriteLine("")
+                For i = 0 To ConnectionUSB.InterventiLetti.Length - 1
+                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intType.ToString + ",")
+                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intTime.ToString + ",")
+                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intVolt1.ToString + ",")
+                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intVolt2.ToString + ",")
+                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intVolt3.ToString + ",")
+                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr1.ToString + ",")
+                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr2.ToString + ",")
+                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr3.ToString + ",")
+                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intPower.ToString + ",")
+                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intPress.ToString + ",")
+                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intCosfi.ToString + ",")
+                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intTemp.ToString)
+                    file.Write(Environment.NewLine)
+                Next
+            Else                        
+                file.WriteLine(New String("*", 80))
+                file.WriteLine("* Faults recorded")
+                file.WriteLine("* Date: " + Date.Now)
+                file.WriteLine("* Serial number:" + ConnectionUSB.Matricola.ToUpper _
+                               + " Fw Ver:" + ConnectionUSB.FwVer.ToString("X4") _
+                               + " Hw Ver:" + ConnectionUSB.HwVer.ToString("X4"))
+                file.WriteLine("* Worked hours:" + GetHours(ConnectionUSB.OreLav).ToString + "h" + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
+                file.WriteLine(New String("*", 80))
 
-            For i = 0 To ConnectionUSB.InterventiLetti.Length - 1
-                file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intType.ToString + ",")
-                file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intTime.ToString + ",")
-                file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intVolt1.ToString + ",")
-                file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intVolt2.ToString + ",")
-                file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intVolt3.ToString + ",")
-                file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr1.ToString + ",")
-                file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr2.ToString + ",")
-                file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr3.ToString + ",")
-                file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intPower.ToString + ",")
-                file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intPress.ToString + ",")
-                file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intCosfi.ToString + ",")
-                file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intTemp.ToString)
-                file.Write(Environment.NewLine)
-            Next
+                file.WriteLine()
+                For i = 0 To ConnectionUSB.InterventiLetti.Length - 1
+                    file.WriteLine()
+                    file.WriteLine(New String("-", 50))
+                    file.WriteLine("-------------------------------------------------------------------------")
+                    file.Write("Fault Type: ")
+                    file.Write(GetTypeIntStr(ConnectionUSB.InterventiLetti.IntItems(i)._intType))
+                    file.Write(New String(" ", 5))
+
+                    file.Write("Fault Time: ")
+                    file.Write(GetHours(ConnectionUSB.InterventiLetti.IntItems(i)._intTime).ToString + "h ")
+                    file.Write(GetMinutes(ConnectionUSB.InterventiLetti.IntItems(i)._intTime).ToString("00") + "' ")
+                    file.Write(GetSeconds(ConnectionUSB.InterventiLetti.IntItems(i)._intTime).ToString("00") + "'' ")
+                    file.Write(New String(" ", 5))
+                    file.WriteLine()
+
+
+                    file.Write("V1:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVolt1.ToString + "V   ")
+                    file.Write("V2:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVolt2.ToString + "V   ")
+                    file.Write("V3:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVolt3.ToString + "V   ")
+                    file.WriteLine()
+
+                    file.Write("I1:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr1).ToString + "A   ")
+                    file.Write("I2:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr2).ToString + "A   ")
+                    file.Write("I3:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr3).ToString + "A   ")
+                    file.WriteLine()
+
+                    file.Write("Power:" + ConnectionUSB.InterventiLetti.IntItems(i)._intPower.ToString + "W   ")
+                    file.Write("Pressure:" + GetPressure(ConnectionUSB.InterventiLetti.IntItems(i)._intPress).ToString + "bar   ")
+                    file.WriteLine()
+
+                    file.Write("Cosfi:" + GetCosfi(ConnectionUSB.InterventiLetti.IntItems(i)._intCosfi).ToString + "    ")
+                    file.Write("Temperature" + ConnectionUSB.InterventiLetti.IntItems(i)._intTemp.ToString + "°C   ")
+                    file.WriteLine()
+                    file.WriteLine()
+                Next
+
+            End If
+
 
             file.Close()
-        Catch ex As Exception
+        Catch ex As Exception            
             MsgBox(ex.Message)
         Finally
 
