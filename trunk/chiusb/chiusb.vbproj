@@ -94,6 +94,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConstMod.vb" />
     <Compile Include="USBModule.vb" />
     <Compile Include="USBClass.vb" />
     <Compile Include="MainFrm.vb">
