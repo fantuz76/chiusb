@@ -496,7 +496,7 @@ Partial Class MainFrm
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(583, 233)
+        Me.TabPage2.Size = New System.Drawing.Size(583, 260)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Other"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -557,7 +557,7 @@ Partial Class MainFrm
         '
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 452)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(798, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(894, 22)
         Me.StatusStrip1.TabIndex = 3
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -566,7 +566,7 @@ Partial Class MainFrm
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem1})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(798, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(894, 24)
         Me.MenuStrip1.TabIndex = 4
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -640,7 +640,7 @@ Partial Class MainFrm
         'btnRead
         '
         Me.btnRead.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnRead.Location = New System.Drawing.Point(726, 302)
+        Me.btnRead.Location = New System.Drawing.Point(822, 302)
         Me.btnRead.Name = "btnRead"
         Me.btnRead.Size = New System.Drawing.Size(60, 35)
         Me.btnRead.TabIndex = 6
@@ -650,7 +650,7 @@ Partial Class MainFrm
         'Button2
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.Location = New System.Drawing.Point(726, 343)
+        Me.Button2.Location = New System.Drawing.Point(822, 343)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(60, 35)
         Me.Button2.TabIndex = 9
@@ -672,7 +672,7 @@ Partial Class MainFrm
         '
         Me.btnExit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnExit.Image = Global.ApplicationChiUSB.My.Resources.Resources.Spegni
-        Me.btnExit.Location = New System.Drawing.Point(726, 384)
+        Me.btnExit.Location = New System.Drawing.Point(822, 384)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(60, 60)
         Me.btnExit.TabIndex = 1
@@ -685,13 +685,13 @@ Partial Class MainFrm
         Me.Chart1.ChartAreas.Add(ChartArea1)
         Legend1.Name = "Legend1"
         Me.Chart1.Legends.Add(Legend1)
-        Me.Chart1.Location = New System.Drawing.Point(603, 97)
+        Me.Chart1.Location = New System.Drawing.Point(165, 87)
         Me.Chart1.Name = "Chart1"
         Series1.ChartArea = "ChartArea1"
         Series1.Legend = "Legend1"
         Series1.Name = "Series1"
         Me.Chart1.Series.Add(Series1)
-        Me.Chart1.Size = New System.Drawing.Size(195, 187)
+        Me.Chart1.Size = New System.Drawing.Size(682, 283)
         Me.Chart1.TabIndex = 11
         Me.Chart1.Text = "Chart1"
         '
@@ -699,10 +699,10 @@ Partial Class MainFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(798, 474)
-        Me.Controls.Add(Me.Chart1)
+        Me.ClientSize = New System.Drawing.Size(894, 474)
         Me.Controls.Add(Me.ListBoxLog)
         Me.Controls.Add(Me.StatusStrip1)
+        Me.Controls.Add(Me.Chart1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.PictureLogo)

@@ -1,6 +1,8 @@
 ﻿Imports System.Windows.Forms.DataVisualization.Charting.Utilities
-Public Class MainFrm
 
+Imports System.Windows.Forms.DataVisualization.Charting
+
+Public Class MainFrm    
 
     Private Sub MainFrm_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
         CloseProgram()
@@ -10,6 +12,9 @@ Public Class MainFrm
     Private Sub MainFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Draw_header()
 
+
+
+     
     End Sub
 
 
@@ -19,7 +24,7 @@ Public Class MainFrm
     End Sub
 
     Private Sub btnRead_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRead.Click
-        lblNotify.Text = ConnectionUSB.RequestError(1, 2)
+
     End Sub
 
 
@@ -53,6 +58,9 @@ Public Class MainFrm
                 If ConnectionUSB.RequestInterventi(0, 0) Then
                     EnableControlsInterventi(True)
                     lblNotify.Text = "Faults found " & ConnectionUSB.InterventiLetti.Length
+
+                    Intervents = New InterventiTypeClass(ConnectionUSB.InterventiLetti)
+                    UpdateChart()
                 Else
                     EnableControlsInterventi(False)
                     lblNotify.Text = "No Faults"
@@ -80,13 +88,16 @@ Public Class MainFrm
         ' Blocca dimensione minima finestra
         Me.MinimumSize = Me.Size
 
-        Chart1.Series.Add("Gigione")
-        Chart1.Series.Add("Paolo")
-        Chart1.Series("Paolo").AxisLabel = "paoloin2"
-        Chart1.Series("Paolo").ResetIsValueShownAsLabel()
-        Chart1.Series("Paolo").Points.AddY(22)
-        Chart1.Series("Gigione").Points.AddY(55)
-        Chart1.Series("Series1").Points.AddY(23)
+       
+
+        UpdateChart()
+        'Chart1.Series.Add("Gigione")
+        'Chart1.Series.Add("Paolo")
+        'Chart1.Series("Paolo").AxisLabel = "paoloin2"
+        'Chart1.Series("Paolo").ResetIsValueShownAsLabel()
+        'Chart1.Series("Paolo").Points.AddY(22)
+        'Chart1.Series("Gigione").Points.AddY(55)
+        'Chart1.Series("Series1").Points.AddY(23)
 
         lblGenericTmp.Text = "Program developing " + Environment.NewLine _
                             + "Sw Version " + SwVersion + "   " + "2010"
@@ -119,7 +130,7 @@ Public Class MainFrm
 
     Private Sub FillIntData(ByVal intToFill As InterventSingle)
 
-        lblIntTypeVal.Text = GetTypeIntStr(intToFill._intType)
+        lblIntTypeVal.Text = Intervents.GetIntStr(intToFill._intType)
 
         lblIntTimeVal.Text = GetHours(intToFill._intTime).ToString & "h " & GetMinutes(intToFill._intTime).ToString("00") & "' " & GetSeconds(intToFill._intTime).ToString("00") & "''"
 
@@ -293,7 +304,7 @@ Public Class MainFrm
                     file.WriteLine(New String("-", 50))
                     file.WriteLine("-------------------------------------------------------------------------")
                     file.Write("Fault Type: ")
-                    file.Write(GetTypeIntStr(ConnectionUSB.InterventiLetti.IntItems(i)._intType))
+                    file.Write(Intervents.GetIntStr(ConnectionUSB.InterventiLetti.IntItems(i)._intType))
                     file.Write(New String(" ", 5))
 
                     file.Write("Fault Time: ")
@@ -337,7 +348,39 @@ Public Class MainFrm
 
     End Sub
 
+    Private Sub UpdateChart()
 
+        Chart1.Series.Clear()
+
+        'Chart1.DataSource = Intervents
+        Chart1.ChartAreas.Clear()
+        Chart1.ChartAreas.Add(0)
+        Chart1.ChartAreas(0).AxisY.IntervalAutoMode = True
+        Chart1.ChartAreas(0).AxisX.IntervalAutoMode = True
+        Chart1.ChartAreas(0).AxisX.Interval = 1
+        Chart1.Series.Add(0)
+        Chart1.Series(0).XValueMember = " XVALMEM"
+        Chart1.Series(0).YValueMembers = " YVALMEM"
+
+        'Chart1.Series(0).Points.AddY(2)
+        Chart1.Series(0).YValueType = ChartValueType.Int32
+        'Chart1.Series(0).Points.AddXY("FF", 35)
+        'Chart1.Series(0).Points.AddY(3)
+
+        Chart1.Series(0).XAxisType = DataVisualization.Charting.AxisType.Primary
+        Chart1.Series(0).XValueType = DataVisualization.Charting.ChartValueType.String
+        Chart1.Series(0).ChartType = DataVisualization.Charting.SeriesChartType.Column
+        ''Chart1.Series("Gigione")
+        For i = 0 To Intervents.TotTipiIntervento - 1
+            'Chart1.Series(0).Points.AddY(CType(Intervents.GetOcc(Intervents.enumNum(i)), Double))
+            Chart1.Series(0).IsXValueIndexed = True
+
+            Chart1.Series(0).Points.AddXY(Intervents.enumStr(i), Intervents.GetOcc(Intervents.enumNum(i)))
+
+
+
+        Next
+    End Sub
     Private Sub PictureLogo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureLogo.Click
         Process.Start("http://www.electroil.it/inglese/index.html")
     End Sub

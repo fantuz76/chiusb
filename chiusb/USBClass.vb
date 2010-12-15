@@ -20,7 +20,7 @@ Public Structure InterventSingle
 
 End Structure
 
-Public Class InterventList
+Public Class InterventiList
     Private _List As InterventSingle()
 
     Public Property IntItems As InterventSingle()
@@ -35,14 +35,14 @@ Public Class InterventList
     Public ReadOnly Property Length As UInt16
         Get
             Return _List.Length
-        End Get        
+        End Get
     End Property
 
 
 
 
     ''' Constructor to set the properties of our    
-    Public Sub New()        
+    Public Sub New()
         ReDim _List(-1)
     End Sub
 
@@ -107,22 +107,23 @@ End Class
 
 
 
-
 Public Class USBClass
 
     Private Const CODE_HELLO = &H21
+    Private Const CODE_REQ_INTERVENTI = &H31
 
 #Region "Manager Variables"
     ' Property VAR    
     Private _logWindow As Object 'Control
     Private _Matricola As String
     Private _OreLav As UInt32
-    Private _myint As New InterventList
+    Private _myIntArr As New InterventiList
     Private _FwVer As UInt16
     Private _HwVer As UInt16
 
     'global manager variables    
     Private comPort As New SerialPort()
+
 #End Region
 
 #Region "Manager Properties"
@@ -148,9 +149,9 @@ Public Class USBClass
         End Get
     End Property
 
-    Public ReadOnly Property InterventiLetti As InterventList
+    Public ReadOnly Property InterventiLetti As InterventiList
         Get
-            Return _myint
+            Return _myIntArr
         End Get
     End Property
 
@@ -462,27 +463,8 @@ Public Class USBClass
 
     End Function
 
-    Public Function RequestError(Optional ByVal _typeData1 As Byte = 0, Optional ByVal _typeData2 As Byte = 0) As String
-        Dim pkt As Byte()
-        Dim ret As Byte()
+    
 
-        ReDim pkt(3)
-        ReDim ret(0)
-        pkt(0) = &H41
-        pkt(1) = _typeData1
-        pkt(2) = _typeData2
-        If SendPkt(pkt, pkt.Length) Then
-            If ReadPkt(ret) Then
-                Dim strModified As String = System.Text.Encoding.ASCII.GetString(ret)
-                Return strModified
-            End If
-
-        Else
-            Return "ERR"
-        End If
-
-        Return "ENDING"
-    End Function
 
     Public Function RequestHello() As Boolean
         Dim pkt As Byte()
@@ -537,25 +519,25 @@ Public Class USBClass
 
         ReDim pkt(3)
         ReDim ret(0)
-        pkt(0) = &H31
+        pkt(0) = CODE_REQ_INTERVENTI
         pkt(1) = _typeData1
         pkt(2) = _typeData2
         cnt = 0
         LetturaOK = True
         If SendPkt(pkt, pkt.Length) Then
-            _myint.ClearArrToInt()
+            _myIntArr.ClearArrToInt()
             While LetturaOK
                 LetturaOK = ReadPkt(ret)
                 If LetturaOK And (ret.Length > 5) Then
                     If (ret(2) = &HFF And ret(3) = &HFF And ret(4) = &HFF) Then
-                        _myint.SortArrIntTime(False)
+                        _myIntArr.SortArrIntTime(False)
                         ' fine OK
 
-                        DisplayLogData("Read Faults #" + _myint.Length.ToString)
+                        DisplayLogData("Read Faults #" + _myIntArr.Length.ToString)
                         Return True
 
                     Else
-                        _myint.AddArrInt(ret)
+                        _myIntArr.AddArrInt(ret)
                     End If
 
                     cnt += 1
