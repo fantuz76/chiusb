@@ -30,3 +30,4 @@ h:\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\GenerateResource-ResGen
 c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\GenerateResource-ResGen.read.6.tlog
 h:\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.MainFrm.resources
 h:\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.Resources.resources
+h:\Documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\ZedGraph.xml

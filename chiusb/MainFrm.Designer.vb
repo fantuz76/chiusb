@@ -88,6 +88,10 @@ Partial Class MainFrm
         Me.ClearLogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.zg1 = New ZedGraph.ZedGraphControl()
+        Me.lstInterventi = New System.Windows.Forms.ListBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -111,11 +115,12 @@ Partial Class MainFrm
         Me.TabControl1.Location = New System.Drawing.Point(5, 84)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(591, 286)
+        Me.TabControl1.Size = New System.Drawing.Size(591, 382)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.lstInterventi)
         Me.TabPage1.Controls.Add(Me.lblNumIntTitle)
         Me.TabPage1.Controls.Add(Me.lblNumInt)
         Me.TabPage1.Controls.Add(Me.HscrollInterventi)
@@ -123,7 +128,7 @@ Partial Class MainFrm
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(583, 260)
+        Me.TabPage1.Size = New System.Drawing.Size(583, 356)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Faults"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -517,7 +522,7 @@ Partial Class MainFrm
         Me.ListBoxLog.BackColor = System.Drawing.SystemColors.GrayText
         Me.ListBoxLog.ContextMenuStrip = Me.ContextMenuLog
         Me.ListBoxLog.FormattingEnabled = True
-        Me.ListBoxLog.Location = New System.Drawing.Point(5, 375)
+        Me.ListBoxLog.Location = New System.Drawing.Point(5, 471)
         Me.ListBoxLog.Name = "ListBoxLog"
         Me.ListBoxLog.Size = New System.Drawing.Size(587, 69)
         Me.ListBoxLog.TabIndex = 7
@@ -555,7 +560,7 @@ Partial Class MainFrm
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 452)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 548)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(894, 22)
         Me.StatusStrip1.TabIndex = 3
@@ -640,7 +645,7 @@ Partial Class MainFrm
         'btnRead
         '
         Me.btnRead.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnRead.Location = New System.Drawing.Point(822, 302)
+        Me.btnRead.Location = New System.Drawing.Point(822, 398)
         Me.btnRead.Name = "btnRead"
         Me.btnRead.Size = New System.Drawing.Size(60, 35)
         Me.btnRead.TabIndex = 6
@@ -650,7 +655,7 @@ Partial Class MainFrm
         'Button2
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.Location = New System.Drawing.Point(822, 343)
+        Me.Button2.Location = New System.Drawing.Point(822, 439)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(60, 35)
         Me.Button2.TabIndex = 9
@@ -672,7 +677,7 @@ Partial Class MainFrm
         '
         Me.btnExit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnExit.Image = Global.ApplicationChiUSB.My.Resources.Resources.Spegni
-        Me.btnExit.Location = New System.Drawing.Point(822, 384)
+        Me.btnExit.Location = New System.Drawing.Point(822, 480)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(60, 60)
         Me.btnExit.TabIndex = 1
@@ -685,7 +690,7 @@ Partial Class MainFrm
         Me.Chart1.ChartAreas.Add(ChartArea1)
         Legend1.Name = "Legend1"
         Me.Chart1.Legends.Add(Legend1)
-        Me.Chart1.Location = New System.Drawing.Point(165, 87)
+        Me.Chart1.Location = New System.Drawing.Point(613, 76)
         Me.Chart1.Name = "Chart1"
         Series1.ChartArea = "ChartArea1"
         Series1.Legend = "Legend1"
@@ -695,16 +700,63 @@ Partial Class MainFrm
         Me.Chart1.TabIndex = 11
         Me.Chart1.Text = "Chart1"
         '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(751, 43)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(81, 17)
+        Me.CheckBox1.TabIndex = 12
+        Me.CheckBox1.Text = "CheckBox1"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(668, 38)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(44, 32)
+        Me.Button1.TabIndex = 13
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'zg1
+        '
+        Me.zg1.AutoSize = True
+        Me.zg1.Location = New System.Drawing.Point(613, 365)
+        Me.zg1.Name = "zg1"
+        Me.zg1.ScrollGrace = 0.0R
+        Me.zg1.ScrollMaxX = 0.0R
+        Me.zg1.ScrollMaxY = 335.0R
+        Me.zg1.ScrollMaxY2 = 0.0R
+        Me.zg1.ScrollMinX = 0.0R
+        Me.zg1.ScrollMinY = 0.0R
+        Me.zg1.ScrollMinY2 = 0.0R
+        Me.zg1.Size = New System.Drawing.Size(655, 367)
+        Me.zg1.TabIndex = 14
+        '
+        'lstInterventi
+        '
+        Me.lstInterventi.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lstInterventi.FormattingEnabled = True
+        Me.lstInterventi.ItemHeight = 14
+        Me.lstInterventi.Location = New System.Drawing.Point(15, 211)
+        Me.lstInterventi.Name = "lstInterventi"
+        Me.lstInterventi.Size = New System.Drawing.Size(561, 130)
+        Me.lstInterventi.TabIndex = 4
+        '
         'MainFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(894, 474)
+        Me.ClientSize = New System.Drawing.Size(894, 570)
+        Me.Controls.Add(Me.zg1)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.ListBoxLog)
         Me.Controls.Add(Me.StatusStrip1)
-        Me.Controls.Add(Me.Chart1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.Chart1)
         Me.Controls.Add(Me.PictureLogo)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.btnExit)
@@ -714,6 +766,7 @@ Partial Class MainFrm
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "MainFrm"
         Me.Text = "USB Configuration"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -794,5 +847,9 @@ Partial Class MainFrm
     Friend WithEvents lblNumIntTitle As System.Windows.Forms.Label
     Friend WithEvents lblGenericTmp As System.Windows.Forms.Label
     Friend WithEvents Chart1 As System.Windows.Forms.DataVisualization.Charting.Chart
+    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents zg1 As ZedGraph.ZedGraphControl
+    Friend WithEvents lstInterventi As System.Windows.Forms.ListBox
 
 End Class

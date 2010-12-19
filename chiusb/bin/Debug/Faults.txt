@@ -1,0 +1,3022 @@
+********************************************************************************
+* Faults recorded
+* Date: 18/12/2010 0.40.20
+* Serial number:ABGU Fw Ver:0102 Hw Ver:0304
+* Worked hours:60h40' 36''
+********************************************************************************
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overvoltage - System Halt     Fault Time: 18h 12' 15''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - Without Halt     Fault Time: 18h 07' 58''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - System Halt     Fault Time: 18h 03' 41''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - System Halt     Fault Time: 17h 59' 24''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - Without Halt     Fault Time: 17h 55' 07''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - Without Halt     Fault Time: 17h 50' 50''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Dry running - Without Halt     Fault Time: 17h 46' 33''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type:      Fault Time: 17h 42' 16''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Current imbalance - System Halt     Fault Time: 17h 37' 59''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Dry running - Without Halt     Fault Time: 17h 33' 42''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - System Halt     Fault Time: 17h 29' 25''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - Without Halt     Fault Time: 17h 25' 08''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Over Temperature - System Halt     Fault Time: 17h 20' 51''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: ON     Fault Time: 17h 16' 34''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Current imbalance - System Halt     Fault Time: 17h 12' 17''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Under Load - Without Halt     Fault Time: 17h 08' 00''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - Without Halt     Fault Time: 17h 03' 43''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Under Load - System Halt     Fault Time: 16h 59' 26''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - System Halt     Fault Time: 16h 55' 09''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type:      Fault Time: 16h 50' 52''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - Without Halt     Fault Time: 16h 46' 35''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - Without Halt     Fault Time: 16h 42' 18''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Over Temperature - System Halt     Fault Time: 16h 38' 01''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Under Load - System Halt     Fault Time: 16h 33' 44''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: ON     Fault Time: 16h 29' 27''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - System Halt     Fault Time: 16h 25' 10''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - Without Halt     Fault Time: 16h 20' 53''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Over Temperature - Without Halt     Fault Time: 16h 16' 36''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - Without Halt     Fault Time: 16h 12' 19''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type:      Fault Time: 16h 08' 02''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overvoltage - System Halt     Fault Time: 16h 03' 45''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - System Halt     Fault Time: 15h 59' 28''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - System Halt     Fault Time: 15h 55' 11''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Dry running - System Halt     Fault Time: 15h 50' 54''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: OFF     Fault Time: 15h 46' 37''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Current imbalance - Without Halt     Fault Time: 15h 42' 20''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Current imbalance - System Halt     Fault Time: 15h 38' 03''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - System Halt     Fault Time: 15h 33' 46''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - Without Halt     Fault Time: 15h 29' 29''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - Without Halt     Fault Time: 15h 25' 12''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Current imbalance - Without Halt     Fault Time: 15h 20' 55''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - Without Halt     Fault Time: 15h 16' 38''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - System Halt     Fault Time: 15h 12' 21''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - Without Halt     Fault Time: 15h 08' 04''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Dry running - System Halt     Fault Time: 15h 03' 47''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Current imbalance - System Halt     Fault Time: 14h 59' 30''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - Without Halt     Fault Time: 14h 55' 13''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - System Halt     Fault Time: 14h 50' 56''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - Without Halt     Fault Time: 14h 46' 39''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - Without Halt     Fault Time: 14h 42' 22''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - Without Halt     Fault Time: 14h 38' 05''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - System Halt     Fault Time: 14h 33' 48''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: ON     Fault Time: 14h 29' 31''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - System Halt     Fault Time: 14h 25' 14''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - System Halt     Fault Time: 14h 20' 57''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Dry running - System Halt     Fault Time: 14h 16' 40''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - Without Halt     Fault Time: 14h 12' 23''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - System Halt     Fault Time: 14h 08' 06''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - Without Halt     Fault Time: 14h 03' 49''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - Without Halt     Fault Time: 13h 59' 32''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overvoltage - System Halt     Fault Time: 13h 55' 15''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Under Load - System Halt     Fault Time: 13h 50' 58''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: OFF     Fault Time: 13h 46' 41''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: ON     Fault Time: 13h 42' 24''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overvoltage - Without Halt     Fault Time: 13h 38' 07''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - Without Halt     Fault Time: 13h 33' 50''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - System Halt     Fault Time: 13h 29' 33''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Over Temperature - System Halt     Fault Time: 13h 25' 16''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - System Halt     Fault Time: 13h 20' 59''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: OFF     Fault Time: 13h 16' 42''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Under Load - System Halt     Fault Time: 13h 12' 25''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - Without Halt     Fault Time: 13h 08' 08''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Current imbalance - System Halt     Fault Time: 13h 03' 51''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - Without Halt     Fault Time: 12h 59' 34''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Dry running - Without Halt     Fault Time: 12h 55' 17''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Over Temperature - System Halt     Fault Time: 12h 51' 00''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Over Temperature - System Halt     Fault Time: 12h 46' 43''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - System Halt     Fault Time: 12h 42' 26''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - Without Halt     Fault Time: 12h 38' 09''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Current imbalance - System Halt     Fault Time: 12h 33' 52''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Current imbalance - System Halt     Fault Time: 12h 29' 35''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - System Halt     Fault Time: 12h 25' 18''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Under Load - Without Halt     Fault Time: 12h 21' 01''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - Without Halt     Fault Time: 12h 16' 44''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - Without Halt     Fault Time: 12h 12' 27''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Current imbalance - System Halt     Fault Time: 12h 08' 10''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Under Load - System Halt     Fault Time: 12h 03' 53''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - System Halt     Fault Time: 11h 59' 36''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overvoltage - Without Halt     Fault Time: 11h 55' 19''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: OFF     Fault Time: 11h 51' 02''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: OFF     Fault Time: 11h 46' 45''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - System Halt     Fault Time: 11h 42' 28''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - System Halt     Fault Time: 11h 38' 11''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overvoltage - System Halt     Fault Time: 11h 33' 54''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - System Halt     Fault Time: 11h 29' 37''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Under Load - System Halt     Fault Time: 11h 25' 20''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - System Halt     Fault Time: 11h 21' 03''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overvoltage - System Halt     Fault Time: 11h 16' 46''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - System Halt     Fault Time: 11h 12' 29''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Dry running - Without Halt     Fault Time: 11h 08' 12''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Over Temperature - Without Halt     Fault Time: 11h 03' 55''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Over Temperature - System Halt     Fault Time: 10h 59' 38''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Under Load - Without Halt     Fault Time: 10h 55' 21''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - Without Halt     Fault Time: 10h 51' 04''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Over Temperature - System Halt     Fault Time: 10h 46' 47''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - System Halt     Fault Time: 10h 42' 30''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Dry running - System Halt     Fault Time: 10h 38' 13''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Under Load - System Halt     Fault Time: 10h 33' 56''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - Without Halt     Fault Time: 10h 29' 39''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Over Temperature - System Halt     Fault Time: 10h 25' 22''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - Without Halt     Fault Time: 10h 21' 05''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Over Temperature - Without Halt     Fault Time: 10h 16' 48''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Over Temperature - System Halt     Fault Time: 10h 12' 31''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - Without Halt     Fault Time: 10h 08' 14''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - System Halt     Fault Time: 10h 03' 57''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - System Halt     Fault Time: 9h 59' 40''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Under Load - Without Halt     Fault Time: 9h 55' 23''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Under Load - Without Halt     Fault Time: 9h 51' 06''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - Without Halt     Fault Time: 9h 46' 49''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: ON     Fault Time: 9h 42' 32''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - System Halt     Fault Time: 9h 38' 15''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - Without Halt     Fault Time: 9h 33' 58''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - Without Halt     Fault Time: 9h 29' 41''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - System Halt     Fault Time: 9h 25' 24''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - Without Halt     Fault Time: 9h 21' 07''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Over Temperature - System Halt     Fault Time: 9h 16' 50''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - System Halt     Fault Time: 9h 12' 33''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - Without Halt     Fault Time: 9h 08' 16''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - Without Halt     Fault Time: 9h 03' 59''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: OFF     Fault Time: 8h 59' 42''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - Without Halt     Fault Time: 8h 55' 25''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - System Halt     Fault Time: 8h 51' 08''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - Without Halt     Fault Time: 8h 46' 51''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: OFF     Fault Time: 8h 42' 34''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - Without Halt     Fault Time: 8h 38' 17''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - Without Halt     Fault Time: 8h 34' 00''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Over Temperature - Without Halt     Fault Time: 8h 29' 43''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - Without Halt     Fault Time: 8h 25' 26''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - System Halt     Fault Time: 8h 21' 09''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - System Halt     Fault Time: 8h 16' 52''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - System Halt     Fault Time: 8h 12' 35''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - System Halt     Fault Time: 8h 08' 18''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - Without Halt     Fault Time: 8h 04' 01''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - Without Halt     Fault Time: 7h 59' 44''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Dry running - System Halt     Fault Time: 7h 55' 27''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Current imbalance - Without Halt     Fault Time: 7h 51' 10''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Under Load - System Halt     Fault Time: 7h 46' 53''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Under Load - System Halt     Fault Time: 7h 42' 36''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - Without Halt     Fault Time: 7h 38' 19''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Current imbalance - Without Halt     Fault Time: 7h 34' 02''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Dry running - Without Halt     Fault Time: 7h 29' 45''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - Without Halt     Fault Time: 7h 25' 28''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Current imbalance - System Halt     Fault Time: 7h 21' 11''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Under Load - Without Halt     Fault Time: 7h 16' 54''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Dry running - Without Halt     Fault Time: 7h 12' 37''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Over Temperature - Without Halt     Fault Time: 7h 08' 20''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - Without Halt     Fault Time: 7h 04' 03''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Current imbalance - System Halt     Fault Time: 6h 59' 46''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - System Halt     Fault Time: 6h 55' 29''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - System Halt     Fault Time: 6h 51' 12''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - Without Halt     Fault Time: 6h 46' 55''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - Without Halt     Fault Time: 6h 42' 38''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Under Load - System Halt     Fault Time: 6h 38' 21''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - System Halt     Fault Time: 6h 34' 04''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - System Halt     Fault Time: 6h 29' 47''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - System Halt     Fault Time: 6h 25' 30''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - System Halt     Fault Time: 6h 21' 13''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - System Halt     Fault Time: 6h 16' 56''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: OFF     Fault Time: 6h 12' 39''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Dry running - Without Halt     Fault Time: 6h 08' 22''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - System Halt     Fault Time: 6h 04' 05''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Over Temperature - System Halt     Fault Time: 5h 59' 48''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - System Halt     Fault Time: 5h 55' 31''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type:      Fault Time: 5h 51' 14''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Current imbalance - Without Halt     Fault Time: 5h 46' 57''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Over Temperature - System Halt     Fault Time: 5h 42' 40''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Dry running - System Halt     Fault Time: 5h 38' 23''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Dry running - Without Halt     Fault Time: 5h 34' 06''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Under Load - Without Halt     Fault Time: 5h 34' 06''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - Without Halt     Fault Time: 5h 29' 49''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: ON     Fault Time: 5h 29' 49''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - Without Halt     Fault Time: 5h 25' 32''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Dry running - Without Halt     Fault Time: 5h 25' 32''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Dry running - Without Halt     Fault Time: 5h 21' 15''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - System Halt     Fault Time: 5h 21' 15''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Dry running - System Halt     Fault Time: 5h 16' 58''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - System Halt     Fault Time: 5h 16' 58''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Current imbalance - Without Halt     Fault Time: 5h 12' 41''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - Without Halt     Fault Time: 5h 12' 41''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: ON     Fault Time: 5h 08' 24''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Current imbalance - System Halt     Fault Time: 5h 08' 24''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Dry running - System Halt     Fault Time: 5h 04' 07''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - System Halt     Fault Time: 5h 04' 07''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Under Load - Without Halt     Fault Time: 4h 59' 50''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - System Halt     Fault Time: 4h 59' 50''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Dry running - Without Halt     Fault Time: 4h 55' 33''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - System Halt     Fault Time: 4h 55' 33''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - System Halt     Fault Time: 4h 51' 16''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type:      Fault Time: 4h 51' 16''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - System Halt     Fault Time: 4h 46' 59''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - System Halt     Fault Time: 4h 46' 59''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overvoltage - Without Halt     Fault Time: 4h 42' 42''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: OFF     Fault Time: 4h 42' 42''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - System Halt     Fault Time: 4h 38' 25''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - System Halt     Fault Time: 4h 38' 25''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - System Halt     Fault Time: 4h 34' 08''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overvoltage - Without Halt     Fault Time: 4h 34' 08''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - System Halt     Fault Time: 4h 29' 51''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - System Halt     Fault Time: 4h 29' 51''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Dry running - System Halt     Fault Time: 4h 25' 34''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - System Halt     Fault Time: 4h 25' 34''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Current imbalance - Without Halt     Fault Time: 4h 21' 17''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - System Halt     Fault Time: 4h 21' 17''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: ON     Fault Time: 4h 17' 00''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Over Temperature - Without Halt     Fault Time: 4h 17' 00''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: ON     Fault Time: 4h 12' 43''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Over Temperature - System Halt     Fault Time: 4h 12' 43''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - System Halt     Fault Time: 4h 08' 26''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Over Temperature - Without Halt     Fault Time: 4h 08' 26''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type:      Fault Time: 4h 04' 09''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: ON     Fault Time: 4h 04' 09''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overvoltage - System Halt     Fault Time: 3h 59' 52''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - Without Halt     Fault Time: 3h 59' 52''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Under Load - Without Halt     Fault Time: 3h 55' 35''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: OFF     Fault Time: 3h 55' 35''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - Without Halt     Fault Time: 3h 51' 18''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Under Load - System Halt     Fault Time: 3h 51' 18''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: OFF     Fault Time: 3h 47' 01''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Dry running - System Halt     Fault Time: 3h 47' 01''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overvoltage - Without Halt     Fault Time: 3h 42' 44''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - System Halt     Fault Time: 3h 42' 44''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overvoltage - System Halt     Fault Time: 3h 38' 27''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - Without Halt     Fault Time: 3h 38' 27''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - System Halt     Fault Time: 3h 34' 10''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overvoltage - Without Halt     Fault Time: 3h 34' 10''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Current imbalance - System Halt     Fault Time: 3h 29' 53''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - Without Halt     Fault Time: 3h 29' 53''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - Without Halt     Fault Time: 3h 25' 36''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overvoltage - System Halt     Fault Time: 3h 25' 36''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - Without Halt     Fault Time: 3h 21' 19''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: ON     Fault Time: 3h 21' 19''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Over Temperature - Without Halt     Fault Time: 3h 17' 02''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - Without Halt     Fault Time: 3h 17' 02''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - System Halt     Fault Time: 3h 12' 45''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Under Load - Without Halt     Fault Time: 3h 12' 45''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - Without Halt     Fault Time: 3h 08' 28''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - System Halt     Fault Time: 3h 08' 28''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overvoltage - System Halt     Fault Time: 3h 04' 11''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - Without Halt     Fault Time: 3h 04' 11''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Current imbalance - System Halt     Fault Time: 2h 59' 54''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - Without Halt     Fault Time: 2h 59' 54''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - Without Halt     Fault Time: 2h 55' 37''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: OFF     Fault Time: 2h 55' 37''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overvoltage - System Halt     Fault Time: 2h 51' 20''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - System Halt     Fault Time: 2h 51' 20''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - System Halt     Fault Time: 2h 47' 03''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overvoltage - System Halt     Fault Time: 2h 47' 03''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - System Halt     Fault Time: 2h 42' 46''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - Without Halt     Fault Time: 2h 42' 46''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - Without Halt     Fault Time: 2h 38' 29''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - System Halt     Fault Time: 2h 38' 29''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - Without Halt     Fault Time: 2h 34' 12''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - System Halt     Fault Time: 2h 34' 12''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - Without Halt     Fault Time: 2h 29' 55''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Dry running - Without Halt     Fault Time: 2h 29' 55''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Under Load - Without Halt     Fault Time: 2h 25' 38''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - Without Halt     Fault Time: 2h 25' 38''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - Without Halt     Fault Time: 2h 21' 21''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Under Load - Without Halt     Fault Time: 2h 21' 21''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overvoltage - Without Halt     Fault Time: 2h 17' 04''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - Without Halt     Fault Time: 2h 17' 04''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - Without Halt     Fault Time: 2h 12' 47''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - System Halt     Fault Time: 2h 12' 47''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overvoltage - Without Halt     Fault Time: 2h 08' 30''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - System Halt     Fault Time: 2h 08' 30''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Dry running - Without Halt     Fault Time: 2h 04' 13''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - System Halt     Fault Time: 2h 04' 13''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overvoltage - Without Halt     Fault Time: 1h 59' 56''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Current imbalance - Without Halt     Fault Time: 1h 59' 56''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Over Temperature - System Halt     Fault Time: 1h 55' 39''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Current imbalance - System Halt     Fault Time: 1h 55' 39''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - System Halt     Fault Time: 1h 51' 22''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overvoltage - Without Halt     Fault Time: 1h 51' 22''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - Without Halt     Fault Time: 1h 47' 05''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Current imbalance - System Halt     Fault Time: 1h 47' 05''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Over Temperature - Without Halt     Fault Time: 1h 42' 48''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - System Halt     Fault Time: 1h 42' 48''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - Without Halt     Fault Time: 1h 38' 31''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - System Halt     Fault Time: 1h 38' 31''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overvoltage - Without Halt     Fault Time: 1h 34' 14''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - Without Halt     Fault Time: 1h 34' 14''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Under Load - Without Halt     Fault Time: 1h 29' 57''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - System Halt     Fault Time: 1h 29' 57''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - System Halt     Fault Time: 1h 25' 40''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Dry running - System Halt     Fault Time: 1h 25' 40''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Under Load - Without Halt     Fault Time: 1h 21' 23''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - System Halt     Fault Time: 1h 21' 23''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: OFF     Fault Time: 1h 17' 06''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - Without Halt     Fault Time: 1h 17' 06''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - Without Halt     Fault Time: 1h 12' 49''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - Without Halt     Fault Time: 1h 12' 49''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Dry running - Without Halt     Fault Time: 1h 08' 32''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - Without Halt     Fault Time: 1h 08' 32''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - System Halt     Fault Time: 1h 04' 15''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - System Halt     Fault Time: 1h 04' 15''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Dry running - Without Halt     Fault Time: 0h 59' 58''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Dry running - Without Halt     Fault Time: 0h 59' 58''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Current imbalance - Without Halt     Fault Time: 0h 55' 41''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - Without Halt     Fault Time: 0h 55' 41''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - System Halt     Fault Time: 0h 51' 24''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Current imbalance - System Halt     Fault Time: 0h 51' 24''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overvoltage - System Halt     Fault Time: 0h 47' 07''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overvoltage - Without Halt     Fault Time: 0h 47' 07''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Current imbalance - System Halt     Fault Time: 0h 42' 50''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Current imbalance - Without Halt     Fault Time: 0h 42' 50''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overvoltage - System Halt     Fault Time: 0h 38' 33''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Under Load - System Halt     Fault Time: 0h 38' 33''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Over Temperature - System Halt     Fault Time: 0h 34' 16''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Over Temperature - Without Halt     Fault Time: 0h 34' 16''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Current imbalance - System Halt     Fault Time: 0h 29' 59''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Over Temperature - Without Halt     Fault Time: 0h 29' 59''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Overcurrent - System Halt     Fault Time: 0h 25' 42''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - System Halt     Fault Time: 0h 25' 42''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - System Halt     Fault Time: 0h 21' 25''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Differential protection - System Halt     Fault Time: 0h 21' 25''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - System Halt     Fault Time: 0h 17' 08''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Under Load - Without Halt     Fault Time: 0h 17' 08''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: ON     Fault Time: 0h 12' 51''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Over Temperature - System Halt     Fault Time: 0h 12' 51''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Over Temperature - System Halt     Fault Time: 0h 08' 34''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Asymmetry Voltages - Without Halt     Fault Time: 0h 08' 34''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Dry running - System Halt     Fault Time: 0h 04' 17''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Under Load - Without Halt     Fault Time: 0h 04' 17''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Dry running - System Halt     Fault Time: 0h 00' 00''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+
+
+--------------------------------------------------
+-------------------------------------------------------------------------
+Fault Type: Undervoltage - System Halt     Fault Time: 0h 00' 00''      
+V1:300V   V2:301V   V3:302V   
+I1:700A   I2:700,1A   I3:700,2A   
+Power:3908W   Pressure:122,9bar   
+Cosfi:0,98    Temperature102°C   
+

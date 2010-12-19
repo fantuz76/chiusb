@@ -308,8 +308,11 @@ Public Class USBClass
 
 
     Public Sub ClosePort()
-        If comPort.IsOpen Then            
-            comPort.Close()
+        If comPort.IsOpen Then
+            Try
+                comPort.Close()
+            Catch ex As Exception
+            End Try
         End If
     End Sub
 #End Region
