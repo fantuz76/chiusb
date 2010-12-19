@@ -94,6 +94,7 @@
             ' errore non trovato
             Return ""
         End Function
+
         Public Function TypeExist(ByVal _typeToFind) As Boolean
             For i = 0 To _ArrIntOccur.Length - 1
                 If _ArrIntOccur(i).TypeNum = _typeToFind Then
@@ -114,6 +115,56 @@
 
         Public Function enumNum(ByVal _pos As Byte) As Byte
             Return _ArrIntOccur(_pos).TypeNum
+        End Function
+
+        Public Function returnColor(ByVal _typeToFindColor) As Color
+            Select Case _typeToFindColor
+                Case TYPE_ON
+                    Return Color.Green
+                Case TYPE_OFF
+                    Return Color.Red
+
+                Case TYPE_NOHALT_OVERCURR
+                    Return Color.Violet
+                Case TYPE_NOHALT_OVERVOLT
+                    Return Color.Brown
+                Case TYPE_NOHALT_UNDERVOLT
+                    Return Color.Turquoise
+                Case TYPE_NOHALT_MANDATACH
+                    Return Color.Pink
+                Case TYPE_NOHALT_DRYFUNC
+                    Return Color.SeaGreen
+                Case TYPE_NOHALT_OVERTEMP
+                    Return Color.Olive
+                Case TYPE_NOHALT_DIFF
+                    Return Color.Orange
+                Case TYPE_NOHALT_SQUILIBRIO
+                    Return Color.Gray
+                Case TYPE_NOHALT_DISSIMETRIA
+                    Return Color.Blue
+
+                Case TYPE_HALT_OVERCURR
+                    Return Color.DarkViolet
+                Case TYPE_HALT_OVERVOLT
+                    Return Color.SaddleBrown
+                Case TYPE_HALT_UNDERVOLT
+                    Return Color.DarkTurquoise
+                Case TYPE_HALT_MANDATACH
+                    Return Color.DeepPink
+                Case TYPE_HALT_DRYFUNC
+                    Return Color.DarkSeaGreen
+                Case TYPE_HALT_OVERTEMP
+                    Return Color.DarkOliveGreen
+                Case TYPE_HALT_DIFF
+                    Return Color.DarkOrange
+                Case TYPE_HALT_SQUILIBRIO
+                    Return Color.Black
+                Case TYPE_HALT_DISSIMETRIA
+                    Return Color.DarkBlue
+
+                Case Else
+                    Return (Color.Black)
+            End Select
         End Function
 
     End Class
