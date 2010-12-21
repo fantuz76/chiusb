@@ -35,3 +35,11 @@ c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_Sw
 c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ChiUSB.exe
 c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ChiUSB.xml
 c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ChiUSB.pdb
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\ChiUSB.exe
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\ChiUSB.pdb
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\ChiUSB.xml
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\ZedGraph.xml
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.MainFrm.resources
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.Resources.resources
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\chiusb.vbproj.GenerateResource.Cache

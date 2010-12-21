@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Basic Express 2010
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Basic Express 2008
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "chiusb", "chiusb\chiusb.vbproj", "{ECCB566C-3A42-4369-A0D2-E4820683E91D}"
 EndProject
 Global
