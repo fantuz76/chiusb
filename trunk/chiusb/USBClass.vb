@@ -208,7 +208,7 @@ Public Class USBClass
     Delegate Sub LogDisplayHandler(ByVal msg As String)
 
     Private Sub DisplayLogData(ByVal msg As String)
-        _logWindow.Invoke(New LogDisplayHandler(AddressOf LogDisplay), {msg})
+        _logWindow.Invoke(New LogDisplayHandler(AddressOf LogDisplay), msg)
     End Sub
 
     Private Sub LogDisplay(ByVal msg As String)
