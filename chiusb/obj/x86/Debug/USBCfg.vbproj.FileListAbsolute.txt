@@ -1,0 +1,17 @@
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.exe.config
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.exe.manifest
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.application
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.exe
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.pdb
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.xml
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.MainFrm.resources
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.Resources.resources
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.ZedGraphFrm.resources
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.vbproj.GenerateResource.Cache
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.TrustInfo.xml
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.exe.manifest
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.application
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.exe
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.xml
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.pdb
