@@ -23,9 +23,6 @@ Partial Class MainFrm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainFrm))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -87,7 +84,6 @@ Partial Class MainFrm
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.ClearLogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnExit = New System.Windows.Forms.Button()
-        Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.zg1 = New ZedGraph.ZedGraphControl()
@@ -103,7 +99,6 @@ Partial Class MainFrm
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureLogo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -684,22 +679,6 @@ Partial Class MainFrm
         Me.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnExit.UseVisualStyleBackColor = True
         '
-        'Chart1
-        '
-        ChartArea1.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea1)
-        Legend1.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend1)
-        Me.Chart1.Location = New System.Drawing.Point(613, 76)
-        Me.Chart1.Name = "Chart1"
-        Series1.ChartArea = "ChartArea1"
-        Series1.Legend = "Legend1"
-        Series1.Name = "Series1"
-        Me.Chart1.Series.Add(Series1)
-        Me.Chart1.Size = New System.Drawing.Size(682, 283)
-        Me.Chart1.TabIndex = 11
-        Me.Chart1.Text = "Chart1"
-        '
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
@@ -756,7 +735,6 @@ Partial Class MainFrm
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.Controls.Add(Me.Chart1)
         Me.Controls.Add(Me.PictureLogo)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.btnExit)
@@ -781,7 +759,6 @@ Partial Class MainFrm
         Me.MenuStrip1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.PictureLogo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -846,7 +823,6 @@ Partial Class MainFrm
     Friend WithEvents btnSaveInt As System.Windows.Forms.Button
     Friend WithEvents lblNumIntTitle As System.Windows.Forms.Label
     Friend WithEvents lblGenericTmp As System.Windows.Forms.Label
-    Friend WithEvents Chart1 As System.Windows.Forms.DataVisualization.Charting.Chart
     Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents zg1 As ZedGraph.ZedGraphControl

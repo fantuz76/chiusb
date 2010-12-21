@@ -31,3 +31,7 @@ c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiU
 h:\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.MainFrm.resources
 h:\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.Resources.resources
 h:\Documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\ZedGraph.xml
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\ChiUSB.exe.config
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ChiUSB.exe
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ChiUSB.xml
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ChiUSB.pdb
