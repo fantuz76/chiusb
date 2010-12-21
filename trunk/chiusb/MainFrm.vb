@@ -1,8 +1,4 @@
 ﻿Imports Zedgraph
-
-Imports System.Windows.Forms.DataVisualization.Charting.Utilities
-
-Imports System.Windows.Forms.DataVisualization.Charting
 Imports System.Random
 
 Public Class MainFrm    
@@ -506,37 +502,37 @@ Public Class MainFrm
 
     Private Sub UpdateChart()
 
-        Chart1.Series.Clear()
+        'Chart1.Series.Clear()
 
-        'Chart1.DataSource = Intervents
-        Chart1.ChartAreas.Clear()
-        Chart1.ChartAreas.Add(0)
-        Chart1.ChartAreas(0).AxisY.IntervalAutoMode = True
-        Chart1.ChartAreas(0).AxisX.IntervalAutoMode = True
-        Chart1.ChartAreas(0).AxisX.Interval = 1
-        Chart1.Series.Add(0)
-        'Chart1.Series(0).XValueMember = " XVALMEM"
-        'Chart1.Series(0).YValueMembers = " YVALMEM"
+        ''Chart1.DataSource = Intervents
+        'Chart1.ChartAreas.Clear()
+        'Chart1.ChartAreas.Add(0)
+        'Chart1.ChartAreas(0).AxisY.IntervalAutoMode = True
+        'Chart1.ChartAreas(0).AxisX.IntervalAutoMode = True
+        'Chart1.ChartAreas(0).AxisX.Interval = 1
+        'Chart1.Series.Add(0)
+        ''Chart1.Series(0).XValueMember = " XVALMEM"
+        ''Chart1.Series(0).YValueMembers = " YVALMEM"
 
-        'Chart1.Series(0).Points.AddY(2)
-        Chart1.Series(0).YValueType = ChartValueType.Int32
-        'Chart1.Series(0).Points.AddXY("FF", 35)
-        'Chart1.Series(0).Points.AddY(3)
+        ''Chart1.Series(0).Points.AddY(2)
+        'Chart1.Series(0).YValueType = ChartValueType.Int32
+        ''Chart1.Series(0).Points.AddXY("FF", 35)
+        ''Chart1.Series(0).Points.AddY(3)
 
-        Chart1.Series(0).XAxisType = DataVisualization.Charting.AxisType.Primary
-        Chart1.Series(0).XValueType = DataVisualization.Charting.ChartValueType.String
-        Chart1.Series(0).ChartType = DataVisualization.Charting.SeriesChartType.Column
+        'Chart1.Series(0).XAxisType = DataVisualization.Charting.AxisType.Primary
+        'Chart1.Series(0).XValueType = DataVisualization.Charting.ChartValueType.String
+        'Chart1.Series(0).ChartType = DataVisualization.Charting.SeriesChartType.Column
 
-        For i = 0 To Intervents.TotTipiIntervento - 1
-            'Chart1.Series(0).Points.AddY(CType(Intervents.GetOcc(Intervents.enumNum(i)), Double))
-            Chart1.Series(0).IsXValueIndexed = True
+        'For i = 0 To Intervents.TotTipiIntervento - 1
+        '    'Chart1.Series(0).Points.AddY(CType(Intervents.GetOcc(Intervents.enumNum(i)), Double))
+        '    Chart1.Series(0).IsXValueIndexed = True
 
-            Chart1.Series(0).Points.AddXY(Intervents.enumStr(i), Intervents.GetOcc(Intervents.enumNum(i)))
-            Chart1.Series(0).Points(i).Color = Color.FromArgb(i * 10, 255 - i * 10, i * 10)
+        '    Chart1.Series(0).Points.AddXY(Intervents.enumStr(i), Intervents.GetOcc(Intervents.enumNum(i)))
+        '    Chart1.Series(0).Points(i).Color = Color.FromArgb(i * 10, 255 - i * 10, i * 10)
 
-            Chart1.Series(0).Points(i).LegendText = Intervents.enumStr(i)
+        '    Chart1.Series(0).Points(i).LegendText = Intervents.enumStr(i)
 
-        Next
+        'Next
 
 
 
