@@ -9,3 +9,6 @@ h:\documenti\Electronic\ChiUSB_SwPC\SerialPortCommunication_VBNet\SerialPortComm
 h:\documenti\Electronic\ChiUSB_SwPC\SerialPortCommunication_VBNet\SerialPortCommunication_VBNet\bin\Debug\SerialPortCommunication.exe
 h:\documenti\Electronic\ChiUSB_SwPC\SerialPortCommunication_VBNet\SerialPortCommunication_VBNet\bin\Debug\SerialPortCommunication.pdb
 h:\documenti\Electronic\ChiUSB_SwPC\SerialPortCommunication_VBNet\SerialPortCommunication_VBNet\bin\Debug\SerialPortCommunication.xml
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\SerialPortCommunication_VBNet\SerialPortCommunication_VBNet\obj\Debug\SerialPortCommunication.exe
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\SerialPortCommunication_VBNet\SerialPortCommunication_VBNet\obj\Debug\SerialPortCommunication.xml
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\SerialPortCommunication_VBNet\SerialPortCommunication_VBNet\obj\Debug\SerialPortCommunication.pdb

@@ -85,23 +85,15 @@ Public Class MainFrm
         Dim toolTip1 As New ToolTip()
   
 
-
         ' Blocca dimensione minima finestra
         Me.MinimumSize = Me.Size
 
        
-
         UpdateChart()
         UpdateChartZ()
         UpdateChartZ_second()
-        'Chart1.Series.Add("Gigione")
-        'Chart1.Series.Add("Paolo")
-        'Chart1.Series("Paolo").AxisLabel = "paoloin2"
-        'Chart1.Series("Paolo").ResetIsValueShownAsLabel()
-        'Chart1.Series("Paolo").Points.AddY(22)
-        'Chart1.Series("Gigione").Points.AddY(55)
-        'Chart1.Series("Series1").Points.AddY(23)
 
+        TabControl1.TabPages.Remove(TabControl1.TabPages(1))
         lblGenericTmp.Text = "Program developing " + Environment.NewLine _
                             + "Sw Version " + SwVersion + "   " + "2010"
 
@@ -109,6 +101,7 @@ Public Class MainFrm
         Button2.Visible = False
         StatusStrip1.Items.Clear()
         ListBoxLog.Items.Clear()
+        lstInterventi.Items.Clear()
         EnableControlsInterventi(False)
         SetConn(False)
         Me.Text = "USB Configuration " + SwVersion
@@ -209,7 +202,7 @@ Public Class MainFrm
 
     Private Sub EnableControlsInterventi(ByVal _EvConEn As Boolean)
 
-        Panel1.Enabled = _EvConEn
+        'Panel1.Enabled = _EvConEn
         HscrollInterventi.Enabled = _EvConEn
         lblNumInt.Visible = _EvConEn
 
@@ -310,8 +303,33 @@ Public Class MainFrm
         Dim file As System.IO.StreamWriter
         Dim FileLogName As String
         Dim i As Integer
+        Dim FileNameToSave As String = ""
 
-        SaveFileDialog1.FileName = "Faults"
+
+        FileNameToSave = Strings.Right(Date.Now.Year.ToString, 2)
+        FileNameToSave = FileNameToSave + Date.Now.Month.ToString("00")
+        FileNameToSave = FileNameToSave + Date.Now.Day.ToString("00")
+
+        ' Nome file standard
+        FileNameToSave = "Faults" + "_" + FileNameToSave
+
+        ' Se sto usando estensione .txt controllo se c'è già e eventualmente aggiungo h m s 
+        If SaveFileDialog1.FilterIndex = 1 Then
+            If System.IO.File.Exists(System.Windows.Forms.Application.StartupPath + "\" + FileNameToSave + ".txt") Then
+                SaveFileDialog1.FileName = FileNameToSave + "(" + Date.Now.Hour.ToString("00") + "h" + Date.Now.Minute.ToString("00") + "." + Date.Now.Second.ToString("00") + ")"
+            Else
+                SaveFileDialog1.FileName = FileNameToSave
+            End If        
+        Else
+            ' Se sto usando estensione .csv controllo se c'è già e eventualmente aggiungo h m s 
+            If System.IO.File.Exists(System.Windows.Forms.Application.StartupPath + "\" + FileNameToSave + ".csv") Then
+                SaveFileDialog1.FileName = FileNameToSave + "(" + Date.Now.Hour.ToString("00") + "h" + Date.Now.Minute.ToString("00") + "." + Date.Now.Second.ToString("00") + ")"
+            Else
+                SaveFileDialog1.FileName = FileNameToSave
+            End If
+        End If
+
+
         SaveFileDialog1.DefaultExt = ".txt"
         SaveFileDialog1.AddExtension = True
         SaveFileDialog1.Filter = "Text File (*.txt)|*.txt" + "|" + "Comma separated value (*.csv)|*.csv" + "|" + "All files|*.*"
@@ -323,6 +341,7 @@ Public Class MainFrm
 
 
         If Not (SaveFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK) Then Exit Sub
+
 
         Try
             FileLogName = SaveFileDialog1.FileName

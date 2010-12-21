@@ -109,7 +109,7 @@ Partial Class MainFrm
         Me.TabControl1.Location = New System.Drawing.Point(5, 84)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(643, 422)
+        Me.TabControl1.Size = New System.Drawing.Size(643, 277)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage1
@@ -122,7 +122,7 @@ Partial Class MainFrm
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(635, 396)
+        Me.TabPage1.Size = New System.Drawing.Size(635, 251)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Faults"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -136,7 +136,7 @@ Partial Class MainFrm
         Me.lstInterventi.ItemHeight = 14
         Me.lstInterventi.Location = New System.Drawing.Point(15, 183)
         Me.lstInterventi.Name = "lstInterventi"
-        Me.lstInterventi.Size = New System.Drawing.Size(609, 200)
+        Me.lstInterventi.Size = New System.Drawing.Size(609, 60)
         Me.lstInterventi.TabIndex = 4
         '
         'lblNumIntTitle
@@ -190,10 +190,12 @@ Partial Class MainFrm
         'btnOpenGraph
         '
         Me.btnOpenGraph.Image = Global.ApplicationChiUSB.My.Resources.Resources.chart1
-        Me.btnOpenGraph.Location = New System.Drawing.Point(562, 38)
+        Me.btnOpenGraph.Location = New System.Drawing.Point(471, 78)
         Me.btnOpenGraph.Name = "btnOpenGraph"
-        Me.btnOpenGraph.Size = New System.Drawing.Size(45, 45)
+        Me.btnOpenGraph.Size = New System.Drawing.Size(85, 41)
         Me.btnOpenGraph.TabIndex = 10
+        Me.btnOpenGraph.Text = "Graph"
+        Me.btnOpenGraph.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.btnOpenGraph.UseVisualStyleBackColor = True
         '
         'btnSaveInt
@@ -201,8 +203,10 @@ Partial Class MainFrm
         Me.btnSaveInt.Image = Global.ApplicationChiUSB.My.Resources.Resources.SaveAs
         Me.btnSaveInt.Location = New System.Drawing.Point(471, 36)
         Me.btnSaveInt.Name = "btnSaveInt"
-        Me.btnSaveInt.Size = New System.Drawing.Size(45, 45)
+        Me.btnSaveInt.Size = New System.Drawing.Size(85, 41)
         Me.btnSaveInt.TabIndex = 9
+        Me.btnSaveInt.Text = "Save"
+        Me.btnSaveInt.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.btnSaveInt.UseVisualStyleBackColor = True
         '
         'lblIntCurrent
@@ -517,7 +521,7 @@ Partial Class MainFrm
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(635, 396)
+        Me.TabPage2.Size = New System.Drawing.Size(635, 251)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Other"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -538,9 +542,9 @@ Partial Class MainFrm
         Me.ListBoxLog.BackColor = System.Drawing.SystemColors.GrayText
         Me.ListBoxLog.ContextMenuStrip = Me.ContextMenuLog
         Me.ListBoxLog.FormattingEnabled = True
-        Me.ListBoxLog.Location = New System.Drawing.Point(5, 511)
+        Me.ListBoxLog.Location = New System.Drawing.Point(5, 367)
         Me.ListBoxLog.Name = "ListBoxLog"
-        Me.ListBoxLog.Size = New System.Drawing.Size(643, 69)
+        Me.ListBoxLog.Size = New System.Drawing.Size(643, 56)
         Me.ListBoxLog.TabIndex = 7
         '
         'ContextMenuLog
@@ -576,7 +580,7 @@ Partial Class MainFrm
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 588)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 431)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(733, 22)
         Me.StatusStrip1.TabIndex = 3
@@ -650,7 +654,7 @@ Partial Class MainFrm
         'btnRead
         '
         Me.btnRead.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnRead.Location = New System.Drawing.Point(661, 438)
+        Me.btnRead.Location = New System.Drawing.Point(661, 299)
         Me.btnRead.Name = "btnRead"
         Me.btnRead.Size = New System.Drawing.Size(60, 35)
         Me.btnRead.TabIndex = 6
@@ -660,7 +664,7 @@ Partial Class MainFrm
         'Button2
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.Location = New System.Drawing.Point(661, 479)
+        Me.Button2.Location = New System.Drawing.Point(661, 259)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(60, 35)
         Me.Button2.TabIndex = 9
@@ -681,7 +685,7 @@ Partial Class MainFrm
         'zg1
         '
         Me.zg1.AutoSize = True
-        Me.zg1.Location = New System.Drawing.Point(689, 0)
+        Me.zg1.Location = New System.Drawing.Point(661, 0)
         Me.zg1.Name = "zg1"
         Me.zg1.ScrollGrace = 0
         Me.zg1.ScrollMaxX = 0
@@ -690,7 +694,7 @@ Partial Class MainFrm
         Me.zg1.ScrollMinX = 0
         Me.zg1.ScrollMinY = 0
         Me.zg1.ScrollMinY2 = 0
-        Me.zg1.Size = New System.Drawing.Size(655, 367)
+        Me.zg1.Size = New System.Drawing.Size(683, 253)
         Me.zg1.TabIndex = 14
         Me.zg1.Visible = False
         '
@@ -698,7 +702,7 @@ Partial Class MainFrm
         '
         Me.PictureLogo.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureLogo.Image = Global.ApplicationChiUSB.My.Resources.Resources.logo
-        Me.PictureLogo.Location = New System.Drawing.Point(434, 27)
+        Me.PictureLogo.Location = New System.Drawing.Point(486, 27)
         Me.PictureLogo.Name = "PictureLogo"
         Me.PictureLogo.Size = New System.Drawing.Size(162, 57)
         Me.PictureLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -709,24 +713,25 @@ Partial Class MainFrm
         '
         Me.btnExit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnExit.Image = Global.ApplicationChiUSB.My.Resources.Resources.Spegni
-        Me.btnExit.Location = New System.Drawing.Point(661, 520)
+        Me.btnExit.Location = New System.Drawing.Point(661, 340)
         Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(60, 60)
+        Me.btnExit.Size = New System.Drawing.Size(60, 83)
         Me.btnExit.TabIndex = 1
-        Me.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnExit.Text = "Exit"
+        Me.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
         '
         'MainFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(733, 610)
-        Me.Controls.Add(Me.ListBoxLog)
+        Me.ClientSize = New System.Drawing.Size(733, 453)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.zg1)
+        Me.Controls.Add(Me.ListBoxLog)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.Controls.Add(Me.PictureLogo)
         Me.Controls.Add(Me.TabControl1)
+        Me.Controls.Add(Me.PictureLogo)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnRead)
         Me.Controls.Add(Me.Button2)
