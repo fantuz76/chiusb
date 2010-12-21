@@ -1,4 +1,8 @@
 ﻿Imports Zedgraph
+
+'Imports System.Windows.Forms.DataVisualization.Charting.Utilities
+
+'Imports System.Windows.Forms.DataVisualization.Charting
 Imports System.Random
 
 Public Class MainFrm    
@@ -11,9 +15,6 @@ Public Class MainFrm
     Private Sub MainFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Draw_header()
 
-
-
-     
     End Sub
 
 
@@ -60,6 +61,7 @@ Public Class MainFrm
                     Intervents = New InterventiTypeClass(ConnectionUSB.InterventiLetti)
                     UpdateChart()
                     UpdateChartZ()
+                    UpdateChartZ_second()
                     EnableControlsInterventi(True)
                 Else
                     EnableControlsInterventi(False)
@@ -74,9 +76,7 @@ Public Class MainFrm
 
     Private Sub HscrollInterventi_Scroll(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ScrollEventArgs) Handles HscrollInterventi.Scroll
 
-        lblNumInt.Text = e.NewValue & "/" & HscrollInterventi.Maximum
-        FillIntData(ConnectionUSB.InterventiLetti.IntItems(e.NewValue - 1))
-        lstInterventi.SelectedItem = lstInterventi.Items.Item(e.NewValue - 1)
+     
 
     End Sub
 
@@ -93,6 +93,7 @@ Public Class MainFrm
 
         UpdateChart()
         UpdateChartZ()
+        UpdateChartZ_second()
         'Chart1.Series.Add("Gigione")
         'Chart1.Series.Add("Paolo")
         'Chart1.Series("Paolo").AxisLabel = "paoloin2"
@@ -127,6 +128,7 @@ Public Class MainFrm
         toolTip1.SetToolTip(Me.HscrollInterventi, "Scroll Faults here")
         toolTip1.SetToolTip(Me.ListBoxLog, "Program events")
         toolTip1.SetToolTip(Me.PictureLogo, "Electroil internet site")
+        toolTip1.SetToolTip(Me.btnOpenGraph, "Show Faults Histogram")
 
         lstInterventi.HorizontalScrollbar = True        
 
@@ -500,6 +502,100 @@ Public Class MainFrm
 
     End Sub
 
+    Private Sub UpdateChartZ_Second()
+
+
+        Dim x(Intervents.TotTipiIntervento - 1) As String
+        Dim y(Intervents.TotTipiIntervento - 1) As Double
+        Dim myPane As GraphPane = ZedGraphFrm.zg1.GraphPane
+        Dim myZList As New PointPairList
+        Dim i As Integer
+
+        ZedGraphFrm.zg1.GraphPane.CurveList.Clear()
+        ZedGraphFrm.zg1.GraphPane.Title.Text = "Faults"
+
+        For i = 0 To Intervents.TotTipiIntervento - 1
+            myZList = New PointPairList
+            myZList.Clear()
+            myZList.Add(Intervents.enumNum(i), Intervents.GetOcc(Intervents.enumNum(i)), 111)
+            'x(i) = Intervents.GetIntStr(Intervents.enumNum(i))
+            x(i) = (Intervents.enumNum(i))
+            ' y(i) = Intervents.GetOcc(Intervents.enumNum(i))
+            Dim myCurve As CurveItem = myPane.AddBar(Intervents.enumNum(i).ToString + " " + Intervents.GetIntStr(Intervents.enumNum(i)), myZList, Intervents.returnColor(Intervents.enumNum(i)))
+            'Dim myCurve As CurveItem = myPane.AddBar("", .ToString, Nothing, y, Color.Yellow)
+        Next i
+
+
+
+
+        'Dim myCurve As CurveItem = myPane.AddBar("Gigione", Nothing, y, Color.Green)
+
+
+
+
+        ' Fill the pane background with a color gradient
+        myPane.Fill = New Fill(Color.White, Color.LightGray, 45.0F)
+        ' No fill for the chart background
+        myPane.Chart.Fill.Type = FillType.None
+
+        ' Set the legend to an arbitrary location
+        myPane.Legend.Position = LegendPos.Right
+        myPane.Legend.Location = New Location(0.95F, 0.15F, CoordType.PaneFraction, _
+                    AlignH.Right, AlignV.Top)
+        myPane.Legend.FontSpec.Size = 10.0F
+        myPane.Legend.IsHStack = False
+
+
+
+
+
+
+        myPane.XAxis.Type = ZedGraph.AxisType.Text
+        myPane.XAxis.Title.Text = "Faults type"
+        myPane.XAxis.Title.FontSpec.Size = 10.0F
+
+        myPane.XAxis.Scale.FormatAuto = True
+        'myPane.XAxis.Scale.TextLabels = x
+        myPane.XAxis.Scale.FontSpec.Size = 10.0F
+        myPane.XAxis.Scale.FontSpec.IsBold = True
+        myPane.XAxis.MinorGrid.IsVisible = True
+        myPane.XAxis.MinSpace = 1
+        myPane.XAxis.Scale.FormatAuto = True
+
+
+        myPane.YAxis.Type = ZedGraph.AxisType.Linear
+        myPane.YAxis.Title.Text = "Occurences"
+        myPane.YAxis.Title.FontSpec.Size = 10.0F
+        myPane.YAxis.Scale.FontSpec.Size = 10.0F
+        myPane.YAxis.Scale.Align = AlignP.Inside
+        myPane.YAxis.Scale.Min = 0
+        myPane.YAxis.Scale.MaxAuto = True
+
+
+
+
+
+
+        Dim colors As Color() = {Color.Red, Color.Yellow, Color.Green, Color.Blue, Color.Purple}
+        'myCurve.Bar.Fill = New Fill(colors)
+        'myCurve.Bar.Fill.Type = FillType.GradientByZ
+
+        'myCurve.Bar.Fill.RangeMin = 0
+        'myCurve.Bar.Fill.RangeMax = 4
+
+        'myPane.Chart.Fill = New Fill(Color.White, Color.FromArgb(220, 220, 255), 45)
+        'myPane.Fill = New Fill(Color.White, Color.FromArgb(255, 255, 225), 45)
+        '' Tell ZedGraph to calculate the axis ranges
+        ZedGraphFrm.zg1.AxisChange()
+        ' Make sure the Graph gets redrawn
+        ZedGraphFrm.zg1.Invalidate()
+
+        ZedGraphFrm.zg1.Refresh()
+
+
+
+    End Sub
+
     Private Sub UpdateChart()
 
         'Chart1.Series.Clear()
@@ -627,8 +723,22 @@ Public Class MainFrm
         Process.Start("http://www.electroil.it/inglese/index.html")
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        UpdateChart()
-        UpdateChartZ()
+    Private Sub lstInterventi_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lstInterventi.SelectedIndexChanged
+        HscrollInterventi.Value = lstInterventi.SelectedIndex + 1
+        'lblNumInt.Text = (lstInterventi.SelectedIndex + 1).ToString & "/" & HscrollInterventi.Maximum
+        'FillIntData(ConnectionUSB.InterventiLetti.IntItems(lstInterventi.SelectedIndex))
+        'lstInterventi.SelectedItem = lstInterventi.Items.Item(lstInterventi.SelectedIndex)
+    End Sub
+
+    Private Sub HscrollInterventi_ValueChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles HscrollInterventi.ValueChanged
+        lblNumInt.Text = HscrollInterventi.Value & "/" & HscrollInterventi.Maximum
+        FillIntData(ConnectionUSB.InterventiLetti.IntItems(HscrollInterventi.Value - 1))
+        lstInterventi.SelectedItem = lstInterventi.Items.Item(HscrollInterventi.Value - 1)
+    End Sub
+
+    Private Sub btnOpenGraph_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnOpenGraph.Click
+        ZedGraphFrm.Show()
+        UpdateChartZ_Second()
+
     End Sub
 End Class

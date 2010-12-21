@@ -22,72 +22,71 @@ Partial Class MainFrm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
+        Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainFrm))
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.lblNumIntTitle = New System.Windows.Forms.Label()
-        Me.lblNumInt = New System.Windows.Forms.Label()
-        Me.HscrollInterventi = New System.Windows.Forms.HScrollBar()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnSaveInt = New System.Windows.Forms.Button()
-        Me.lblIntCurrent = New System.Windows.Forms.Label()
-        Me.lblIntVolt = New System.Windows.Forms.Label()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.lblIntTempVal = New System.Windows.Forms.Label()
-        Me.lblIntTempDesc = New System.Windows.Forms.Label()
-        Me.lblIntCosfiVal = New System.Windows.Forms.Label()
-        Me.lblIntCosfiDesc = New System.Windows.Forms.Label()
-        Me.lblIntPressVal = New System.Windows.Forms.Label()
-        Me.lblIntPressDesc = New System.Windows.Forms.Label()
-        Me.lblIntPowVal = New System.Windows.Forms.Label()
-        Me.lblIntPowDesc = New System.Windows.Forms.Label()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.lblIntI3Val = New System.Windows.Forms.Label()
-        Me.lblIntI3Desc = New System.Windows.Forms.Label()
-        Me.lblIntI2Val = New System.Windows.Forms.Label()
-        Me.lblIntI2Desc = New System.Windows.Forms.Label()
-        Me.lblIntI1Val = New System.Windows.Forms.Label()
-        Me.lblIntI1Desc = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.lblIntV3Val = New System.Windows.Forms.Label()
-        Me.lblIntV3Desc = New System.Windows.Forms.Label()
-        Me.lblIntV2Val = New System.Windows.Forms.Label()
-        Me.lblIntV2Desc = New System.Windows.Forms.Label()
-        Me.lblIntV1Val = New System.Windows.Forms.Label()
-        Me.lblIntV1Desc = New System.Windows.Forms.Label()
-        Me.lblIntTimeVal = New System.Windows.Forms.Label()
-        Me.lblIntTimeDesc = New System.Windows.Forms.Label()
-        Me.lblIntTypeVal = New System.Windows.Forms.Label()
-        Me.lblIntTypeDesc = New System.Windows.Forms.Label()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.lblGenericTmp = New System.Windows.Forms.Label()
-        Me.ListBoxLog = New System.Windows.Forms.ListBox()
+        Me.TabControl1 = New System.Windows.Forms.TabControl
+        Me.TabPage1 = New System.Windows.Forms.TabPage
+        Me.lstInterventi = New System.Windows.Forms.ListBox
+        Me.lblNumIntTitle = New System.Windows.Forms.Label
+        Me.lblNumInt = New System.Windows.Forms.Label
+        Me.HscrollInterventi = New System.Windows.Forms.HScrollBar
+        Me.Panel1 = New System.Windows.Forms.Panel
+        Me.btnOpenGraph = New System.Windows.Forms.Button
+        Me.btnSaveInt = New System.Windows.Forms.Button
+        Me.lblIntCurrent = New System.Windows.Forms.Label
+        Me.lblIntVolt = New System.Windows.Forms.Label
+        Me.Panel4 = New System.Windows.Forms.Panel
+        Me.lblIntTempVal = New System.Windows.Forms.Label
+        Me.lblIntTempDesc = New System.Windows.Forms.Label
+        Me.lblIntCosfiVal = New System.Windows.Forms.Label
+        Me.lblIntCosfiDesc = New System.Windows.Forms.Label
+        Me.lblIntPressVal = New System.Windows.Forms.Label
+        Me.lblIntPressDesc = New System.Windows.Forms.Label
+        Me.lblIntPowVal = New System.Windows.Forms.Label
+        Me.lblIntPowDesc = New System.Windows.Forms.Label
+        Me.Panel3 = New System.Windows.Forms.Panel
+        Me.lblIntI3Val = New System.Windows.Forms.Label
+        Me.lblIntI3Desc = New System.Windows.Forms.Label
+        Me.lblIntI2Val = New System.Windows.Forms.Label
+        Me.lblIntI2Desc = New System.Windows.Forms.Label
+        Me.lblIntI1Val = New System.Windows.Forms.Label
+        Me.lblIntI1Desc = New System.Windows.Forms.Label
+        Me.Panel2 = New System.Windows.Forms.Panel
+        Me.lblIntV3Val = New System.Windows.Forms.Label
+        Me.lblIntV3Desc = New System.Windows.Forms.Label
+        Me.lblIntV2Val = New System.Windows.Forms.Label
+        Me.lblIntV2Desc = New System.Windows.Forms.Label
+        Me.lblIntV1Val = New System.Windows.Forms.Label
+        Me.lblIntV1Desc = New System.Windows.Forms.Label
+        Me.lblIntTimeVal = New System.Windows.Forms.Label
+        Me.lblIntTimeDesc = New System.Windows.Forms.Label
+        Me.lblIntTypeVal = New System.Windows.Forms.Label
+        Me.lblIntTypeDesc = New System.Windows.Forms.Label
+        Me.TabPage2 = New System.Windows.Forms.TabPage
+        Me.lblGenericTmp = New System.Windows.Forms.Label
+        Me.ListBoxLog = New System.Windows.Forms.ListBox
         Me.ContextMenuLog = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.CopyLogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ClearLogToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.FileToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.lblNotify = New System.Windows.Forms.Label()
-        Me.btnConn = New System.Windows.Forms.Button()
-        Me.PictureLogo = New System.Windows.Forms.PictureBox()
-        Me.btnRead = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.CopyLogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ClearLogToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip
+        Me.FileToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
+        Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
+        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.lblNotify = New System.Windows.Forms.Label
+        Me.btnConn = New System.Windows.Forms.Button
+        Me.btnRead = New System.Windows.Forms.Button
+        Me.Button2 = New System.Windows.Forms.Button
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
-        Me.ClearLogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.btnExit = New System.Windows.Forms.Button()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.zg1 = New ZedGraph.ZedGraphControl()
-        Me.lstInterventi = New System.Windows.Forms.ListBox()
+        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog
+        Me.ClearLogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.zg1 = New ZedGraph.ZedGraphControl
+        Me.PictureLogo = New System.Windows.Forms.PictureBox
+        Me.btnExit = New System.Windows.Forms.Button
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -110,7 +109,7 @@ Partial Class MainFrm
         Me.TabControl1.Location = New System.Drawing.Point(5, 84)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(591, 382)
+        Me.TabControl1.Size = New System.Drawing.Size(643, 422)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage1
@@ -123,15 +122,27 @@ Partial Class MainFrm
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(583, 356)
+        Me.TabPage1.Size = New System.Drawing.Size(635, 396)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Faults"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'lstInterventi
+        '
+        Me.lstInterventi.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lstInterventi.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lstInterventi.FormattingEnabled = True
+        Me.lstInterventi.ItemHeight = 14
+        Me.lstInterventi.Location = New System.Drawing.Point(15, 183)
+        Me.lstInterventi.Name = "lstInterventi"
+        Me.lstInterventi.Size = New System.Drawing.Size(609, 200)
+        Me.lstInterventi.TabIndex = 4
+        '
         'lblNumIntTitle
         '
         Me.lblNumIntTitle.AutoSize = True
-        Me.lblNumIntTitle.Location = New System.Drawing.Point(494, 10)
+        Me.lblNumIntTitle.Location = New System.Drawing.Point(514, 10)
         Me.lblNumIntTitle.Name = "lblNumIntTitle"
         Me.lblNumIntTitle.Size = New System.Drawing.Size(73, 13)
         Me.lblNumIntTitle.TabIndex = 3
@@ -140,7 +151,7 @@ Partial Class MainFrm
         'lblNumInt
         '
         Me.lblNumInt.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNumInt.Location = New System.Drawing.Point(494, 23)
+        Me.lblNumInt.Location = New System.Drawing.Point(518, 23)
         Me.lblNumInt.Name = "lblNumInt"
         Me.lblNumInt.Size = New System.Drawing.Size(69, 32)
         Me.lblNumInt.TabIndex = 2
@@ -153,13 +164,14 @@ Partial Class MainFrm
         Me.HscrollInterventi.Maximum = 335
         Me.HscrollInterventi.Minimum = 1
         Me.HscrollInterventi.Name = "HscrollInterventi"
-        Me.HscrollInterventi.Size = New System.Drawing.Size(473, 32)
+        Me.HscrollInterventi.Size = New System.Drawing.Size(496, 32)
         Me.HscrollInterventi.TabIndex = 1
         Me.HscrollInterventi.Value = 1
         '
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.btnOpenGraph)
         Me.Panel1.Controls.Add(Me.btnSaveInt)
         Me.Panel1.Controls.Add(Me.lblIntCurrent)
         Me.Panel1.Controls.Add(Me.lblIntVolt)
@@ -172,8 +184,17 @@ Partial Class MainFrm
         Me.Panel1.Controls.Add(Me.lblIntTypeDesc)
         Me.Panel1.Location = New System.Drawing.Point(15, 58)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(561, 147)
+        Me.Panel1.Size = New System.Drawing.Size(614, 124)
         Me.Panel1.TabIndex = 0
+        '
+        'btnOpenGraph
+        '
+        Me.btnOpenGraph.Image = Global.ApplicationChiUSB.My.Resources.Resources.chart1
+        Me.btnOpenGraph.Location = New System.Drawing.Point(562, 38)
+        Me.btnOpenGraph.Name = "btnOpenGraph"
+        Me.btnOpenGraph.Size = New System.Drawing.Size(45, 45)
+        Me.btnOpenGraph.TabIndex = 10
+        Me.btnOpenGraph.UseVisualStyleBackColor = True
         '
         'btnSaveInt
         '
@@ -187,7 +208,7 @@ Partial Class MainFrm
         'lblIntCurrent
         '
         Me.lblIntCurrent.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIntCurrent.Location = New System.Drawing.Point(115, 53)
+        Me.lblIntCurrent.Location = New System.Drawing.Point(119, 36)
         Me.lblIntCurrent.Name = "lblIntCurrent"
         Me.lblIntCurrent.Size = New System.Drawing.Size(99, 16)
         Me.lblIntCurrent.TabIndex = 8
@@ -196,7 +217,7 @@ Partial Class MainFrm
         'lblIntVolt
         '
         Me.lblIntVolt.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIntVolt.Location = New System.Drawing.Point(10, 53)
+        Me.lblIntVolt.Location = New System.Drawing.Point(14, 36)
         Me.lblIntVolt.Name = "lblIntVolt"
         Me.lblIntVolt.Size = New System.Drawing.Size(99, 16)
         Me.lblIntVolt.TabIndex = 7
@@ -215,13 +236,13 @@ Partial Class MainFrm
         Me.Panel4.Controls.Add(Me.lblIntPowDesc)
         Me.Panel4.Location = New System.Drawing.Point(229, 36)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(236, 98)
+        Me.Panel4.Size = New System.Drawing.Size(236, 81)
         Me.Panel4.TabIndex = 6
         '
         'lblIntTempVal
         '
         Me.lblIntTempVal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblIntTempVal.Location = New System.Drawing.Point(178, 64)
+        Me.lblIntTempVal.Location = New System.Drawing.Point(178, 40)
         Me.lblIntTempVal.Name = "lblIntTempVal"
         Me.lblIntTempVal.Size = New System.Drawing.Size(43, 17)
         Me.lblIntTempVal.TabIndex = 11
@@ -231,7 +252,7 @@ Partial Class MainFrm
         'lblIntTempDesc
         '
         Me.lblIntTempDesc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIntTempDesc.Location = New System.Drawing.Point(104, 65)
+        Me.lblIntTempDesc.Location = New System.Drawing.Point(104, 41)
         Me.lblIntTempDesc.Name = "lblIntTempDesc"
         Me.lblIntTempDesc.Size = New System.Drawing.Size(68, 16)
         Me.lblIntTempDesc.TabIndex = 10
@@ -241,7 +262,7 @@ Partial Class MainFrm
         'lblIntCosfiVal
         '
         Me.lblIntCosfiVal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblIntCosfiVal.Location = New System.Drawing.Point(55, 65)
+        Me.lblIntCosfiVal.Location = New System.Drawing.Point(55, 41)
         Me.lblIntCosfiVal.Name = "lblIntCosfiVal"
         Me.lblIntCosfiVal.Size = New System.Drawing.Size(43, 17)
         Me.lblIntCosfiVal.TabIndex = 9
@@ -251,7 +272,7 @@ Partial Class MainFrm
         'lblIntCosfiDesc
         '
         Me.lblIntCosfiDesc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIntCosfiDesc.Location = New System.Drawing.Point(3, 65)
+        Me.lblIntCosfiDesc.Location = New System.Drawing.Point(3, 41)
         Me.lblIntCosfiDesc.Name = "lblIntCosfiDesc"
         Me.lblIntCosfiDesc.Size = New System.Drawing.Size(46, 16)
         Me.lblIntCosfiDesc.TabIndex = 8
@@ -307,7 +328,7 @@ Partial Class MainFrm
         Me.Panel3.Controls.Add(Me.lblIntI2Desc)
         Me.Panel3.Controls.Add(Me.lblIntI1Val)
         Me.Panel3.Controls.Add(Me.lblIntI1Desc)
-        Me.Panel3.Location = New System.Drawing.Point(115, 72)
+        Me.Panel3.Location = New System.Drawing.Point(119, 55)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(103, 62)
         Me.Panel3.TabIndex = 5
@@ -381,7 +402,7 @@ Partial Class MainFrm
         Me.Panel2.Controls.Add(Me.lblIntV2Desc)
         Me.Panel2.Controls.Add(Me.lblIntV1Val)
         Me.Panel2.Controls.Add(Me.lblIntV1Desc)
-        Me.Panel2.Location = New System.Drawing.Point(6, 72)
+        Me.Panel2.Location = New System.Drawing.Point(10, 55)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(103, 62)
         Me.Panel2.TabIndex = 4
@@ -496,7 +517,7 @@ Partial Class MainFrm
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(583, 260)
+        Me.TabPage2.Size = New System.Drawing.Size(635, 396)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Other"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -517,9 +538,9 @@ Partial Class MainFrm
         Me.ListBoxLog.BackColor = System.Drawing.SystemColors.GrayText
         Me.ListBoxLog.ContextMenuStrip = Me.ContextMenuLog
         Me.ListBoxLog.FormattingEnabled = True
-        Me.ListBoxLog.Location = New System.Drawing.Point(5, 471)
+        Me.ListBoxLog.Location = New System.Drawing.Point(5, 511)
         Me.ListBoxLog.Name = "ListBoxLog"
-        Me.ListBoxLog.Size = New System.Drawing.Size(587, 69)
+        Me.ListBoxLog.Size = New System.Drawing.Size(643, 69)
         Me.ListBoxLog.TabIndex = 7
         '
         'ContextMenuLog
@@ -555,9 +576,9 @@ Partial Class MainFrm
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 548)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 588)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(894, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(733, 22)
         Me.StatusStrip1.TabIndex = 3
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -566,7 +587,7 @@ Partial Class MainFrm
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem1})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(894, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(733, 24)
         Me.MenuStrip1.TabIndex = 4
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -626,21 +647,10 @@ Partial Class MainFrm
         Me.btnConn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnConn.UseVisualStyleBackColor = True
         '
-        'PictureLogo
-        '
-        Me.PictureLogo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureLogo.Image = Global.ApplicationChiUSB.My.Resources.Resources.logo
-        Me.PictureLogo.Location = New System.Drawing.Point(434, 27)
-        Me.PictureLogo.Name = "PictureLogo"
-        Me.PictureLogo.Size = New System.Drawing.Size(162, 57)
-        Me.PictureLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureLogo.TabIndex = 10
-        Me.PictureLogo.TabStop = False
-        '
         'btnRead
         '
         Me.btnRead.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnRead.Location = New System.Drawing.Point(822, 398)
+        Me.btnRead.Location = New System.Drawing.Point(661, 438)
         Me.btnRead.Name = "btnRead"
         Me.btnRead.Size = New System.Drawing.Size(60, 35)
         Me.btnRead.TabIndex = 6
@@ -650,7 +660,7 @@ Partial Class MainFrm
         'Button2
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.Location = New System.Drawing.Point(822, 439)
+        Me.Button2.Location = New System.Drawing.Point(661, 479)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(60, 35)
         Me.Button2.TabIndex = 9
@@ -668,71 +678,51 @@ Partial Class MainFrm
         Me.ClearLogToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
         Me.ClearLogToolStripMenuItem.Text = "Clear Log"
         '
+        'zg1
+        '
+        Me.zg1.AutoSize = True
+        Me.zg1.Location = New System.Drawing.Point(689, 0)
+        Me.zg1.Name = "zg1"
+        Me.zg1.ScrollGrace = 0
+        Me.zg1.ScrollMaxX = 0
+        Me.zg1.ScrollMaxY = 335
+        Me.zg1.ScrollMaxY2 = 0
+        Me.zg1.ScrollMinX = 0
+        Me.zg1.ScrollMinY = 0
+        Me.zg1.ScrollMinY2 = 0
+        Me.zg1.Size = New System.Drawing.Size(655, 367)
+        Me.zg1.TabIndex = 14
+        Me.zg1.Visible = False
+        '
+        'PictureLogo
+        '
+        Me.PictureLogo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureLogo.Image = Global.ApplicationChiUSB.My.Resources.Resources.logo
+        Me.PictureLogo.Location = New System.Drawing.Point(434, 27)
+        Me.PictureLogo.Name = "PictureLogo"
+        Me.PictureLogo.Size = New System.Drawing.Size(162, 57)
+        Me.PictureLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureLogo.TabIndex = 10
+        Me.PictureLogo.TabStop = False
+        '
         'btnExit
         '
         Me.btnExit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnExit.Image = Global.ApplicationChiUSB.My.Resources.Resources.Spegni
-        Me.btnExit.Location = New System.Drawing.Point(822, 480)
+        Me.btnExit.Location = New System.Drawing.Point(661, 520)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(60, 60)
         Me.btnExit.TabIndex = 1
         Me.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnExit.UseVisualStyleBackColor = True
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(751, 43)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(81, 17)
-        Me.CheckBox1.TabIndex = 12
-        Me.CheckBox1.Text = "CheckBox1"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(668, 38)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(44, 32)
-        Me.Button1.TabIndex = 13
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'zg1
-        '
-        Me.zg1.AutoSize = True
-        Me.zg1.Location = New System.Drawing.Point(613, 365)
-        Me.zg1.Name = "zg1"
-        Me.zg1.ScrollGrace = 0.0R
-        Me.zg1.ScrollMaxX = 0.0R
-        Me.zg1.ScrollMaxY = 335.0R
-        Me.zg1.ScrollMaxY2 = 0.0R
-        Me.zg1.ScrollMinX = 0.0R
-        Me.zg1.ScrollMinY = 0.0R
-        Me.zg1.ScrollMinY2 = 0.0R
-        Me.zg1.Size = New System.Drawing.Size(655, 367)
-        Me.zg1.TabIndex = 14
-        '
-        'lstInterventi
-        '
-        Me.lstInterventi.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lstInterventi.FormattingEnabled = True
-        Me.lstInterventi.ItemHeight = 14
-        Me.lstInterventi.Location = New System.Drawing.Point(15, 211)
-        Me.lstInterventi.Name = "lstInterventi"
-        Me.lstInterventi.Size = New System.Drawing.Size(561, 130)
-        Me.lstInterventi.TabIndex = 4
         '
         'MainFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(894, 570)
-        Me.Controls.Add(Me.zg1)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.CheckBox1)
+        Me.ClientSize = New System.Drawing.Size(733, 610)
         Me.Controls.Add(Me.ListBoxLog)
         Me.Controls.Add(Me.StatusStrip1)
+        Me.Controls.Add(Me.zg1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.PictureLogo)
@@ -744,7 +734,6 @@ Partial Class MainFrm
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "MainFrm"
         Me.Text = "USB Configuration"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -823,9 +812,9 @@ Partial Class MainFrm
     Friend WithEvents btnSaveInt As System.Windows.Forms.Button
     Friend WithEvents lblNumIntTitle As System.Windows.Forms.Label
     Friend WithEvents lblGenericTmp As System.Windows.Forms.Label
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    'Friend WithEvents Chart1 As System.Windows.Forms.DataVisualization.Charting.Chart
     Friend WithEvents zg1 As ZedGraph.ZedGraphControl
     Friend WithEvents lstInterventi As System.Windows.Forms.ListBox
+    Friend WithEvents btnOpenGraph As System.Windows.Forms.Button
 
 End Class

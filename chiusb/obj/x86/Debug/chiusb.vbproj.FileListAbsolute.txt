@@ -43,3 +43,4 @@ c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_Sw
 c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.MainFrm.resources
 c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.Resources.resources
 c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\chiusb.vbproj.GenerateResource.Cache
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.ZedGraphFrm.resources
