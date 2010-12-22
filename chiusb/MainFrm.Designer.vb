@@ -79,7 +79,6 @@ Partial Class MainFrm
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.lblNotify = New System.Windows.Forms.Label
         Me.btnConn = New System.Windows.Forms.Button
-        Me.btnRead = New System.Windows.Forms.Button
         Me.Button2 = New System.Windows.Forms.Button
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog
@@ -651,20 +650,10 @@ Partial Class MainFrm
         Me.btnConn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnConn.UseVisualStyleBackColor = True
         '
-        'btnRead
-        '
-        Me.btnRead.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnRead.Location = New System.Drawing.Point(661, 299)
-        Me.btnRead.Name = "btnRead"
-        Me.btnRead.Size = New System.Drawing.Size(60, 35)
-        Me.btnRead.TabIndex = 6
-        Me.btnRead.Text = "Read"
-        Me.btnRead.UseVisualStyleBackColor = True
-        '
         'Button2
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.Location = New System.Drawing.Point(661, 259)
+        Me.Button2.Location = New System.Drawing.Point(661, 299)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(60, 35)
         Me.Button2.TabIndex = 9
@@ -733,7 +722,6 @@ Partial Class MainFrm
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.PictureLogo)
         Me.Controls.Add(Me.btnExit)
-        Me.Controls.Add(Me.btnRead)
         Me.Controls.Add(Me.Button2)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
@@ -766,7 +754,6 @@ Partial Class MainFrm
     Friend WithEvents FileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents btnRead As System.Windows.Forms.Button
     Friend WithEvents ListBoxLog As System.Windows.Forms.ListBox
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents btnConn As System.Windows.Forms.Button

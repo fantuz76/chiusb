@@ -245,7 +245,7 @@ Public Class USBClass
             Return False
         End If
 
-        For i = 0 To System.IO.Ports.SerialPort.GetPortNames.Length - 1
+        For i = 0 To System.IO.Ports.SerialPort.GetPortNames.Length - 1            
             If ConfigAndOpenPort(System.IO.Ports.SerialPort.GetPortNames(i)) Then
                 ' HELLO
                 If RequestHello() Then
