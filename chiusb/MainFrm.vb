@@ -24,23 +24,25 @@ Public Class MainFrm
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
         If ConnectionUSB.RequestInterventi(0, 0) Then
             EnableControlsInterventi(True)
-            lblNotify.Text = "Faults found " & ConnectionUSB.InterventiLetti.Length
+            lblNotify.Text = "Alarms found " & ConnectionUSB.InterventiLetti.Length
         Else
             EnableControlsInterventi(False)
-            lblNotify.Text = "No Faults"
+            lblNotify.Text = "No alarms"
         End If
 
     End Sub
 
     Private Sub btnConn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnConn.Click
         Me.Cursor = Cursors.WaitCursor
+        btnConn.Enabled = False
         If ConnectionActive Then
             If Not ConnectionUSB Is Nothing Then
                 ConnectionUSB.ClosePort()
+                ConnectionUSB.LogDisplay("Disconnect")
                 ConnectionUSB = Nothing
             End If
             SetConn(False)
-            EnableControlsInterventi(False)
+            EnableControlsInterventi(False)           
         Else
             If Not ConnectionUSB Is Nothing Then ConnectionUSB = Nothing
 
@@ -49,19 +51,22 @@ Public Class MainFrm
                 SetConn(True)
 
                 If ConnectionUSB.RequestInterventi(0, 0) Then
-                    lblNotify.Text = "Faults found " & ConnectionUSB.InterventiLetti.Length
+                    lblNotify.Text = "alarms found " & ConnectionUSB.InterventiLetti.Length
 
                     Intervents = New InterventiTypeClass(ConnectionUSB.InterventiLetti)
-                    'UpdateChart()
-                    'UpdateChartZ()
+
+
                     UpdateChartZ_Second()
                     EnableControlsInterventi(True)
                 Else
                     EnableControlsInterventi(False)
-                    lblNotify.Text = "No Faults"
+                    lblNotify.Text = "No alarms"
+                    SetConn(False)
+                    EnableControlsInterventi(False)
                 End If
             End If
         End If
+        btnConn.Enabled = True
         Me.Cursor = Cursors.Default
     End Sub
 
@@ -73,13 +78,21 @@ Public Class MainFrm
         ' Blocca dimensione minima finestra
         Me.MinimumSize = Me.Size
 
-        'UpdateChart()
-        'UpdateChartZ()
         UpdateChartZ_second()
 
         TabControl1.TabPages.Remove(TabControl1.TabPages(1))
         lblGenericTmp.Text = "Program developing " + Environment.NewLine _
                             + "Sw Version " + SwVersion + "   " + "2010"
+
+        lblIntVolt.Text = "Average Voltage"
+        lblIntVolt.TextAlign = ContentAlignment.MiddleRight
+        lblIntCurrent.Text = "Average Current"
+        lblIntCurrent.TextAlign = ContentAlignment.MiddleRight
+
+        lblIntVDesc.Text = ""
+        lblIntIDesc.Text = ""
+
+
 
         Button2.Visible = False
         StatusStrip1.Items.Clear()
@@ -97,12 +110,12 @@ Public Class MainFrm
         toolTip1.ShowAlways = True
 
         ' Set up the ToolTip text for the Button and Checkbox.
-        toolTip1.SetToolTip(Me.btnSaveInt, "Save all Faults on a file")
+        toolTip1.SetToolTip(Me.btnSaveInt, "Save all alarms on a file")
         toolTip1.SetToolTip(Me.btnConn, "Connect to Device")
-        toolTip1.SetToolTip(Me.HscrollInterventi, "Scroll Faults here")
+        toolTip1.SetToolTip(Me.HscrollInterventi, "Scroll alarms here")
         toolTip1.SetToolTip(Me.ListBoxLog, "Program events")
         toolTip1.SetToolTip(Me.PictureLogo, "Electroil internet site")
-        toolTip1.SetToolTip(Me.btnOpenGraph, "Show Faults Histogram")
+        toolTip1.SetToolTip(Me.btnOpenGraph, "Show alarms Histogram")
 
         lstInterventi.HorizontalScrollbar = True        
 
@@ -115,13 +128,13 @@ Public Class MainFrm
 
         lblIntTimeVal.Text = GetHours(intToFill._intTime).ToString & "h " & GetMinutes(intToFill._intTime).ToString("00") & "' " & GetSeconds(intToFill._intTime).ToString("00") & "''"
 
-        lblIntV1Val.Text = intToFill._intVolt1
-        lblIntV2Val.Text = intToFill._intVolt2
-        lblIntV3Val.Text = intToFill._intVolt3
+        lblIntV1Val.Text = intToFill._intVoltAv
+        'lblIntV2Val.Text = intToFill._intVolt2
+        'lblIntV3Val.Text = intToFill._intVolt3
 
-        lblIntI1Val.Text = GetCurrent(intToFill._intCurr1)
-        lblIntI2Val.Text = GetCurrent(intToFill._intCurr2)
-        lblIntI3Val.Text = GetCurrent(intToFill._intCurr3)
+        lblIntI1Val.Text = GetCurrent(intToFill._intCurrAv)
+        'lblIntI2Val.Text = GetCurrent(intToFill._intCurr2)
+        'lblIntI3Val.Text = GetCurrent(intToFill._intCurr3)
 
         lblIntPowVal.Text = intToFill._intPower
         lblIntPressVal.Text = GetPressure(intToFill._intPress)
@@ -139,7 +152,7 @@ Public Class MainFrm
             StToAdd = ""
             StToAdd2 = Intervents.GetIntStr(ConnectionUSB.InterventiLetti.IntItems(i)._intType)
 
-            StToAdd = StToAdd + StToAdd2.PadRight(38)
+            StToAdd = StToAdd + StToAdd2.PadRight(25)
 
             StToAdd2 = GetHours(ConnectionUSB.InterventiLetti.IntItems(i)._intTime).ToString + "h "
             StToAdd2 = StToAdd2 + GetMinutes(ConnectionUSB.InterventiLetti.IntItems(i)._intTime).ToString("00") + "' "
@@ -147,19 +160,19 @@ Public Class MainFrm
 
             StToAdd = StToAdd + StToAdd2.PadRight(11)
 
-            StToAdd2 = "V1:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVolt1.ToString + "V"
+            StToAdd2 = "V1:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVoltAv.ToString + "V"
             StToAdd = StToAdd + StToAdd2.PadRight(8)
-            StToAdd2 = "V2:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVolt2.ToString + "V"
-            StToAdd = StToAdd + StToAdd2.PadRight(8)
-            StToAdd2 = "V3:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVolt3.ToString + "V"
-            StToAdd = StToAdd + StToAdd2.PadRight(8)
+            'StToAdd2 = "V2:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVolt2.ToString + "V"
+            'StToAdd = StToAdd + StToAdd2.PadRight(8)
+            'StToAdd2 = "V3:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVolt3.ToString + "V"
+            'StToAdd = StToAdd + StToAdd2.PadRight(8)
 
-            StToAdd2 = "I1:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr1).ToString + "A"
+            StToAdd2 = "I1:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurrAv).ToString + "A"
             StToAdd = StToAdd + StToAdd2.PadRight(10)
-            StToAdd2 = "I2:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr2).ToString + "A"
-            StToAdd = StToAdd + StToAdd2.PadRight(10)
-            StToAdd2 = "I3:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr3).ToString + "A"
-            StToAdd = StToAdd + StToAdd2.PadRight(10)
+            'StToAdd2 = "I2:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr2).ToString + "A"
+            'StToAdd = StToAdd + StToAdd2.PadRight(10)
+            'StToAdd2 = "I3:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr3).ToString + "A"
+            'StToAdd = StToAdd + StToAdd2.PadRight(10)
 
             StToAdd2 = "Power:" + ConnectionUSB.InterventiLetti.IntItems(i)._intPower.ToString + "W"
             StToAdd = StToAdd + StToAdd2.PadRight(13)
@@ -192,7 +205,7 @@ Public Class MainFrm
             HscrollInterventi.SmallChange = 1
             HscrollInterventi.LargeChange = 1
             HscrollInterventi.Value = HscrollInterventi.Minimum
-            lblNumIntTitle.Text = "Faults number"
+            lblNumIntTitle.Text = "alarms number"
             lblNumInt.Text = HscrollInterventi.Value & "/" & HscrollInterventi.Maximum
             FillListData()
             FillIntData(ConnectionUSB.InterventiLetti.IntItems(HscrollInterventi.Value - 1))
@@ -202,13 +215,9 @@ Public Class MainFrm
             lblIntTypeVal.Text = ""
             lblIntTimeVal.Text = ""
             lblIntV1Val.Text = ""
-            lblIntV2Val.Text = ""
-            lblIntV3Val.Text = ""
-
+            
             lblIntI1Val.Text = ""
-            lblIntI2Val.Text = ""
-            lblIntI3Val.Text = ""
-
+            
             lblIntPowVal.Text = ""
             lblIntPressVal.Text = ""
             lblIntCosfiVal.Text = ""
@@ -231,20 +240,20 @@ Public Class MainFrm
             StatusStrip1.Items.Clear()
             StatusStrip1.Items.Add(Date.Now)
             StatusStrip1.Items.Add(New ToolStripSeparator)
-            StatusStrip1.Items.Add("Serial number: " + ConnectionUSB.Matricola.ToUpper)
-            StatusStrip1.Items.Add(New ToolStripSeparator)
+            'StatusStrip1.Items.Add("Serial number: " + ConnectionUSB.Matricola.ToUpper)
+            'StatusStrip1.Items.Add(New ToolStripSeparator)
 
-            StatusStrip1.Items.Add("Fw Ver: " + ConnectionUSB.FwVer.ToString("X4"))
-            StatusStrip1.Items.Add(New ToolStripSeparator)
+            'StatusStrip1.Items.Add("Fw Ver: " + ConnectionUSB.FwVer.ToString("X4"))
+            'StatusStrip1.Items.Add(New ToolStripSeparator)
 
-            StatusStrip1.Items.Add("Hw Ver: " + ConnectionUSB.HwVer.ToString("X4"))
-            StatusStrip1.Items.Add(New ToolStripSeparator)
+            'StatusStrip1.Items.Add("Hw Ver: " + ConnectionUSB.HwVer.ToString("X4"))
+            'StatusStrip1.Items.Add(New ToolStripSeparator)
 
-            StatusStrip1.Items.Add("Worked hours: " + GetHours(ConnectionUSB.OreLav).ToString("") + "h " + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
-            StatusStrip1.Items.Add(New ToolStripSeparator)
+            'StatusStrip1.Items.Add("Worked hours: " + GetHours(ConnectionUSB.OreLav).ToString("") + "h " + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
+            'StatusStrip1.Items.Add(New ToolStripSeparator)
 
         Else
-            lblNotify.Text = "Connect and Read Faults"
+            lblNotify.Text = "Connect and Read alarms"
             btnConn.Image = ApplicationChiUSB.My.Resources.conn
             btnConn.Text = "Connect"
             ConnectionActive = False
@@ -265,7 +274,8 @@ Public Class MainFrm
         For i = 0 To ListBoxLog.Items.Count - 1
             strt = strt + ListBoxLog.Items.Item(i) + Environment.NewLine
         Next
-        Clipboard.SetText(strt)
+        If strt.Length > 0 Then Clipboard.SetText(strt)
+
     End Sub
 
     Private Sub ClearLogToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ClearLogToolStripMenuItem1.Click
@@ -289,7 +299,7 @@ Public Class MainFrm
         FileNameToSave = FileNameToSave + Date.Now.Day.ToString("00")
 
         ' Nome file standard
-        FileNameToSave = "Faults" + "_" + FileNameToSave
+        FileNameToSave = "alarms" + "_" + FileNameToSave
 
         ' Se sto usando estensione .txt controllo se c'è già e eventualmente aggiungo h m s 
         If SaveFileDialog1.FilterIndex = 1 Then
@@ -312,7 +322,7 @@ Public Class MainFrm
         SaveFileDialog1.AddExtension = True
         SaveFileDialog1.Filter = "Text File (*.txt)|*.txt" + "|" + "Comma separated value (*.csv)|*.csv" + "|" + "All files|*.*"
         SaveFileDialog1.InitialDirectory = System.Windows.Forms.Application.StartupPath
-        SaveFileDialog1.Title = "Save Faults"
+        SaveFileDialog1.Title = "Save alarms"
         SaveFileDialog1.CheckPathExists = True
         SaveFileDialog1.OverwritePrompt = True
 
@@ -331,12 +341,12 @@ Public Class MainFrm
                 For i = 0 To ConnectionUSB.InterventiLetti.Length - 1
                     file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intType.ToString + ",")
                     file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intTime.ToString + ",")
-                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intVolt1.ToString + ",")
-                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intVolt2.ToString + ",")
-                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intVolt3.ToString + ",")
-                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr1.ToString + ",")
-                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr2.ToString + ",")
-                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr3.ToString + ",")
+                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intVoltAv.ToString + ",")
+                    'file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intVolt2.ToString + ",")
+                    'file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intVolt3.ToString + ",")
+                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intCurrAv.ToString + ",")
+                    'file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr2.ToString + ",")
+                    'file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr3.ToString + ",")
                     file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intPower.ToString + ",")
                     file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intPress.ToString + ",")
                     file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intCosfi.ToString + ",")
@@ -345,12 +355,12 @@ Public Class MainFrm
                 Next
             Else
                 file.WriteLine(New String("*", 80))
-                file.WriteLine("* Faults recorded")
+                file.WriteLine("* Alarms recorded")
                 file.WriteLine("* Date: " + Date.Now)
-                file.WriteLine("* Serial number:" + ConnectionUSB.Matricola.ToUpper _
-                               + " Fw Ver:" + ConnectionUSB.FwVer.ToString("X4") _
-                               + " Hw Ver:" + ConnectionUSB.HwVer.ToString("X4"))
-                file.WriteLine("* Worked hours:" + GetHours(ConnectionUSB.OreLav).ToString + "h" + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
+                'file.WriteLine("* Serial number:" + ConnectionUSB.Matricola.ToUpper _
+                '               + " Fw Ver:" + ConnectionUSB.FwVer.ToString("X4") _
+                '               + " Hw Ver:" + ConnectionUSB.HwVer.ToString("X4"))
+                'file.WriteLine("* Worked hours:" + GetHours(ConnectionUSB.OreLav).ToString + "h" + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
                 file.WriteLine(New String("*", 80))
 
                 file.WriteLine()
@@ -358,11 +368,11 @@ Public Class MainFrm
                     file.WriteLine()
                     file.WriteLine(New String("-", 50))
                     file.WriteLine("-------------------------------------------------------------------------")
-                    file.Write("Fault Type: ")
+                    file.Write("Alarm Type: ")
                     file.Write(Intervents.GetIntStr(ConnectionUSB.InterventiLetti.IntItems(i)._intType))
                     file.Write(New String(" ", 5))
 
-                    file.Write("Fault Time: ")
+                    file.Write("Alarm Time: ")
                     file.Write(GetHours(ConnectionUSB.InterventiLetti.IntItems(i)._intTime).ToString + "h ")
                     file.Write(GetMinutes(ConnectionUSB.InterventiLetti.IntItems(i)._intTime).ToString("00") + "' ")
                     file.Write(GetSeconds(ConnectionUSB.InterventiLetti.IntItems(i)._intTime).ToString("00") + "'' ")
@@ -370,14 +380,16 @@ Public Class MainFrm
                     file.WriteLine()
 
 
-                    file.Write("V1:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVolt1.ToString + "V   ")
-                    file.Write("V2:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVolt2.ToString + "V   ")
-                    file.Write("V3:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVolt3.ToString + "V   ")
+                    file.Write("V1:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVoltAv.ToString + "V   ")
+                    'file.Write("V1:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVolt1.ToString + "V   ")
+                    'file.Write("V2:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVolt2.ToString + "V   ")
+                    'file.Write("V3:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVolt3.ToString + "V   ")
                     file.WriteLine()
 
-                    file.Write("I1:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr1).ToString + "A   ")
-                    file.Write("I2:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr2).ToString + "A   ")
-                    file.Write("I3:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr3).ToString + "A   ")
+                    file.Write("I1:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurrAv).ToString + "A   ")
+                    'file.Write("I1:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr1).ToString + "A   ")
+                    'file.Write("I2:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr2).ToString + "A   ")
+                    'file.Write("I3:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr3).ToString + "A   ")
                     file.WriteLine()
 
                     file.Write("Power:" + ConnectionUSB.InterventiLetti.IntItems(i)._intPower.ToString + "W   ")
@@ -412,7 +424,7 @@ Public Class MainFrm
         Dim i As Integer
 
         zg1.GraphPane.CurveList.Clear()
-        zg1.GraphPane.Title.Text = "Faults"
+        zg1.GraphPane.Title.Text = "Alarms"
 
         For i = 0 To Intervents.TotTipiIntervento - 1
             myZList = New PointPairList
@@ -441,7 +453,7 @@ Public Class MainFrm
 
 
         myPane.XAxis.Type = ZedGraph.AxisType.Text
-        myPane.XAxis.Title.Text = "Faults type"
+        myPane.XAxis.Title.Text = "Alarms type"
         myPane.XAxis.Title.FontSpec.Size = 10.0F
 
         myPane.XAxis.Scale.FormatAuto = True
@@ -487,7 +499,7 @@ Public Class MainFrm
         Dim i As Integer
 
         ZedGraphFrm.zg1.GraphPane.CurveList.Clear()
-        ZedGraphFrm.zg1.GraphPane.Title.Text = "Faults"       
+        ZedGraphFrm.zg1.GraphPane.Title.Text = "Alarms"
 
         For i = 0 To Intervents.TotTipiIntervento - 1
             myZList = New PointPairList
@@ -510,7 +522,7 @@ Public Class MainFrm
         myPane.Legend.IsHStack = False
 
         myPane.XAxis.Type = ZedGraph.AxisType.Text
-        myPane.XAxis.Title.Text = "Faults type"
+        myPane.XAxis.Title.Text = "Alarms type"
         myPane.XAxis.Title.FontSpec.Size = 10.0F
 
         myPane.XAxis.Scale.FormatAuto = True
@@ -581,7 +593,7 @@ Public Class MainFrm
         ''Chart1.ChartAreas("HistoInterventi").AxisY.IntervalAutoMode = True
         ''Chart1.ChartAreas("HistoInterventi").AxisX.IntervalAutoMode = True
 
-        'Chart1.Titles.Add("Fault graph")
+        'Chart1.Titles.Add("Alarm graph")
         ''Chart1.ChartAreas("").
 
 
@@ -664,7 +676,10 @@ Public Class MainFrm
     Private Sub HscrollInterventi_ValueChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles HscrollInterventi.ValueChanged
         lblNumInt.Text = HscrollInterventi.Value & "/" & HscrollInterventi.Maximum
         FillIntData(ConnectionUSB.InterventiLetti.IntItems(HscrollInterventi.Value - 1))
-        lstInterventi.SelectedItem = lstInterventi.Items.Item(HscrollInterventi.Value - 1)
+
+        If lstInterventi.Items.Count >= HscrollInterventi.Value Then
+            lstInterventi.SelectedItem = lstInterventi.Items.Item(HscrollInterventi.Value - 1)
+        End If
     End Sub
 
     Private Sub btnOpenGraph_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnOpenGraph.Click

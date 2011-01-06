@@ -48,7 +48,7 @@ Partial Class ZedGraphFrm
         Me.ClientSize = New System.Drawing.Size(691, 392)
         Me.Controls.Add(Me.zg1)
         Me.Name = "ZedGraphFrm"
-        Me.Text = "ZedGraphFrm"
+        Me.Text = "Graph"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
