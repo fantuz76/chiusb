@@ -44,14 +44,14 @@
         Public Sub New()
             ' Solo per controllo verifico che costante e init array siano OK
             If _ArrIntOccur.Length <> NUM_INT_TYPES Then
-                MsgBox("Warning: Incopatible faults number")
+                MsgBox("Warning: Incopatible alarms number")
             End If
         End Sub
 
         Public Sub New(ByVal _ListInt As InterventiList)
             ' Solo per controllo verifico che costante e init array siano OK
             If _ArrIntOccur.Length <> NUM_INT_TYPES Then
-                MsgBox("Warning: Incopatible faults number")
+                MsgBox("Warning: Incopatible alarms number")
             End If
 
             ' Imposto occorrenze interventi

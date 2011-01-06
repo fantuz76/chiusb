@@ -5,8 +5,9 @@
 
     Public Const NUM_INT_TYPES = 20
 
+    Public Const TYPE_OFF = 0
     Public Const TYPE_ON = 1
-    Public Const TYPE_OFF = 2
+
     Public Const TYPE_NOHALT_OVERCURR = 10
     Public Const TYPE_NOHALT_OVERVOLT = 11
     Public Const TYPE_NOHALT_UNDERVOLT = 12
@@ -27,27 +28,31 @@
     Public Const TYPE_HALT_DISSIMETRIA = 18 + 10
 
 
-    Public Const TYPE_ON_STR = "ON"
-    Public Const TYPE_OFF_STR = "OFF"
-    Public Const TYPE_NOHALT_OVERCURR_STR = "Overcurrent" + " - NO Halt"
-    Public Const TYPE_NOHALT_OVERVOLT_STR = "Overvoltage" + " - NO Halt"
-    Public Const TYPE_NOHALT_UNDERVOLT_STR = "Undervoltage" + " - NO Halt"
-    Public Const TYPE_NOHALT_MANDATACH_STR = "Under Load" + " - NO Halt"
-    Public Const TYPE_NOHALT_DRYFUNC_STR = "Dry running" + " - NO Halt"
-    Public Const TYPE_NOHALT_OVERTEMP_STR = "Over Temperature" + " - NO Halt"
-    Public Const TYPE_NOHALT_DIFF_STR = "Differential protection" + " - NO Halt"
-    Public Const TYPE_NOHALT_SQUILIBRIO_STR = "Current imbalance" + " - NO Halt"
-    Public Const TYPE_NOHALT_DISSIMETRIA_STR = "Asymmetry Voltages" + " - NO Halt"
 
-    Public Const TYPE_HALT_OVERVOLT_STR = "Overvoltage" + " - System Halt"
-    Public Const TYPE_HALT_OVERCURR_STR = "Overcurrent" + " - System Halt"
-    Public Const TYPE_HALT_UNDERVOLT_STR = "Undervoltage" + " - System Halt"
-    Public Const TYPE_HALT_MANDATACH_STR = "Under Load" + " - System Halt"
-    Public Const TYPE_HALT_DRYFUNC_STR = "Dry running" + " - System Halt"
-    Public Const TYPE_HALT_OVERTEMP_STR = "Over Temperature" + " - System Halt"
-    Public Const TYPE_HALT_DIFF_STR = "Differential protection" + " - System Halt"
-    Public Const TYPE_HALT_SQUILIBRIO_STR = "Current imbalance" + " - System Halt"
-    Public Const TYPE_HALT_DISSIMETRIA_STR = "Asymmetry Voltages" + " - System Halt"
+
+
+
+    Public Const TYPE_ON_STR = "ON  "
+    Public Const TYPE_OFF_STR = "OFF "
+    Public Const TYPE_NOHALT_OVERCURR_STR = "OverCurrent" + "   ON"
+    Public Const TYPE_NOHALT_OVERVOLT_STR = "OverVoltage" + "   ON"
+    Public Const TYPE_NOHALT_UNDERVOLT_STR = "UnderVoltage" + "  ON"
+    Public Const TYPE_NOHALT_MANDATACH_STR = "MinimumFlow" + "   ON"
+    Public Const TYPE_NOHALT_DRYFUNC_STR = "Dry Operating" + "  ON"
+    Public Const TYPE_NOHALT_OVERTEMP_STR = "OverTemperature" + " ON"
+    Public Const TYPE_NOHALT_DIFF_STR = "Isolation Fault" + "  ON"
+    Public Const TYPE_NOHALT_SQUILIBRIO_STR = "CurrentDiff." + "  ON"
+    Public Const TYPE_NOHALT_DISSIMETRIA_STR = "VoltageDiff." + "  ON"
+
+    Public Const TYPE_HALT_OVERCURR_STR = "Overcurrent" + "  OFF"
+    Public Const TYPE_HALT_OVERVOLT_STR = "Overvoltage" + "  OFF"
+    Public Const TYPE_HALT_UNDERVOLT_STR = "Undervoltage" + "  OFF"
+    Public Const TYPE_HALT_MANDATACH_STR = "MinimumFlow" + "  OFF"
+    Public Const TYPE_HALT_DRYFUNC_STR = "DryOperating" + "  OFF"
+    Public Const TYPE_HALT_OVERTEMP_STR = "OverTemperature" + "  OFF"
+    Public Const TYPE_HALT_DIFF_STR = "Isolation Fault" + "  OFF"
+    Public Const TYPE_HALT_SQUILIBRIO_STR = "CurrentDiff." + "  OFF"
+    Public Const TYPE_HALT_DISSIMETRIA_STR = "VoltageDiff." + "  OFF"
 
 
     Public Const TYPE_ON_COL = 1
