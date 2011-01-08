@@ -327,7 +327,7 @@ Partial Class MainFrm
         'lblIntI1Val
         '
         Me.lblIntI1Val.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblIntI1Val.Location = New System.Drawing.Point(6, 5)
+        Me.lblIntI1Val.Location = New System.Drawing.Point(0, 5)
         Me.lblIntI1Val.Name = "lblIntI1Val"
         Me.lblIntI1Val.Size = New System.Drawing.Size(43, 17)
         Me.lblIntI1Val.TabIndex = 5
@@ -341,7 +341,7 @@ Partial Class MainFrm
         Me.lblIntIDesc.Name = "lblIntIDesc"
         Me.lblIntIDesc.Size = New System.Drawing.Size(36, 16)
         Me.lblIntIDesc.TabIndex = 4
-        Me.lblIntIDesc.Text = "I1"
+        Me.lblIntIDesc.Text = "A"
         Me.lblIntIDesc.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Panel2
@@ -356,7 +356,7 @@ Partial Class MainFrm
         'lblIntV1Val
         '
         Me.lblIntV1Val.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblIntV1Val.Location = New System.Drawing.Point(6, 6)
+        Me.lblIntV1Val.Location = New System.Drawing.Point(0, 6)
         Me.lblIntV1Val.Name = "lblIntV1Val"
         Me.lblIntV1Val.Size = New System.Drawing.Size(43, 17)
         Me.lblIntV1Val.TabIndex = 5
@@ -370,7 +370,7 @@ Partial Class MainFrm
         Me.lblIntVDesc.Name = "lblIntVDesc"
         Me.lblIntVDesc.Size = New System.Drawing.Size(36, 16)
         Me.lblIntVDesc.TabIndex = 4
-        Me.lblIntVDesc.Text = "V1"
+        Me.lblIntVDesc.Text = "V"
         Me.lblIntVDesc.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lblIntTimeVal
@@ -440,7 +440,8 @@ Partial Class MainFrm
         '
         'ListBoxLog
         '
-        Me.ListBoxLog.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.ListBoxLog.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ListBoxLog.BackColor = System.Drawing.SystemColors.GrayText
         Me.ListBoxLog.ContextMenuStrip = Me.ContextMenuLog
         Me.ListBoxLog.FormattingEnabled = True
@@ -582,9 +583,10 @@ Partial Class MainFrm
         '
         'PictureLogo
         '
+        Me.PictureLogo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureLogo.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureLogo.Image = Global.ApplicationChiUSB.My.Resources.Resources.logo
-        Me.PictureLogo.Location = New System.Drawing.Point(486, 27)
+        Me.PictureLogo.Location = New System.Drawing.Point(477, 27)
         Me.PictureLogo.Name = "PictureLogo"
         Me.PictureLogo.Size = New System.Drawing.Size(162, 57)
         Me.PictureLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -613,8 +615,8 @@ Partial Class MainFrm
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.TabControl1)
-        Me.Controls.Add(Me.PictureLogo)
         Me.Controls.Add(Me.btnExit)
+        Me.Controls.Add(Me.PictureLogo)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "MainFrm"

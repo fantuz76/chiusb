@@ -10,8 +10,8 @@
 ; Inno Setup PreProccessor
 [ISPP]
 #define AppName "Usb Configurator"
-#define ShortAppName "USB Config"
-#define AppVersion "1.0.0"
+#define ShortAppName "USB Configurator"
+#define AppVersion "1.0"
 #define AppPublisher "Electroil"
 #define AppURL "http://www.electroil.it/"
 
@@ -94,7 +94,8 @@ WizardSmallImageFile=C:\Programmi\Inno Setup 5\WizModernSmallImage-IS.bmp
 [Files]
 Source: {#SourceFileDir}\USBCfg.exe; DestDir: {app}; DestName: USBcfg.exe; Flags: ignoreversion
 Source: {#SourceFileDir}\ZedGraph.dll; DestDir: {app}; DestName: ZedGraph.dll; Flags: ignoreversion 
-Source: {#SourceFileDir}\config.xml; DestDir: {app}; DestName: config.xml; Flags: ignoreversion 
+Source: {#SourceFileDir}\config.xml; DestDir: {app}; DestName: config.xml; Flags: ignoreversion
+Source: .\Inf_driver\HC9S08JMxx.inf; DestDir: {app}\driver_usb\; DestName: UsbJM60.inf; Flags: ignoreversion
 #if IncludeFramework
   Source: dotnetfx.exe; DestDir: {tmp}; Flags: ignoreversion ; Check: NeedsFramework
 #endif

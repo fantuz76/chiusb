@@ -24,6 +24,7 @@ Partial Class FormWait
     Private Sub InitializeComponent()
         Me.lblWait1 = New System.Windows.Forms.Label
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
+        Me.btnWaitOK = New System.Windows.Forms.Button
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -41,28 +42,39 @@ Partial Class FormWait
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.ApplicationChiUSB.My.Resources.Resources.ajax_loader
-        Me.PictureBox1.Location = New System.Drawing.Point(53, 109)
+        Me.PictureBox1.Location = New System.Drawing.Point(45, 90)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(229, 32)
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
+        'btnWaitOK
+        '
+        Me.btnWaitOK.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnWaitOK.Location = New System.Drawing.Point(110, 140)
+        Me.btnWaitOK.Name = "btnWaitOK"
+        Me.btnWaitOK.Size = New System.Drawing.Size(100, 32)
+        Me.btnWaitOK.TabIndex = 2
+        Me.btnWaitOK.Text = "OK"
+        Me.btnWaitOK.UseVisualStyleBackColor = True
+        '
         'FormWait
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(348, 202)
+        Me.ClientSize = New System.Drawing.Size(339, 184)
+        Me.Controls.Add(Me.btnWaitOK)
         Me.Controls.Add(Me.lblWait1)
         Me.Controls.Add(Me.PictureBox1)
         Me.ForeColor = System.Drawing.Color.CornflowerBlue
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FormWait"
         Me.ShowInTaskbar = False
-        Me.TopMost = True
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents lblWait1 As System.Windows.Forms.Label
+    Friend WithEvents btnWaitOK As System.Windows.Forms.Button
 End Class

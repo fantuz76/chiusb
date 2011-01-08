@@ -4,6 +4,8 @@ Imports System.Drawing
 Imports System.IO.Ports
 Imports System.Windows.Forms
 
+
+
 Public Structure InterventSingle
     'Public _intType As Byte
     'Public _intTime As UInt32
@@ -63,7 +65,7 @@ Public Class InterventiList
     End Sub
 
     Public Function AddArrInt(ByVal _arrToParse As Byte()) As Boolean
-        If _arrToParse.Length < 16 Then
+        If _arrToParse.Length < INTERVENTO_LENGTH Then
             Return False
         End If
 
@@ -118,14 +120,14 @@ End Class
 
 
 Public Class USBClass
-
     Private Const CODE_HELLO = &H21
     Private Const CODE_REQ_INTERVENTI = &H31
 
 #Region "Manager Variables"
     ' Property VAR    
     Private _logWindow As Object 'Control
-    Private _Matricola As String
+    Private _DatiSetHello As Byte()
+    Private _Matricola As UInt16
     Private _OreLav As UInt32
     Private _myIntArr As New InterventiList
     Private _FwVer As UInt16
@@ -144,6 +146,11 @@ Public Class USBClass
         End Get
     End Property
 
+    Public ReadOnly Property DatiSetHello() As Byte()
+        Get
+            Return _DatiSetHello
+        End Get
+    End Property
 
     Public Property LogWindow() As Object
         Get
@@ -154,31 +161,31 @@ Public Class USBClass
         End Set
     End Property
 
-    Public ReadOnly Property Matricola As String
+    Public ReadOnly Property Matricola() As String
         Get
             Return _Matricola
         End Get
     End Property
 
-    Public ReadOnly Property OreLav As UInt32
+    Public ReadOnly Property OreLav() As UInt32
         Get
             Return _OreLav
         End Get
     End Property
 
-    Public ReadOnly Property InterventiLetti As InterventiList
+    Public ReadOnly Property InterventiLetti() As InterventiList
         Get
             Return _myIntArr
         End Get
     End Property
 
-    Public ReadOnly Property FwVer As UInt16
+    Public ReadOnly Property FwVer() As UInt16
         Get
             Return _FwVer
         End Get
     End Property
 
-    Public ReadOnly Property HwVer As UInt16
+    Public ReadOnly Property HwVer() As UInt16
         Get
             Return _HwVer
         End Get
@@ -193,7 +200,7 @@ Public Class USBClass
         _OreLav = 0
         _FwVer = 0
         _HwVer = 0
-        _Matricola = ""
+        _Matricola = 0
 
         'now add an event handler
         'AddHandler comPort.DataReceived, AddressOf comPort_DataReceived
@@ -225,7 +232,10 @@ Public Class USBClass
     Delegate Sub LogDisplayHandler(ByVal msg As String)
 
     Private Sub DisplayLogData(ByVal msg As String)
-        _logWindow.Invoke(New LogDisplayHandler(AddressOf LogDisplay), msg)
+        Try
+            _logWindow.Invoke(New LogDisplayHandler(AddressOf LogDisplay), msg)
+        Catch ex As Exception
+        End Try
     End Sub
 
     Public Sub LogDisplay(ByVal msg As String)
@@ -369,7 +379,7 @@ Public Class USBClass
         Dim cntar As Byte
 
         Try
-           
+
             ' Cancella tutto nei buffer
             comPort.DiscardInBuffer()
             comPort.DiscardOutBuffer()
@@ -432,7 +442,6 @@ Public Class USBClass
         Dim byteRead As Byte
 
         Try
-
             ReDim _arrRead(-1)
 
             comPort.ReadTimeout = 500
@@ -483,7 +492,6 @@ Public Class USBClass
 
                 End If
 
-
                 CntBytes += 1
 
             Loop
@@ -504,12 +512,11 @@ Public Class USBClass
             Return False
         Finally
 
-
         End Try
 
     End Function
 
-    
+
 
 
     Public Function RequestHello() As Boolean
@@ -524,17 +531,14 @@ Public Class USBClass
                 Application.DoEvents()
                 If ReadPkt(ret) Then
                     If ret(0) = &H21 Then
-                        _Matricola = Chr(ret(1)) + Chr(ret(2)) + Chr(ret(3)) + Chr(ret(4))
-                        _OreLav = ret(5) * 256 ^ 3 + ret(6) * 256 ^ 2 + ret(7) * 256 ^ 1 + ret(8) * 256 ^ 0
-                        _FwVer = ret(9) * 256 + ret(10)
-                        _HwVer = ret(11) * 256 + ret(12)
+                        _DatiSetHello = ret
+                        _Matricola = ret(1) * 256 ^ 1 + ret(2) * 256 ^ 0
+                        _OreLav = ret(71) * 256 ^ 3 + ret(72) * 256 ^ 2 + ret(73) * 256 ^ 1 + ret(74) * 256 ^ 0
                         ForceClosePort()
                         Return True
                     Else
                         'Return False
                     End If
-                    'Dim strModified As String = System.Text.Encoding.ASCII.GetString(ret)
-                    'Return strModified
                 Else
                     'Return False
                 End If
@@ -576,7 +580,7 @@ Public Class USBClass
                     Application.DoEvents()
                     LetturaOK = ReadPkt(ret)
                     If LetturaOK And (ret.Length > 5) Then
-                        If ret(0) >= 29 Then
+                        If ret(0) >= NUM_MAX_TYPE_INT Then
                             'if ret(2) = &HFF And ret(3) = &HFF And ret(4) = &HFF And ret(5) = &HFF) Then
                             _myIntArr.SortArrIntTime(True)
                             ' fine OK
