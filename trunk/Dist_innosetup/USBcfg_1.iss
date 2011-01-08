@@ -94,6 +94,7 @@ WizardSmallImageFile=C:\Programmi\Inno Setup 5\WizModernSmallImage-IS.bmp
 [Files]
 Source: {#SourceFileDir}\USBCfg.exe; DestDir: {app}; DestName: USBcfg.exe; Flags: ignoreversion
 Source: {#SourceFileDir}\ZedGraph.dll; DestDir: {app}; DestName: ZedGraph.dll; Flags: ignoreversion 
+Source: {#SourceFileDir}\config.xml; DestDir: {app}; DestName: config.xml; Flags: ignoreversion 
 #if IncludeFramework
   Source: dotnetfx.exe; DestDir: {tmp}; Flags: ignoreversion ; Check: NeedsFramework
 #endif
