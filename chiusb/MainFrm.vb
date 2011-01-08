@@ -100,9 +100,9 @@ Public Class MainFrm
         lblGenericTmp.Text = "Program developing " + Environment.NewLine _
                             + "Sw Version " + SwVersion + "   " + "2010"
 
-        lblIntVolt.Text = "Average Voltage"
+        lblIntVolt.Text = "Average Voltage [Volt]"
         lblIntVolt.TextAlign = ContentAlignment.MiddleRight
-        lblIntCurrent.Text = "Average Current"
+        lblIntCurrent.Text = "Average Current [Amp]"
         lblIntCurrent.TextAlign = ContentAlignment.MiddleRight
 
         lblIntVDesc.Text = ""
@@ -165,25 +165,29 @@ Public Class MainFrm
 
         For i = 0 To ConnectionUSB.InterventiLetti.Length - 1
             StToAdd = ""
+            StToAdd2 = (i + 1)  '.ToString("000")
+
+            StToAdd = StToAdd + StToAdd2.PadRight(5)
+
             StToAdd2 = Intervents.GetIntStr(ConnectionUSB.InterventiLetti.IntItems(i)._intType)
 
-            StToAdd = StToAdd + StToAdd2.PadRight(25)
+            StToAdd = StToAdd + StToAdd2.PadRight(28)
 
             StToAdd2 = GetHours(ConnectionUSB.InterventiLetti.IntItems(i)._intTime).ToString + "h "
             StToAdd2 = StToAdd2 + GetMinutes(ConnectionUSB.InterventiLetti.IntItems(i)._intTime).ToString("00") + "' "
             StToAdd2 = StToAdd2 + GetSeconds(ConnectionUSB.InterventiLetti.IntItems(i)._intTime).ToString("00") + "'' "
 
-            StToAdd = StToAdd + StToAdd2.PadRight(11)
+            StToAdd = StToAdd + StToAdd2.PadRight(13)
 
-            StToAdd2 = "V1:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVoltAv.ToString + "V"
-            StToAdd = StToAdd + StToAdd2.PadRight(8)
+            StToAdd2 = "Volt:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVoltAv.ToString + "V"
+            StToAdd = StToAdd + StToAdd2.PadRight(11)
             'StToAdd2 = "V2:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVolt2.ToString + "V"
             'StToAdd = StToAdd + StToAdd2.PadRight(8)
             'StToAdd2 = "V3:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVolt3.ToString + "V"
             'StToAdd = StToAdd + StToAdd2.PadRight(8)
 
-            StToAdd2 = "I1:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurrAv).ToString + "A"
-            StToAdd = StToAdd + StToAdd2.PadRight(10)
+            StToAdd2 = "Curr:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurrAv).ToString + "A"
+            StToAdd = StToAdd + StToAdd2.PadRight(13)
             'StToAdd2 = "I2:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr2).ToString + "A"
             'StToAdd = StToAdd + StToAdd2.PadRight(10)
             'StToAdd2 = "I3:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr3).ToString + "A"
@@ -192,8 +196,8 @@ Public Class MainFrm
             StToAdd2 = "Power:" + ConnectionUSB.InterventiLetti.IntItems(i)._intPower.ToString + "W"
             StToAdd = StToAdd + StToAdd2.PadRight(13)
 
-            StToAdd2 = "Press:" + GetPressure(ConnectionUSB.InterventiLetti.IntItems(i)._intPress).ToString + "bar"
-            StToAdd = StToAdd + StToAdd2.PadRight(15)
+            StToAdd2 = "Pressure:" + GetPressure(ConnectionUSB.InterventiLetti.IntItems(i)._intPress).ToString + " bar"
+            StToAdd = StToAdd + StToAdd2.PadRight(20)
 
 
             StToAdd2 = "Cosfi:" + GetCosfi(ConnectionUSB.InterventiLetti.IntItems(i)._intCosfi).ToString + ""
@@ -255,8 +259,12 @@ Public Class MainFrm
             StatusStrip1.Items.Clear()
             StatusStrip1.Items.Add(Date.Now)
             StatusStrip1.Items.Add(New ToolStripSeparator)
-            'StatusStrip1.Items.Add("Serial number: " + ConnectionUSB.Matricola.ToUpper)
-            'StatusStrip1.Items.Add(New ToolStripSeparator)
+            StatusStrip1.Items.Add("Serial number: " + ConnectionUSB.Matricola.ToUpper)
+            StatusStrip1.Items.Add(New ToolStripSeparator)
+
+            StatusStrip1.Items.Add("Worked hours: " + GetHours(ConnectionUSB.OreLav).ToString("") + "h " + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
+            StatusStrip1.Items.Add(New ToolStripSeparator)
+
 
             'StatusStrip1.Items.Add("Fw Ver: " + ConnectionUSB.FwVer.ToString("X4"))
             'StatusStrip1.Items.Add(New ToolStripSeparator)
@@ -264,8 +272,6 @@ Public Class MainFrm
             'StatusStrip1.Items.Add("Hw Ver: " + ConnectionUSB.HwVer.ToString("X4"))
             'StatusStrip1.Items.Add(New ToolStripSeparator)
 
-            'StatusStrip1.Items.Add("Worked hours: " + GetHours(ConnectionUSB.OreLav).ToString("") + "h " + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
-            'StatusStrip1.Items.Add(New ToolStripSeparator)
 
         Else
             lblNotify.Text = "Connect and Read alarms"
@@ -351,6 +357,9 @@ Public Class MainFrm
 
             ' Se CSV faccio in un modo altrimenti riempio come file txt
             If Strings.Right(FileLogName, 3).ToUpper = "CSV" Then
+                Dim enc As New System.Text.UTF8Encoding()
+
+                file.Write(enc.GetString(ConnectionUSB.DatiSetHello()))
                 file.WriteLine("")
                 file.WriteLine("")
                 For i = 0 To ConnectionUSB.InterventiLetti.Length - 1
@@ -372,17 +381,18 @@ Public Class MainFrm
                 file.WriteLine(New String("*", 80))
                 file.WriteLine("* Alarms recorded")
                 file.WriteLine("* Date: " + Date.Now)
-                'file.WriteLine("* Serial number:" + ConnectionUSB.Matricola.ToUpper _
+                file.WriteLine("* Serial number:" + ConnectionUSB.Matricola.ToUpper)
+
                 '               + " Fw Ver:" + ConnectionUSB.FwVer.ToString("X4") _
                 '               + " Hw Ver:" + ConnectionUSB.HwVer.ToString("X4"))
-                'file.WriteLine("* Worked hours:" + GetHours(ConnectionUSB.OreLav).ToString + "h" + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
+                file.WriteLine("* Worked hours:" + GetHours(ConnectionUSB.OreLav).ToString + "h" + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
                 file.WriteLine(New String("*", 80))
 
                 file.WriteLine()
                 For i = 0 To ConnectionUSB.InterventiLetti.Length - 1
                     file.WriteLine()
                     file.WriteLine(New String("-", 50))
-                    file.WriteLine("-------------------------------------------------------------------------")
+
                     file.Write("Alarm Type: ")
                     file.Write(Intervents.GetIntStr(ConnectionUSB.InterventiLetti.IntItems(i)._intType))
                     file.Write(New String(" ", 5))
@@ -395,13 +405,13 @@ Public Class MainFrm
                     file.WriteLine()
 
 
-                    file.Write("V1:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVoltAv.ToString + "V   ")
+                    file.Write("Volt:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVoltAv.ToString + "V   ")
                     'file.Write("V1:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVolt1.ToString + "V   ")
                     'file.Write("V2:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVolt2.ToString + "V   ")
                     'file.Write("V3:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVolt3.ToString + "V   ")
-                    file.WriteLine()
+                    'file.WriteLine()
 
-                    file.Write("I1:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurrAv).ToString + "A   ")
+                    file.Write("Curr:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurrAv).ToString + "A   ")
                     'file.Write("I1:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr1).ToString + "A   ")
                     'file.Write("I2:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr2).ToString + "A   ")
                     'file.Write("I3:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr3).ToString + "A   ")
@@ -413,7 +423,6 @@ Public Class MainFrm
 
                     file.Write("Cosfi:" + GetCosfi(ConnectionUSB.InterventiLetti.IntItems(i)._intCosfi).ToString + "    ")
                     file.Write("Temp:" + ConnectionUSB.InterventiLetti.IntItems(i)._intTemp.ToString + "°C   ")
-                    file.WriteLine()
                     file.WriteLine()
                 Next
 
