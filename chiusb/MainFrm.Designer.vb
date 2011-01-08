@@ -26,13 +26,13 @@ Partial Class MainFrm
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainFrm))
         Me.TabControl1 = New System.Windows.Forms.TabControl
         Me.TabPage1 = New System.Windows.Forms.TabPage
+        Me.btnSaveInt = New System.Windows.Forms.Button
         Me.lstInterventi = New System.Windows.Forms.ListBox
+        Me.btnOpenGraph = New System.Windows.Forms.Button
         Me.lblNumIntTitle = New System.Windows.Forms.Label
         Me.lblNumInt = New System.Windows.Forms.Label
         Me.HscrollInterventi = New System.Windows.Forms.HScrollBar
         Me.Panel1 = New System.Windows.Forms.Panel
-        Me.btnOpenGraph = New System.Windows.Forms.Button
-        Me.btnSaveInt = New System.Windows.Forms.Button
         Me.lblIntCurrent = New System.Windows.Forms.Label
         Me.lblIntVolt = New System.Windows.Forms.Label
         Me.Panel4 = New System.Windows.Forms.Panel
@@ -71,7 +71,6 @@ Partial Class MainFrm
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.lblNotify = New System.Windows.Forms.Label
         Me.btnConn = New System.Windows.Forms.Button
-        Me.Button2 = New System.Windows.Forms.Button
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog
         Me.ClearLogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
@@ -93,19 +92,22 @@ Partial Class MainFrm
         '
         'TabControl1
         '
-        Me.TabControl1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.TabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Location = New System.Drawing.Point(5, 84)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(643, 305)
+        Me.TabControl1.Size = New System.Drawing.Size(634, 306)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.btnSaveInt)
         Me.TabPage1.Controls.Add(Me.lstInterventi)
+        Me.TabPage1.Controls.Add(Me.btnOpenGraph)
         Me.TabPage1.Controls.Add(Me.lblNumIntTitle)
         Me.TabPage1.Controls.Add(Me.lblNumInt)
         Me.TabPage1.Controls.Add(Me.HscrollInterventi)
@@ -113,27 +115,50 @@ Partial Class MainFrm
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(635, 279)
+        Me.TabPage1.Size = New System.Drawing.Size(626, 280)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Alarms"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'btnSaveInt
+        '
+        Me.btnSaveInt.Image = Global.ApplicationChiUSB.My.Resources.Resources.SaveAs
+        Me.btnSaveInt.Location = New System.Drawing.Point(535, 85)
+        Me.btnSaveInt.Name = "btnSaveInt"
+        Me.btnSaveInt.Size = New System.Drawing.Size(79, 39)
+        Me.btnSaveInt.TabIndex = 9
+        Me.btnSaveInt.Text = "Save"
+        Me.btnSaveInt.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.btnSaveInt.UseVisualStyleBackColor = True
+        '
         'lstInterventi
         '
-        Me.lstInterventi.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lstInterventi.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lstInterventi.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstInterventi.FormattingEnabled = True
         Me.lstInterventi.ItemHeight = 14
         Me.lstInterventi.Location = New System.Drawing.Point(15, 173)
         Me.lstInterventi.Name = "lstInterventi"
-        Me.lstInterventi.Size = New System.Drawing.Size(614, 102)
+        Me.lstInterventi.Size = New System.Drawing.Size(605, 102)
         Me.lstInterventi.TabIndex = 4
+        '
+        'btnOpenGraph
+        '
+        Me.btnOpenGraph.Image = Global.ApplicationChiUSB.My.Resources.Resources.chart1
+        Me.btnOpenGraph.Location = New System.Drawing.Point(535, 130)
+        Me.btnOpenGraph.Name = "btnOpenGraph"
+        Me.btnOpenGraph.Size = New System.Drawing.Size(79, 37)
+        Me.btnOpenGraph.TabIndex = 10
+        Me.btnOpenGraph.Text = "Graph"
+        Me.btnOpenGraph.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.btnOpenGraph.UseVisualStyleBackColor = True
         '
         'lblNumIntTitle
         '
         Me.lblNumIntTitle.AutoSize = True
-        Me.lblNumIntTitle.Location = New System.Drawing.Point(514, 10)
+        Me.lblNumIntTitle.Location = New System.Drawing.Point(538, 10)
         Me.lblNumIntTitle.Name = "lblNumIntTitle"
         Me.lblNumIntTitle.Size = New System.Drawing.Size(76, 13)
         Me.lblNumIntTitle.TabIndex = 3
@@ -142,7 +167,7 @@ Partial Class MainFrm
         'lblNumInt
         '
         Me.lblNumInt.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNumInt.Location = New System.Drawing.Point(518, 23)
+        Me.lblNumInt.Location = New System.Drawing.Point(538, 23)
         Me.lblNumInt.Name = "lblNumInt"
         Me.lblNumInt.Size = New System.Drawing.Size(69, 32)
         Me.lblNumInt.TabIndex = 2
@@ -155,15 +180,13 @@ Partial Class MainFrm
         Me.HscrollInterventi.Maximum = 505
         Me.HscrollInterventi.Minimum = 1
         Me.HscrollInterventi.Name = "HscrollInterventi"
-        Me.HscrollInterventi.Size = New System.Drawing.Size(496, 32)
+        Me.HscrollInterventi.Size = New System.Drawing.Size(514, 32)
         Me.HscrollInterventi.TabIndex = 1
         Me.HscrollInterventi.Value = 1
         '
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel1.Controls.Add(Me.btnOpenGraph)
-        Me.Panel1.Controls.Add(Me.btnSaveInt)
         Me.Panel1.Controls.Add(Me.lblIntCurrent)
         Me.Panel1.Controls.Add(Me.lblIntVolt)
         Me.Panel1.Controls.Add(Me.Panel4)
@@ -175,30 +198,8 @@ Partial Class MainFrm
         Me.Panel1.Controls.Add(Me.lblIntTypeDesc)
         Me.Panel1.Location = New System.Drawing.Point(15, 58)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(614, 114)
+        Me.Panel1.Size = New System.Drawing.Size(514, 114)
         Me.Panel1.TabIndex = 0
-        '
-        'btnOpenGraph
-        '
-        Me.btnOpenGraph.Image = Global.ApplicationChiUSB.My.Resources.Resources.chart1
-        Me.btnOpenGraph.Location = New System.Drawing.Point(529, 45)
-        Me.btnOpenGraph.Name = "btnOpenGraph"
-        Me.btnOpenGraph.Size = New System.Drawing.Size(52, 51)
-        Me.btnOpenGraph.TabIndex = 10
-        Me.btnOpenGraph.Text = "Graph"
-        Me.btnOpenGraph.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.btnOpenGraph.UseVisualStyleBackColor = True
-        '
-        'btnSaveInt
-        '
-        Me.btnSaveInt.Image = Global.ApplicationChiUSB.My.Resources.Resources.SaveAs
-        Me.btnSaveInt.Location = New System.Drawing.Point(471, 45)
-        Me.btnSaveInt.Name = "btnSaveInt"
-        Me.btnSaveInt.Size = New System.Drawing.Size(52, 51)
-        Me.btnSaveInt.TabIndex = 9
-        Me.btnSaveInt.Text = "Save"
-        Me.btnSaveInt.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.btnSaveInt.UseVisualStyleBackColor = True
         '
         'lblIntCurrent
         '
@@ -229,7 +230,7 @@ Partial Class MainFrm
         Me.Panel4.Controls.Add(Me.lblIntPressDesc)
         Me.Panel4.Controls.Add(Me.lblIntPowVal)
         Me.Panel4.Controls.Add(Me.lblIntPowDesc)
-        Me.Panel4.Location = New System.Drawing.Point(229, 36)
+        Me.Panel4.Location = New System.Drawing.Point(254, 36)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(236, 71)
         Me.Panel4.TabIndex = 6
@@ -377,7 +378,7 @@ Partial Class MainFrm
         Me.lblIntTimeVal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblIntTimeVal.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblIntTimeVal.ForeColor = System.Drawing.Color.Green
-        Me.lblIntTimeVal.Location = New System.Drawing.Point(62, 3)
+        Me.lblIntTimeVal.Location = New System.Drawing.Point(334, 6)
         Me.lblIntTimeVal.Name = "lblIntTimeVal"
         Me.lblIntTimeVal.Size = New System.Drawing.Size(156, 25)
         Me.lblIntTimeVal.TabIndex = 3
@@ -387,9 +388,9 @@ Partial Class MainFrm
         'lblIntTimeDesc
         '
         Me.lblIntTimeDesc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIntTimeDesc.Location = New System.Drawing.Point(-2, -1)
+        Me.lblIntTimeDesc.Location = New System.Drawing.Point(285, 2)
         Me.lblIntTimeDesc.Name = "lblIntTimeDesc"
-        Me.lblIntTimeDesc.Size = New System.Drawing.Size(58, 32)
+        Me.lblIntTimeDesc.Size = New System.Drawing.Size(43, 32)
         Me.lblIntTimeDesc.TabIndex = 2
         Me.lblIntTimeDesc.Text = "Alarm time"
         Me.lblIntTimeDesc.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -399,9 +400,9 @@ Partial Class MainFrm
         Me.lblIntTypeVal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblIntTypeVal.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblIntTypeVal.ForeColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.lblIntTypeVal.Location = New System.Drawing.Point(283, 3)
+        Me.lblIntTypeVal.Location = New System.Drawing.Point(57, 5)
         Me.lblIntTypeVal.Name = "lblIntTypeVal"
-        Me.lblIntTypeVal.Size = New System.Drawing.Size(263, 25)
+        Me.lblIntTypeVal.Size = New System.Drawing.Size(222, 25)
         Me.lblIntTypeVal.TabIndex = 1
         Me.lblIntTypeVal.Text = "Label1"
         Me.lblIntTypeVal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -409,9 +410,9 @@ Partial Class MainFrm
         'lblIntTypeDesc
         '
         Me.lblIntTypeDesc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIntTypeDesc.Location = New System.Drawing.Point(226, 0)
+        Me.lblIntTypeDesc.Location = New System.Drawing.Point(3, 1)
         Me.lblIntTypeDesc.Name = "lblIntTypeDesc"
-        Me.lblIntTypeDesc.Size = New System.Drawing.Size(53, 34)
+        Me.lblIntTypeDesc.Size = New System.Drawing.Size(48, 34)
         Me.lblIntTypeDesc.TabIndex = 0
         Me.lblIntTypeDesc.Text = "Alarm type"
         Me.lblIntTypeDesc.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -422,7 +423,7 @@ Partial Class MainFrm
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(635, 251)
+        Me.TabPage2.Size = New System.Drawing.Size(626, 280)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Other"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -443,9 +444,9 @@ Partial Class MainFrm
         Me.ListBoxLog.BackColor = System.Drawing.SystemColors.GrayText
         Me.ListBoxLog.ContextMenuStrip = Me.ContextMenuLog
         Me.ListBoxLog.FormattingEnabled = True
-        Me.ListBoxLog.Location = New System.Drawing.Point(5, 395)
+        Me.ListBoxLog.Location = New System.Drawing.Point(5, 396)
         Me.ListBoxLog.Name = "ListBoxLog"
-        Me.ListBoxLog.Size = New System.Drawing.Size(643, 56)
+        Me.ListBoxLog.Size = New System.Drawing.Size(630, 56)
         Me.ListBoxLog.TabIndex = 7
         '
         'ContextMenuLog
@@ -481,9 +482,9 @@ Partial Class MainFrm
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 459)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 460)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(733, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(717, 22)
         Me.StatusStrip1.TabIndex = 3
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -492,7 +493,7 @@ Partial Class MainFrm
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem1})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(733, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(717, 24)
         Me.MenuStrip1.TabIndex = 4
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -552,16 +553,6 @@ Partial Class MainFrm
         Me.btnConn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnConn.UseVisualStyleBackColor = True
         '
-        'Button2
-        '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.Location = New System.Drawing.Point(661, 327)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(60, 35)
-        Me.Button2.TabIndex = 9
-        Me.Button2.Text = "alarms"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
         'Timer1
         '
         Me.Timer1.Enabled = True
@@ -604,7 +595,7 @@ Partial Class MainFrm
         '
         Me.btnExit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnExit.Image = Global.ApplicationChiUSB.My.Resources.Resources.Spegni
-        Me.btnExit.Location = New System.Drawing.Point(661, 368)
+        Me.btnExit.Location = New System.Drawing.Point(645, 369)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(60, 83)
         Me.btnExit.TabIndex = 1
@@ -615,7 +606,7 @@ Partial Class MainFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(733, 481)
+        Me.ClientSize = New System.Drawing.Size(717, 482)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.zg1)
         Me.Controls.Add(Me.ListBoxLog)
@@ -624,7 +615,6 @@ Partial Class MainFrm
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.PictureLogo)
         Me.Controls.Add(Me.btnExit)
-        Me.Controls.Add(Me.Button2)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "MainFrm"
@@ -657,7 +647,6 @@ Partial Class MainFrm
     Friend WithEvents ExitToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents ListBoxLog As System.Windows.Forms.ListBox
-    Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents btnConn As System.Windows.Forms.Button
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents Panel1 As System.Windows.Forms.Panel

@@ -10,6 +10,13 @@ Public Class MainFrm
     End Sub
 
     Private Sub MainFrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        Try
+            LastCOMUsed = ReadConfigXML("SistemaUtente", "LastCOMUsed")
+        Catch ex As Exception
+            LastCOMUsed = "COM1"
+        End Try
+
         Draw_header()
     End Sub
 
@@ -21,53 +28,62 @@ Public Class MainFrm
 
 
 
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        If ConnectionUSB.RequestInterventi(0, 0) Then
-            EnableControlsInterventi(True)
-            lblNotify.Text = "Alarms found " & ConnectionUSB.InterventiLetti.Length
-        Else
-            EnableControlsInterventi(False)
-            lblNotify.Text = "No alarms"
-        End If
-
-    End Sub
+   
 
     Private Sub btnConn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnConn.Click
         Me.Cursor = Cursors.WaitCursor
-        btnConn.Enabled = False
+        'lblNotify.Text = "Please Wait"
+        GroupBox1.Enabled = False
+
+
+
+        FormWait.Cursor = Cursors.WaitCursor
+        FormWait.Show()
+        FormWait.Left = Me.Left + (Me.Width - FormWait.Width) / 2
+        FormWait.Top = Me.Top + (Me.Height - FormWait.Height) / 2
+
         If ConnectionActive Then
             If Not ConnectionUSB Is Nothing Then
-                ConnectionUSB.ClosePort()
+                ConnectionUSB.ForceClosePort()
                 ConnectionUSB.LogDisplay("Disconnect")
                 ConnectionUSB = Nothing
             End If
             SetConn(False)
-            EnableControlsInterventi(False)           
+            EnableControlsInterventi(False)
         Else
             If Not ConnectionUSB Is Nothing Then ConnectionUSB = Nothing
 
             ConnectionUSB = New USBClass(ListBoxLog)
             If ConnectionUSB.ConnectDevice() Then
+                LastCOMUsed = ConnectionUSB.GetCOMName
+                WriteConfigXML("SistemaUtente", "LastCOMUsed", LastCOMUsed)
                 SetConn(True)
-
+                Application.DoEvents()
                 If ConnectionUSB.RequestInterventi(0, 0) Then
-                    lblNotify.Text = "alarms found " & ConnectionUSB.InterventiLetti.Length
+                    lblNotify.Text = "Alarms found = " & ConnectionUSB.InterventiLetti.Length
+                    If ConnectionUSB.InterventiLetti.IntItems.Length = 0 Then
+                        EnableControlsInterventi(False)
+                    Else
+                        Intervents = New InterventiTypeClass(ConnectionUSB.InterventiLetti)
+                        UpdateChartZ_Second()
+                        EnableControlsInterventi(True)
+                    End If
 
-                    Intervents = New InterventiTypeClass(ConnectionUSB.InterventiLetti)
-
-
-                    UpdateChartZ_Second()
-                    EnableControlsInterventi(True)
                 Else
                     EnableControlsInterventi(False)
                     lblNotify.Text = "No alarms"
                     SetConn(False)
                     EnableControlsInterventi(False)
                 End If
+            Else
+                SetConn(False)
             End If
         End If
+        GroupBox1.Enabled = True
         btnConn.Enabled = True
         Me.Cursor = Cursors.Default
+
+        FormWait.Close()
     End Sub
 
 
@@ -94,7 +110,6 @@ Public Class MainFrm
 
 
 
-        Button2.Visible = False
         StatusStrip1.Items.Clear()
         ListBoxLog.Items.Clear()
         lstInterventi.Items.Clear()
@@ -674,12 +689,15 @@ Public Class MainFrm
     End Sub
 
     Private Sub HscrollInterventi_ValueChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles HscrollInterventi.ValueChanged
-        lblNumInt.Text = HscrollInterventi.Value & "/" & HscrollInterventi.Maximum
-        FillIntData(ConnectionUSB.InterventiLetti.IntItems(HscrollInterventi.Value - 1))
+        If ConnectionUSB.InterventiLetti.IntItems.Length > 0 Then
+            lblNumInt.Text = HscrollInterventi.Value & "/" & HscrollInterventi.Maximum
+            FillIntData(ConnectionUSB.InterventiLetti.IntItems(HscrollInterventi.Value - 1))
 
-        If lstInterventi.Items.Count >= HscrollInterventi.Value Then
-            lstInterventi.SelectedItem = lstInterventi.Items.Item(HscrollInterventi.Value - 1)
+            If lstInterventi.Items.Count >= HscrollInterventi.Value Then
+                lstInterventi.SelectedItem = lstInterventi.Items.Item(HscrollInterventi.Value - 1)
+            End If
         End If
+
     End Sub
 
     Private Sub btnOpenGraph_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnOpenGraph.Click
@@ -687,4 +705,5 @@ Public Class MainFrm
         UpdateChartZ_Second()
     End Sub
 
+  
 End Class

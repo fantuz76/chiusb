@@ -33,3 +33,22 @@ i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.vbproj.GenerateR
 i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.TrustInfo.xml
 i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.exe.manifest
 i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.application
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.exe.config
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.exe
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.xml
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.pdb
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.exe.manifest
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.application
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.exe
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.pdb
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.xml
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\ZedGraph.xml
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.MainFrm.resources
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.Resources.resources
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.ZedGraphFrm.resources
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.vbproj.GenerateResource.Cache
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.TrustInfo.xml
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.exe.manifest
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.application
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.FormWait.resources

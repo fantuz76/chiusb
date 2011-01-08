@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="yes"?>
+<Settings>
+  <SistemaUtente>
+    <CartellaApplicazione>C:\</CartellaApplicazione>
+    <LastCOMUsed>COM13</LastCOMUsed>
+  </SistemaUtente>
+  <InterfacciaGrafica>
+    <ColoreSfondo>Green</ColoreSfondo>
+    <DimensioneOrizzontale>550</DimensioneOrizzontale>
+    <DimensioneVerticale>400</DimensioneVerticale>
+    <VisualizzazioneAvanzata>True</VisualizzazioneAvanzata>
+  </InterfacciaGrafica>
+</Settings>
