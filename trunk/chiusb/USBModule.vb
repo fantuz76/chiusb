@@ -5,6 +5,7 @@
     Public ConnectionUSB As USBClass
 
     Public ConnectionActive As Boolean
+    Public LastCOMUsed As String
 
   
 
@@ -169,7 +170,19 @@
 
     End Class
 
+    Public Function ReadConfigXML(ByVal _Tab1 As String, ByVal _Field1 As String) As String
+        Dim ds As New Data.DataSet
+        ds.ReadXml(Application.StartupPath + "\config.xml")
+        Return ds.Tables(_Tab1).Rows(0).Item(_Field1)
+    End Function
 
+    Public Sub WriteConfigXML(ByVal _Tab1 As String, ByVal _Field1 As String, ByVal _ValToWrite As String)
+        Dim ds As New Data.DataSet
+
+        ds.ReadXml(Application.StartupPath + "\config.xml")
+        ds.Tables(_Tab1).Rows(0).Item(_Field1) = _ValToWrite
+        ds.WriteXml(Application.StartupPath + "\config.xml")
+    End Sub
 
     Public Sub CloseProgram()
 

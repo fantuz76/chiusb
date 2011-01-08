@@ -138,6 +138,13 @@ Public Class USBClass
 
 #Region "Manager Properties"
 
+    Public ReadOnly Property GetCOMName() As String
+        Get            
+            Return comPort.PortName
+        End Get
+    End Property
+
+
     Public Property LogWindow() As Object
         Get
             Return _logWindow
@@ -207,7 +214,7 @@ Public Class USBClass
 
     ' Destructor
     Protected Overrides Sub Finalize()
-        ClosePort()
+        ForceClosePort()
     End Sub
 #End Region
 
@@ -249,32 +256,59 @@ Public Class USBClass
 
     Public Function ConnectDevice() As Boolean
         Dim i As Integer = 0
+        Dim rep As Integer = 0
+        Dim ActualPort As String
+        Try
 
-        If System.IO.Ports.SerialPort.GetPortNames.Length = 0 Then
-            DisplayLogData("Impossible to Connect - No COM available")
-            Return False
-        End If
-
-        For i = 0 To System.IO.Ports.SerialPort.GetPortNames.Length - 1            
-            If ConfigAndOpenPort(System.IO.Ports.SerialPort.GetPortNames(i)) Then
-                ' HELLO
-                If RequestHello() Then
-                    DisplayLogData("Connection established on " + System.IO.Ports.SerialPort.GetPortNames(i))
-                    comPort.Close()
-                    Return True
-                Else
-                    DisplayLogData("Hello not received from " + System.IO.Ports.SerialPort.GetPortNames(i))
-                End If
-
-
-            Else
-                DisplayLogData("Connection not possible on " + System.IO.Ports.SerialPort.GetPortNames(i))
+            If System.IO.Ports.SerialPort.GetPortNames.Length = 0 Then
+                DisplayLogData("Impossible to Connect - No COM available")
+                Return False
             End If
 
-        Next
-        
-        DisplayLogData("Impossible to Connect Device")
-        Return False
+            If ConfigAndOpenPort(LastCOMUsed) Then
+                ' HELLO
+                If RequestHello() Then
+                    DisplayLogData("Connection established on " + LastCOMUsed)
+                    ForceClosePort()
+                    Return True
+                Else
+                    DisplayLogData("Hello not received from " + LastCOMUsed)
+                End If
+            Else
+                DisplayLogData("Connection not possible on " + LastCOMUsed)
+            End If
+
+            For rep = 0 To 1
+
+
+                For i = 0 To System.IO.Ports.SerialPort.GetPortNames.Length - 1
+                    ActualPort = System.IO.Ports.SerialPort.GetPortNames(i)
+                    If ConfigAndOpenPort(ActualPort) Then
+                        ' HELLO
+                        If RequestHello() Then
+                            DisplayLogData("Connection established on " + ActualPort)
+                            ForceClosePort()
+                            Return True
+                        Else
+                            DisplayLogData("Hello not received from " + ActualPort)
+                        End If
+                    Else
+                        DisplayLogData("Connection not possible on " + ActualPort)
+                    End If
+
+                Next
+            Next
+
+            DisplayLogData("Impossible to Connect Device")
+            ForceClosePort()
+            Return False
+        Catch ex As Exception
+            DisplayLogData("ConnectDevice Exception= " + ex.Message)
+            ForceClosePort()
+            Return False
+
+        End Try
+
     End Function
 
 
@@ -286,9 +320,7 @@ Public Class USBClass
             End If
 
             ' Se comPort è aperta lo chiude
-            If comPort.IsOpen = True Then
-                comPort.Close()
-            End If
+            ForceClosePort()
 
             'set properties
             comPort.BaudRate = Integer.Parse("9600")
@@ -300,30 +332,31 @@ Public Class USBClass
             comPort.WriteTimeout = 300
             comPort.ReadTimeout = 300
 
-            ' If comPort.IsOpen = False Then
-            '     comPort.Open()
-            ' End If
 
-
-            comPort.Close()
+            ForceClosePort()
             Return True
 
 
         Catch ex As Exception
-            DisplayLogData(" Exception= " + ex.Message)
-            comPort.Close()
+            DisplayLogData("Config&OpenPort Exception= " + ex.Message)
+            ForceClosePort()
             Return False
         End Try
     End Function
 
 
-    Public Sub ClosePort()
-        If comPort.IsOpen Then
-            Try
-                comPort.Close()
-            Catch ex As Exception
-            End Try
-        End If
+    Public Sub ForceOpenPort()
+        Try
+            comPort.Open()
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Public Sub ForceClosePort()
+        Try
+            If comPort.IsOpen Then comPort.Close()
+        Catch ex As Exception
+        End Try
     End Sub
 #End Region
 
@@ -336,7 +369,7 @@ Public Class USBClass
         Dim cntar As Byte
 
         Try
-
+           
             ' Cancella tutto nei buffer
             comPort.DiscardInBuffer()
             comPort.DiscardOutBuffer()
@@ -402,7 +435,7 @@ Public Class USBClass
 
             ReDim _arrRead(-1)
 
-            comPort.ReadTimeout = 1000
+            comPort.ReadTimeout = 500
             ReadingInProgress = True
             ReadOK = False
             CntReadArray = 0
@@ -483,38 +516,38 @@ Public Class USBClass
         Dim pkt As Byte()
         Dim ret As Byte()
         Try
-            If Not comPort.IsOpen Then comPort.Open()
+            ForceOpenPort()
             ReDim pkt(0)
             ReDim ret(0)
             pkt(0) = &H21
             If SendPkt(pkt, pkt.Length) Then
+                Application.DoEvents()
                 If ReadPkt(ret) Then
                     If ret(0) = &H21 Then
                         _Matricola = Chr(ret(1)) + Chr(ret(2)) + Chr(ret(3)) + Chr(ret(4))
                         _OreLav = ret(5) * 256 ^ 3 + ret(6) * 256 ^ 2 + ret(7) * 256 ^ 1 + ret(8) * 256 ^ 0
                         _FwVer = ret(9) * 256 + ret(10)
                         _HwVer = ret(11) * 256 + ret(12)
-
+                        ForceClosePort()
                         Return True
                     Else
-                        Return False
+                        'Return False
                     End If
                     'Dim strModified As String = System.Text.Encoding.ASCII.GetString(ret)
                     'Return strModified
                 Else
-                    Return False
+                    'Return False
                 End If
 
             Else
-                Return False
+                'Return False
             End If
-
-
-        Catch ex As Exception
-
+            ForceClosePort()
             Return False
-        Finally
-            If comPort.IsOpen Then comPort.Close()
+        Catch ex As Exception
+            DisplayLogData("RequestHello Exception= " + ex.Message)
+            ForceClosePort()
+            Return False
         End Try
 
     End Function
@@ -527,47 +560,55 @@ Public Class USBClass
         Dim cnt As Integer
         Dim LetturaOK As Boolean
 
+        Try
+            ForceOpenPort()
 
-        If Not comPort.IsOpen Then comPort.Open()
+            ReDim pkt(3)
+            ReDim ret(0)
+            pkt(0) = CODE_REQ_INTERVENTI
+            pkt(1) = _typeData1
+            pkt(2) = _typeData2
+            cnt = 0
+            LetturaOK = True
+            If SendPkt(pkt, pkt.Length) Then
+                _myIntArr.ClearArrToInt()
+                While LetturaOK
+                    Application.DoEvents()
+                    LetturaOK = ReadPkt(ret)
+                    If LetturaOK And (ret.Length > 5) Then
+                        If ret(0) >= 29 Then
+                            'if ret(2) = &HFF And ret(3) = &HFF And ret(4) = &HFF And ret(5) = &HFF) Then
+                            _myIntArr.SortArrIntTime(True)
+                            ' fine OK
 
-        ReDim pkt(3)
-        ReDim ret(0)
-        pkt(0) = CODE_REQ_INTERVENTI
-        pkt(1) = _typeData1
-        pkt(2) = _typeData2
-        cnt = 0
-        LetturaOK = True
-        If SendPkt(pkt, pkt.Length) Then
-            _myIntArr.ClearArrToInt()
-            While LetturaOK
-                LetturaOK = ReadPkt(ret)
-                If LetturaOK And (ret.Length > 5) Then
-                    If ret(0) >= 29 Then
-                        'if ret(2) = &HFF And ret(3) = &HFF And ret(4) = &HFF And ret(5) = &HFF) Then
-                        _myIntArr.SortArrIntTime(True)
-                        ' fine OK
+                            DisplayLogData("Read OK alarms #" + _myIntArr.Length.ToString)
+                            ForceClosePort()
+                            Return True
 
-                        DisplayLogData("Read OK alarms #" + _myIntArr.Length.ToString)
-                        Return True
+                        Else
+                            _myIntArr.AddArrInt(ret)
+                        End If
 
-                    Else
-                        _myIntArr.AddArrInt(ret)
+                        cnt += 1
                     End If
+                End While
 
-                    cnt += 1
-                End If
-            End While
+                DisplayLogData("Can't Read alarms")
 
-            DisplayLogData("Can't Read alarms")
+            Else
+
+
+            End If
+
+            ForceClosePort()
             Return False
-        Else
 
+        Catch ex As Exception
+            DisplayLogData("RequestAlarms Exception= " + ex.Message)
+            ForceClosePort()
             Return False
-        End If
+        End Try
 
-
-        Return False
-        If comPort.IsOpen Then comPort.Close()
     End Function
 
 
