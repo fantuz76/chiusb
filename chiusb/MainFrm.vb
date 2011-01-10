@@ -91,6 +91,12 @@ Public Class MainFrm
     Private Sub Draw_header()
         Dim toolTip1 As New ToolTip()
 
+
+        If My.Application.Info.Title <> "" Then
+            Me.Text = My.Application.Info.Title
+        Else
+            Me.Text = System.IO.Path.GetFileNameWithoutExtension(My.Application.Info.AssemblyName)
+        End If
         ' Blocca dimensione minima finestra
         Me.MinimumSize = Me.Size
 
@@ -98,7 +104,10 @@ Public Class MainFrm
 
         TabControl1.TabPages.Remove(TabControl1.TabPages(1))
         lblGenericTmp.Text = "Program developing " + Environment.NewLine _
-                            + "Sw Version " + SwVersion + "   " + "2010"
+                            + "Sw Version " + "" + "   " + "2010"
+
+
+
 
         lblIntVolt.Text = "Average Voltage [Volt]"
         lblIntVolt.TextAlign = ContentAlignment.MiddleRight
@@ -115,7 +124,7 @@ Public Class MainFrm
         lstInterventi.Items.Clear()
         EnableControlsInterventi(False)
         SetConn(False)
-        Me.Text = "USB Configuration " + SwVersion
+        Me.Text = "USB Configuration "
 
         ' Set up the delays for the ToolTip.
         toolTip1.AutoPopDelay = 5000
@@ -211,7 +220,7 @@ Public Class MainFrm
     End Sub
 
     Private Sub EnableControlsInterventi(ByVal _EvConEn As Boolean)
-
+        pnlButAlarms.Enabled = _EvConEn
         Panel1.Enabled = _EvConEn
         HscrollInterventi.Enabled = _EvConEn
         lblNumInt.Visible = _EvConEn
@@ -715,4 +724,8 @@ Public Class MainFrm
     End Sub
 
   
+   
+    Private Sub AboutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AboutToolStripMenuItem.Click
+        AboutBox1.Show()
+    End Sub
 End Class
