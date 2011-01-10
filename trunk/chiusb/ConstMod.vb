@@ -1,9 +1,8 @@
 ﻿Module ConstMod
 
-    Public Const SwVersion = "1.0"
 
     Public Const NUM_MAX_TYPE_INT = 35      ' Codice tipo intervento massimo possibile (non tutti sono usati)
-    Public Const NUM_INT_TYPES = 20         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)
+    Public Const NUM_INT_TYPES = 21         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)
 
     Public Const INTERVENTO_LENGTH = 16     ' Dimensione array USB singolo intervento
 
@@ -30,6 +29,7 @@
     Public Const TYPE_HALT_DIFF = 16 + 10
     Public Const TYPE_HALT_SQUILIBRIO = 17 + 10
     Public Const TYPE_HALT_DISSIMETRIA = 18 + 10
+    Public Const TYPE_HALT_PRESS_SENS = 19 + 10
 
 
 
@@ -41,7 +41,7 @@
     Public Const TYPE_NOHALT_UNDERVOLT_STR = "UnderVoltage" + "  ON"
     Public Const TYPE_NOHALT_MANDATACH_STR = "Minimum Flow" + "   ON"
     Public Const TYPE_NOHALT_DRYFUNC_STR = "Dry Operating" + "  ON"
-    Public Const TYPE_NOHALT_OVERTEMP_STR = "OverTemperature" + " ON"
+    Public Const TYPE_NOHALT_OVERTEMP_STR = "Pump OverTemperature" + " ON"
     Public Const TYPE_NOHALT_DIFF_STR = "Isolation Fault" + "  ON"
     Public Const TYPE_NOHALT_SQUILIBRIO_STR = "Current Diff." + "  ON"
     Public Const TYPE_NOHALT_DISSIMETRIA_STR = "Voltage Diff." + "  ON"
@@ -51,10 +51,11 @@
     Public Const TYPE_HALT_UNDERVOLT_STR = "Undervoltage" + "  OFF"
     Public Const TYPE_HALT_MANDATACH_STR = "MinimumFlow" + "  OFF"
     Public Const TYPE_HALT_DRYFUNC_STR = "Dry Operating" + "  OFF"
-    Public Const TYPE_HALT_OVERTEMP_STR = "OverTemperature" + "  OFF"
+    Public Const TYPE_HALT_OVERTEMP_STR = "Pump OverTemperature" + "  OFF"
     Public Const TYPE_HALT_DIFF_STR = "Isolation Fault" + "  OFF"
     Public Const TYPE_HALT_SQUILIBRIO_STR = "Current Diff." + "  OFF"
     Public Const TYPE_HALT_DISSIMETRIA_STR = "Voltage Diff." + "  OFF"
+    Public Const TYPE_HALT_PRESS_SENS_STR = "Pressure Sensor alarm" + "  OFF"
 
 
 
@@ -101,17 +102,17 @@
     '69	35	numero_segnalazione,//0-503	
     '71	36	conta_ore[2],	
     '73	37	conta_ore[2],	
-    '75	38	riserva[11];	
-    '77	39	riserva[11];	
-    '79	40	riserva[11];	
-    '81	41	riserva[11];	
-    '83	42	riserva[11];	
-    '85	43	riserva[11];	
-    '87	44	riserva[11];	
-    '89	45	riserva[11];	
-    '91	46	riserva[11];	
-    '93	47	riserva[11];	
-    '95	48	riserva[11];	
+    '75	38	abilita_sensore_pressione,	
+    '77	39	riserva[];	
+    '79	40	riserva[];	
+    '81	41	riserva[];	
+    '83	42	riserva[];
+    '85	43	riserva[];	
+    '87	44	riserva[];	
+    '89	45	riserva[];	
+    '91	46	riserva[];	
+    '93	47	riserva[];	
+    '95	48	riserva[];	
 
 
 

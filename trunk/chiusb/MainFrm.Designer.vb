@@ -26,9 +26,10 @@ Partial Class MainFrm
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainFrm))
         Me.TabControl1 = New System.Windows.Forms.TabControl
         Me.TabPage1 = New System.Windows.Forms.TabPage
+        Me.pnlButAlarms = New System.Windows.Forms.Panel
         Me.btnSaveInt = New System.Windows.Forms.Button
-        Me.lstInterventi = New System.Windows.Forms.ListBox
         Me.btnOpenGraph = New System.Windows.Forms.Button
+        Me.lstInterventi = New System.Windows.Forms.ListBox
         Me.lblNumIntTitle = New System.Windows.Forms.Label
         Me.lblNumInt = New System.Windows.Forms.Label
         Me.HscrollInterventi = New System.Windows.Forms.HScrollBar
@@ -66,6 +67,7 @@ Partial Class MainFrm
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip
         Me.FileToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
         Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
@@ -77,8 +79,10 @@ Partial Class MainFrm
         Me.zg1 = New ZedGraph.ZedGraphControl
         Me.PictureLogo = New System.Windows.Forms.PictureBox
         Me.btnExit = New System.Windows.Forms.Button
+        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.pnlButAlarms.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -105,9 +109,8 @@ Partial Class MainFrm
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.btnSaveInt)
+        Me.TabPage1.Controls.Add(Me.pnlButAlarms)
         Me.TabPage1.Controls.Add(Me.lstInterventi)
-        Me.TabPage1.Controls.Add(Me.btnOpenGraph)
         Me.TabPage1.Controls.Add(Me.lblNumIntTitle)
         Me.TabPage1.Controls.Add(Me.lblNumInt)
         Me.TabPage1.Controls.Add(Me.HscrollInterventi)
@@ -120,16 +123,36 @@ Partial Class MainFrm
         Me.TabPage1.Text = "Alarms"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'pnlButAlarms
+        '
+        Me.pnlButAlarms.Controls.Add(Me.btnSaveInt)
+        Me.pnlButAlarms.Controls.Add(Me.btnOpenGraph)
+        Me.pnlButAlarms.Location = New System.Drawing.Point(533, 46)
+        Me.pnlButAlarms.Name = "pnlButAlarms"
+        Me.pnlButAlarms.Size = New System.Drawing.Size(87, 126)
+        Me.pnlButAlarms.TabIndex = 11
+        '
         'btnSaveInt
         '
         Me.btnSaveInt.Image = Global.ApplicationChiUSB.My.Resources.Resources.SaveAs
-        Me.btnSaveInt.Location = New System.Drawing.Point(535, 85)
+        Me.btnSaveInt.Location = New System.Drawing.Point(3, 39)
         Me.btnSaveInt.Name = "btnSaveInt"
         Me.btnSaveInt.Size = New System.Drawing.Size(79, 39)
         Me.btnSaveInt.TabIndex = 9
         Me.btnSaveInt.Text = "Save"
         Me.btnSaveInt.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.btnSaveInt.UseVisualStyleBackColor = True
+        '
+        'btnOpenGraph
+        '
+        Me.btnOpenGraph.Image = Global.ApplicationChiUSB.My.Resources.Resources.chart1
+        Me.btnOpenGraph.Location = New System.Drawing.Point(3, 84)
+        Me.btnOpenGraph.Name = "btnOpenGraph"
+        Me.btnOpenGraph.Size = New System.Drawing.Size(79, 37)
+        Me.btnOpenGraph.TabIndex = 10
+        Me.btnOpenGraph.Text = "Graph"
+        Me.btnOpenGraph.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.btnOpenGraph.UseVisualStyleBackColor = True
         '
         'lstInterventi
         '
@@ -144,17 +167,6 @@ Partial Class MainFrm
         Me.lstInterventi.Size = New System.Drawing.Size(605, 102)
         Me.lstInterventi.TabIndex = 4
         '
-        'btnOpenGraph
-        '
-        Me.btnOpenGraph.Image = Global.ApplicationChiUSB.My.Resources.Resources.chart1
-        Me.btnOpenGraph.Location = New System.Drawing.Point(535, 130)
-        Me.btnOpenGraph.Name = "btnOpenGraph"
-        Me.btnOpenGraph.Size = New System.Drawing.Size(79, 37)
-        Me.btnOpenGraph.TabIndex = 10
-        Me.btnOpenGraph.Text = "Graph"
-        Me.btnOpenGraph.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.btnOpenGraph.UseVisualStyleBackColor = True
-        '
         'lblNumIntTitle
         '
         Me.lblNumIntTitle.AutoSize = True
@@ -167,9 +179,9 @@ Partial Class MainFrm
         'lblNumInt
         '
         Me.lblNumInt.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNumInt.Location = New System.Drawing.Point(538, 23)
+        Me.lblNumInt.Location = New System.Drawing.Point(545, 23)
         Me.lblNumInt.Name = "lblNumInt"
-        Me.lblNumInt.Size = New System.Drawing.Size(69, 32)
+        Me.lblNumInt.Size = New System.Drawing.Size(69, 20)
         Me.lblNumInt.TabIndex = 2
         Me.lblNumInt.Text = "504/504"
         Me.lblNumInt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -491,7 +503,7 @@ Partial Class MainFrm
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem1})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem1, Me.ToolStripMenuItem3})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(717, 24)
@@ -510,6 +522,13 @@ Partial Class MainFrm
         Me.ExitToolStripMenuItem1.Name = "ExitToolStripMenuItem1"
         Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(103, 22)
         Me.ExitToolStripMenuItem1.Text = "Exit"
+        '
+        'ToolStripMenuItem3
+        '
+        Me.ToolStripMenuItem3.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem})
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(24, 20)
+        Me.ToolStripMenuItem3.Text = "?"
         '
         'FileToolStripMenuItem
         '
@@ -604,6 +623,12 @@ Partial Class MainFrm
         Me.btnExit.Text = "Exit"
         Me.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
         '
+        'AboutToolStripMenuItem
+        '
+        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AboutToolStripMenuItem.Text = "About"
+        '
         'MainFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -624,6 +649,7 @@ Partial Class MainFrm
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        Me.pnlButAlarms.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
@@ -693,5 +719,8 @@ Partial Class MainFrm
     Friend WithEvents zg1 As ZedGraph.ZedGraphControl
     Friend WithEvents lstInterventi As System.Windows.Forms.ListBox
     Friend WithEvents btnOpenGraph As System.Windows.Forms.Button
+    Friend WithEvents pnlButAlarms As System.Windows.Forms.Panel
+    Friend WithEvents ToolStripMenuItem3 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AboutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

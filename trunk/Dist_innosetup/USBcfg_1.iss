@@ -9,8 +9,8 @@
 
 ; Inno Setup PreProccessor
 [ISPP]
-#define AppName "Usb Configurator"
-#define ShortAppName "USB Configurator"
+#define AppName "Usb Config"
+#define ShortAppName "USB Config"
 #define AppVersion "1.0"
 #define AppPublisher "Electroil"
 #define AppURL "http://www.electroil.it/"

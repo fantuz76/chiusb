@@ -53,3 +53,4 @@ C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86
 C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.application
 C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.FormWait.resources
 i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.FormWait.resources
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.AboutBox1.resources

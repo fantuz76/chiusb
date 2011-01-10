@@ -40,7 +40,8 @@
                                             New IntOccur(TYPE_HALT_OVERTEMP, TYPE_HALT_OVERTEMP_STR), _
                                             New IntOccur(TYPE_HALT_DIFF, TYPE_HALT_DIFF_STR), _
                                             New IntOccur(TYPE_HALT_SQUILIBRIO, TYPE_HALT_SQUILIBRIO_STR), _
-                                            New IntOccur(TYPE_HALT_DISSIMETRIA, TYPE_HALT_DISSIMETRIA_STR)}
+                                            New IntOccur(TYPE_HALT_DISSIMETRIA, TYPE_HALT_DISSIMETRIA_STR), _
+                                            New IntOccur(TYPE_HALT_PRESS_SENS, TYPE_HALT_PRESS_SENS_STR)}
 
         Public Sub New()
             ' Solo per controllo verifico che costante e init array siano OK
@@ -162,7 +163,8 @@
                     Return Color.Black
                 Case TYPE_HALT_DISSIMETRIA
                     Return Color.DarkBlue
-
+                Case TYPE_HALT_PRESS_SENS
+                    Return Color.RosyBrown
                 Case Else
                     Return (Color.Black)
             End Select
