@@ -124,7 +124,7 @@ Public Class MainFrm
         lstInterventi.Items.Clear()
         EnableControlsInterventi(False)
         SetConn(False)
-        Me.Text = "USB Configuration "
+
 
         ' Set up the delays for the ToolTip.
         toolTip1.AutoPopDelay = 5000

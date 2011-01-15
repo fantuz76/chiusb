@@ -62,9 +62,9 @@ WizardSmallImageFile=C:\Programmi\Inno Setup 5\WizModernSmallImage-IS.bmp
 
 ; Nome programma di installazione
 #if IncludeFramework
-  OutputBaseFilename=Setup_Fw
+  OutputBaseFilename=Setup_Fw-{#ShortAppName}
 #else
-  OutputBaseFilename=Setup
+  OutputBaseFilename=Setup-{#ShortAppName}
 #endif
 
 ; forza visualizzazione delle lingue d'installazione (problema su PC bertoldi che andava solo in inglese)
