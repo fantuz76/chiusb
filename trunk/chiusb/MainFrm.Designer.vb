@@ -134,7 +134,7 @@ Partial Class MainFrm
         '
         'btnSaveInt
         '
-        Me.btnSaveInt.Image = Global.ApplicationChiUSB.My.Resources.Resources.SaveAs
+        Me.btnSaveInt.Image = Global.ApplicationUSB.My.Resources.Resources.SaveAs
         Me.btnSaveInt.Location = New System.Drawing.Point(3, 39)
         Me.btnSaveInt.Name = "btnSaveInt"
         Me.btnSaveInt.Size = New System.Drawing.Size(79, 39)
@@ -145,7 +145,7 @@ Partial Class MainFrm
         '
         'btnOpenGraph
         '
-        Me.btnOpenGraph.Image = Global.ApplicationChiUSB.My.Resources.Resources.chart1
+        Me.btnOpenGraph.Image = Global.ApplicationUSB.My.Resources.Resources.chart1
         Me.btnOpenGraph.Location = New System.Drawing.Point(3, 84)
         Me.btnOpenGraph.Name = "btnOpenGraph"
         Me.btnOpenGraph.Size = New System.Drawing.Size(79, 37)
@@ -564,7 +564,7 @@ Partial Class MainFrm
         '
         'btnConn
         '
-        Me.btnConn.Image = Global.ApplicationChiUSB.My.Resources.Resources.conn
+        Me.btnConn.Image = Global.ApplicationUSB.My.Resources.Resources.conn
         Me.btnConn.Location = New System.Drawing.Point(4, 9)
         Me.btnConn.Name = "btnConn"
         Me.btnConn.Size = New System.Drawing.Size(107, 43)
@@ -604,7 +604,7 @@ Partial Class MainFrm
         '
         Me.PictureLogo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureLogo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureLogo.Image = Global.ApplicationChiUSB.My.Resources.Resources.logo
+        Me.PictureLogo.Image = Global.ApplicationUSB.My.Resources.Resources.logo
         Me.PictureLogo.Location = New System.Drawing.Point(477, 27)
         Me.PictureLogo.Name = "PictureLogo"
         Me.PictureLogo.Size = New System.Drawing.Size(162, 57)
@@ -615,7 +615,7 @@ Partial Class MainFrm
         'btnExit
         '
         Me.btnExit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnExit.Image = Global.ApplicationChiUSB.My.Resources.Resources.Spegni
+        Me.btnExit.Image = Global.ApplicationUSB.My.Resources.Resources.Spegni
         Me.btnExit.Location = New System.Drawing.Point(645, 369)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(60, 83)

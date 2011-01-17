@@ -15,24 +15,9 @@ c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiU
 c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.exe
 c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.xml
 c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.pdb
-i:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.exe.config
-i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.exe
-i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.xml
-i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.pdb
-i:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.exe.manifest
-i:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.application
-i:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.exe
-i:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.pdb
-i:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.xml
 i:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\ZedGraph.xml
 i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ResolveAssemblyReference.cache
-i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.MainFrm.resources
-i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.Resources.resources
-i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.ZedGraphFrm.resources
 i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.vbproj.GenerateResource.Cache
-i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.TrustInfo.xml
-i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.exe.manifest
-i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.application
 C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.exe.config
 C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.exe
 C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.xml
@@ -52,5 +37,20 @@ C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86
 C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.exe.manifest
 C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.application
 C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.FormWait.resources
-i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.FormWait.resources
-i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.AboutBox1.resources
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.AboutBox1.resources
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.FormWait.resources
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.MainFrm.resources
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.Resources.resources
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.ZedGraphFrm.resources
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.exe.config
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.exe.manifest
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.application
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.exe
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.pdb
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.xml
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.TrustInfo.xml
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.exe.manifest
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.application
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.exe
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.xml
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.pdb

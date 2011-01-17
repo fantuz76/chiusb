@@ -1,5 +1,6 @@
 ﻿Module ConstMod
 
+    Public Const XMLCFG = "\Config.xml"
 
     Public Const NUM_MAX_TYPE_INT = 35      ' Codice tipo intervento massimo possibile (non tutti sono usati)
     Public Const NUM_INT_TYPES = 21         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)

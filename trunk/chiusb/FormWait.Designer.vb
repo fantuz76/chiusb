@@ -41,7 +41,7 @@ Partial Class FormWait
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.ApplicationChiUSB.My.Resources.Resources.Wait
+        Me.PictureBox1.Image = Global.ApplicationUSB.My.Resources.Resources.Wait
         Me.PictureBox1.Location = New System.Drawing.Point(45, 90)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(229, 32)

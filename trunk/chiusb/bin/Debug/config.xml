@@ -2,6 +2,7 @@
 <Settings>
   <SistemaUtente>
     <CartellaApplicazione>C:\</CartellaApplicazione>
+    <CartellaSaveAlarms>c:\Programmi\</CartellaSaveAlarms>
     <LastCOMUsed>COM9</LastCOMUsed>
   </SistemaUtente>
   <InterfacciaGrafica>

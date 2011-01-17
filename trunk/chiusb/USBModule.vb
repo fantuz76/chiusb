@@ -1,6 +1,7 @@
 ﻿Module USBModule
 
-
+    Public UsrAppData As String
+    Public UsrDocData As String
     Public Intervents As New InterventiTypeClass
     Public ConnectionUSB As USBClass
 
@@ -172,18 +173,47 @@
 
     End Class
 
-    Public Function ReadConfigXML(ByVal _Tab1 As String, ByVal _Field1 As String) As String
+    Public Function ReadConfigXML(ByVal _FileNameStr As String, ByVal _Tab1 As String, ByVal _Field1 As String) As String
         Dim ds As New Data.DataSet
-        ds.ReadXml(Application.StartupPath + "\config.xml")
-        Return ds.Tables(_Tab1).Rows(0).Item(_Field1)
+        Try
+            ds.ReadXml(_FileNameStr)
+            Return ds.Tables(_Tab1).Rows(0).Item(_Field1)
+        Catch ex As Exception
+            Return ""
+        End Try
     End Function
 
-    Public Sub WriteConfigXML(ByVal _Tab1 As String, ByVal _Field1 As String, ByVal _ValToWrite As String)
+    Public Sub WriteConfigXML(ByVal _FileNameStr As String, ByVal _Tab1 As String, ByVal _Field1 As String, ByVal _ValToWrite As String)
         Dim ds As New Data.DataSet
+        Try
+            ds.ReadXml(_FileNameStr)
+            ds.Tables(_Tab1).Rows(0).Item(_Field1) = _ValToWrite
+            ds.WriteXml(_FileNameStr)
 
-        ds.ReadXml(Application.StartupPath + "\config.xml")
-        ds.Tables(_Tab1).Rows(0).Item(_Field1) = _ValToWrite
-        ds.WriteXml(Application.StartupPath + "\config.xml")
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Public Sub CreateNewConfigXML(ByVal _FileNameStr As String)
+        Dim ds As New Data.DataSet
+        Try
+            ds.DataSetName = "Settings"
+            ds.Tables.Add("SistemaUtente")
+
+            ds.Tables("SistemaUtente").Columns.Add("CartellaApplicazione")
+            ds.Tables("SistemaUtente").Columns.Add("CartellaSaveAlarms")
+            ds.Tables("SistemaUtente").Columns.Add("LastCOMUsed")
+
+            Dim rowVals(2) As String 'Vettore che conterrà i valori da memorizzare nella riga
+            rowVals(0) = Application.StartupPath
+            rowVals(1) = UsrDocData
+            rowVals(2) = "COM1"
+
+            ds.Tables("SistemaUtente").Rows.Add(rowVals)
+
+            ds.WriteXml(_FileNameStr)
+        Catch ex As Exception
+        End Try
     End Sub
 
     Public Sub CloseProgram()
@@ -191,63 +221,35 @@
     End Sub
 
 
+    Public Sub Load_Parameters()
+
+        UsrDocData = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+        UsrAppData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\" + My.Application.Info.Title
+        If IO.Directory.Exists(UsrAppData) Then
+            If IO.File.Exists(UsrAppData + XMLCFG) Then
+                ' Esiste già il file
+            Else
+                ' Esisteva cartella ma non il file
+                IO.File.Create(UsrAppData + XMLCFG)
+            End If
+        Else
+            ' non esiste cartella
+            IO.Directory.CreateDirectory(UsrAppData)
+            IO.File.Create(UsrAppData + XMLCFG)
+        End If
+
+        If ReadConfigXML(UsrAppData + XMLCFG, "SistemaUtente", "CartellaApplicazione") = "" Then
+            CreateNewConfigXML(UsrAppData + XMLCFG)
+        End If
+
+        LastCOMUsed = ReadConfigXML(UsrAppData + XMLCFG, "SistemaUtente", "LastCOMUsed")
+        
+    End Sub
+
+
 #Region "Funzioni generiche Interventi"
 
-    'Public Function GetTypeIntStr(ByVal _typeIntnum As Byte) As String
-    '    Dim StrToRet As String
 
-
-    '    Select Case _typeIntnum
-    '        Case 1
-    '            StrToRet = "ON"
-    '        Case 2
-    '            StrToRet = "OFF"
-
-    '        Case 10
-    '            StrToRet = "Overcurrent" + " - Without Halt"
-    '        Case 11
-    '            StrToRet = "Overvoltage" + " - Without Halt"
-    '        Case 12
-    '            StrToRet = "Undervoltage" + " - Without Halt"
-    '        Case 13
-    '            StrToRet = "Under Load" + " - Without Halt"
-    '        Case 14
-    '            StrToRet = "Dry running" + " - Without Halt"
-    '        Case 15
-    '            StrToRet = "Over Temperature" + " - Without Halt"
-    '        Case 16
-    '            StrToRet = "Differential protection" + " - Without Halt"
-    '        Case 17
-    '            StrToRet = "Current imbalance" + " - Without Halt"
-    '        Case 18
-    '            StrToRet = "Asymmetry Voltages" + " - Without Halt"
-
-    '        Case 10 + 10
-    '            StrToRet = "Overcurrent" + " - System Halt"
-    '        Case 11 + 10
-    '            StrToRet = "Overvoltage" + " - System Halt"
-    '        Case 12 + 10
-    '            StrToRet = "Undervoltage" + " - System Halt"
-    '        Case 13 + 10
-    '            StrToRet = "Under Load" + " - System Halt"
-    '        Case 14 + 10
-    '            StrToRet = "Dry running" + " - System Halt"
-    '        Case 15 + 10
-    '            StrToRet = "Over Temperature" + " - System Halt"
-    '        Case 16 + 10
-    '            StrToRet = "Differential protection" + " - System Halt"
-    '        Case 17 + 10
-    '            StrToRet = "Current imbalance" + " - System Halt"
-    '        Case 18 + 10
-    '            StrToRet = "Asymmetry Voltages" + " - System Halt"
-
-    '        Case Else
-    '            StrToRet = _typeIntnum
-    '    End Select
-
-    '    Return StrToRet
-
-    'End Function
     Public Function GetHours(ByVal _totNumSec As UInt32) As UInteger
         Return _totNumSec \ 3600
     End Function
