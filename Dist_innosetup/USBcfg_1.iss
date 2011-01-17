@@ -9,8 +9,8 @@
 
 ; Inno Setup PreProccessor
 [ISPP]
-#define AppName "Usb Config"
-#define ShortAppName "USB Config"
+#define AppName "Usb Pump Control Box"
+#define ShortAppName "USB Pump Control Box"
 #define AppVersion "1.0"
 #define AppPublisher "Electroil"
 #define AppURL "http://www.electroil.it/"
@@ -92,9 +92,8 @@ WizardSmallImageFile=C:\Programmi\Inno Setup 5\WizModernSmallImage-IS.bmp
 
 
 [Files]
-Source: {#SourceFileDir}\USBCfg.exe; DestDir: {app}; DestName: USBcfg.exe; Flags: ignoreversion
+Source: {#SourceFileDir}\USBConfig.exe; DestDir: {app}; DestName: USBConfig.exe; Flags: ignoreversion
 Source: {#SourceFileDir}\ZedGraph.dll; DestDir: {app}; DestName: ZedGraph.dll; Flags: ignoreversion 
-Source: {#SourceFileDir}\config.xml; DestDir: {app}; DestName: config.xml; Flags: ignoreversion
 Source: .\Inf_driver\HC9S08JMxx.inf; DestDir: {app}\driver_usb\; DestName: UsbJM60.inf; Flags: ignoreversion
 #if IncludeFramework
   Source: dotnetfx.exe; DestDir: {tmp}; Flags: ignoreversion ; Check: NeedsFramework
@@ -102,9 +101,9 @@ Source: .\Inf_driver\HC9S08JMxx.inf; DestDir: {app}\driver_usb\; DestName: UsbJM
 
 
 [Icons]
-Name: {group}\{#AppName};                     Filename: {app}\USBCfg.exe; WorkingDir: {app}
+Name: {group}\{#AppName};                     Filename: {app}\USBConfig.exe; WorkingDir: {app}
 Name: {group}\Uninstall {#AppName};           Filename: {uninstallexe}
-Name: {userdesktop}\{#AppName}; Filename: {app}\USBCfg.exe; WorkingDir: {app}
+Name: {userdesktop}\{#AppName}; Filename: {app}\USBConfig.exe; WorkingDir: {app}
 
 
 [Languages]

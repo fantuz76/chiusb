@@ -8,10 +8,10 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("USB Config")> 
-<Assembly: AssemblyDescription("Utility for USB communication , setup, configuration etc...")> 
+<Assembly: AssemblyTitle("USB Pump Control Box")> 
+<Assembly: AssemblyDescription("Utility for USB communication , setup, configuration etc... on Pump Control Box")> 
 <Assembly: AssemblyCompany("Electroil")> 
-<Assembly: AssemblyProduct("USB Config")> 
+<Assembly: AssemblyProduct("USB Pump Control Box")> 
 <Assembly: AssemblyCopyright("Copyright ©  2011")> 
 <Assembly: AssemblyTrademark("")> 
 
