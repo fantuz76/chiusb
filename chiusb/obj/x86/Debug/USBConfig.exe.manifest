@@ -58,14 +58,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="USBConfig.exe" size="530944">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="USBConfig.exe" size="531456">
       <assemblyIdentity name="USBConfig" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>UxUY7LLrK2pwQjdxYAZR5wOeYnE=</dsig:DigestValue>
+        <dsig:DigestValue>L5IGnI45KzDNMlcG9AHYNTB4OVw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
