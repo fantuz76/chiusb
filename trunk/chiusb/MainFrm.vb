@@ -405,9 +405,12 @@ Public Class MainFrm
                 file.WriteLine()
                 For i = 0 To ConnectionUSB.InterventiLetti.Length - 1
                     file.WriteLine()
-                    file.WriteLine(New String("-", 50))
+                    file.WriteLine(New String("-", 68))
+
+                    file.WriteLine((i + 1).ToString + ")")
 
                     file.Write("Alarm Type: ")
+                    file.Write(("[" + ConnectionUSB.InterventiLetti.IntItems(i)._intType.ToString + "]").PadLeft(4))
                     file.Write(Intervents.GetIntStr(ConnectionUSB.InterventiLetti.IntItems(i)._intType).PadRight(28))
                     'file.Write(New String(" ", 5))
 
@@ -437,7 +440,7 @@ Public Class MainFrm
 
                     file.Write(("Cosfi:" + GetCosfi(ConnectionUSB.InterventiLetti.IntItems(i)._intCosfi).ToString).PadRight(16))
                     file.Write(("Temp:" + ConnectionUSB.InterventiLetti.IntItems(i)._intTemp.ToString + "°C").PadRight(11))
-                    file.WriteLine()
+                    'file.WriteLine()
                 Next
 
             End If
@@ -581,6 +584,9 @@ Public Class MainFrm
         myPane.YAxis.Scale.Min = 0
         myPane.YAxis.Scale.MaxAuto = True
 
+        CreateBarLabels(myPane, False, "00")
+
+
         '' Tell ZedGraph to calculate the axis ranges
         ZedGraphFrm.zg1.AxisChange()
         ' Make sure the Graph gets redrawn
@@ -589,13 +595,15 @@ Public Class MainFrm
         ZedGraphFrm.zg1.Refresh()
 
 
-        CreateBarLabels(myPane, False, "00")
+        
     End Sub
 
 
 
     Private Sub CreateBarLabels(ByVal pane As GraphPane, ByVal isBarCenter As Boolean, ByVal valueFormat As String)
         Dim isVertical As Boolean = True
+
+        pane.GraphObjList.Clear()
 
         '' Make the gap between the bars and the labels = 2% of the axis range
         Dim labelOffset As Single

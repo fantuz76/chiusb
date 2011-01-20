@@ -230,12 +230,13 @@
                 ' Esiste già il file
             Else
                 ' Esisteva cartella ma non il file
-                IO.File.Create(UsrAppData + XMLCFG)
+                IO.File.Create(UsrAppData + XMLCFG).Close()
             End If
         Else
             ' non esiste cartella
             IO.Directory.CreateDirectory(UsrAppData)
-            IO.File.Create(UsrAppData + XMLCFG)
+            IO.File.Create(UsrAppData + XMLCFG).Close()
+
         End If
 
         If ReadConfigXML(UsrAppData + XMLCFG, "SistemaUtente", "CartellaApplicazione") = "" Then

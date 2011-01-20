@@ -64,7 +64,7 @@ WizardSmallImageFile=C:\Programmi\Inno Setup 5\WizModernSmallImage-IS.bmp
 #if IncludeFramework
   OutputBaseFilename=Setup_Fw-{#ShortAppName}
 #else
-  OutputBaseFilename=Setup-{#ShortAppName}
+  OutputBaseFilename=Setup_{#ShortAppName}_{#AppVersion}
 #endif
 
 ; forza visualizzazione delle lingue d'installazione (problema su PC bertoldi che andava solo in inglese)
@@ -130,6 +130,10 @@ Filename: {win}\Microsoft.NET\Framework\v2.0.50727\CasPol.exe; Parameters: "-q -
 
 [UninstallDelete]
 ; Da completare per rimuovere tutti i file
+Type: files; Name: "{userappdata}\{#ShortAppName}\*";
+Type: dirifempty; Name: "{userappdata}\{#ShortAppName}";
+
+
 
 [UninstallRun]
 Filename: {win}\Microsoft.NET\Framework\v2.0.50727\CasPol.exe; Parameters: "-q -machine -remgroup ""MyApp"""; Flags: skipifdoesntexist runhidden;

@@ -7,19 +7,6 @@ Imports System.Windows.Forms
 
 
 Public Structure InterventSingle
-    'Public _intType As Byte
-    'Public _intTime As UInt32
-    'Public _intVolt1 As UInt16
-    'Public _intVolt2 As UInt16
-    'Public _intVolt3 As UInt16
-    'Public _intCurr1 As UInt16
-    'Public _intCurr2 As UInt16
-    'Public _intCurr3 As UInt16
-    'Public _intPower As UInt16
-    'Public _intPress As UInt16
-    'Public _intCosfi As Byte
-    'Public _intTemp As UInt16
-
     Public _intType As Byte
     Public _intTime As UInt32
     Public _intVoltAv As UInt16
@@ -79,7 +66,10 @@ Public Class InterventiList
         _List(_List.Length - 1)._intCurrAv = _arrToParse(7) * 256 ^ 1 + _arrToParse(8) * 256 ^ 0
 
         _List(_List.Length - 1)._intPower = _arrToParse(9) * 256 ^ 1 + _arrToParse(10) * 256 ^ 0
+
         _List(_List.Length - 1)._intPress = _arrToParse(11) * 256 ^ 1 + _arrToParse(12) * 256 ^ 0
+
+
         _List(_List.Length - 1)._intCosfi = _arrToParse(13)
         _List(_List.Length - 1)._intTemp = _arrToParse(14) * 256 ^ 1 + _arrToParse(15) * 256 ^ 0
 
