@@ -103,12 +103,14 @@ Public Class MainFrm
 
 
         lblIntVolt.Text = "Average Voltage [Volt]"
-        lblIntVolt.TextAlign = ContentAlignment.MiddleRight
-        lblIntCurrent.Text = "Average Current [Amp]"
-        lblIntCurrent.TextAlign = ContentAlignment.MiddleRight
+        lblIntVolt.TextAlign = ContentAlignment.MiddleCenter
+        lblIntCurrent.Text = "Currents [Amp]"
+        lblIntCurrent.TextAlign = ContentAlignment.MiddleCenter
 
         lblIntVDesc.Text = ""
-        lblIntIDesc.Text = ""
+        lblIntI1Desc.Text = "I1"
+        lblIntI2Desc.Text = "I2"
+        lblIntI3Desc.Text = "I3"
 
 
 
@@ -145,70 +147,72 @@ Public Class MainFrm
 
         lblIntTimeVal.Text = GetHours(intToFill._intTime).ToString & "h " & GetMinutes(intToFill._intTime).ToString("00") & "' " & GetSeconds(intToFill._intTime).ToString("00") & "''"
 
-        lblIntV1Val.Text = intToFill._intVoltAv
+        lblIntV1Val.Text = GetVoltage(intToFill._intVoltAv)
         'lblIntV2Val.Text = intToFill._intVolt2
         'lblIntV3Val.Text = intToFill._intVolt3
 
-        lblIntI1Val.Text = GetCurrent(intToFill._intCurrAv)
-        'lblIntI2Val.Text = GetCurrent(intToFill._intCurr2)
-        'lblIntI3Val.Text = GetCurrent(intToFill._intCurr3)
+        lblIntI1Val.Text = GetCurrent(intToFill._intI1_rms)
+        lblIntI2Val.Text = GetCurrent(intToFill._intI2_rms)
+        lblIntI3Val.Text = GetCurrent(intToFill._intI3_rms)
 
-        lblIntPowVal.Text = intToFill._intPower
+        lblIntPowVal.Text = GetPower(intToFill._intPower)
         lblIntPressVal.Text = GetPressure(intToFill._intPress)
         lblIntCosfiVal.Text = GetCosfi(intToFill._intCosfi)
-        lblIntTempVal.Text = intToFill._intTemp
+        lblIntTempVal.Text = GetTemperature(intToFill._intTemp)
 
     End Sub
 
     Private Sub FillListData()
 
-        Dim StToAdd As String = ""
-        Dim StToAdd2 As String = ""
+        'Dim StToAdd As String = ""
+        'Dim StToAdd2 As String = ""
 
         For i = 0 To ConnectionUSB.InterventiLetti.Length - 1
-            StToAdd = ""
-            StToAdd2 = (i + 1)  '.ToString("000")
 
-            StToAdd = StToAdd + StToAdd2.PadRight(5)
 
-            StToAdd2 = Intervents.GetIntStr(ConnectionUSB.InterventiLetti.IntItems(i)._intType)
+            'StToAdd = ""
+            'StToAdd2 = (i + 1)  '.ToString("000")
 
-            StToAdd = StToAdd + StToAdd2.PadRight(28)
+            'StToAdd = StToAdd + StToAdd2.PadRight(5)
 
-            StToAdd2 = GetHours(ConnectionUSB.InterventiLetti.IntItems(i)._intTime).ToString + "h "
-            StToAdd2 = StToAdd2 + GetMinutes(ConnectionUSB.InterventiLetti.IntItems(i)._intTime).ToString("00") + "' "
-            StToAdd2 = StToAdd2 + GetSeconds(ConnectionUSB.InterventiLetti.IntItems(i)._intTime).ToString("00") + "'' "
+            'StToAdd2 = Intervents.GetIntStr(ConnectionUSB.InterventiLetti.IntItems(i)._intType)
 
-            StToAdd = StToAdd + StToAdd2.PadRight(13)
+            'StToAdd = StToAdd + StToAdd2.PadRight(28)
 
-            StToAdd2 = "Volt:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVoltAv.ToString + "V"
-            StToAdd = StToAdd + StToAdd2.PadRight(11)
-            'StToAdd2 = "V2:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVolt2.ToString + "V"
-            'StToAdd = StToAdd + StToAdd2.PadRight(8)
-            'StToAdd2 = "V3:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVolt3.ToString + "V"
-            'StToAdd = StToAdd + StToAdd2.PadRight(8)
+            'StToAdd2 = GetHours(ConnectionUSB.InterventiLetti.IntItems(i)._intTime).ToString + "h "
+            'StToAdd2 = StToAdd2 + GetMinutes(ConnectionUSB.InterventiLetti.IntItems(i)._intTime).ToString("00") + "' "
+            'StToAdd2 = StToAdd2 + GetSeconds(ConnectionUSB.InterventiLetti.IntItems(i)._intTime).ToString("00") + "'' "
 
-            StToAdd2 = "Curr:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurrAv).ToString + "A"
-            StToAdd = StToAdd + StToAdd2.PadRight(13)
-            'StToAdd2 = "I2:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr2).ToString + "A"
+            'StToAdd = StToAdd + StToAdd2.PadRight(13)
+
+            'StToAdd2 = "Volt:" + GetVoltage(ConnectionUSB.InterventiLetti.IntItems(i)._intVoltAv).ToString + "V"
+            'StToAdd = StToAdd + StToAdd2.PadRight(11)
+            ''StToAdd2 = "V2:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVolt2.ToString + "V"
+            ''StToAdd = StToAdd + StToAdd2.PadRight(8)
+            ''StToAdd2 = "V3:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVolt3.ToString + "V"
+            ''StToAdd = StToAdd + StToAdd2.PadRight(8)
+
+            'StToAdd2 = "I1:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intI1_rms).ToString + "A"
+            'StToAdd = StToAdd + StToAdd2.PadRight(13)
+            'StToAdd2 = "I2:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intI2_rms).ToString + "A"
             'StToAdd = StToAdd + StToAdd2.PadRight(10)
-            'StToAdd2 = "I3:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr3).ToString + "A"
+            'StToAdd2 = "I3:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intI3_rms).ToString + "A"
             'StToAdd = StToAdd + StToAdd2.PadRight(10)
 
-            StToAdd2 = "Power:" + ConnectionUSB.InterventiLetti.IntItems(i)._intPower.ToString + "W"
-            StToAdd = StToAdd + StToAdd2.PadRight(13)
+            'StToAdd2 = "Power:" + GetPower(ConnectionUSB.InterventiLetti.IntItems(i)._intPower).ToString + "W"
+            'StToAdd = StToAdd + StToAdd2.PadRight(13)
 
-            StToAdd2 = "Pressure:" + GetPressure(ConnectionUSB.InterventiLetti.IntItems(i)._intPress).ToString + " bar"
-            StToAdd = StToAdd + StToAdd2.PadRight(20)
+            'StToAdd2 = "Pressure:" + GetPressure(ConnectionUSB.InterventiLetti.IntItems(i)._intPress).ToString + " bar"
+            'StToAdd = StToAdd + StToAdd2.PadRight(20)
 
 
-            StToAdd2 = "Cosfi:" + GetCosfi(ConnectionUSB.InterventiLetti.IntItems(i)._intCosfi).ToString + ""
-            StToAdd = StToAdd + StToAdd2.PadRight(12)
+            'StToAdd2 = "Cosfi:" + GetCosfi(ConnectionUSB.InterventiLetti.IntItems(i)._intCosfi).ToString + ""
+            'StToAdd = StToAdd + StToAdd2.PadRight(12)
 
-            StToAdd2 = "Temp:" + ConnectionUSB.InterventiLetti.IntItems(i)._intTemp.ToString + "°C"
-            StToAdd = StToAdd + StToAdd2.PadRight(11)
+            'StToAdd2 = "Temp:" + GetTemperature(ConnectionUSB.InterventiLetti.IntItems(i)._intTemp).ToString + "°C"
+            'StToAdd = StToAdd + StToAdd2.PadRight(11)
 
-            lstInterventi.Items.Add(StToAdd)
+            lstInterventi.Items.Add(CreateLineStringIntervento(ConnectionUSB.InterventiLetti.IntItems(i), i))
         Next
     End Sub
 
@@ -238,6 +242,8 @@ Public Class MainFrm
             lblIntV1Val.Text = ""
             
             lblIntI1Val.Text = ""
+            lblIntI2Val.Text = ""
+            lblIntI3Val.Text = ""
             
             lblIntPowVal.Text = ""
             lblIntPressVal.Text = ""
@@ -382,9 +388,9 @@ Public Class MainFrm
                     file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intVoltAv.ToString + ",")
                     'file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intVolt2.ToString + ",")
                     'file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intVolt3.ToString + ",")
-                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intCurrAv.ToString + ",")
-                    'file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr2.ToString + ",")
-                    'file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr3.ToString + ",")
+                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intI1_rms.ToString + ",")
+                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intI2_rms.ToString + ",")
+                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intI3_rms.ToString + ",")
                     file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intPower.ToString + ",")
                     file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intPress.ToString + ",")
                     file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intCosfi.ToString + ",")
@@ -392,7 +398,7 @@ Public Class MainFrm
                     file.Write(Environment.NewLine)
                 Next
             Else
-                file.WriteLine(New String("*", 80))
+                file.WriteLine(New String("*", 90))
                 file.WriteLine("* Alarms recorded")
                 file.WriteLine("* Date: " + Date.Now)
                 file.WriteLine("* Serial number:" + ConnectionUSB.Matricola.ToUpper)
@@ -400,47 +406,44 @@ Public Class MainFrm
                 '               + " Fw Ver:" + ConnectionUSB.FwVer.ToString("X4") _
                 '               + " Hw Ver:" + ConnectionUSB.HwVer.ToString("X4"))
                 file.WriteLine("* Worked hours:" + GetHours(ConnectionUSB.OreLav).ToString + "h" + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
-                file.WriteLine(New String("*", 80))
+                file.WriteLine(New String("*", 90))
 
                 file.WriteLine()
                 For i = 0 To ConnectionUSB.InterventiLetti.Length - 1
-                    file.WriteLine()
-                    file.WriteLine(New String("-", 68))
+                    file.WriteLine(CreateLineStringIntervento(ConnectionUSB.InterventiLetti.IntItems(i), i))
+                    'file.WriteLine()
+                    'file.WriteLine(New String("-", 68))
 
-                    file.WriteLine((i + 1).ToString + ")")
+                    'file.WriteLine((i + 1).ToString + ")")
 
-                    file.Write("Alarm Type: ")
-                    file.Write(("[" + ConnectionUSB.InterventiLetti.IntItems(i)._intType.ToString + "]").PadLeft(4))
-                    file.Write(Intervents.GetIntStr(ConnectionUSB.InterventiLetti.IntItems(i)._intType).PadRight(28))
-                    'file.Write(New String(" ", 5))
+                    'file.Write("Alarm Type: ")
+                    'file.Write(("[" + ConnectionUSB.InterventiLetti.IntItems(i)._intType.ToString + "]").PadLeft(4))
+                    'file.Write(Intervents.GetIntStr(ConnectionUSB.InterventiLetti.IntItems(i)._intType).PadRight(28))
+                    ''file.Write(New String(" ", 5))
 
-                    file.Write("Alarm Time: ")
-                    file.Write(GetHours(ConnectionUSB.InterventiLetti.IntItems(i)._intTime).ToString + "h ")
-                    file.Write(GetMinutes(ConnectionUSB.InterventiLetti.IntItems(i)._intTime).ToString("00") + "' ")
-                    file.Write(GetSeconds(ConnectionUSB.InterventiLetti.IntItems(i)._intTime).ToString("00") + "'' ")
-                    'file.Write(New String(" ", 5))
-                    file.WriteLine()
-
-
-                    file.Write(("Volt:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVoltAv.ToString + "V").PadRight(16))
-                    'file.Write("V1:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVolt1.ToString + "V   ")
-                    'file.Write("V2:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVolt2.ToString + "V   ")
-                    'file.Write("V3:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVolt3.ToString + "V   ")
+                    'file.Write("Alarm Time: ")
+                    'file.Write(GetHours(ConnectionUSB.InterventiLetti.IntItems(i)._intTime).ToString + "h ")
+                    'file.Write(GetMinutes(ConnectionUSB.InterventiLetti.IntItems(i)._intTime).ToString("00") + "' ")
+                    'file.Write(GetSeconds(ConnectionUSB.InterventiLetti.IntItems(i)._intTime).ToString("00") + "'' ")
+                    ''file.Write(New String(" ", 5))
                     'file.WriteLine()
 
-                    file.Write(("Curr:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurrAv).ToString + "A").PadRight(13))
-                    'file.Write("I1:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr1).ToString + "A   ")
-                    'file.Write("I2:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr2).ToString + "A   ")
-                    'file.Write("I3:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurr3).ToString + "A   ")
-                    file.WriteLine()
 
-                    file.Write(("Power:" + ConnectionUSB.InterventiLetti.IntItems(i)._intPower.ToString + "W").PadRight(16))
-                    file.Write(("Pressure:" + GetPressure(ConnectionUSB.InterventiLetti.IntItems(i)._intPress).ToString + " bar").PadRight(20))
-                    file.WriteLine()
+                    'file.Write(("Volt:" + GetVoltage(ConnectionUSB.InterventiLetti.IntItems(i)._intVoltAv).ToString + "V").PadRight(16))
 
-                    file.Write(("Cosfi:" + GetCosfi(ConnectionUSB.InterventiLetti.IntItems(i)._intCosfi).ToString).PadRight(16))
-                    file.Write(("Temp:" + ConnectionUSB.InterventiLetti.IntItems(i)._intTemp.ToString + "°C").PadRight(11))
+                    ''file.Write(("Curr:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurrAv).ToString + "A").PadRight(13))
+                    'file.Write("I1:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intI1_rms).ToString + "A   ")
+                    'file.Write("I2:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intI2_rms).ToString + "A   ")
+                    'file.Write("I3:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intI3_rms).ToString + "A   ")
                     'file.WriteLine()
+
+                    'file.Write(("Power:" + GetPower(ConnectionUSB.InterventiLetti.IntItems(i)._intPower).ToString + "W").PadRight(16))
+                    'file.Write(("Pressure:" + GetPressure(ConnectionUSB.InterventiLetti.IntItems(i)._intPress).ToString + " bar").PadRight(20))
+                    'file.WriteLine()
+
+                    'file.Write(("Cosfi:" + GetCosfi(ConnectionUSB.InterventiLetti.IntItems(i)._intCosfi).ToString).PadRight(16))
+                    'file.Write(("Temp:" + GetTemperature(ConnectionUSB.InterventiLetti.IntItems(i)._intTemp).ToString + "°C").PadRight(11))
+
                 Next
 
             End If

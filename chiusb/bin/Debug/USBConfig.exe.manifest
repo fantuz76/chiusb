@@ -4,7 +4,7 @@
   <description asmv2:iconFile="logo_cut.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="USBConfig" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+    <assemblyIdentity name="USBConfig" version="1.0.1.0" language="neutral" processorArchitecture="x86" />
     <commandLine file="USBConfig.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -44,6 +44,11 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.VisualBasic.PowerPacks.Vs" version="9.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
       <assemblyIdentity name="System.Core" version="3.5.0.0" publicKeyToken="b77a5c561934e089" language="neutral" processorArchitecture="msil" />
     </dependentAssembly>
   </dependency>
@@ -58,14 +63,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="USBConfig.exe" size="531456">
-      <assemblyIdentity name="USBConfig" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="it\Microsoft.VisualBasic.PowerPacks.Vs.resources.dll" size="40960">
+      <assemblyIdentity name="Microsoft.VisualBasic.PowerPacks.Vs.resources" version="9.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="it" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>L5IGnI45KzDNMlcG9AHYNTB4OVw=</dsig:DigestValue>
+        <dsig:DigestValue>fjn7l7/8TLncZLn7ORBG7LBgfU8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="USBConfig.exe" size="533504">
+      <assemblyIdentity name="USBConfig" version="1.0.1.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>SwLWiqD3nYcGRcIKXim1H5ND4BQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

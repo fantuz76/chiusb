@@ -6,17 +6,30 @@ Imports System.Windows.Forms
 
 
 
+'16 bytes trasmessi per un complesso di 8K 504 registrazioni
+' 1 byte = tipo intervento  all'indirizzo binario xxxx xxxx xxxx 0000
+' 4 bytes = ora_minuto_secondo  xxxxx.xx.xx  (viene registrata come numero totale di secondi di funzionamento)
+' 2 bytes = tensione_media 0-500V
+' 1 byte = I1_rms  0-25.5A
+' 1 byte = I2_rms  0-25.5A
+' 1 byte = I3_rms  0-25.5A
+' 2 bytes = potenza  0-10000 W
+' 2 bytes = pressione  -1.0 - +50.0 Bar
+' 1 byte  = cosfi convenzionale =P/(P^2+Q^2) 0-.99
+' 1 byte = temperatura  0-255 °C
 Public Structure InterventSingle
     Public _intType As Byte
     Public _intTime As UInt32
-    Public _intVoltAv As UInt16
+    Public _intVoltAv As Int16
 
-    Public _intCurrAv As UInt16
+    Public _intI1_rms As Byte
+    Public _intI2_rms As Byte
+    Public _intI3_rms As Byte
 
-    Public _intPower As UInt16
-    Public _intPress As UInt16
+    Public _intPower As Int16
+    Public _intPress As Int16
     Public _intCosfi As Byte
-    Public _intTemp As UInt16
+    Public _intTemp As Byte
 
 
 End Structure
@@ -61,17 +74,22 @@ Public Class InterventiList
 
         _List(_List.Length - 1)._intType = _arrToParse(0)
         _List(_List.Length - 1)._intTime = _arrToParse(1) * 256 ^ 3 + _arrToParse(2) * 256 ^ 2 + _arrToParse(3) * 256 ^ 1 + _arrToParse(4) * 256 ^ 0
-        _List(_List.Length - 1)._intVoltAv = _arrToParse(5) * 256 ^ 1 + _arrToParse(6) * 256 ^ 0
 
-        _List(_List.Length - 1)._intCurrAv = _arrToParse(7) * 256 ^ 1 + _arrToParse(8) * 256 ^ 0
+        _List(_List.Length - 1)._intVoltAv = Conv_num_Int16(_arrToParse(5), _arrToParse(6))
 
-        _List(_List.Length - 1)._intPower = _arrToParse(9) * 256 ^ 1 + _arrToParse(10) * 256 ^ 0
+        _List(_List.Length - 1)._intI1_rms = _arrToParse(7)
+        _List(_List.Length - 1)._intI2_rms = _arrToParse(8)
+        _List(_List.Length - 1)._intI3_rms = _arrToParse(9)
 
-        _List(_List.Length - 1)._intPress = _arrToParse(11) * 256 ^ 1 + _arrToParse(12) * 256 ^ 0
+        Dim value As Integer
+        value = _arrToParse(10) * 256 ^ 1 + _arrToParse(11) * 256 ^ 0
+
+        _List(_List.Length - 1)._intPower = Conv_num_Int16(_arrToParse(10), _arrToParse(11))
+        _List(_List.Length - 1)._intPress = Conv_num_Int16(_arrToParse(12), _arrToParse(13))
 
 
-        _List(_List.Length - 1)._intCosfi = _arrToParse(13)
-        _List(_List.Length - 1)._intTemp = _arrToParse(14) * 256 ^ 1 + _arrToParse(15) * 256 ^ 0
+        _List(_List.Length - 1)._intCosfi = _arrToParse(14)
+        _List(_List.Length - 1)._intTemp = _arrToParse(15)
 
         Return True
     End Function
@@ -85,6 +103,7 @@ Public Class InterventiList
     End Sub
 
     ' Bubble Sort degli interventi in base al tempo
+    ' Se Crescente=TRUE -> ordina dal più vecchio al più recente
     Public Function SortArrIntTime(ByVal Crescente As Boolean) As Boolean
         Dim alto As Integer = _List.Length - 1
 
@@ -523,7 +542,7 @@ Public Class USBClass
                     If ret(0) = &H21 Then
                         _DatiSetHello = ret
                         _Matricola = ret(1) * 256 ^ 1 + ret(2) * 256 ^ 0
-                        _OreLav = ret(71) * 256 ^ 3 + ret(72) * 256 ^ 2 + ret(73) * 256 ^ 1 + ret(74) * 256 ^ 0
+                        _OreLav = ret(83) * 256 ^ 3 + ret(84) * 256 ^ 2 + ret(85) * 256 ^ 1 + ret(86) * 256 ^ 0
                         ForceClosePort()
                         Return True
                     Else
@@ -572,7 +591,7 @@ Public Class USBClass
                     If LetturaOK And (ret.Length > 5) Then
                         If ret(0) >= NUM_MAX_TYPE_INT Then
                             'if ret(2) = &HFF And ret(3) = &HFF And ret(4) = &HFF And ret(5) = &HFF) Then
-                            _myIntArr.SortArrIntTime(True)
+                            _myIntArr.SortArrIntTime(False)
                             ' fine OK
 
                             DisplayLogData("Read OK alarms #" + _myIntArr.Length.ToString)
