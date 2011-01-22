@@ -251,6 +251,64 @@
 #Region "Funzioni generiche Interventi"
 
 
+
+    Public Function Conv_num_Int16(ByVal _n1 As Byte, ByVal _n2 As Byte) As Int16
+        Dim _ar(2) As Byte
+        ' inverto l'ordine perchè non è Little-Endian
+        _ar(0) = _n2
+        _ar(1) = _n1
+        Return BitConverter.ToInt16(_ar, 0)
+    End Function
+
+    Public Function CreateLineStringIntervento(ByVal _intv As InterventSingle, ByVal _progress As UInteger) As String
+        Dim StToAdd, StToAdd2 As String
+        StToAdd = ""        
+        StToAdd2 = (_progress + 1)  '.ToString("000")
+
+        StToAdd = StToAdd + StToAdd2.PadRight(5)
+
+        StToAdd2 = "[" + _intv._intType.ToString + "] "
+        StToAdd = StToAdd + StToAdd2.PadLeft(6)
+
+        StToAdd2 = Intervents.GetIntStr(_intv._intType)
+        StToAdd = StToAdd + StToAdd2.PadRight(28)
+
+        StToAdd2 = GetHours(_intv._intTime).ToString + "h "
+        StToAdd2 = StToAdd2 + GetMinutes(_intv._intTime).ToString("00") + "' "
+        StToAdd2 = StToAdd2 + GetSeconds(_intv._intTime).ToString("00") + "'' "
+
+        StToAdd = StToAdd + StToAdd2.PadRight(13)
+
+        StToAdd2 = "Volt:" + GetVoltage(_intv._intVoltAv).ToString + "V"
+        StToAdd = StToAdd + StToAdd2.PadRight(11)
+        'StToAdd2 = "V2:" + _intv._intVolt2.ToString + "V"
+        'StToAdd = StToAdd + StToAdd2.PadRight(8)
+        'StToAdd2 = "V3:" + _intv._intVolt3.ToString + "V"
+        'StToAdd = StToAdd + StToAdd2.PadRight(8)
+
+        StToAdd2 = "I1:" + GetCurrent(_intv._intI1_rms).ToString("F1") + "A"
+        StToAdd = StToAdd + StToAdd2.PadRight(9)
+        StToAdd2 = "I2:" + GetCurrent(_intv._intI2_rms).ToString("F1") + "A"
+        StToAdd = StToAdd + StToAdd2.PadRight(9)
+        StToAdd2 = "I3:" + GetCurrent(_intv._intI3_rms).ToString("F1") + "A"
+        StToAdd = StToAdd + StToAdd2.PadRight(9)
+
+        StToAdd2 = "Power:" + GetPower(_intv._intPower).ToString + "W"
+        StToAdd = StToAdd + StToAdd2.PadRight(13)
+
+        StToAdd2 = "Pressure:" + GetPressure(_intv._intPress).ToString("F1") + " bar"
+        StToAdd = StToAdd + StToAdd2.PadRight(20)
+
+
+        StToAdd2 = "Cosfi:" + GetCosfi(_intv._intCosfi).ToString("F2") + ""
+        StToAdd = StToAdd + StToAdd2.PadRight(12)
+
+        StToAdd2 = "Temp:" + GetTemperature(_intv._intTemp).ToString + "°C"
+        StToAdd = StToAdd + StToAdd2.PadRight(11)
+
+        Return StToAdd
+    End Function
+
     Public Function GetHours(ByVal _totNumSec As UInt32) As UInteger
         Return _totNumSec \ 3600
     End Function
@@ -263,17 +321,32 @@
         Return ((_totNumSec Mod 3600) Mod 60) \ 1
     End Function
 
-    Public Function GetCurrent(ByVal _numToConvert As UInt16) As Double
+    Public Function GetVoltage(ByVal _numToConvert As Integer) As Integer
+        'If _numToConvert < 0 Then Return 0
+        Return (_numToConvert)
+    End Function
+
+    Public Function GetCurrent(ByVal _numToConvert As Byte) As Double
         Return (_numToConvert / 10)
     End Function
 
-    Public Function GetPressure(ByVal _numToConvert As UInt16) As Double
+    Public Function GetPower(ByVal _numToConvert As Integer) As Integer
+        'If _numToConvert < 0 Then Return 0
+        Return (_numToConvert)
+    End Function
+
+    Public Function GetPressure(ByVal _numToConvert As Integer) As Double
+        If _numToConvert < 0 Then Return 0
         Return (_numToConvert / 10)
     End Function
 
     Public Function GetCosfi(ByVal _numToConvert As Byte) As Double
+        'If _numToConvert < 0 Then Return 0
         Return (_numToConvert / 100)
     End Function
 
+    Public Function GetTemperature(ByVal _numToConvert As Byte) As Integer
+        Return (_numToConvert)
+    End Function
 #End Region
 End Module

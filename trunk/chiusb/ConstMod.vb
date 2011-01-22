@@ -65,56 +65,55 @@
     ' Ogni numero è composto da 2 byte (sono int)
     ' Sono 48 posizioni da 2 byte
 
-    ' int //dai di funzionamento a partire dall'indirizzo 8040  della eeprom		
-    '1	1	numero_serie, //0	
-    '3	2	monofase_trifase,//0-1	
-    '5	3	tensione_nominale,//V	
-    '7	4	limite_sovratensione,//%	
-    '9	5	limite_sottotensione,//%	
-    '11	6	limite_segnalazione_dissimmetria,//%	
-    '13	7	limite_intervento_dissimmetria,//%	
-    '15	8	timeout_protezione_tensione,//s	
-    '17	9	corrente_nominale,//A*10	
-    '19	10	limite_sovracorrente,//%	
-    '21	11	limite_segnalazione_squilibrio,//%	
-    '23	12	limite_intervento_squilibrio,//%	
-    '25	13	timeout_protezione_squilibrio,//s	
-    '27	14	costante_tau_salita_temperatura,//s	
-    '29	15	taratura_temperatura_ambiente,//da modificare per la taratura	
-    '31	16	scala_temperatura_motore,//mV/°C	
-    '33	17	limite_intervento_temper_motore,//°C	
-    '35	18	scala_corrente_differenziale, //mA in /mA out	
-    '37	19	limite_corrente_differenziale,//mA	
-    '39	20	ritardo_intervento_differenziale,//ms	
-    '41	21	ritardo_funzionamento_dopo_emergenza,//s	
-    '43	22	portata_sensore_pressione,//Bar*10	
-    '45	23	limite_intervento_pressione,//Bar*10	
-    '47	24	potenza_minima_mandata_chiusa,//W	
-    '49	25	ritardo_stop_mandata_chiusa, //s	
-    '51	26	potenza_minima_funz_secco, //W	
-    '53	27	ritardo_stop_funzionemento_a_secco, //s	
-    '55	28	ritardo_riaccensione_a_secco,//s	
-    '57	29	modo_start_stop,//remoto o pressione	
-    '59	30	pressione_accensione,//Bar*10	
-    '61	31	pressione_spegnimento,//Bar*10	
-    '63	32	lingua,//0-1	
-    '65	33	temperatura_ambiente,//°C	
-    '67	34	motore_on,//0-1         	
-    '69	35	numero_segnalazione,//0-503	
-    '71	36	conta_ore[2],	
-    '73	37	conta_ore[2],	
-    '75	38	abilita_sensore_pressione,	
-    '77	39	riserva[];	
-    '79	40	riserva[];	
-    '81	41	riserva[];	
-    '83	42	riserva[];
-    '85	43	riserva[];	
-    '87	44	riserva[];	
-    '89	45	riserva[];	
-    '91	46	riserva[];	
-    '93	47	riserva[];	
-    '95	48	riserva[];	
-
+    '	Pos # byte	# int	int //dai di funzionamento a partire dall'indirizzo 8040  della eeprom
+    '	1	1	numero_serie, //0
+    '	3	2	monofase_trifase,//0-1
+    '	5	3	potenza_nominale,// W*10
+    '	7	4	tensione_nominale,//V
+    '	9	5	limite_sovratensione,//%
+    '	11	6	limite_sottotensione,//%
+    '	13	7	tensione_restart,// %
+    '	15	8	limite_segnalazione_dissimmetria,//%
+    '	17	9	limite_intervento_dissimmetria,//%
+    '	19	10	timeout_protezione_tensione,//s
+    '	21	11	corrente_nominale,//A*10
+    '	23	12	limite_sovracorrente,//%
+    '	25	13	limite_segnalazione_squilibrio,//%
+    '	27	14	limite_intervento_squilibrio,//%
+    '	29	15	ritardo_protezione_squilibrio,//s
+    '	31	16	costante_tau_salita_temperatura,//s
+    '	33	17	taratura_temperatura_ambiente,//da modificare per la taratura
+    '	35	18	scala_temperatura_motore,//mV/°C
+    '	37	19	limite_intervento_temper_motore,//°C
+    '	39	20	scala_corrente_differenziale, //mA in /mA out
+    '	41	21	limite_corrente_differenziale,//mA
+    '	43	22	ritardo_intervento_differenziale,//ms
+    '	45	23	ritardo_funzionamento_dopo_emergenza,//min
+    '	47	24	portata_sensore_pressione,//Bar*10
+    '	49	25	pressione_emergenza,//Bar*10
+    '	51	26	potenza_minima_mandata_chiusa,//%
+    '	53	27	ritardo_stop_mandata_chiusa, //s
+    '	55	28	potenza_minima_funz_secco, //%
+    '	57	29	ritardo_stop_funzionemento_a_secco, //s
+    '	59	30	ritardo_riaccensione_mandata_chiusa,//s
+    '	61	31	modo_start_stop,//remoto o pressione
+    '	63	32	pressione_accensione,//Bar*10
+    '	65	33	pressione_spegnimento,//Bar*10
+    '	67	34	lingua,//0-1
+    '	69	35	temperatura_ambiente,//°C
+    '	71	36	abilita_sensore_pressione,//0-1
+    '	73	37	calibrazione_I1,    
+    '	75	38	calibrazione_I2,    
+    '	77	39	calibrazione_I3,    
+    '	79	40	motore_on,//0-1         
+    '	81	41	numero_segnalazione,//0-503
+    '	83	42	conta_ore[2],
+    '	85	43	
+    '	87	44	riserva[5];
+    '	89	45	
+    '	91	46	
+    '	93	47	
+    '	95	48	
 
 
 
