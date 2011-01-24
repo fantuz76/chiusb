@@ -11,7 +11,7 @@
 [ISPP]
 #define AppName "Usb Pump Control Box"
 #define ShortAppName "USB Pump Control Box"
-#define AppVersion "1.0.1"
+#define AppVersion "1.1.0"
 #define AppPublisher "Electroil"
 #define AppURL "http://www.electroil.it/"
 
@@ -118,6 +118,12 @@ Name: eng; MessagesFile: compiler:Default.isl
 #endif
 Filename: {win}\Microsoft.NET\Framework\v2.0.50727\CasPol.exe; Parameters: "-q -machine -remgroup ""MyApp"""; WorkingDir: {tmp}; Flags: skipifdoesntexist runhidden; StatusMsg: "Setting Program Access Permissions..."
 Filename: {win}\Microsoft.NET\Framework\v2.0.50727\CasPol.exe; Parameters: "-q -machine -addgroup 1.2 -url ""file://{app}/*"" FullTrust -name ""MyApp"""; WorkingDir: {tmp}; Flags: skipifdoesntexist runhidden; StatusMsg: "Setting Program Access Permissions..."
+
+
+;Filename: {sys}\rundll32.exe; Parameters: "setupapi,InstallHinfSection DefaultInstall 128 {app}\driver_usb\UsbJM60.inf"; 
+;Filename: {sys}\rundll32.exe; Parameters: "setupapi,InstallHinfSection DefaultInstall 132 .\<driver>x86.inf"; WorkingDir: {app}; Flags: 32bit; Check: IsX86;
+;The normal method to install a .inf file is to right click on it and select Install from the context menu however it is also possible to install from the command line. The syntax is: 
+;C:\>rundll32 syssetup,SetupInfObjectInstallAction DefaultInstall 128 .\<file>.inf
 
 [Registry]
 ; Création de la clé primaire

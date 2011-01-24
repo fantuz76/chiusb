@@ -3,7 +3,7 @@
     Public Const XMLCFG = "\Config.xml"
 
     Public Const NUM_MAX_TYPE_INT = 35      ' Codice tipo intervento massimo possibile (non tutti sono usati)
-    Public Const NUM_INT_TYPES = 21         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)
+    Public Const NUM_INT_TYPES = 24         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)
 
     Public Const INTERVENTO_LENGTH = 16     ' Dimensione array USB singolo intervento
 
@@ -21,6 +21,8 @@
     Public Const TYPE_NOHALT_DIFF = 16
     Public Const TYPE_NOHALT_SQUILIBRIO = 17
     Public Const TYPE_NOHALT_DISSIMETRIA = 18
+    Public Const TYPE_NOHALT_SOVRAPRESSIONE = 19
+
     Public Const TYPE_HALT_OVERCURR = 10 + 10
     Public Const TYPE_HALT_OVERVOLT = 11 + 10
     Public Const TYPE_HALT_UNDERVOLT = 12 + 10
@@ -31,6 +33,9 @@
     Public Const TYPE_HALT_SQUILIBRIO = 17 + 10
     Public Const TYPE_HALT_DISSIMETRIA = 18 + 10
     Public Const TYPE_HALT_PRESS_SENS = 19 + 10
+    Public Const TYPE_HALT_SOVRAPRESSIONE = 30
+    Public Const TYPE_HALT_CORTO_CIRCUITO = 31
+
 
 
 
@@ -46,10 +51,11 @@
     Public Const TYPE_NOHALT_DIFF_STR = "Isolation Fault" + "  ON"
     Public Const TYPE_NOHALT_SQUILIBRIO_STR = "Current Diff." + "  ON"
     Public Const TYPE_NOHALT_DISSIMETRIA_STR = "Voltage Diff." + "  ON"
+    Public Const TYPE_NOHALT_SOVRAPRESSIONE_STR = "Over Pressure" + "  ON"
 
-    Public Const TYPE_HALT_OVERCURR_STR = "Overcurrent" + "  OFF"
-    Public Const TYPE_HALT_OVERVOLT_STR = "Overvoltage" + "  OFF"
-    Public Const TYPE_HALT_UNDERVOLT_STR = "Undervoltage" + "  OFF"
+    Public Const TYPE_HALT_OVERCURR_STR = "OverCurrent" + "  OFF"
+    Public Const TYPE_HALT_OVERVOLT_STR = "OverVoltage" + "  OFF"
+    Public Const TYPE_HALT_UNDERVOLT_STR = "UnderVoltage" + "  OFF"
     Public Const TYPE_HALT_MANDATACH_STR = "MinimumFlow" + "  OFF"
     Public Const TYPE_HALT_DRYFUNC_STR = "Dry Operating" + "  OFF"
     Public Const TYPE_HALT_OVERTEMP_STR = "Pump OverTemperature" + "  OFF"
@@ -57,6 +63,8 @@
     Public Const TYPE_HALT_SQUILIBRIO_STR = "Current Diff." + "  OFF"
     Public Const TYPE_HALT_DISSIMETRIA_STR = "Voltage Diff." + "  OFF"
     Public Const TYPE_HALT_PRESS_SENS_STR = "Pressure Sensor alarm" + "  OFF"
+    Public Const TYPE_HALT_SOVRAPRESSIONE_STR = "Over Pressure" + "  OFF"
+    Public Const TYPE_HALT_CORTO_CIRCUITO_STR = "Short Circuit" + "  OFF"
 
 
 

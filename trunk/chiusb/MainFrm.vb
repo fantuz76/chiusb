@@ -212,7 +212,7 @@ Public Class MainFrm
             'StToAdd2 = "Temp:" + GetTemperature(ConnectionUSB.InterventiLetti.IntItems(i)._intTemp).ToString + "°C"
             'StToAdd = StToAdd + StToAdd2.PadRight(11)
 
-            lstInterventi.Items.Add(CreateLineStringIntervento(ConnectionUSB.InterventiLetti.IntItems(i), i))
+            lstInterventi.Items.Add(CreateLineStringIntervento(ConnectionUSB.InterventiLetti.IntItems(i), i, ConnectionUSB.InterventiLetti.Length - 1))
         Next
     End Sub
 
@@ -231,7 +231,8 @@ Public Class MainFrm
             HscrollInterventi.LargeChange = 1
             HscrollInterventi.Value = HscrollInterventi.Minimum
             lblNumIntTitle.Text = "alarms number"
-            lblNumInt.Text = HscrollInterventi.Value & "/" & HscrollInterventi.Maximum
+            lblNumInt.Text = HscrollInterventi.Maximum - HscrollInterventi.Value + 1 & "/" & HscrollInterventi.Maximum  'voleva numerazione inversa
+            'lblNumInt.Text = HscrollInterventi.Value & "/" & HscrollInterventi.Maximum
             FillListData()
             FillIntData(ConnectionUSB.InterventiLetti.IntItems(HscrollInterventi.Value - 1))
             lstInterventi.SelectedItem = lstInterventi.Items.Item(HscrollInterventi.Value - 1)
@@ -270,7 +271,10 @@ Public Class MainFrm
             StatusStrip1.Items.Add("Serial number: " + ConnectionUSB.Matricola.ToUpper)
             StatusStrip1.Items.Add(New ToolStripSeparator)
 
-            StatusStrip1.Items.Add("Worked hours: " + GetHours(ConnectionUSB.OreLav).ToString("") + "h " + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
+            StatusStrip1.Items.Add("Total time control box ON: " + GetHours(ConnectionUSB.TotalTime).ToString("") + "h " + GetMinutes(ConnectionUSB.TotalTime).ToString("00") + "' " + GetSeconds(ConnectionUSB.TotalTime).ToString("00") + "''")
+            StatusStrip1.Items.Add(New ToolStripSeparator)
+
+            StatusStrip1.Items.Add("Pump ON worked hours: " + GetHours(ConnectionUSB.OreLav).ToString("") + "h " + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
             StatusStrip1.Items.Add(New ToolStripSeparator)
 
 
@@ -405,12 +409,14 @@ Public Class MainFrm
 
                 '               + " Fw Ver:" + ConnectionUSB.FwVer.ToString("X4") _
                 '               + " Hw Ver:" + ConnectionUSB.HwVer.ToString("X4"))
-                file.WriteLine("* Worked hours:" + GetHours(ConnectionUSB.OreLav).ToString + "h" + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
+                file.WriteLine("* Total time control box ON:" + GetHours(ConnectionUSB.TotalTime).ToString + "h" + GetMinutes(ConnectionUSB.TotalTime).ToString("00") + "' " + GetSeconds(ConnectionUSB.TotalTime).ToString("00") + "''")
+                file.WriteLine("* Pump ON worked hours: " + GetHours(ConnectionUSB.OreLav).ToString + "h" + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
+
                 file.WriteLine(New String("*", 90))
 
                 file.WriteLine()
                 For i = 0 To ConnectionUSB.InterventiLetti.Length - 1
-                    file.WriteLine(CreateLineStringIntervento(ConnectionUSB.InterventiLetti.IntItems(i), i))
+                    file.WriteLine(CreateLineStringIntervento(ConnectionUSB.InterventiLetti.IntItems(i), i, ConnectionUSB.InterventiLetti.Length - 1))
                     'file.WriteLine()
                     'file.WriteLine(New String("-", 68))
 
@@ -460,77 +466,6 @@ Public Class MainFrm
     End Sub
 
 
-    'Private Sub UpdateChartZ()
-    '    Dim x(Intervents.TotTipiIntervento - 1) As String
-    '    Dim y(Intervents.TotTipiIntervento - 1) As Double
-    '    Dim myPane As GraphPane = zg1.GraphPane
-    '    Dim myZList As New PointPairList
-    '    Dim i As Integer
-
-    '    zg1.GraphPane.CurveList.Clear()
-    '    zg1.GraphPane.Title.Text = "Alarms"
-
-    '    For i = 0 To Intervents.TotTipiIntervento - 1
-    '        myZList = New PointPairList
-    '        myZList.Clear()
-    '        myZList.Add(Intervents.enumNum(i), Intervents.GetOcc(Intervents.enumNum(i)), 111)
-    '        'x(i) = Intervents.GetIntStr(Intervents.enumNum(i))
-    '        x(i) = (Intervents.enumNum(i))
-    '        ' y(i) = Intervents.GetOcc(Intervents.enumNum(i))
-    '        Dim myCurve As CurveItem = myPane.AddBar(Intervents.enumNum(i).ToString + " " + Intervents.GetIntStr(Intervents.enumNum(i)), myZList, Intervents.returnColor(Intervents.enumNum(i)))
-    '        'Dim myCurve As CurveItem = myPane.AddBar("", .ToString, Nothing, y, Color.Yellow)
-    '    Next i
-
-    '    'Dim myCurve As CurveItem = myPane.AddBar("Gigione", Nothing, y, Color.Green)
-
-    '    ' Fill the pane background with a color gradient
-    '    myPane.Fill = New Fill(Color.White, Color.LightGray, 45.0F)
-    '    ' No fill for the chart background
-    '    myPane.Chart.Fill.Type = FillType.None
-
-    '    ' Set the legend to an arbitrary location
-    '    myPane.Legend.Position = LegendPos.Right
-    '    myPane.Legend.Location = New Location(0.95F, 0.15F, CoordType.PaneFraction, _
-    '                AlignH.Right, AlignV.Top)
-    '    myPane.Legend.FontSpec.Size = 10.0F
-    '    myPane.Legend.IsHStack = False
-
-
-    '    myPane.XAxis.Type = ZedGraph.AxisType.Text
-    '    myPane.XAxis.Title.Text = "Alarms type"
-    '    myPane.XAxis.Title.FontSpec.Size = 10.0F
-
-    '    myPane.XAxis.Scale.FormatAuto = True
-    '    'myPane.XAxis.Scale.TextLabels = x
-    '    myPane.XAxis.Scale.FontSpec.Size = 10.0F
-    '    myPane.XAxis.Scale.FontSpec.IsBold = True
-    '    myPane.XAxis.MinorGrid.IsVisible = True
-    '    myPane.XAxis.MinSpace = 1
-    '    myPane.XAxis.Scale.FormatAuto = True
-
-
-    '    myPane.YAxis.Type = ZedGraph.AxisType.Linear
-    '    myPane.YAxis.Title.Text = "Occurences"
-    '    myPane.YAxis.Title.FontSpec.Size = 10.0F
-    '    myPane.YAxis.Scale.FontSpec.Size = 10.0F
-    '    myPane.YAxis.Scale.Align = AlignP.Inside
-    '    myPane.YAxis.Scale.Min = 0
-    '    myPane.YAxis.Scale.MaxAuto = True
-
-    '    Dim colors As Color() = {Color.Red, Color.Yellow, Color.Green, Color.Blue, Color.Purple}
-
-
-    '    '' Tell ZedGraph to calculate the axis ranges
-    '    zg1.AxisChange()
-    '    ' Make sure the Graph gets redrawn
-    '    zg1.Invalidate()
-
-    '    zg1.Refresh()
-
-
-
-
-    'End Sub
 
     Private Sub UpdateChartZ_Second()
         Dim x(Intervents.TotTipiIntervento - 1) As String
@@ -755,11 +690,6 @@ Public Class MainFrm
 
 
 
-
-
-
-
-
         'Chart1.ChartAreas.Clear()
         'Chart1.Series.Clear()
 
@@ -799,7 +729,8 @@ Public Class MainFrm
 
     Private Sub HscrollInterventi_ValueChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles HscrollInterventi.ValueChanged
         If ConnectionUSB.InterventiLetti.IntItems.Length > 0 Then
-            lblNumInt.Text = HscrollInterventi.Value & "/" & HscrollInterventi.Maximum
+            'lblNumInt.Text = HscrollInterventi.Value & "/" & HscrollInterventi.Maximum
+            lblNumInt.Text = HscrollInterventi.Maximum - HscrollInterventi.Value + 1 & "/" & HscrollInterventi.Maximum  'voleva numerazione inversa
             FillIntData(ConnectionUSB.InterventiLetti.IntItems(HscrollInterventi.Value - 1))
 
             If lstInterventi.Items.Count >= HscrollInterventi.Value Then
@@ -810,8 +741,8 @@ Public Class MainFrm
     End Sub
 
     Private Sub btnOpenGraph_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnOpenGraph.Click
-        ZedGraphFrm.Show()
         UpdateChartZ_Second()
+        ZedGraphFrm.Show()
     End Sub
 
 
@@ -819,4 +750,6 @@ Public Class MainFrm
     Private Sub AboutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AboutToolStripMenuItem.Click
         AboutBox1.Show()
     End Sub
+
+    
 End Class

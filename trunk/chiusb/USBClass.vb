@@ -137,6 +137,7 @@ Public Class USBClass
     Private _logWindow As Object 'Control
     Private _DatiSetHello As Byte()
     Private _Matricola As UInt16
+    Private _TotalTime As UInt32
     Private _OreLav As UInt32
     Private _myIntArr As New InterventiList
     Private _FwVer As UInt16
@@ -182,6 +183,11 @@ Public Class USBClass
         End Get
     End Property
 
+    Public ReadOnly Property TotalTime() As UInt32
+        Get
+            Return _TotalTime
+        End Get
+    End Property
     Public ReadOnly Property InterventiLetti() As InterventiList
         Get
             Return _myIntArr
@@ -542,7 +548,8 @@ Public Class USBClass
                     If ret(0) = &H21 Then
                         _DatiSetHello = ret
                         _Matricola = ret(1) * 256 ^ 1 + ret(2) * 256 ^ 0
-                        _OreLav = ret(83) * 256 ^ 3 + ret(84) * 256 ^ 2 + ret(85) * 256 ^ 1 + ret(86) * 256 ^ 0
+                        _TotalTime = ret(83) * 256 ^ 3 + ret(84) * 256 ^ 2 + ret(85) * 256 ^ 1 + ret(86) * 256 ^ 0
+                        _OreLav = ret(87) * 256 ^ 3 + ret(88) * 256 ^ 2 + ret(89) * 256 ^ 1 + ret(90) * 256 ^ 0
                         ForceClosePort()
                         Return True
                     Else
