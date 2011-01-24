@@ -34,8 +34,20 @@ Partial Class MainFrm
         Me.lblNumInt = New System.Windows.Forms.Label
         Me.HscrollInterventi = New System.Windows.Forms.HScrollBar
         Me.Panel1 = New System.Windows.Forms.Panel
-        Me.lblIntCurrent = New System.Windows.Forms.Label
+        Me.Panel6 = New System.Windows.Forms.Panel
+        Me.Panel2 = New System.Windows.Forms.Panel
+        Me.lblIntV1Val = New System.Windows.Forms.Label
+        Me.lblIntVDesc = New System.Windows.Forms.Label
         Me.lblIntVolt = New System.Windows.Forms.Label
+        Me.Panel5 = New System.Windows.Forms.Panel
+        Me.lblIntCurrent = New System.Windows.Forms.Label
+        Me.Panel3 = New System.Windows.Forms.Panel
+        Me.lblIntI3Val = New System.Windows.Forms.Label
+        Me.lblIntI3Desc = New System.Windows.Forms.Label
+        Me.lblIntI2Val = New System.Windows.Forms.Label
+        Me.lblIntI2Desc = New System.Windows.Forms.Label
+        Me.lblIntI1Val = New System.Windows.Forms.Label
+        Me.lblIntI1Desc = New System.Windows.Forms.Label
         Me.Panel4 = New System.Windows.Forms.Panel
         Me.lblIntTempVal = New System.Windows.Forms.Label
         Me.lblIntTempDesc = New System.Windows.Forms.Label
@@ -45,12 +57,6 @@ Partial Class MainFrm
         Me.lblIntPressDesc = New System.Windows.Forms.Label
         Me.lblIntPowVal = New System.Windows.Forms.Label
         Me.lblIntPowDesc = New System.Windows.Forms.Label
-        Me.Panel3 = New System.Windows.Forms.Panel
-        Me.lblIntI1Val = New System.Windows.Forms.Label
-        Me.lblIntI1Desc = New System.Windows.Forms.Label
-        Me.Panel2 = New System.Windows.Forms.Panel
-        Me.lblIntV1Val = New System.Windows.Forms.Label
-        Me.lblIntVDesc = New System.Windows.Forms.Label
         Me.lblIntTimeVal = New System.Windows.Forms.Label
         Me.lblIntTimeDesc = New System.Windows.Forms.Label
         Me.lblIntTypeVal = New System.Windows.Forms.Label
@@ -77,29 +83,22 @@ Partial Class MainFrm
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog
         Me.ClearLogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.zg1 = New ZedGraph.ZedGraphControl
         Me.PictureLogo = New System.Windows.Forms.PictureBox
         Me.btnExit = New System.Windows.Forms.Button
-        Me.lblIntI2Val = New System.Windows.Forms.Label
-        Me.lblIntI2Desc = New System.Windows.Forms.Label
-        Me.lblIntI3Val = New System.Windows.Forms.Label
-        Me.lblIntI3Desc = New System.Windows.Forms.Label
-        Me.Panel5 = New System.Windows.Forms.Panel
-        Me.Panel6 = New System.Windows.Forms.Panel
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.pnlButAlarms.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.Panel4.SuspendLayout()
-        Me.Panel3.SuspendLayout()
+        Me.Panel6.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.Panel5.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.ContextMenuLog.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureLogo, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel5.SuspendLayout()
-        Me.Panel6.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -219,15 +218,44 @@ Partial Class MainFrm
         Me.Panel1.Size = New System.Drawing.Size(524, 114)
         Me.Panel1.TabIndex = 0
         '
-        'lblIntCurrent
+        'Panel6
         '
-        Me.lblIntCurrent.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIntCurrent.Location = New System.Drawing.Point(2, 8)
-        Me.lblIntCurrent.Name = "lblIntCurrent"
-        Me.lblIntCurrent.Size = New System.Drawing.Size(176, 26)
-        Me.lblIntCurrent.TabIndex = 8
-        Me.lblIntCurrent.Text = "Currents [Amp]"
-        Me.lblIntCurrent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel6.Controls.Add(Me.Panel2)
+        Me.Panel6.Controls.Add(Me.lblIntVolt)
+        Me.Panel6.Location = New System.Drawing.Point(3, 34)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(91, 71)
+        Me.Panel6.TabIndex = 10
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.lblIntV1Val)
+        Me.Panel2.Controls.Add(Me.lblIntVDesc)
+        Me.Panel2.Location = New System.Drawing.Point(-1, 37)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(91, 30)
+        Me.Panel2.TabIndex = 4
+        '
+        'lblIntV1Val
+        '
+        Me.lblIntV1Val.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblIntV1Val.Location = New System.Drawing.Point(6, 6)
+        Me.lblIntV1Val.Name = "lblIntV1Val"
+        Me.lblIntV1Val.Size = New System.Drawing.Size(78, 17)
+        Me.lblIntV1Val.TabIndex = 5
+        Me.lblIntV1Val.Text = "65535"
+        Me.lblIntV1Val.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblIntVDesc
+        '
+        Me.lblIntVDesc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIntVDesc.Location = New System.Drawing.Point(48, 17)
+        Me.lblIntVDesc.Name = "lblIntVDesc"
+        Me.lblIntVDesc.Size = New System.Drawing.Size(36, 16)
+        Me.lblIntVDesc.TabIndex = 4
+        Me.lblIntVDesc.Text = "V"
+        Me.lblIntVDesc.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lblIntVolt
         '
@@ -238,6 +266,99 @@ Partial Class MainFrm
         Me.lblIntVolt.TabIndex = 7
         Me.lblIntVolt.Text = "Average Voltage [Volt]"
         Me.lblIntVolt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Panel5
+        '
+        Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel5.Controls.Add(Me.lblIntCurrent)
+        Me.Panel5.Controls.Add(Me.Panel3)
+        Me.Panel5.Location = New System.Drawing.Point(93, 34)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(190, 71)
+        Me.Panel5.TabIndex = 9
+        '
+        'lblIntCurrent
+        '
+        Me.lblIntCurrent.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIntCurrent.Location = New System.Drawing.Point(2, 8)
+        Me.lblIntCurrent.Name = "lblIntCurrent"
+        Me.lblIntCurrent.Size = New System.Drawing.Size(176, 26)
+        Me.lblIntCurrent.TabIndex = 8
+        Me.lblIntCurrent.Text = "Currents [Amp]"
+        Me.lblIntCurrent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.lblIntI3Val)
+        Me.Panel3.Controls.Add(Me.lblIntI3Desc)
+        Me.Panel3.Controls.Add(Me.lblIntI2Val)
+        Me.Panel3.Controls.Add(Me.lblIntI2Desc)
+        Me.Panel3.Controls.Add(Me.lblIntI1Val)
+        Me.Panel3.Controls.Add(Me.lblIntI1Desc)
+        Me.Panel3.Location = New System.Drawing.Point(2, 37)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(187, 30)
+        Me.Panel3.TabIndex = 5
+        '
+        'lblIntI3Val
+        '
+        Me.lblIntI3Val.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblIntI3Val.Location = New System.Drawing.Point(145, 6)
+        Me.lblIntI3Val.Name = "lblIntI3Val"
+        Me.lblIntI3Val.Size = New System.Drawing.Size(34, 17)
+        Me.lblIntI3Val.TabIndex = 9
+        Me.lblIntI3Val.Text = "25.5"
+        Me.lblIntI3Val.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lblIntI3Desc
+        '
+        Me.lblIntI3Desc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIntI3Desc.Location = New System.Drawing.Point(122, 6)
+        Me.lblIntI3Desc.Name = "lblIntI3Desc"
+        Me.lblIntI3Desc.Size = New System.Drawing.Size(22, 17)
+        Me.lblIntI3Desc.TabIndex = 8
+        Me.lblIntI3Desc.Text = "I3"
+        Me.lblIntI3Desc.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'lblIntI2Val
+        '
+        Me.lblIntI2Val.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblIntI2Val.Location = New System.Drawing.Point(85, 6)
+        Me.lblIntI2Val.Name = "lblIntI2Val"
+        Me.lblIntI2Val.Size = New System.Drawing.Size(34, 17)
+        Me.lblIntI2Val.TabIndex = 7
+        Me.lblIntI2Val.Text = "25.5"
+        Me.lblIntI2Val.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lblIntI2Desc
+        '
+        Me.lblIntI2Desc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIntI2Desc.Location = New System.Drawing.Point(62, 6)
+        Me.lblIntI2Desc.Name = "lblIntI2Desc"
+        Me.lblIntI2Desc.Size = New System.Drawing.Size(22, 17)
+        Me.lblIntI2Desc.TabIndex = 6
+        Me.lblIntI2Desc.Text = "I2"
+        Me.lblIntI2Desc.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'lblIntI1Val
+        '
+        Me.lblIntI1Val.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblIntI1Val.Location = New System.Drawing.Point(24, 6)
+        Me.lblIntI1Val.Name = "lblIntI1Val"
+        Me.lblIntI1Val.Size = New System.Drawing.Size(34, 17)
+        Me.lblIntI1Val.TabIndex = 5
+        Me.lblIntI1Val.Text = "25.5"
+        Me.lblIntI1Val.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lblIntI1Desc
+        '
+        Me.lblIntI1Desc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIntI1Desc.Location = New System.Drawing.Point(1, 6)
+        Me.lblIntI1Desc.Name = "lblIntI1Desc"
+        Me.lblIntI1Desc.Size = New System.Drawing.Size(22, 17)
+        Me.lblIntI1Desc.TabIndex = 4
+        Me.lblIntI1Desc.Text = "I1"
+        Me.lblIntI1Desc.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Panel4
         '
@@ -335,68 +456,6 @@ Partial Class MainFrm
         Me.lblIntPowDesc.Text = "Power [Watt]"
         Me.lblIntPowDesc.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'Panel3
-        '
-        Me.Panel3.Controls.Add(Me.lblIntI3Val)
-        Me.Panel3.Controls.Add(Me.lblIntI3Desc)
-        Me.Panel3.Controls.Add(Me.lblIntI2Val)
-        Me.Panel3.Controls.Add(Me.lblIntI2Desc)
-        Me.Panel3.Controls.Add(Me.lblIntI1Val)
-        Me.Panel3.Controls.Add(Me.lblIntI1Desc)
-        Me.Panel3.Location = New System.Drawing.Point(2, 37)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(187, 30)
-        Me.Panel3.TabIndex = 5
-        '
-        'lblIntI1Val
-        '
-        Me.lblIntI1Val.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblIntI1Val.Location = New System.Drawing.Point(24, 6)
-        Me.lblIntI1Val.Name = "lblIntI1Val"
-        Me.lblIntI1Val.Size = New System.Drawing.Size(34, 17)
-        Me.lblIntI1Val.TabIndex = 5
-        Me.lblIntI1Val.Text = "25.5"
-        Me.lblIntI1Val.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'lblIntI1Desc
-        '
-        Me.lblIntI1Desc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIntI1Desc.Location = New System.Drawing.Point(1, 6)
-        Me.lblIntI1Desc.Name = "lblIntI1Desc"
-        Me.lblIntI1Desc.Size = New System.Drawing.Size(22, 17)
-        Me.lblIntI1Desc.TabIndex = 4
-        Me.lblIntI1Desc.Text = "I1"
-        Me.lblIntI1Desc.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.lblIntV1Val)
-        Me.Panel2.Controls.Add(Me.lblIntVDesc)
-        Me.Panel2.Location = New System.Drawing.Point(-1, 37)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(91, 30)
-        Me.Panel2.TabIndex = 4
-        '
-        'lblIntV1Val
-        '
-        Me.lblIntV1Val.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblIntV1Val.Location = New System.Drawing.Point(6, 6)
-        Me.lblIntV1Val.Name = "lblIntV1Val"
-        Me.lblIntV1Val.Size = New System.Drawing.Size(78, 17)
-        Me.lblIntV1Val.TabIndex = 5
-        Me.lblIntV1Val.Text = "65535"
-        Me.lblIntV1Val.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lblIntVDesc
-        '
-        Me.lblIntVDesc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIntVDesc.Location = New System.Drawing.Point(48, 17)
-        Me.lblIntVDesc.Name = "lblIntVDesc"
-        Me.lblIntVDesc.Size = New System.Drawing.Size(36, 16)
-        Me.lblIntVDesc.TabIndex = 4
-        Me.lblIntVDesc.Text = "V"
-        Me.lblIntVDesc.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
         'lblIntTimeVal
         '
         Me.lblIntTimeVal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
@@ -447,7 +506,7 @@ Partial Class MainFrm
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(626, 280)
+        Me.TabPage2.Size = New System.Drawing.Size(638, 280)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Other"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -602,22 +661,6 @@ Partial Class MainFrm
         Me.ClearLogToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
         Me.ClearLogToolStripMenuItem.Text = "Clear Log"
         '
-        'zg1
-        '
-        Me.zg1.AutoSize = True
-        Me.zg1.Location = New System.Drawing.Point(661, 0)
-        Me.zg1.Name = "zg1"
-        Me.zg1.ScrollGrace = 0
-        Me.zg1.ScrollMaxX = 0
-        Me.zg1.ScrollMaxY = 505
-        Me.zg1.ScrollMaxY2 = 0
-        Me.zg1.ScrollMinX = 0
-        Me.zg1.ScrollMinY = 0
-        Me.zg1.ScrollMinY2 = 0
-        Me.zg1.Size = New System.Drawing.Size(683, 253)
-        Me.zg1.TabIndex = 14
-        Me.zg1.Visible = False
-        '
         'PictureLogo
         '
         Me.PictureLogo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -641,73 +684,12 @@ Partial Class MainFrm
         Me.btnExit.Text = "Exit"
         Me.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
         '
-        'lblIntI2Val
-        '
-        Me.lblIntI2Val.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblIntI2Val.Location = New System.Drawing.Point(85, 6)
-        Me.lblIntI2Val.Name = "lblIntI2Val"
-        Me.lblIntI2Val.Size = New System.Drawing.Size(34, 17)
-        Me.lblIntI2Val.TabIndex = 7
-        Me.lblIntI2Val.Text = "25.5"
-        Me.lblIntI2Val.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'lblIntI2Desc
-        '
-        Me.lblIntI2Desc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIntI2Desc.Location = New System.Drawing.Point(62, 6)
-        Me.lblIntI2Desc.Name = "lblIntI2Desc"
-        Me.lblIntI2Desc.Size = New System.Drawing.Size(22, 17)
-        Me.lblIntI2Desc.TabIndex = 6
-        Me.lblIntI2Desc.Text = "I2"
-        Me.lblIntI2Desc.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'lblIntI3Val
-        '
-        Me.lblIntI3Val.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblIntI3Val.Location = New System.Drawing.Point(145, 6)
-        Me.lblIntI3Val.Name = "lblIntI3Val"
-        Me.lblIntI3Val.Size = New System.Drawing.Size(34, 17)
-        Me.lblIntI3Val.TabIndex = 9
-        Me.lblIntI3Val.Text = "25.5"
-        Me.lblIntI3Val.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'lblIntI3Desc
-        '
-        Me.lblIntI3Desc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIntI3Desc.Location = New System.Drawing.Point(122, 6)
-        Me.lblIntI3Desc.Name = "lblIntI3Desc"
-        Me.lblIntI3Desc.Size = New System.Drawing.Size(22, 17)
-        Me.lblIntI3Desc.TabIndex = 8
-        Me.lblIntI3Desc.Text = "I3"
-        Me.lblIntI3Desc.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'Panel5
-        '
-        Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel5.Controls.Add(Me.lblIntCurrent)
-        Me.Panel5.Controls.Add(Me.Panel3)
-        Me.Panel5.Location = New System.Drawing.Point(93, 34)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(190, 71)
-        Me.Panel5.TabIndex = 9
-        '
-        'Panel6
-        '
-        Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel6.Controls.Add(Me.Panel2)
-        Me.Panel6.Controls.Add(Me.lblIntVolt)
-        Me.Panel6.Location = New System.Drawing.Point(3, 34)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(91, 71)
-        Me.Panel6.TabIndex = 10
-        '
         'MainFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(729, 482)
         Me.Controls.Add(Me.StatusStrip1)
-        Me.Controls.Add(Me.zg1)
         Me.Controls.Add(Me.ListBoxLog)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MenuStrip1)
@@ -723,9 +705,11 @@ Partial Class MainFrm
         Me.TabPage1.PerformLayout()
         Me.pnlButAlarms.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel3.ResumeLayout(False)
+        Me.Panel6.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel4.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.ContextMenuLog.ResumeLayout(False)
@@ -733,8 +717,6 @@ Partial Class MainFrm
         Me.MenuStrip1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.PictureLogo, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel5.ResumeLayout(False)
-        Me.Panel6.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -790,7 +772,6 @@ Partial Class MainFrm
     Friend WithEvents lblNumIntTitle As System.Windows.Forms.Label
     Friend WithEvents lblGenericTmp As System.Windows.Forms.Label
     'Friend WithEvents Chart1 As System.Windows.Forms.DataVisualization.Charting.Chart
-    Friend WithEvents zg1 As ZedGraph.ZedGraphControl
     Friend WithEvents lstInterventi As System.Windows.Forms.ListBox
     Friend WithEvents btnOpenGraph As System.Windows.Forms.Button
     Friend WithEvents pnlButAlarms As System.Windows.Forms.Panel

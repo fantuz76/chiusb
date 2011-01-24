@@ -33,6 +33,7 @@
                                             New IntOccur(TYPE_NOHALT_DIFF, TYPE_NOHALT_DIFF_STR), _
                                             New IntOccur(TYPE_NOHALT_SQUILIBRIO, TYPE_NOHALT_SQUILIBRIO_STR), _
                                             New IntOccur(TYPE_NOHALT_DISSIMETRIA, TYPE_NOHALT_DISSIMETRIA_STR), _
+                                            New IntOccur(TYPE_NOHALT_SOVRAPRESSIONE, TYPE_NOHALT_SOVRAPRESSIONE_STR), _
                                             New IntOccur(TYPE_HALT_OVERCURR, TYPE_HALT_OVERCURR_STR), _
                                             New IntOccur(TYPE_HALT_OVERVOLT, TYPE_HALT_OVERVOLT_STR), _
                                             New IntOccur(TYPE_HALT_UNDERVOLT, TYPE_HALT_UNDERVOLT_STR), _
@@ -42,7 +43,9 @@
                                             New IntOccur(TYPE_HALT_DIFF, TYPE_HALT_DIFF_STR), _
                                             New IntOccur(TYPE_HALT_SQUILIBRIO, TYPE_HALT_SQUILIBRIO_STR), _
                                             New IntOccur(TYPE_HALT_DISSIMETRIA, TYPE_HALT_DISSIMETRIA_STR), _
-                                            New IntOccur(TYPE_HALT_PRESS_SENS, TYPE_HALT_PRESS_SENS_STR)}
+                                            New IntOccur(TYPE_HALT_PRESS_SENS, TYPE_HALT_PRESS_SENS_STR), _
+                                            New IntOccur(TYPE_HALT_SOVRAPRESSIONE, TYPE_HALT_SOVRAPRESSIONE_STR), _
+                                            New IntOccur(TYPE_HALT_CORTO_CIRCUITO, TYPE_HALT_CORTO_CIRCUITO_STR)}
 
         Public Sub New()
             ' Solo per controllo verifico che costante e init array siano OK
@@ -145,6 +148,9 @@
                     Return Color.Gray
                 Case TYPE_NOHALT_DISSIMETRIA
                     Return Color.Blue
+                Case TYPE_NOHALT_SOVRAPRESSIONE
+                    Return Color.DarkSalmon
+
 
                 Case TYPE_HALT_OVERCURR
                     Return Color.DarkViolet
@@ -166,6 +172,11 @@
                     Return Color.DarkBlue
                 Case TYPE_HALT_PRESS_SENS
                     Return Color.RosyBrown
+                Case TYPE_HALT_SOVRAPRESSIONE
+                    Return Color.LightSalmon
+                Case TYPE_HALT_CORTO_CIRCUITO
+                    Return Color.Crimson
+
                 Case Else
                     Return (Color.Black)
             End Select
@@ -260,10 +271,11 @@
         Return BitConverter.ToInt16(_ar, 0)
     End Function
 
-    Public Function CreateLineStringIntervento(ByVal _intv As InterventSingle, ByVal _progress As UInteger) As String
+    Public Function CreateLineStringIntervento(ByVal _intv As InterventSingle, ByVal _progress As UInteger, ByVal _totaleInt As UInteger) As String
         Dim StToAdd, StToAdd2 As String
-        StToAdd = ""        
-        StToAdd2 = (_progress + 1)  '.ToString("000")
+        StToAdd = ""
+        StToAdd2 = (_totaleInt - _progress + 1)  'voleva numerazione inversa
+        'StToAdd2 = (_progress + 1)  '.ToString("000")
 
         StToAdd = StToAdd + StToAdd2.PadRight(5)
 
