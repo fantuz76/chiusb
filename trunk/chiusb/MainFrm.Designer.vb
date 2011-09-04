@@ -85,6 +85,7 @@ Partial Class MainFrm
         Me.ClearLogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.PictureLogo = New System.Windows.Forms.PictureBox
         Me.btnExit = New System.Windows.Forms.Button
+        Me.Button1 = New System.Windows.Forms.Button
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.pnlButAlarms.SuspendLayout()
@@ -684,11 +685,21 @@ Partial Class MainFrm
         Me.btnExit.Text = "Exit"
         Me.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(335, 36)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(80, 47)
+        Me.Button1.TabIndex = 11
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'MainFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(729, 482)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.ListBoxLog)
         Me.Controls.Add(Me.GroupBox1)
@@ -783,5 +794,6 @@ Partial Class MainFrm
     Friend WithEvents lblIntI2Desc As System.Windows.Forms.Label
     Friend WithEvents Panel6 As System.Windows.Forms.Panel
     Friend WithEvents Panel5 As System.Windows.Forms.Panel
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 
 End Class
