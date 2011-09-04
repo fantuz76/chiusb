@@ -291,29 +291,30 @@
 
         StToAdd = StToAdd + StToAdd2.PadRight(13)
 
-        StToAdd2 = "Volt:" + GetVoltage(_intv._intVoltAv).ToString + "V"
+        StToAdd2 = "Volt:" + GetVoltage(_intv._intVoltAv).ToString
         StToAdd = StToAdd + StToAdd2.PadRight(11)
         'StToAdd2 = "V2:" + _intv._intVolt2.ToString + "V"
         'StToAdd = StToAdd + StToAdd2.PadRight(8)
         'StToAdd2 = "V3:" + _intv._intVolt3.ToString + "V"
         'StToAdd = StToAdd + StToAdd2.PadRight(8)
 
-        StToAdd2 = "I1:" + GetCurrent(_intv._intI1_rms).ToString("F1") + "A"
+        StToAdd2 = "I1:" + GetCurrent(_intv._intI1_rms).ToString("F1")
         StToAdd = StToAdd + StToAdd2.PadRight(9)
-        StToAdd2 = "I2:" + GetCurrent(_intv._intI2_rms).ToString("F1") + "A"
+        StToAdd2 = "I2:" + GetCurrent(_intv._intI2_rms).ToString("F1")
         StToAdd = StToAdd + StToAdd2.PadRight(9)
-        StToAdd2 = "I3:" + GetCurrent(_intv._intI3_rms).ToString("F1") + "A"
+        StToAdd2 = "I3:" + GetCurrent(_intv._intI3_rms).ToString("F1")
         StToAdd = StToAdd + StToAdd2.PadRight(9)
 
-        StToAdd2 = "Power:" + GetPower(_intv._intPower).ToString + "W"
+        StToAdd2 = "Cosfi:" + GetCosfi(_intv._intCosfi).ToString("F2") + ""
+        StToAdd = StToAdd + StToAdd2.PadRight(12)
+
+        StToAdd2 = "Power:" + GetPower(_intv._intPower).ToString
         StToAdd = StToAdd + StToAdd2.PadRight(13)
 
         StToAdd2 = "Pressure:" + GetPressure(_intv._intPress).ToString("F1") + " bar"
         StToAdd = StToAdd + StToAdd2.PadRight(20)
 
 
-        StToAdd2 = "Cosfi:" + GetCosfi(_intv._intCosfi).ToString("F2") + ""
-        StToAdd = StToAdd + StToAdd2.PadRight(12)
 
         StToAdd2 = "Temp:" + GetTemperature(_intv._intTemp).ToString + "°C"
         StToAdd = StToAdd + StToAdd2.PadRight(11)

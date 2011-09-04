@@ -24,6 +24,7 @@ Partial Class ZedGraphFrm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
         Me.zg1 = New ZedGraph.ZedGraphControl
+        Me.zg2 = New ZedGraph.ZedGraphControl
         Me.SuspendLayout()
         '
         'zg1
@@ -41,17 +42,35 @@ Partial Class ZedGraphFrm
         Me.zg1.Size = New System.Drawing.Size(655, 367)
         Me.zg1.TabIndex = 15
         '
+        'zg2
+        '
+        Me.zg2.IsEnableVPan = False
+        Me.zg2.Location = New System.Drawing.Point(12, 385)
+        Me.zg2.Name = "zg2"
+        Me.zg2.PanModifierKeys = System.Windows.Forms.Keys.None
+        Me.zg2.ScrollGrace = 0
+        Me.zg2.ScrollMaxX = 0
+        Me.zg2.ScrollMaxY = 0
+        Me.zg2.ScrollMaxY2 = 0
+        Me.zg2.ScrollMinX = 0
+        Me.zg2.ScrollMinY = 0
+        Me.zg2.ScrollMinY2 = 0
+        Me.zg2.Size = New System.Drawing.Size(643, 272)
+        Me.zg2.TabIndex = 16
+        '
         'ZedGraphFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(691, 392)
+        Me.ClientSize = New System.Drawing.Size(900, 630)
+        Me.Controls.Add(Me.zg2)
         Me.Controls.Add(Me.zg1)
         Me.Name = "ZedGraphFrm"
-        Me.Text = "Graph"
+        Me.Text = "t"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents zg1 As ZedGraph.ZedGraphControl
+    Friend WithEvents zg2 As ZedGraph.ZedGraphControl
 End Class

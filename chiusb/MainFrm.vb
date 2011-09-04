@@ -467,12 +467,16 @@ Public Class MainFrm
 
 
 
+
     Private Sub UpdateChartZ_Second()
         Dim x(Intervents.TotTipiIntervento - 1) As String
         Dim y(Intervents.TotTipiIntervento - 1) As Double
         Dim myPane As GraphPane = ZedGraphFrm.zg1.GraphPane
         Dim myZList As New PointPairList
         Dim i As Integer
+
+
+
 
         ZedGraphFrm.zg1.GraphPane.CurveList.Clear()
         ZedGraphFrm.zg1.GraphPane.Title.Text = "Alarms"
@@ -533,9 +537,63 @@ Public Class MainFrm
         ZedGraphFrm.zg1.Refresh()
 
 
-        
+
     End Sub
 
+
+
+    Private Sub UpdateChartZ_XY()
+        'Dim x(Intervents.TotTipiIntervento - 1) As String
+        'Dim y(Intervents.TotTipiIntervento - 1) As Double
+        Dim myPane As GraphPane = ZedGraphFrm.zg2.GraphPane
+        Dim myZList As New PointPairList
+     
+        'Dim myPane As GraphPane = zgc.GraphPane
+
+        ZedGraphFrm.zg2.GraphPane.CurveList.Clear()
+        ZedGraphFrm.zg2.GraphPane.Title.Text = "Alarms"
+
+        ' Set the titles and axis labels
+        myPane.Title.Text = "Measures Events"
+        myPane.XAxis.Title.Text = "Events"
+        myPane.YAxis.Title.Text = "Volt/Ampere"
+
+        ' Make up some data points from the Sine function
+        Dim list = New PointPairList()
+
+
+        Dim list2 As New PointPairList        
+        For x = 0 To ConnectionUSB.InterventiLetti.Length - 1
+            list2.Add(x, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(x)._intI1_rms), "I1")
+            list2.Add(x, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(x)._intI2_rms), "I2")
+            list2.Add(x, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(x)._intI3_rms), "I3")
+        Next
+
+
+        ' Generate a blue curve with circle symbols, and "My Curve 2" in the legend
+        Dim myCurve As LineItem '= myPane.AddCurve("My Curve", list, Color.Blue, SymbolType.Circle)
+        myCurve = myPane.AddCurve("My Curve 2", list2, Color.Green, SymbolType.None)
+
+        ' Fill the area under the curve with a white-red gradient at 45 degrees
+        myCurve.Line.Fill = New Fill(Color.White, Color.Red, 45.0F)
+        ' Make the symbols opaque by filling them with white
+        myCurve.Symbol.Fill = New Fill(Color.White)
+
+        ' Fill the axis background with a color gradient
+        'myPane.Chart.Fill = New Fill(Color.White, Color.LightGoldenrodYellow, 45.0F)
+
+        ' Fill the pane background with a color gradient
+        'myPane.Fill = New Fill(Color.White, Color.FromArgb(220, 220, 255), 45.0F)
+
+
+        ' Calculate the Axis Scale Ranges
+        ZedGraphFrm.zg2.AxisChange()
+
+        ' Make sure the Graph gets redrawn
+        ZedGraphFrm.zg2.Invalidate()
+        ZedGraphFrm.zg2.Refresh()
+
+    End Sub
 
 
     Private Sub CreateBarLabels(ByVal pane As GraphPane, ByVal isBarCenter As Boolean, ByVal valueFormat As String)
@@ -752,4 +810,8 @@ Public Class MainFrm
     End Sub
 
     
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        UpdateChartZ_XY()
+        ZedGraphFrm.Show()
+    End Sub
 End Class
