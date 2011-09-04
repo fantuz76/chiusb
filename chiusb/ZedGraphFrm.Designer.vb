@@ -44,18 +44,17 @@ Partial Class ZedGraphFrm
         '
         'zg2
         '
-        Me.zg2.IsEnableVPan = False
-        Me.zg2.Location = New System.Drawing.Point(12, 385)
+        Me.zg2.AutoSize = True
+        Me.zg2.Location = New System.Drawing.Point(123, 132)
         Me.zg2.Name = "zg2"
-        Me.zg2.PanModifierKeys = System.Windows.Forms.Keys.None
         Me.zg2.ScrollGrace = 0
         Me.zg2.ScrollMaxX = 0
-        Me.zg2.ScrollMaxY = 0
+        Me.zg2.ScrollMaxY = 335
         Me.zg2.ScrollMaxY2 = 0
         Me.zg2.ScrollMinX = 0
         Me.zg2.ScrollMinY = 0
         Me.zg2.ScrollMinY2 = 0
-        Me.zg2.Size = New System.Drawing.Size(643, 272)
+        Me.zg2.Size = New System.Drawing.Size(655, 367)
         Me.zg2.TabIndex = 16
         '
         'ZedGraphFrm
@@ -66,7 +65,7 @@ Partial Class ZedGraphFrm
         Me.Controls.Add(Me.zg2)
         Me.Controls.Add(Me.zg1)
         Me.Name = "ZedGraphFrm"
-        Me.Text = "t"
+        Me.Text = "Chart"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

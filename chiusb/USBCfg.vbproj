@@ -149,6 +149,7 @@
   <ItemGroup>
     <EmbeddedResource Include="AboutBox1.resx">
       <DependentUpon>AboutBox1.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FormWait.resx">
       <DependentUpon>FormWait.vb</DependentUpon>
@@ -230,6 +231,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo_cut.ico" />
+    <None Include="Resources\GraphXY.png" />
+    <None Include="Resources\Actions-office-chart-line-stacked-icon.png" />
     <None Include="Resources\ajax-loader.gif" />
     <None Include="chiusb_TemporaryKey.pfx" />
     <None Include="Resources\chart.png" />

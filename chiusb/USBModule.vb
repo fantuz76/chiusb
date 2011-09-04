@@ -1,4 +1,6 @@
-﻿Module USBModule
+﻿Imports System.Globalization.CultureInfo
+
+Module USBModule
 
     Public UsrAppData As String
     Public UsrDocData As String
@@ -8,7 +10,7 @@
     Public ConnectionActive As Boolean
     Public LastCOMUsed As String
 
-  
+
 
     Class InterventiTypeClass
         Private Structure IntOccur
@@ -255,7 +257,7 @@
         End If
 
         LastCOMUsed = ReadConfigXML(UsrAppData + XMLCFG, "SistemaUtente", "LastCOMUsed")
-        
+
     End Sub
 
 
@@ -271,55 +273,202 @@
         Return BitConverter.ToInt16(_ar, 0)
     End Function
 
-    Public Function CreateLineStringIntervento(ByVal _intv As InterventSingle, ByVal _progress As UInteger, ByVal _totaleInt As UInteger) As String
+
+    Public Function CreateCSVStringHeaderInt() As String
         Dim StToAdd, StToAdd2 As String
         StToAdd = ""
-        StToAdd2 = (_totaleInt - _progress + 1)  'voleva numerazione inversa
+        StToAdd2 = "Num"
+        StToAdd = StToAdd + StToAdd2 + ","
+
+        StToAdd2 = "Ev. "
+        StToAdd = StToAdd + StToAdd2 + ","
+
+        StToAdd2 = "Description"
+        StToAdd = StToAdd + StToAdd2 + ","
+
+        StToAdd2 = "Time"
+        StToAdd = StToAdd + StToAdd2 + ","
+
+        StToAdd2 = "V1[V]"
+        StToAdd = StToAdd + StToAdd2 + ","
+        'StToAdd2 = "V2:" + _intv._intVolt2.ToString + "V"
+        'StToAdd = StToAdd + ","
+        'StToAdd2 = "V3:" + _intv._intVolt3.ToString + "V"
+        'StToAdd = StToAdd + ","
+
+        StToAdd2 = "I1[A]"
+        StToAdd = StToAdd + StToAdd2 + ","
+        StToAdd2 = "I2[A]"
+        StToAdd = StToAdd + StToAdd2 + ","
+        StToAdd2 = "I3[A]"
+        StToAdd = StToAdd + StToAdd2 + ","
+
+        StToAdd2 = "Cosfi"
+        StToAdd = StToAdd + StToAdd2 + ","
+
+        StToAdd2 = "P[W]"
+        StToAdd = StToAdd + StToAdd2 + ","
+
+        StToAdd2 = "P[bar]"
+        StToAdd = StToAdd + StToAdd2 + ","
+
+        StToAdd2 = "T[°C]"
+        StToAdd = StToAdd + StToAdd2 + ","
+
+        Return StToAdd
+    End Function
+
+    Public Function CreateCSVStringIntervento(ByVal _intv As InterventSingle, ByVal _progress As UInteger, ByVal _totaleInt As UInteger) As String
+        Dim StToAdd, StToAdd2 As String
+        StToAdd = ""
+        StToAdd2 = (_totaleInt - _progress + 1)   'voleva numerazione inversa che parte da 1
         'StToAdd2 = (_progress + 1)  '.ToString("000")
 
-        StToAdd = StToAdd + StToAdd2.PadRight(5)
+        StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = "[" + _intv._intType.ToString + "] "
-        StToAdd = StToAdd + StToAdd2.PadLeft(6)
+        StToAdd2 = _intv._intType.ToString
+        StToAdd = StToAdd + StToAdd2 + ","
 
         StToAdd2 = Intervents.GetIntStr(_intv._intType)
-        StToAdd = StToAdd + StToAdd2.PadRight(28)
+        StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = GetHours(_intv._intTime).ToString + "h "
-        StToAdd2 = StToAdd2 + GetMinutes(_intv._intTime).ToString("00") + "' "
-        StToAdd2 = StToAdd2 + GetSeconds(_intv._intTime).ToString("00") + "'' "
+        StToAdd2 = GetHours(_intv._intTime).ToString + "h"
+        StToAdd2 = StToAdd2 + GetMinutes(_intv._intTime).ToString("00") + "'"
+        StToAdd2 = StToAdd2 + GetSeconds(_intv._intTime).ToString("00") + """"
+        StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd = StToAdd + StToAdd2.PadRight(13)
+        StToAdd2 = GetVoltage(_intv._intVoltAv).ToString
+        StToAdd = StToAdd + StToAdd2 + ","
+        'StToAdd2 = "V2:" + _intv._intVolt2.ToString + "V"
+        'StToAdd = StToAdd + ","
+        'StToAdd2 = "V3:" + _intv._intVolt3.ToString + "V"
+        'StToAdd = StToAdd + ","
 
-        StToAdd2 = "Volt:" + GetVoltage(_intv._intVoltAv).ToString
-        StToAdd = StToAdd + StToAdd2.PadRight(11)
+        StToAdd2 = GetCurrent(_intv._intI1_rms).ToString("F1", GetCultureInfo("en-GB"))
+        StToAdd = StToAdd + StToAdd2 + ","
+        StToAdd2 = GetCurrent(_intv._intI2_rms).ToString("F1", GetCultureInfo("en-GB"))
+        StToAdd = StToAdd + StToAdd2 + ","
+        StToAdd2 = GetCurrent(_intv._intI3_rms).ToString("F1", GetCultureInfo("en-GB"))
+        StToAdd = StToAdd + StToAdd2 + ","
+
+        StToAdd2 = GetCosfi(_intv._intCosfi).ToString("F2", GetCultureInfo("en-GB")) + ""
+        StToAdd = StToAdd + StToAdd2 + ","
+
+        StToAdd2 = GetPower(_intv._intPower).ToString
+        StToAdd = StToAdd + StToAdd2 + ","
+
+        StToAdd2 = GetPressure(_intv._intPress).ToString("F1", GetCultureInfo("en-GB"))
+        StToAdd = StToAdd + StToAdd2 + ","
+
+        StToAdd2 = GetTemperature(_intv._intTemp).ToString
+        StToAdd = StToAdd + StToAdd2 + ","
+
+        Return StToAdd
+    End Function
+
+
+
+
+    Public Function CreateLineStringHeaderInt() As String
+        Dim StToAdd, StToAdd2 As String
+        StToAdd = ""
+        StToAdd2 = "Num"
+        StToAdd = StToAdd + StToAdd2.PadRight(5)
+
+        StToAdd2 = "Ev. "
+        StToAdd = StToAdd + StToAdd2.PadLeft(5)
+
+        StToAdd2 = "Description"
+        StToAdd = StToAdd + StToAdd2.PadRight(21)
+
+        StToAdd2 = "Time"
+        StToAdd = StToAdd + StToAdd2.PadRight(9)
+
+        StToAdd2 = "V1[V]"
+        StToAdd = StToAdd + StToAdd2.PadRight(6)
         'StToAdd2 = "V2:" + _intv._intVolt2.ToString + "V"
         'StToAdd = StToAdd + StToAdd2.PadRight(8)
         'StToAdd2 = "V3:" + _intv._intVolt3.ToString + "V"
         'StToAdd = StToAdd + StToAdd2.PadRight(8)
 
-        StToAdd2 = "I1:" + GetCurrent(_intv._intI1_rms).ToString("F1")
-        StToAdd = StToAdd + StToAdd2.PadRight(9)
-        StToAdd2 = "I2:" + GetCurrent(_intv._intI2_rms).ToString("F1")
-        StToAdd = StToAdd + StToAdd2.PadRight(9)
-        StToAdd2 = "I3:" + GetCurrent(_intv._intI3_rms).ToString("F1")
-        StToAdd = StToAdd + StToAdd2.PadRight(9)
+        StToAdd2 = "I1[A]"
+        StToAdd = StToAdd + StToAdd2.PadRight(6)
+        StToAdd2 = "I2[A]"
+        StToAdd = StToAdd + StToAdd2.PadRight(6)
+        StToAdd2 = "I3[A]"
+        StToAdd = StToAdd + StToAdd2.PadRight(6)
 
-        StToAdd2 = "Cosfi:" + GetCosfi(_intv._intCosfi).ToString("F2") + ""
-        StToAdd = StToAdd + StToAdd2.PadRight(12)
+        StToAdd2 = "Cosfi"
+        StToAdd = StToAdd + StToAdd2.PadRight(6)
 
-        StToAdd2 = "Power:" + GetPower(_intv._intPower).ToString
-        StToAdd = StToAdd + StToAdd2.PadRight(13)
+        StToAdd2 = "P[W]"
+        StToAdd = StToAdd + StToAdd2.PadRight(5)
 
-        StToAdd2 = "Pressure:" + GetPressure(_intv._intPress).ToString("F1") + " bar"
-        StToAdd = StToAdd + StToAdd2.PadRight(20)
+        StToAdd2 = "P[bar]"
+        StToAdd = StToAdd + StToAdd2.PadRight(7)
 
 
 
-        StToAdd2 = "Temp:" + GetTemperature(_intv._intTemp).ToString + "°C"
-        StToAdd = StToAdd + StToAdd2.PadRight(11)
+        StToAdd2 = "T[°C]"
+        StToAdd = StToAdd + StToAdd2.PadRight(5)
 
         Return StToAdd
+    End Function
+
+    Public Function CreateLineStringIntervento(ByVal _intv As InterventSingle, ByVal _progress As UInteger, ByVal _totaleInt As UInteger) As String
+        Dim StToAdd, StToAdd2 As String
+        StToAdd = ""
+        StToAdd2 = (_totaleInt - _progress + 1)  'voleva numerazione inversa che parte da 1
+        'StToAdd2 = (_progress + 1)  '.ToString("000")
+
+        StToAdd = StToAdd + StToAdd2.PadRight(5)
+
+        StToAdd2 = "[" + _intv._intType.ToString + "] "
+        StToAdd = StToAdd + StToAdd2.PadLeft(5)
+
+        StToAdd2 = Intervents.GetIntStr(_intv._intType)
+        StToAdd = StToAdd + StToAdd2.PadRight(21)
+
+        StToAdd2 = GetHours(_intv._intTime).ToString + "h"
+        StToAdd2 = StToAdd2 + GetMinutes(_intv._intTime).ToString("00") + "'"
+        StToAdd2 = StToAdd2 + GetSeconds(_intv._intTime).ToString("00") + """"
+        StToAdd = StToAdd + StToAdd2.PadRight(9)
+
+        StToAdd2 = GetVoltage(_intv._intVoltAv).ToString
+        StToAdd = StToAdd + StToAdd2.PadRight(6)
+        'StToAdd2 = "V2:" + _intv._intVolt2.ToString + "V"
+        'StToAdd = StToAdd + StToAdd2.PadRight(8)
+        'StToAdd2 = "V3:" + _intv._intVolt3.ToString + "V"
+        'StToAdd = StToAdd + StToAdd2.PadRight(8)
+
+        StToAdd2 = GetCurrent(_intv._intI1_rms).ToString("F1", GetCultureInfo("en-GB"))
+        StToAdd = StToAdd + StToAdd2.PadRight(6)
+        StToAdd2 = GetCurrent(_intv._intI2_rms).ToString("F1", GetCultureInfo("en-GB"))
+        StToAdd = StToAdd + StToAdd2.PadRight(6)
+        StToAdd2 = GetCurrent(_intv._intI3_rms).ToString("F1", GetCultureInfo("en-GB"))
+        StToAdd = StToAdd + StToAdd2.PadRight(6)
+
+        StToAdd2 = GetCosfi(_intv._intCosfi).ToString("F2", GetCultureInfo("en-GB")) + ""
+        StToAdd = StToAdd + StToAdd2.PadRight(6)
+
+        StToAdd2 = GetPower(_intv._intPower).ToString
+        StToAdd = StToAdd + StToAdd2.PadRight(5)
+
+        StToAdd2 = GetPressure(_intv._intPress).ToString("F1", GetCultureInfo("en-GB"))
+        StToAdd = StToAdd + StToAdd2.PadRight(7)
+
+
+
+        StToAdd2 = GetTemperature(_intv._intTemp).ToString
+        StToAdd = StToAdd + StToAdd2.PadRight(5)
+
+        Return StToAdd
+    End Function
+
+
+
+    Public Function ToGBString(ByVal value As Double)
+        Return value.ToString(Globalization.CultureInfo.GetCultureInfo("en-GB"))
     End Function
 
     Public Function GetHours(ByVal _totNumSec As UInt32) As UInteger

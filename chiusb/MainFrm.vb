@@ -136,7 +136,8 @@ Public Class MainFrm
         toolTip1.SetToolTip(Me.PictureLogo, "Electroil internet site")
         toolTip1.SetToolTip(Me.btnOpenGraph, "Show alarms Histogram")
 
-        lstInterventi.HorizontalScrollbar = True        
+        'lstInterventi.HorizontalScrollbar = True    
+        lblHeaderList.Text = ""
 
     End Sub
 
@@ -163,55 +164,8 @@ Public Class MainFrm
     End Sub
 
     Private Sub FillListData()
-
-        'Dim StToAdd As String = ""
-        'Dim StToAdd2 As String = ""
-
+        lblHeaderList.Text = CreateLineStringHeaderInt()
         For i = 0 To ConnectionUSB.InterventiLetti.Length - 1
-
-
-            'StToAdd = ""
-            'StToAdd2 = (i + 1)  '.ToString("000")
-
-            'StToAdd = StToAdd + StToAdd2.PadRight(5)
-
-            'StToAdd2 = Intervents.GetIntStr(ConnectionUSB.InterventiLetti.IntItems(i)._intType)
-
-            'StToAdd = StToAdd + StToAdd2.PadRight(28)
-
-            'StToAdd2 = GetHours(ConnectionUSB.InterventiLetti.IntItems(i)._intTime).ToString + "h "
-            'StToAdd2 = StToAdd2 + GetMinutes(ConnectionUSB.InterventiLetti.IntItems(i)._intTime).ToString("00") + "' "
-            'StToAdd2 = StToAdd2 + GetSeconds(ConnectionUSB.InterventiLetti.IntItems(i)._intTime).ToString("00") + "'' "
-
-            'StToAdd = StToAdd + StToAdd2.PadRight(13)
-
-            'StToAdd2 = "Volt:" + GetVoltage(ConnectionUSB.InterventiLetti.IntItems(i)._intVoltAv).ToString + "V"
-            'StToAdd = StToAdd + StToAdd2.PadRight(11)
-            ''StToAdd2 = "V2:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVolt2.ToString + "V"
-            ''StToAdd = StToAdd + StToAdd2.PadRight(8)
-            ''StToAdd2 = "V3:" + ConnectionUSB.InterventiLetti.IntItems(i)._intVolt3.ToString + "V"
-            ''StToAdd = StToAdd + StToAdd2.PadRight(8)
-
-            'StToAdd2 = "I1:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intI1_rms).ToString + "A"
-            'StToAdd = StToAdd + StToAdd2.PadRight(13)
-            'StToAdd2 = "I2:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intI2_rms).ToString + "A"
-            'StToAdd = StToAdd + StToAdd2.PadRight(10)
-            'StToAdd2 = "I3:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intI3_rms).ToString + "A"
-            'StToAdd = StToAdd + StToAdd2.PadRight(10)
-
-            'StToAdd2 = "Power:" + GetPower(ConnectionUSB.InterventiLetti.IntItems(i)._intPower).ToString + "W"
-            'StToAdd = StToAdd + StToAdd2.PadRight(13)
-
-            'StToAdd2 = "Pressure:" + GetPressure(ConnectionUSB.InterventiLetti.IntItems(i)._intPress).ToString + " bar"
-            'StToAdd = StToAdd + StToAdd2.PadRight(20)
-
-
-            'StToAdd2 = "Cosfi:" + GetCosfi(ConnectionUSB.InterventiLetti.IntItems(i)._intCosfi).ToString + ""
-            'StToAdd = StToAdd + StToAdd2.PadRight(12)
-
-            'StToAdd2 = "Temp:" + GetTemperature(ConnectionUSB.InterventiLetti.IntItems(i)._intTemp).ToString + "°C"
-            'StToAdd = StToAdd + StToAdd2.PadRight(11)
-
             lstInterventi.Items.Add(CreateLineStringIntervento(ConnectionUSB.InterventiLetti.IntItems(i), i, ConnectionUSB.InterventiLetti.Length - 1))
         Next
     End Sub
@@ -325,7 +279,7 @@ Public Class MainFrm
         Dim FileLogName As String
         Dim i As Integer
         Dim FileNameToSave As String = ""
-        Dim FolderStr As String
+        Dim mySt, FolderStr As String
 
 
         FolderStr = System.IO.Path.GetDirectoryName(ReadConfigXML(UsrAppData + XMLCFG, "SistemaUtente", "CartellaSaveAlarms") + "\")
@@ -360,9 +314,9 @@ Public Class MainFrm
         End If
 
 
-        SaveFileDialog1.DefaultExt = ".txt"
+        SaveFileDialog1.DefaultExt = ".csv"
         SaveFileDialog1.AddExtension = True
-        SaveFileDialog1.Filter = "Text File (*.txt)|*.txt" + "|" + "Comma separated value (*.csv)|*.csv" + "|" + "All files|*.*"
+        SaveFileDialog1.Filter = "Comma separated value (*.csv)|*.csv" + "|" + "Text File (*.txt)|*.txt" + "|" + "All files|*.*"
         SaveFileDialog1.InitialDirectory = FolderStr
         SaveFileDialog1.Title = "Save alarms"
         SaveFileDialog1.CheckPathExists = True
@@ -383,23 +337,12 @@ Public Class MainFrm
             If Strings.Right(FileLogName, 3).ToUpper = "CSV" Then
                 Dim enc As New System.Text.UTF8Encoding()
 
-                file.Write(enc.GetString(ConnectionUSB.DatiSetHello()))
-                file.WriteLine("")
-                file.WriteLine("")
-                For i = 0 To ConnectionUSB.InterventiLetti.Length - 1
-                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intType.ToString + ",")
-                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intTime.ToString + ",")
-                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intVoltAv.ToString + ",")
-                    'file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intVolt2.ToString + ",")
-                    'file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intVolt3.ToString + ",")
-                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intI1_rms.ToString + ",")
-                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intI2_rms.ToString + ",")
-                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intI3_rms.ToString + ",")
-                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intPower.ToString + ",")
-                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intPress.ToString + ",")
-                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intCosfi.ToString + ",")
-                    file.Write(ConnectionUSB.InterventiLetti.IntItems(i)._intTemp.ToString)
-                    file.Write(Environment.NewLine)
+                'file.Write(enc.GetString(ConnectionUSB.DatiSetHello()))
+                'file.WriteLine("")
+                file.WriteLine(CreateCSVStringHeaderInt())
+                For i = 0 To ConnectionUSB.InterventiLetti.Length - 1                    
+                    file.WriteLine(CreateCSVStringIntervento(ConnectionUSB.InterventiLetti.IntItems(i), i, ConnectionUSB.InterventiLetti.Length - 1))
+
                 Next
             Else
                 file.WriteLine(New String("*", 90))
@@ -414,42 +357,10 @@ Public Class MainFrm
 
                 file.WriteLine(New String("*", 90))
 
+                file.WriteLine(CreateLineStringHeaderInt())
                 file.WriteLine()
                 For i = 0 To ConnectionUSB.InterventiLetti.Length - 1
-                    file.WriteLine(CreateLineStringIntervento(ConnectionUSB.InterventiLetti.IntItems(i), i, ConnectionUSB.InterventiLetti.Length - 1))
-                    'file.WriteLine()
-                    'file.WriteLine(New String("-", 68))
-
-                    'file.WriteLine((i + 1).ToString + ")")
-
-                    'file.Write("Alarm Type: ")
-                    'file.Write(("[" + ConnectionUSB.InterventiLetti.IntItems(i)._intType.ToString + "]").PadLeft(4))
-                    'file.Write(Intervents.GetIntStr(ConnectionUSB.InterventiLetti.IntItems(i)._intType).PadRight(28))
-                    ''file.Write(New String(" ", 5))
-
-                    'file.Write("Alarm Time: ")
-                    'file.Write(GetHours(ConnectionUSB.InterventiLetti.IntItems(i)._intTime).ToString + "h ")
-                    'file.Write(GetMinutes(ConnectionUSB.InterventiLetti.IntItems(i)._intTime).ToString("00") + "' ")
-                    'file.Write(GetSeconds(ConnectionUSB.InterventiLetti.IntItems(i)._intTime).ToString("00") + "'' ")
-                    ''file.Write(New String(" ", 5))
-                    'file.WriteLine()
-
-
-                    'file.Write(("Volt:" + GetVoltage(ConnectionUSB.InterventiLetti.IntItems(i)._intVoltAv).ToString + "V").PadRight(16))
-
-                    ''file.Write(("Curr:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intCurrAv).ToString + "A").PadRight(13))
-                    'file.Write("I1:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intI1_rms).ToString + "A   ")
-                    'file.Write("I2:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intI2_rms).ToString + "A   ")
-                    'file.Write("I3:" + GetCurrent(ConnectionUSB.InterventiLetti.IntItems(i)._intI3_rms).ToString + "A   ")
-                    'file.WriteLine()
-
-                    'file.Write(("Power:" + GetPower(ConnectionUSB.InterventiLetti.IntItems(i)._intPower).ToString + "W").PadRight(16))
-                    'file.Write(("Pressure:" + GetPressure(ConnectionUSB.InterventiLetti.IntItems(i)._intPress).ToString + " bar").PadRight(20))
-                    'file.WriteLine()
-
-                    'file.Write(("Cosfi:" + GetCosfi(ConnectionUSB.InterventiLetti.IntItems(i)._intCosfi).ToString).PadRight(16))
-                    'file.Write(("Temp:" + GetTemperature(ConnectionUSB.InterventiLetti.IntItems(i)._intTemp).ToString + "°C").PadRight(11))
-
+                    file.WriteLine(CreateLineStringIntervento(ConnectionUSB.InterventiLetti.IntItems(i), i, ConnectionUSB.InterventiLetti.Length - 1))                    
                 Next
 
             End If
@@ -476,6 +387,7 @@ Public Class MainFrm
         Dim i As Integer
 
 
+        ZedGraphFrm.zg1.AutoSize = True
 
 
         ZedGraphFrm.zg1.GraphPane.CurveList.Clear()
@@ -536,7 +448,8 @@ Public Class MainFrm
 
         ZedGraphFrm.zg1.Refresh()
 
-
+        ZedGraphFrm.zg1.IsEnableHZoom = True
+        ZedGraphFrm.zg1.IsEnableVZoom = False
 
     End Sub
 
@@ -549,42 +462,54 @@ Public Class MainFrm
         Dim myZList As New PointPairList
      
         'Dim myPane As GraphPane = zgc.GraphPane
+        ZedGraphFrm.zg2.AutoSize = True
 
         ZedGraphFrm.zg2.GraphPane.CurveList.Clear()
         ZedGraphFrm.zg2.GraphPane.Title.Text = "Alarms"
 
         ' Set the titles and axis labels
         myPane.Title.Text = "Measures Events"
-        myPane.XAxis.Title.Text = "Events"
+        myPane.XAxis.Title.Text = "Events number"
         myPane.YAxis.Title.Text = "Volt/Ampere"
 
         ' Make up some data points from the Sine function
-        Dim list = New PointPairList()
+        Dim list1 = New PointPairList()
+        Dim list2 As New PointPairList
+        Dim list3 As New PointPairList
 
-
-        Dim list2 As New PointPairList        
+        Dim listV1 As New PointPairList
         For x = 0 To ConnectionUSB.InterventiLetti.Length - 1
-            list2.Add(x, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(x)._intI1_rms), "I1")
-            list2.Add(x, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(x)._intI2_rms), "I2")
-            list2.Add(x, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(x)._intI3_rms), "I3")
+            list1.Add(x + 1, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intI1_rms), "I1")
+            list2.Add(x + 1, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intI2_rms), "I2")
+            list3.Add(x + 1, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intI3_rms), "I3")
+            listV1.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intVoltAv), "V1")
         Next
 
 
         ' Generate a blue curve with circle symbols, and "My Curve 2" in the legend
-        Dim myCurve As LineItem '= myPane.AddCurve("My Curve", list, Color.Blue, SymbolType.Circle)
-        myCurve = myPane.AddCurve("My Curve 2", list2, Color.Green, SymbolType.None)
+        Dim myCurve1 As LineItem
+        Dim myCurve2 As LineItem
+        Dim myCurve3 As LineItem
+        Dim myCurveV1 As LineItem
+        myCurve1 = myPane.AddCurve("I1", list1, Color.Blue, SymbolType.None)
+        myCurve2 = myPane.AddCurve("I2", list2, Color.Green, SymbolType.None)
+        myCurve3 = myPane.AddCurve("I3", list3, Color.Red, SymbolType.None)
+        myCurveV1 = myPane.AddCurve("V1", listV1, Color.DarkBlue, SymbolType.None)
+        myCurveV1.Line.Width = 2
 
         ' Fill the area under the curve with a white-red gradient at 45 degrees
-        myCurve.Line.Fill = New Fill(Color.White, Color.Red, 45.0F)
+        'myCurve.Line.Fill = New Fill(Color.White, Color.Red, 45.0F)
+
         ' Make the symbols opaque by filling them with white
-        myCurve.Symbol.Fill = New Fill(Color.White)
+        'myCurve.Symbol.Fill = New Fill(Color.White)
 
         ' Fill the axis background with a color gradient
         'myPane.Chart.Fill = New Fill(Color.White, Color.LightGoldenrodYellow, 45.0F)
 
         ' Fill the pane background with a color gradient
-        'myPane.Fill = New Fill(Color.White, Color.FromArgb(220, 220, 255), 45.0F)
+        myPane.Fill = New Fill(Color.White, Color.FromArgb(220, 220, 255), 45.0F)
 
+        'CreateLineLabels(myPane, False, "00")
 
         ' Calculate the Axis Scale Ranges
         ZedGraphFrm.zg2.AxisChange()
@@ -593,8 +518,94 @@ Public Class MainFrm
         ZedGraphFrm.zg2.Invalidate()
         ZedGraphFrm.zg2.Refresh()
 
+        ZedGraphFrm.zg2.IsEnableHZoom = True
+        ZedGraphFrm.zg2.IsEnableVZoom = False
+        ZedGraphFrm.zg2.ZoomOutAll(myPane)
+
+
     End Sub
 
+    Private Sub CreateLineLabels(ByVal pane As GraphPane, ByVal isBarCenter As Boolean, ByVal valueFormat As String)
+        Dim isVertical As Boolean = True
+
+        pane.GraphObjList.Clear()
+
+        '' Make the gap between the bars and the labels = 2% of the axis range
+        Dim labelOffset As Single
+        If isVertical Then
+            labelOffset = 1 ' CSng(pane.YAxis.Max - pane.YAxis.Min) * 0.02F
+        Else
+            labelOffset = 1 'CSng(pane.XAxis.Max - pane.XAxis.Min) * 0.02F
+        End If
+
+        ' keep a count of the number of BarItems
+        Dim curveIndex As Integer = 0
+
+        ' Get a valuehandler to do some calculations for us
+        Dim valueHandler As New ValueHandler(pane, True)
+
+        ' Loop through each curve in the list
+        For Each curve As CurveItem In pane.CurveList
+            ' work with BarItems only
+            Dim line As LineItem = TryCast(curve, LineItem)
+            If line IsNot Nothing Then
+                Dim points As IPointList = curve.Points
+
+                ' Loop through each point in the BarItem
+                For i = 0 To points.Count - 1
+                    ' Get the high, low and base values for the current bar
+                    ' note that this method will automatically calculate the "effective"
+                    ' values if the bar is stacked
+                    Dim baseVal As Double, lowVal As Double, hiVal As Double
+                    valueHandler.GetValues(curve, i, baseVal, lowVal, hiVal)
+                    If hiVal <> lowVal Then
+
+
+                        ' Get the value that corresponds to the center of the bar base
+                        ' This method figures out how the bars are positioned within a cluster
+                        Dim centerVal As Single = CSng(valueHandler.BarCenterValue(line, line.GetBarWidth(pane), i, baseVal, curveIndex))
+
+                        ' Create a text label -- note that we have to go back to the original point
+                        ' data for this, since hiVal and lowVal could be "effective" values from a bar stack
+                        Dim barLabelText As String = points(i).X.ToString(valueFormat)
+                        'Dim barLabelText As String = Intervents.enumNum(curveIndex)
+
+                        ' Calculate the position of the label -- this is either the X or the Y coordinate
+                        ' depending on whether they are horizontal or vertical bars, respectively
+                        Dim position As Single
+                        If isBarCenter Then
+                            position = CSng(hiVal + lowVal) / 2.0F
+                        Else
+                            position = CSng(hiVal) + labelOffset
+                        End If
+                        ' position = lowVal - 3
+
+                        ' Create the new TextItem
+                        Dim label As TextObj
+                        If isVertical Then
+                            label = New TextObj(barLabelText, centerVal, position)
+                        Else
+                            label = New TextObj(barLabelText, position, centerVal)
+                        End If
+
+                        ' Configure the TextItem
+                        label.Location.CoordinateFrame = CoordType.AxisXYScale
+                        label.FontSpec.Size = 12
+                        label.FontSpec.FontColor = Color.Black
+                        label.FontSpec.Angle = If(isVertical, 90, 0)
+                        label.Location.AlignH = If(isBarCenter, AlignH.Center, AlignH.Left)
+                        label.Location.AlignV = AlignV.Center
+                        label.FontSpec.Border.IsVisible = False
+                        label.FontSpec.Fill.IsVisible = False
+
+                        ' Add the TextItem to the GraphPane
+                        pane.GraphObjList.Add(label)
+                    End If
+                Next
+            End If
+            curveIndex += 1
+        Next
+    End Sub
 
     Private Sub CreateBarLabels(ByVal pane As GraphPane, ByVal isBarCenter As Boolean, ByVal valueFormat As String)
         Dim isVertical As Boolean = True
@@ -781,6 +792,8 @@ Public Class MainFrm
         Process.Start("http://www.electroil.it/inglese/index.html")
     End Sub
 
+   
+
     Private Sub lstInterventi_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lstInterventi.SelectedIndexChanged
         HscrollInterventi.Value = lstInterventi.SelectedIndex + 1
     End Sub
@@ -800,6 +813,8 @@ Public Class MainFrm
 
     Private Sub btnOpenGraph_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnOpenGraph.Click
         UpdateChartZ_Second()
+        ZedGraphFrm.zg1.Visible = True
+        ZedGraphFrm.zg2.Visible = False
         ZedGraphFrm.Show()
     End Sub
 
@@ -810,8 +825,12 @@ Public Class MainFrm
     End Sub
 
     
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnChartXY.Click
         UpdateChartZ_XY()
+
+        ZedGraphFrm.zg2.Visible = True
+        ZedGraphFrm.zg1.Visible = False
         ZedGraphFrm.Show()
     End Sub
 End Class
+
