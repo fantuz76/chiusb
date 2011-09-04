@@ -60,6 +60,13 @@ Namespace My.Resources
             End Set
         End Property
         
+        Friend ReadOnly Property Actions_office_chart_line_stacked_icon() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Actions-office-chart-line-stacked-icon", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Friend ReadOnly Property chart1() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("chart1", resourceCulture)
@@ -77,6 +84,13 @@ Namespace My.Resources
         Friend ReadOnly Property disc() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("disc", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property GraphXY() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("GraphXY", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
