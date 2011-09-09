@@ -22,6 +22,10 @@ Public Structure InterventSingle
     Public _intTime As UInt32
     Public _intVoltAv As Int16
 
+    Public _intV1_rms As Int16
+    Public _intV2_rms As Int16
+    Public _intV3_rms As Int16
+
     Public _intI1_rms As Byte
     Public _intI2_rms As Byte
     Public _intI3_rms As Byte
