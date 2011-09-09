@@ -67,6 +67,13 @@ Namespace My.Resources
             End Get
         End Property
         
+        Friend ReadOnly Property Actions_zoom_fit_icon() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Actions-zoom-fit-icon", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Friend ReadOnly Property chart1() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("chart1", resourceCulture)

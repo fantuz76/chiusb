@@ -59,8 +59,7 @@ Public Class MainFrm
                     If ConnectionUSB.InterventiLetti.IntItems.Length = 0 Then
                         EnableControlsInterventi(False)
                     Else
-                        Intervents = New InterventiTypeClass(ConnectionUSB.InterventiLetti)
-                        UpdateChartZ_Second()
+                        Intervents = New InterventiTypeClass(ConnectionUSB.InterventiLetti)                        
                         EnableControlsInterventi(True)
                     End If
 
@@ -102,12 +101,14 @@ Public Class MainFrm
 
 
 
-        lblIntVolt.Text = "Average Voltage [Volt]"
+        lblIntVolt.Text = "Voltages [Volt]"
         lblIntVolt.TextAlign = ContentAlignment.MiddleCenter
         lblIntCurrent.Text = "Currents [Amp]"
         lblIntCurrent.TextAlign = ContentAlignment.MiddleCenter
 
-        lblIntVDesc.Text = ""
+        lblIntV1Desc.Text = "V1"
+        lblIntV2Desc.Text = "V2"
+        lblIntV3Desc.Text = "V3"
         lblIntI1Desc.Text = "I1"
         lblIntI2Desc.Text = "I2"
         lblIntI3Desc.Text = "I3"
@@ -195,6 +196,8 @@ Public Class MainFrm
             lblIntTypeVal.Text = ""
             lblIntTimeVal.Text = ""
             lblIntV1Val.Text = ""
+            lblIntV2Val.Text = ""
+            lblIntV3Val.Text = ""
             
             lblIntI1Val.Text = ""
             lblIntI2Val.Text = ""
@@ -279,7 +282,7 @@ Public Class MainFrm
         Dim FileLogName As String
         Dim i As Integer
         Dim FileNameToSave As String = ""
-        Dim mySt, FolderStr As String
+        Dim FolderStr As String
 
 
         FolderStr = System.IO.Path.GetDirectoryName(ReadConfigXML(UsrAppData + XMLCFG, "SistemaUtente", "CartellaSaveAlarms") + "\")
@@ -378,416 +381,6 @@ Public Class MainFrm
 
 
 
-
-    Private Sub UpdateChartZ_Second()
-        Dim x(Intervents.TotTipiIntervento - 1) As String
-        Dim y(Intervents.TotTipiIntervento - 1) As Double
-        Dim myPane As GraphPane = ZedGraphFrm.zg1.GraphPane
-        Dim myZList As New PointPairList
-        Dim i As Integer
-
-
-        ZedGraphFrm.zg1.AutoSize = True
-
-
-        ZedGraphFrm.zg1.GraphPane.CurveList.Clear()
-        ZedGraphFrm.zg1.GraphPane.Title.Text = "Alarms"
-
-        For i = 0 To Intervents.TotTipiIntervento - 1
-            myZList = New PointPairList
-            myZList.Clear()
-            myZList.Add(Intervents.enumNum(i), Intervents.GetOcc(Intervents.enumNum(i)), 111)
-            x(i) = (Intervents.enumNum(i))
-            Dim myCurve As CurveItem = myPane.AddBar(Intervents.enumNum(i).ToString + " " + Intervents.GetIntStr(Intervents.enumNum(i)), myZList, Intervents.returnColor(Intervents.enumNum(i)))
-
-            ' Dim label As TextObj = New TextObj(Intervents.GetOcc(Intervents.enumNum(i)), myCurve.Points.Item(0).X, myCurve.Points.Item(0).Y)
-            ' myPane.GraphObjList.Add(label)
-        Next i
-
-
-
-        ' Fill the pane background with a color gradient
-        myPane.Fill = New Fill(Color.White, Color.LightGray, 45.0F)
-        ' No fill for the chart background
-        myPane.Chart.Fill.Type = FillType.None
-
-        ' Set the legend to an arbitrary location
-        myPane.Legend.Position = LegendPos.Right
-        myPane.Legend.Location = New Location(0.95F, 0.15F, CoordType.PaneFraction, _
-                    AlignH.Right, AlignV.Top)
-        myPane.Legend.FontSpec.Size = 10.0F
-        myPane.Legend.IsHStack = False
-
-        myPane.XAxis.Type = ZedGraph.AxisType.Text
-        myPane.XAxis.Title.Text = "Alarms type"
-        myPane.XAxis.Title.FontSpec.Size = 10.0F
-
-        myPane.XAxis.Scale.FormatAuto = True
-        'myPane.XAxis.Scale.TextLabels = x
-        myPane.XAxis.Scale.FontSpec.Size = 10.0F
-        myPane.XAxis.Scale.FontSpec.IsBold = True
-        myPane.XAxis.MinorGrid.IsVisible = True
-        myPane.XAxis.MinSpace = 1
-        myPane.XAxis.Scale.FormatAuto = True
-
-        myPane.YAxis.Type = ZedGraph.AxisType.Linear
-        myPane.YAxis.Title.Text = "Occurences"
-        myPane.YAxis.Title.FontSpec.Size = 10.0F
-        myPane.YAxis.Scale.FontSpec.Size = 10.0F
-        myPane.YAxis.Scale.Align = AlignP.Inside
-        myPane.YAxis.Scale.Min = 0
-        myPane.YAxis.Scale.MaxAuto = True
-
-        CreateBarLabels(myPane, False, "00")
-
-
-        '' Tell ZedGraph to calculate the axis ranges
-        ZedGraphFrm.zg1.AxisChange()
-        ' Make sure the Graph gets redrawn
-        ZedGraphFrm.zg1.Invalidate()
-
-        ZedGraphFrm.zg1.Refresh()
-
-        ZedGraphFrm.zg1.IsEnableHZoom = True
-        ZedGraphFrm.zg1.IsEnableVZoom = False
-
-    End Sub
-
-
-
-    Private Sub UpdateChartZ_XY()
-        'Dim x(Intervents.TotTipiIntervento - 1) As String
-        'Dim y(Intervents.TotTipiIntervento - 1) As Double
-        Dim myPane As GraphPane = ZedGraphFrm.zg2.GraphPane
-        Dim myZList As New PointPairList
-     
-        'Dim myPane As GraphPane = zgc.GraphPane
-        ZedGraphFrm.zg2.AutoSize = True
-
-        ZedGraphFrm.zg2.GraphPane.CurveList.Clear()
-        ZedGraphFrm.zg2.GraphPane.Title.Text = "Alarms"
-
-        ' Set the titles and axis labels
-        myPane.Title.Text = "Measures Events"
-        myPane.XAxis.Title.Text = "Events number"
-        myPane.YAxis.Title.Text = "Volt/Ampere"
-
-        ' Make up some data points from the Sine function
-        Dim list1 = New PointPairList()
-        Dim list2 As New PointPairList
-        Dim list3 As New PointPairList
-
-        Dim listV1 As New PointPairList
-        For x = 0 To ConnectionUSB.InterventiLetti.Length - 1
-            list1.Add(x + 1, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intI1_rms), "I1")
-            list2.Add(x + 1, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intI2_rms), "I2")
-            list3.Add(x + 1, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intI3_rms), "I3")
-            listV1.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intVoltAv), "V1")
-        Next
-
-
-        ' Generate a blue curve with circle symbols, and "My Curve 2" in the legend
-        Dim myCurve1 As LineItem
-        Dim myCurve2 As LineItem
-        Dim myCurve3 As LineItem
-        Dim myCurveV1 As LineItem
-        myCurve1 = myPane.AddCurve("I1", list1, Color.Blue, SymbolType.None)
-        myCurve2 = myPane.AddCurve("I2", list2, Color.Green, SymbolType.None)
-        myCurve3 = myPane.AddCurve("I3", list3, Color.Red, SymbolType.None)
-        myCurveV1 = myPane.AddCurve("V1", listV1, Color.DarkBlue, SymbolType.None)
-        myCurveV1.Line.Width = 2
-
-        ' Fill the area under the curve with a white-red gradient at 45 degrees
-        'myCurve.Line.Fill = New Fill(Color.White, Color.Red, 45.0F)
-
-        ' Make the symbols opaque by filling them with white
-        'myCurve.Symbol.Fill = New Fill(Color.White)
-
-        ' Fill the axis background with a color gradient
-        'myPane.Chart.Fill = New Fill(Color.White, Color.LightGoldenrodYellow, 45.0F)
-
-        ' Fill the pane background with a color gradient
-        myPane.Fill = New Fill(Color.White, Color.FromArgb(220, 220, 255), 45.0F)
-
-        'CreateLineLabels(myPane, False, "00")
-
-        ' Calculate the Axis Scale Ranges
-        ZedGraphFrm.zg2.AxisChange()
-
-        ' Make sure the Graph gets redrawn
-        ZedGraphFrm.zg2.Invalidate()
-        ZedGraphFrm.zg2.Refresh()
-
-        ZedGraphFrm.zg2.IsEnableHZoom = True
-        ZedGraphFrm.zg2.IsEnableVZoom = False
-        ZedGraphFrm.zg2.ZoomOutAll(myPane)
-
-
-    End Sub
-
-    Private Sub CreateLineLabels(ByVal pane As GraphPane, ByVal isBarCenter As Boolean, ByVal valueFormat As String)
-        Dim isVertical As Boolean = True
-
-        pane.GraphObjList.Clear()
-
-        '' Make the gap between the bars and the labels = 2% of the axis range
-        Dim labelOffset As Single
-        If isVertical Then
-            labelOffset = 1 ' CSng(pane.YAxis.Max - pane.YAxis.Min) * 0.02F
-        Else
-            labelOffset = 1 'CSng(pane.XAxis.Max - pane.XAxis.Min) * 0.02F
-        End If
-
-        ' keep a count of the number of BarItems
-        Dim curveIndex As Integer = 0
-
-        ' Get a valuehandler to do some calculations for us
-        Dim valueHandler As New ValueHandler(pane, True)
-
-        ' Loop through each curve in the list
-        For Each curve As CurveItem In pane.CurveList
-            ' work with BarItems only
-            Dim line As LineItem = TryCast(curve, LineItem)
-            If line IsNot Nothing Then
-                Dim points As IPointList = curve.Points
-
-                ' Loop through each point in the BarItem
-                For i = 0 To points.Count - 1
-                    ' Get the high, low and base values for the current bar
-                    ' note that this method will automatically calculate the "effective"
-                    ' values if the bar is stacked
-                    Dim baseVal As Double, lowVal As Double, hiVal As Double
-                    valueHandler.GetValues(curve, i, baseVal, lowVal, hiVal)
-                    If hiVal <> lowVal Then
-
-
-                        ' Get the value that corresponds to the center of the bar base
-                        ' This method figures out how the bars are positioned within a cluster
-                        Dim centerVal As Single = CSng(valueHandler.BarCenterValue(line, line.GetBarWidth(pane), i, baseVal, curveIndex))
-
-                        ' Create a text label -- note that we have to go back to the original point
-                        ' data for this, since hiVal and lowVal could be "effective" values from a bar stack
-                        Dim barLabelText As String = points(i).X.ToString(valueFormat)
-                        'Dim barLabelText As String = Intervents.enumNum(curveIndex)
-
-                        ' Calculate the position of the label -- this is either the X or the Y coordinate
-                        ' depending on whether they are horizontal or vertical bars, respectively
-                        Dim position As Single
-                        If isBarCenter Then
-                            position = CSng(hiVal + lowVal) / 2.0F
-                        Else
-                            position = CSng(hiVal) + labelOffset
-                        End If
-                        ' position = lowVal - 3
-
-                        ' Create the new TextItem
-                        Dim label As TextObj
-                        If isVertical Then
-                            label = New TextObj(barLabelText, centerVal, position)
-                        Else
-                            label = New TextObj(barLabelText, position, centerVal)
-                        End If
-
-                        ' Configure the TextItem
-                        label.Location.CoordinateFrame = CoordType.AxisXYScale
-                        label.FontSpec.Size = 12
-                        label.FontSpec.FontColor = Color.Black
-                        label.FontSpec.Angle = If(isVertical, 90, 0)
-                        label.Location.AlignH = If(isBarCenter, AlignH.Center, AlignH.Left)
-                        label.Location.AlignV = AlignV.Center
-                        label.FontSpec.Border.IsVisible = False
-                        label.FontSpec.Fill.IsVisible = False
-
-                        ' Add the TextItem to the GraphPane
-                        pane.GraphObjList.Add(label)
-                    End If
-                Next
-            End If
-            curveIndex += 1
-        Next
-    End Sub
-
-    Private Sub CreateBarLabels(ByVal pane As GraphPane, ByVal isBarCenter As Boolean, ByVal valueFormat As String)
-        Dim isVertical As Boolean = True
-
-        pane.GraphObjList.Clear()
-
-        '' Make the gap between the bars and the labels = 2% of the axis range
-        Dim labelOffset As Single
-        If isVertical Then
-            labelOffset = 1 ' CSng(pane.YAxis.Max - pane.YAxis.Min) * 0.02F
-        Else
-            labelOffset = 1 'CSng(pane.XAxis.Max - pane.XAxis.Min) * 0.02F
-        End If
-
-        ' keep a count of the number of BarItems
-        Dim curveIndex As Integer = 0
-
-        ' Get a valuehandler to do some calculations for us
-        Dim valueHandler As New ValueHandler(pane, True)
-
-        ' Loop through each curve in the list
-        For Each curve As CurveItem In pane.CurveList
-            ' work with BarItems only
-            Dim bar As BarItem = TryCast(curve, BarItem)
-            If bar IsNot Nothing Then
-                Dim points As IPointList = curve.Points
-
-                ' Loop through each point in the BarItem
-                For i = 0 To points.Count - 1
-                    ' Get the high, low and base values for the current bar
-                    ' note that this method will automatically calculate the "effective"
-                    ' values if the bar is stacked
-                    Dim baseVal As Double, lowVal As Double, hiVal As Double
-                    valueHandler.GetValues(curve, i, baseVal, lowVal, hiVal)
-                    If hiVal <> lowVal Then
-
-
-                        ' Get the value that corresponds to the center of the bar base
-                        ' This method figures out how the bars are positioned within a cluster
-                        Dim centerVal As Single = CSng(valueHandler.BarCenterValue(bar, bar.GetBarWidth(pane), i, baseVal, curveIndex))
-
-                        ' Create a text label -- note that we have to go back to the original point
-                        ' data for this, since hiVal and lowVal could be "effective" values from a bar stack
-                        'Dim barLabelText As String = (If(isVertical, points(i).Y, points(i).X)).ToString(valueFormat)
-                        Dim barLabelText As String = Intervents.enumNum(curveIndex)
-
-                        ' Calculate the position of the label -- this is either the X or the Y coordinate
-                        ' depending on whether they are horizontal or vertical bars, respectively
-                        Dim position As Single
-                        If isBarCenter Then
-                            position = CSng(hiVal + lowVal) / 2.0F
-                        Else
-                            position = CSng(hiVal) + labelOffset
-                        End If
-                        ' position = lowVal - 3
-
-                        ' Create the new TextItem
-                        Dim label As TextObj
-                        If isVertical Then
-                            label = New TextObj(barLabelText, centerVal, position)
-                        Else
-                            label = New TextObj(barLabelText, position, centerVal)
-                        End If
-
-                        ' Configure the TextItem
-                        label.Location.CoordinateFrame = CoordType.AxisXYScale
-                        label.FontSpec.Size = 12
-                        label.FontSpec.FontColor = Color.Black
-                        label.FontSpec.Angle = If(isVertical, 90, 0)
-                        label.Location.AlignH = If(isBarCenter, AlignH.Center, AlignH.Left)
-                        label.Location.AlignV = AlignV.Center
-                        label.FontSpec.Border.IsVisible = False
-                        label.FontSpec.Fill.IsVisible = False
-
-                        ' Add the TextItem to the GraphPane
-                        pane.GraphObjList.Add(label)
-                    End If
-                Next
-            End If
-            curveIndex += 1
-        Next
-    End Sub
-
-
-    Private Sub UpdateChart()
-
-        'Chart1.Series.Clear()
-
-        ''Chart1.DataSource = Intervents
-        'Chart1.ChartAreas.Clear()
-        'Chart1.ChartAreas.Add(0)
-        'Chart1.ChartAreas(0).AxisY.IntervalAutoMode = True
-        'Chart1.ChartAreas(0).AxisX.IntervalAutoMode = True
-        'Chart1.ChartAreas(0).AxisX.Interval = 1
-        'Chart1.Series.Add(0)
-        ''Chart1.Series(0).XValueMember = " XVALMEM"
-        ''Chart1.Series(0).YValueMembers = " YVALMEM"
-
-        ''Chart1.Series(0).Points.AddY(2)
-        'Chart1.Series(0).YValueType = ChartValueType.Int32
-        ''Chart1.Series(0).Points.AddXY("FF", 35)
-        ''Chart1.Series(0).Points.AddY(3)
-
-        'Chart1.Series(0).XAxisType = DataVisualization.Charting.AxisType.Primary
-        'Chart1.Series(0).XValueType = DataVisualization.Charting.ChartValueType.String
-        'Chart1.Series(0).ChartType = DataVisualization.Charting.SeriesChartType.Column
-
-        'For i = 0 To Intervents.TotTipiIntervento - 1
-        '    'Chart1.Series(0).Points.AddY(CType(Intervents.GetOcc(Intervents.enumNum(i)), Double))
-        '    Chart1.Series(0).IsXValueIndexed = True
-
-        '    Chart1.Series(0).Points.AddXY(Intervents.enumStr(i), Intervents.GetOcc(Intervents.enumNum(i)))
-        '    Chart1.Series(0).Points(i).Color = Color.FromArgb(i * 10, 255 - i * 10, i * 10)
-
-        '    Chart1.Series(0).Points(i).LegendText = Intervents.enumStr(i)
-
-        'Next
-
-
-        'Chart1.Series.Clear()
-        'Chart1.ChartAreas.Clear()
-        'Chart1.Titles.Clear()
-
-        'Chart1.ChartAreas.Add("HistoInterventi")        
-        ''Chart1.ChartAreas("HistoInterventi").AxisY.IntervalAutoMode = True
-        ''Chart1.ChartAreas("HistoInterventi").AxisX.IntervalAutoMode = True
-
-        'Chart1.Titles.Add("Alarm graph")
-        ''Chart1.ChartAreas("").
-
-
-        ''Chart1.Series(0).YValueType = ChartValueType.Int32
-        ''Chart1.Series(0).XAxisType = DataVisualization.Charting.AxisType.Primary
-        ''Chart1.Series(0).XValueType = DataVisualization.Charting.ChartValueType.String
-        ''Chart1.Series(0).ChartType = DataVisualization.Charting.SeriesChartType.Column
-        'For i = 0 To Intervents.TotTipiIntervento - 1
-        '    Chart1.Series.Add(Intervents.enumStr(i))
-        '    Chart1.Series(Intervents.enumStr(i)).IsXValueIndexed = True
-        '    'Chart1.Series(Intervents.enumStr(i)).Points
-        '    Chart1.Series(Intervents.enumStr(i)).Points.AddY(Intervents.GetOcc(Intervents.enumNum(i)))
-        '    Chart1.Series(Intervents.enumStr(i)).Points(0).Label = i.ToString
-        '    Chart1.Series(Intervents.enumStr(i)).AxisLabel = "DDIIS"
-        '    Chart1.Series(Intervents.enumStr(i)).YValueMembers = "YY"
-
-        '    'Chart1.Series(0).IsXValueIndexed = True
-
-        '    'Chart1.Series(0).Points.AddXY(Intervents.enumStr(i), Intervents.GetOcc(Intervents.enumNum(i)))
-
-        'Next
-
-
-
-
-        'Chart1.ChartAreas.Clear()
-        'Chart1.Series.Clear()
-
-        'Chart1.ChartAreas.Add("Default")
-        'Chart1.Series.Add("Series1")
-
-
-        '' Populate series data
-        'Dim random As New Random()
-        'Dim [date] As DateTime = DateTime.Now.Date
-        'Dim pointIndex As Integer
-        'For pointIndex = 0 To 7
-        '    Chart1.Series("Series1").Points.AddXY([date], random.Next(5, 95))
-        '    [date] = [date].AddDays(random.Next(1, 5))
-        'Next
-
-        ''Use point index instead of the X value
-        'If CheckBox1.Checked Then
-        '    Chart1.Series("Series1").IsXValueIndexed = True
-
-        '    ' Show labels every day
-        '    Chart1.ChartAreas("Default").AxisX.LabelStyle.Interval = 1
-        '    Chart1.ChartAreas("Default").AxisX.MajorGrid.Interval = 1
-        '    Chart1.ChartAreas("Default").AxisX.MajorTickMark.Interval = 1
-        'End If
-
-
-
-    End Sub
     Private Sub PictureLogo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureLogo.Click
         Process.Start("http://www.electroil.it/inglese/index.html")
     End Sub
@@ -811,13 +404,6 @@ Public Class MainFrm
 
     End Sub
 
-    Private Sub btnOpenGraph_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnOpenGraph.Click
-        UpdateChartZ_Second()
-        ZedGraphFrm.zg1.Visible = True
-        ZedGraphFrm.zg2.Visible = False
-        ZedGraphFrm.Show()
-    End Sub
-
 
 
     Private Sub AboutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AboutToolStripMenuItem.Click
@@ -825,12 +411,23 @@ Public Class MainFrm
     End Sub
 
     
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnChartXY.Click
-        UpdateChartZ_XY()
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnChartXY.Click, btnOpenGraph.Click
+        If sender Is btnChartXY Then
+            ZedGraphFrm.UpdateChartZ_XY()
+            ZedGraphFrm.zg2.Visible = True
+            ZedGraphFrm.zg1.Visible = False
+        ElseIf sender Is btnOpenGraph Then
+            ZedGraphFrm.UpdateChartZ_Second()
+            ZedGraphFrm.zg1.Visible = True
+            ZedGraphFrm.zg2.Visible = False
+        End If
 
-        ZedGraphFrm.zg2.Visible = True
-        ZedGraphFrm.zg1.Visible = False
+        ZedGraphFrm.Panel1.Visible = ZedGraphFrm.zg2.Visible
+        ZedGraphFrm.HScrollIntGraph.Visible = ZedGraphFrm.zg2.Visible
+        ZedGraphFrm.DrawHeader()
         ZedGraphFrm.Show()
+
     End Sub
+
 End Class
 

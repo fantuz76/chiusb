@@ -231,6 +231,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo_cut.ico" />
+    <None Include="Resources\Actions-zoom-fit-icon.png" />
     <None Include="Resources\GraphXY.png" />
     <None Include="Resources\Actions-office-chart-line-stacked-icon.png" />
     <None Include="Resources\ajax-loader.gif" />
