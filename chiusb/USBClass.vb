@@ -17,24 +17,40 @@ Imports System.Windows.Forms
 ' 2 bytes = pressione  -1.0 - +50.0 Bar
 ' 1 byte  = cosfi convenzionale =P/(P^2+Q^2) 0-.99
 ' 1 byte = temperatura  0-255 °C
+
+'nuova versione settembre -2011
+'20 bytes trasmessi per un complesso di 6539 registrazioni  per 129510 bytes
+' 1 byte = tipo intervento 
+' 4 bytes = tempo = secondo + minuto*60 + ora*3600 + giorno*24*3600 + mese*32*24*3600 + anno*13*32*24*3600   ; valido fino al 2119
+'   processo inverso:
+'   anno(a partire dal 2000) = tempo/(13*32*24*3600); resto_anno = tempo - anno*(13*32*24*3600);
+'   mese = resto_anno/(32*24*3600); resto_mese = resto_anno - mese*(32*24*3600)
+'   giorno = resto_mese/(24*3600);  resto_giorno = resto_mese - giorno*(24*3600)
+'   ora = resto_giorno/3600;  resto_ora = resto_giorno - ora*3600;
+'   minuto = resto_ora/60;  resto_minuto = secondo = resto_ora - minuto*60;
+' 4 bytes per le 3 tensioni: tensioni = (((V12_rms<<10)+V13_rms)<<10)+V23_rms; campo 0-1023V
+' 4 bytes per le 3 correnti = (((I1<<10)+I2)<<10)+I3;  I= 0-102.3A, oppure 0-1023A
+' 4 bytes = potenza_pressione_cosfi = (((potenza<<10) + pressione)<<7) +cosfi; potenza 0-327.67KW, pressione 0-102.3Bar, cosfi= 0-99
+' 2 bytes = flusso
+' 1 byte = temperatura  0-255 °C
 Public Structure InterventSingle
     Public _intType As Byte
     Public _intTime As UInt32
-    Public _intVoltAv As Int16
+    Public _intVoltAv As UInt16
 
-    Public _intV1_rms As Int16
-    Public _intV2_rms As Int16
-    Public _intV3_rms As Int16
+    Public _intV1_rms As UInt16
+    Public _intV2_rms As UInt16
+    Public _intV3_rms As UInt16
 
-    Public _intI1_rms As Byte
-    Public _intI2_rms As Byte
-    Public _intI3_rms As Byte
+    Public _intI1_rms As UInt16
+    Public _intI2_rms As UInt16
+    Public _intI3_rms As UInt16
 
-    Public _intPower As Int16
+    Public _intPower As UInt16
     Public _intPress As Int16
     Public _intCosfi As Byte
     Public _intTemp As Byte
-
+    Public _Flux As UInt16
 
 End Structure
 
@@ -69,6 +85,8 @@ Public Class InterventiList
     End Sub
 
     Public Function AddArrInt(ByVal _arrToParse As Byte()) As Boolean
+        Dim numTmp As UInt32
+
         If _arrToParse.Length < INTERVENTO_LENGTH Then
             Return False
         End If
@@ -79,21 +97,26 @@ Public Class InterventiList
         _List(_List.Length - 1)._intType = _arrToParse(0)
         _List(_List.Length - 1)._intTime = _arrToParse(1) * 256 ^ 3 + _arrToParse(2) * 256 ^ 2 + _arrToParse(3) * 256 ^ 1 + _arrToParse(4) * 256 ^ 0
 
-        _List(_List.Length - 1)._intVoltAv = Conv_num_Int16(_arrToParse(5), _arrToParse(6))
+        ''_List(_List.Length - 1)._intVoltAv = Conv_num_Int16(_arrToParse(5), _arrToParse(6))
+        numTmp = _arrToParse(5) * 256 ^ 3 + _arrToParse(6) * 256 ^ 2 + _arrToParse(7) * 256 ^ 1 + _arrToParse(8) * 256 ^ 0
+        _List(_List.Length - 1)._intV1_rms = (numTmp >> 20) And &H3FF   ' 10 bit
+        _List(_List.Length - 1)._intV2_rms = (numTmp >> 10) And &H3FF   ' 10 bit
+        _List(_List.Length - 1)._intV3_rms = numTmp And &H3FF           ' 10 bit
 
-        _List(_List.Length - 1)._intI1_rms = _arrToParse(7)
-        _List(_List.Length - 1)._intI2_rms = _arrToParse(8)
-        _List(_List.Length - 1)._intI3_rms = _arrToParse(9)
+        numTmp = _arrToParse(9) * 256 ^ 3 + _arrToParse(10) * 256 ^ 2 + _arrToParse(11) * 256 ^ 1 + _arrToParse(12) * 256 ^ 0
+        _List(_List.Length - 1)._intI1_rms = (numTmp >> 20) And &H3FF   ' 10 bit
+        _List(_List.Length - 1)._intI2_rms = (numTmp >> 10) And &H3FF   ' 10 bit
+        _List(_List.Length - 1)._intI3_rms = numTmp And &H3FF           ' 10 bit
 
-        Dim value As Integer
-        value = _arrToParse(10) * 256 ^ 1 + _arrToParse(11) * 256 ^ 0
+        numTmp = _arrToParse(13) * 256 ^ 3 + _arrToParse(14) * 256 ^ 2 + _arrToParse(15) * 256 ^ 1 + _arrToParse(16) * 256 ^ 0
+        _List(_List.Length - 1)._intPower = (numTmp >> 17) And &H7FFF   ' 15 bit
+        _List(_List.Length - 1)._intPress = (numTmp >> 7) And &H3FF     ' 10 bit
+        _List(_List.Length - 1)._intCosfi = numTmp And &H7F             ' 7 bit
 
-        _List(_List.Length - 1)._intPower = Conv_num_Int16(_arrToParse(10), _arrToParse(11))
-        _List(_List.Length - 1)._intPress = Conv_num_Int16(_arrToParse(12), _arrToParse(13))
+        numTmp = _arrToParse(17) * 256 ^ 1 + _arrToParse(18) * 256 ^ 0
+        _List(_List.Length - 1)._Flux = numTmp
 
-
-        _List(_List.Length - 1)._intCosfi = _arrToParse(14)
-        _List(_List.Length - 1)._intTemp = _arrToParse(15)
+        _List(_List.Length - 1)._intTemp = _arrToParse(19)
 
         Return True
     End Function
@@ -143,6 +166,9 @@ Public Class USBClass
     Private _Matricola As UInt16
     Private _TotalTime As UInt32
     Private _OreLav As UInt32
+    Private _PotNom As UInt32
+    Private _CurrNom As UInt32
+    Private _VoltNom As UInt32
     Private _myIntArr As New InterventiList
     Private _FwVer As UInt16
     Private _HwVer As UInt16
@@ -192,6 +218,25 @@ Public Class USBClass
             Return _TotalTime
         End Get
     End Property
+
+    Public ReadOnly Property PotNom() As String
+        Get
+            Return _PotNom
+        End Get
+    End Property
+
+    Public ReadOnly Property CurrNom() As String
+        Get
+            Return _CurrNom
+        End Get
+    End Property
+
+    Public ReadOnly Property VoltNom() As String
+        Get
+            Return _VoltNom
+        End Get
+    End Property
+
     Public ReadOnly Property InterventiLetti() As InterventiList
         Get
             Return _myIntArr
@@ -220,6 +265,7 @@ Public Class USBClass
         _FwVer = 0
         _HwVer = 0
         _Matricola = 0
+        _PotNom = _CurrNom = _VoltNom = 0
 
         'now add an event handler
         'AddHandler comPort.DataReceived, AddressOf comPort_DataReceived
@@ -232,7 +278,8 @@ Public Class USBClass
         _OreLav = 0
         _FwVer = 0
         _HwVer = 0
-        _Matricola = ""
+        _Matricola = 0
+        _PotNom = _CurrNom = _VoltNom = 0
 
         'add event handler
         'AddHandler comPort.DataReceived, AddressOf comPort_DataReceived
@@ -551,9 +598,18 @@ Public Class USBClass
                 If ReadPkt(ret) Then
                     If ret(0) = &H21 Then
                         _DatiSetHello = ret
+
+                        ' Versione precedente a Settembre 2011  
+                        '_Matricola = ret(1) * 256 ^ 1 + ret(2) * 256 ^ 0
+                        '_TotalTime = ret(83) * 256 ^ 3 + ret(84) * 256 ^ 2 + ret(85) * 256 ^ 1 + ret(86) * 256 ^ 0
+                        '_OreLav = ret(87) * 256 ^ 3 + ret(88) * 256 ^ 2 + ret(89) * 256 ^ 1 + ret(90) * 256 ^ 0
+
                         _Matricola = ret(1) * 256 ^ 1 + ret(2) * 256 ^ 0
-                        _TotalTime = ret(83) * 256 ^ 3 + ret(84) * 256 ^ 2 + ret(85) * 256 ^ 1 + ret(86) * 256 ^ 0
-                        _OreLav = ret(87) * 256 ^ 3 + ret(88) * 256 ^ 2 + ret(89) * 256 ^ 1 + ret(90) * 256 ^ 0
+                        _TotalTime = ret(95) * 256 ^ 3 + ret(96) * 256 ^ 2 + ret(97) * 256 ^ 1 + ret(98) * 256 ^ 0
+                        _OreLav = ret(111) * 256 ^ 3 + ret(112) * 256 ^ 2 + ret(113) * 256 ^ 1 + ret(114) * 256 ^ 0
+                        _PotNom = ret(5) * 256 ^ 1 + ret(6) * 256 ^ 0
+                        _CurrNom = ret(51) * 256 ^ 1 + ret(52) * 256 ^ 0
+                        _VoltNom = ret(49) * 256 ^ 1 + ret(50) * 256 ^ 0
                         ForceClosePort()
                         Return True
                     Else

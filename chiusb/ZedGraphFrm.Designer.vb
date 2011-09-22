@@ -206,7 +206,7 @@ Partial Class ZedGraphFrm
         Me.lblIntV2Desc.Name = "lblIntV2Desc"
         Me.lblIntV2Desc.Size = New System.Drawing.Size(22, 17)
         Me.lblIntV2Desc.TabIndex = 6
-        Me.lblIntV2Desc.Text = "V1"
+        Me.lblIntV2Desc.Text = "V12"
         Me.lblIntV2Desc.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lblIntV1Val
@@ -226,7 +226,7 @@ Partial Class ZedGraphFrm
         Me.lblIntV1Desc.Name = "lblIntV1Desc"
         Me.lblIntV1Desc.Size = New System.Drawing.Size(22, 17)
         Me.lblIntV1Desc.TabIndex = 4
-        Me.lblIntV1Desc.Text = "V1"
+        Me.lblIntV1Desc.Text = "V12"
         Me.lblIntV1Desc.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lblIntVolt

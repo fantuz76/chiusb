@@ -256,9 +256,9 @@ Partial Class MainFrm
         Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel6.Controls.Add(Me.Panel2)
         Me.Panel6.Controls.Add(Me.lblIntVolt)
-        Me.Panel6.Location = New System.Drawing.Point(3, 34)
+        Me.Panel6.Location = New System.Drawing.Point(7, 34)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(180, 71)
+        Me.Panel6.Size = New System.Drawing.Size(188, 71)
         Me.Panel6.TabIndex = 10
         '
         'Panel2
@@ -271,15 +271,15 @@ Partial Class MainFrm
         Me.Panel2.Controls.Add(Me.lblIntV1Desc)
         Me.Panel2.Location = New System.Drawing.Point(-1, 37)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(176, 30)
+        Me.Panel2.Size = New System.Drawing.Size(188, 30)
         Me.Panel2.TabIndex = 4
         '
         'lblIntV3Val
         '
         Me.lblIntV3Val.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblIntV3Val.Location = New System.Drawing.Point(140, 6)
+        Me.lblIntV3Val.Location = New System.Drawing.Point(151, 6)
         Me.lblIntV3Val.Name = "lblIntV3Val"
-        Me.lblIntV3Val.Size = New System.Drawing.Size(35, 17)
+        Me.lblIntV3Val.Size = New System.Drawing.Size(34, 17)
         Me.lblIntV3Val.TabIndex = 9
         Me.lblIntV3Val.Text = "299"
         Me.lblIntV3Val.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -287,19 +287,19 @@ Partial Class MainFrm
         'lblIntV3Desc
         '
         Me.lblIntV3Desc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIntV3Desc.Location = New System.Drawing.Point(119, 6)
+        Me.lblIntV3Desc.Location = New System.Drawing.Point(121, 6)
         Me.lblIntV3Desc.Name = "lblIntV3Desc"
-        Me.lblIntV3Desc.Size = New System.Drawing.Size(22, 17)
+        Me.lblIntV3Desc.Size = New System.Drawing.Size(32, 17)
         Me.lblIntV3Desc.TabIndex = 8
-        Me.lblIntV3Desc.Text = "V3"
+        Me.lblIntV3Desc.Text = "V23"
         Me.lblIntV3Desc.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lblIntV2Val
         '
         Me.lblIntV2Val.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblIntV2Val.Location = New System.Drawing.Point(79, 6)
+        Me.lblIntV2Val.Location = New System.Drawing.Point(89, 6)
         Me.lblIntV2Val.Name = "lblIntV2Val"
-        Me.lblIntV2Val.Size = New System.Drawing.Size(35, 17)
+        Me.lblIntV2Val.Size = New System.Drawing.Size(34, 17)
         Me.lblIntV2Val.TabIndex = 7
         Me.lblIntV2Val.Text = "299"
         Me.lblIntV2Val.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -309,17 +309,17 @@ Partial Class MainFrm
         Me.lblIntV2Desc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblIntV2Desc.Location = New System.Drawing.Point(59, 6)
         Me.lblIntV2Desc.Name = "lblIntV2Desc"
-        Me.lblIntV2Desc.Size = New System.Drawing.Size(22, 17)
+        Me.lblIntV2Desc.Size = New System.Drawing.Size(32, 17)
         Me.lblIntV2Desc.TabIndex = 6
-        Me.lblIntV2Desc.Text = "V1"
+        Me.lblIntV2Desc.Text = "V13"
         Me.lblIntV2Desc.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lblIntV1Val
         '
         Me.lblIntV1Val.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblIntV1Val.Location = New System.Drawing.Point(20, 6)
+        Me.lblIntV1Val.Location = New System.Drawing.Point(30, 6)
         Me.lblIntV1Val.Name = "lblIntV1Val"
-        Me.lblIntV1Val.Size = New System.Drawing.Size(35, 17)
+        Me.lblIntV1Val.Size = New System.Drawing.Size(34, 17)
         Me.lblIntV1Val.TabIndex = 5
         Me.lblIntV1Val.Text = "1023"
         Me.lblIntV1Val.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -329,9 +329,9 @@ Partial Class MainFrm
         Me.lblIntV1Desc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblIntV1Desc.Location = New System.Drawing.Point(1, 6)
         Me.lblIntV1Desc.Name = "lblIntV1Desc"
-        Me.lblIntV1Desc.Size = New System.Drawing.Size(22, 17)
+        Me.lblIntV1Desc.Size = New System.Drawing.Size(32, 17)
         Me.lblIntV1Desc.TabIndex = 4
-        Me.lblIntV1Desc.Text = "V1"
+        Me.lblIntV1Desc.Text = "V12"
         Me.lblIntV1Desc.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lblIntVolt
@@ -350,7 +350,7 @@ Partial Class MainFrm
         Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel5.Controls.Add(Me.lblIntCurrent)
         Me.Panel5.Controls.Add(Me.Panel3)
-        Me.Panel5.Location = New System.Drawing.Point(181, 34)
+        Me.Panel5.Location = New System.Drawing.Point(194, 34)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(180, 71)
         Me.Panel5.TabIndex = 9
@@ -449,15 +449,15 @@ Partial Class MainFrm
         Me.Panel4.Controls.Add(Me.lblIntPressDesc)
         Me.Panel4.Controls.Add(Me.lblIntPowVal)
         Me.Panel4.Controls.Add(Me.lblIntPowDesc)
-        Me.Panel4.Location = New System.Drawing.Point(360, 34)
+        Me.Panel4.Location = New System.Drawing.Point(373, 34)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(224, 71)
+        Me.Panel4.Size = New System.Drawing.Size(211, 71)
         Me.Panel4.TabIndex = 6
         '
         'lblIntTempVal
         '
         Me.lblIntTempVal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblIntTempVal.Location = New System.Drawing.Point(174, 40)
+        Me.lblIntTempVal.Location = New System.Drawing.Point(164, 40)
         Me.lblIntTempVal.Name = "lblIntTempVal"
         Me.lblIntTempVal.Size = New System.Drawing.Size(43, 17)
         Me.lblIntTempVal.TabIndex = 11
@@ -467,7 +467,7 @@ Partial Class MainFrm
         'lblIntTempDesc
         '
         Me.lblIntTempDesc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIntTempDesc.Location = New System.Drawing.Point(100, 41)
+        Me.lblIntTempDesc.Location = New System.Drawing.Point(90, 41)
         Me.lblIntTempDesc.Name = "lblIntTempDesc"
         Me.lblIntTempDesc.Size = New System.Drawing.Size(68, 16)
         Me.lblIntTempDesc.TabIndex = 10
@@ -477,7 +477,7 @@ Partial Class MainFrm
         'lblIntCosfiVal
         '
         Me.lblIntCosfiVal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblIntCosfiVal.Location = New System.Drawing.Point(55, 41)
+        Me.lblIntCosfiVal.Location = New System.Drawing.Point(51, 41)
         Me.lblIntCosfiVal.Name = "lblIntCosfiVal"
         Me.lblIntCosfiVal.Size = New System.Drawing.Size(43, 17)
         Me.lblIntCosfiVal.TabIndex = 9
@@ -487,7 +487,7 @@ Partial Class MainFrm
         'lblIntCosfiDesc
         '
         Me.lblIntCosfiDesc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIntCosfiDesc.Location = New System.Drawing.Point(3, 41)
+        Me.lblIntCosfiDesc.Location = New System.Drawing.Point(-1, 41)
         Me.lblIntCosfiDesc.Name = "lblIntCosfiDesc"
         Me.lblIntCosfiDesc.Size = New System.Drawing.Size(46, 16)
         Me.lblIntCosfiDesc.TabIndex = 8
@@ -497,7 +497,7 @@ Partial Class MainFrm
         'lblIntPressVal
         '
         Me.lblIntPressVal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblIntPressVal.Location = New System.Drawing.Point(174, 14)
+        Me.lblIntPressVal.Location = New System.Drawing.Point(164, 14)
         Me.lblIntPressVal.Name = "lblIntPressVal"
         Me.lblIntPressVal.Size = New System.Drawing.Size(43, 17)
         Me.lblIntPressVal.TabIndex = 7
@@ -507,7 +507,7 @@ Partial Class MainFrm
         'lblIntPressDesc
         '
         Me.lblIntPressDesc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIntPressDesc.Location = New System.Drawing.Point(100, 5)
+        Me.lblIntPressDesc.Location = New System.Drawing.Point(90, 5)
         Me.lblIntPressDesc.Name = "lblIntPressDesc"
         Me.lblIntPressDesc.Size = New System.Drawing.Size(68, 36)
         Me.lblIntPressDesc.TabIndex = 6
@@ -517,7 +517,7 @@ Partial Class MainFrm
         'lblIntPowVal
         '
         Me.lblIntPowVal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblIntPowVal.Location = New System.Drawing.Point(55, 14)
+        Me.lblIntPowVal.Location = New System.Drawing.Point(52, 14)
         Me.lblIntPowVal.Name = "lblIntPowVal"
         Me.lblIntPowVal.Size = New System.Drawing.Size(43, 17)
         Me.lblIntPowVal.TabIndex = 5
@@ -527,7 +527,7 @@ Partial Class MainFrm
         'lblIntPowDesc
         '
         Me.lblIntPowDesc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIntPowDesc.Location = New System.Drawing.Point(3, 5)
+        Me.lblIntPowDesc.Location = New System.Drawing.Point(-1, 5)
         Me.lblIntPowDesc.Name = "lblIntPowDesc"
         Me.lblIntPowDesc.Size = New System.Drawing.Size(46, 36)
         Me.lblIntPowDesc.TabIndex = 4
