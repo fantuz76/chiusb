@@ -289,12 +289,13 @@ Module USBModule
         StToAdd2 = "Time"
         StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = "V1[V]"
+        StToAdd2 = "V12[V]"
         StToAdd = StToAdd + StToAdd2 + ","
-        'StToAdd2 = "V2:" + _intv._intVolt2.ToString + "V"
-        'StToAdd = StToAdd + ","
-        'StToAdd2 = "V3:" + _intv._intVolt3.ToString + "V"
-        'StToAdd = StToAdd + ","
+        StToAdd2 = "V13[V]"
+        StToAdd = StToAdd + StToAdd2 + ","
+        StToAdd2 = "V23[V]"
+        StToAdd = StToAdd + StToAdd2 + ","
+        
 
         StToAdd2 = "I1[A]"
         StToAdd = StToAdd + StToAdd2 + ","
@@ -306,7 +307,7 @@ Module USBModule
         StToAdd2 = "Cosfi"
         StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = "P[W]"
+        StToAdd2 = "P[KW]"
         StToAdd = StToAdd + StToAdd2 + ","
 
         StToAdd2 = "P[bar]"
@@ -337,12 +338,14 @@ Module USBModule
         StToAdd2 = StToAdd2 + GetSeconds(_intv._intTime).ToString("00") + """"
         StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = GetVoltage(_intv._intVoltAv).ToString
-        StToAdd = StToAdd + StToAdd2 + ","
-        'StToAdd2 = "V2:" + _intv._intVolt2.ToString + "V"
-        'StToAdd = StToAdd + ","
-        'StToAdd2 = "V3:" + _intv._intVolt3.ToString + "V"
-        'StToAdd = StToAdd + ","
+        'StToAdd2 = GetVoltage(_intv._intVoltAv).ToString
+        'StToAdd = StToAdd + StToAdd2 + ","
+        StToAdd2 = _intv._intV1_rms.ToString
+        StToAdd = StToAdd + ","
+        StToAdd2 = _intv._intV2_rms.ToString
+        StToAdd = StToAdd + ","
+        StToAdd2 = _intv._intV3_rms.ToString
+        StToAdd = StToAdd + ","
 
         StToAdd2 = GetCurrent(_intv._intI1_rms).ToString("F1", GetCultureInfo("en-GB"))
         StToAdd = StToAdd + StToAdd2 + ","
@@ -384,12 +387,12 @@ Module USBModule
         StToAdd2 = "Time"
         StToAdd = StToAdd + StToAdd2.PadRight(9)
 
-        StToAdd2 = "V1[V]"
+        StToAdd2 = "V12[V]"
         StToAdd = StToAdd + StToAdd2.PadRight(6)
-        'StToAdd2 = "V2:" + _intv._intVolt2.ToString + "V"
-        'StToAdd = StToAdd + StToAdd2.PadRight(8)
-        'StToAdd2 = "V3:" + _intv._intVolt3.ToString + "V"
-        'StToAdd = StToAdd + StToAdd2.PadRight(8)
+        StToAdd2 = "V13[V]"
+        StToAdd = StToAdd + StToAdd2.PadRight(6)
+        StToAdd2 = "V23[V]"
+        StToAdd = StToAdd + StToAdd2.PadRight(6)
 
         StToAdd2 = "I1[A]"
         StToAdd = StToAdd + StToAdd2.PadRight(6)
@@ -401,7 +404,7 @@ Module USBModule
         StToAdd2 = "Cosfi"
         StToAdd = StToAdd + StToAdd2.PadRight(6)
 
-        StToAdd2 = "P[W]"
+        StToAdd2 = "P[KW]"
         StToAdd = StToAdd + StToAdd2.PadRight(5)
 
         StToAdd2 = "P[bar]"
@@ -434,12 +437,14 @@ Module USBModule
         StToAdd2 = StToAdd2 + GetSeconds(_intv._intTime).ToString("00") + """"
         StToAdd = StToAdd + StToAdd2.PadRight(9)
 
-        StToAdd2 = GetVoltage(_intv._intVoltAv).ToString
+        'StToAdd2 = GetVoltage(_intv._intVoltAv).ToString
+        'StToAdd = StToAdd + StToAdd2.PadRight(6)
+        StToAdd2 = _intv._intV1_rms.ToString
         StToAdd = StToAdd + StToAdd2.PadRight(6)
-        'StToAdd2 = "V2:" + _intv._intVolt2.ToString + "V"
-        'StToAdd = StToAdd + StToAdd2.PadRight(8)
-        'StToAdd2 = "V3:" + _intv._intVolt3.ToString + "V"
-        'StToAdd = StToAdd + StToAdd2.PadRight(8)
+        StToAdd2 = _intv._intV2_rms.ToString
+        StToAdd = StToAdd + StToAdd2.PadRight(6)
+        StToAdd2 = _intv._intV3_rms.ToString
+        StToAdd = StToAdd + StToAdd2.PadRight(6)
 
         StToAdd2 = GetCurrent(_intv._intI1_rms).ToString("F1", GetCultureInfo("en-GB"))
         StToAdd = StToAdd + StToAdd2.PadRight(6)
@@ -494,7 +499,7 @@ Module USBModule
 
     Public Function GetPower(ByVal _numToConvert As Integer) As Integer
         'If _numToConvert < 0 Then Return 0
-        Return (_numToConvert)
+        Return (_numToConvert / 100)
     End Function
 
     Public Function GetPressure(ByVal _numToConvert As Integer) As Double

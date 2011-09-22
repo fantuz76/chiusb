@@ -94,8 +94,8 @@ Public Class ZedGraphFrm
             lblIntI2Val.Text = GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intI2_rms)
             lblIntI3Val.Text = GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intI3_rms)
 
-            lblIntV1Val.Text = GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intVoltAv)
-            'lblIntV1Val.Text = GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intV1_rms)
+            'lblIntV1Val.Text = GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intVoltAv)
+            lblIntV1Val.Text = GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intV1_rms)
             lblIntV2Val.Text = GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intV2_rms)
             lblIntV3Val.Text = GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intV3_rms)
         End If
@@ -221,7 +221,10 @@ Public Class ZedGraphFrm
             list1.Add(x + 1, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intI1_rms), "I1")
             list2.Add(x + 1, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intI2_rms), "I2")
             list3.Add(x + 1, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intI3_rms), "I3")
-            listV1.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intVoltAv), "V1")
+            'listV1.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intVoltAv), "V12")
+            listV1.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV1_rms), "V12")
+            listV1.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV2_rms), "V13")
+            listV1.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV3_rms), "V23")
         Next
 
 
@@ -231,9 +234,9 @@ Public Class ZedGraphFrm
         myCurveI1 = myPane.AddCurve("I1", list1, Color.Blue, SymbolType.None)
         myCurveI2 = myPane.AddCurve("I2", list2, Color.Green, SymbolType.None)
         myCurveI3 = myPane.AddCurve("I3", list3, Color.Red, SymbolType.None)
-        myCurveV1 = myPane.AddCurve("V1", listV1, Color.DarkBlue, SymbolType.None)
-        myCurveV2 = myPane.AddCurve("V2", listV1, Color.DarkGreen, SymbolType.None)
-        myCurveV3 = myPane.AddCurve("V3", listV1, Color.DarkRed, SymbolType.None)
+        myCurveV1 = myPane.AddCurve("V12", listV1, Color.DarkBlue, SymbolType.None)
+        myCurveV2 = myPane.AddCurve("V13", listV1, Color.DarkGreen, SymbolType.None)
+        myCurveV3 = myPane.AddCurve("V23", listV1, Color.DarkRed, SymbolType.None)
         myCurveI1.IsY2Axis = False
         myCurveI2.IsY2Axis = False
         myCurveI3.IsY2Axis = False
