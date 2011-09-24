@@ -146,10 +146,16 @@ Public Class ZedGraphFrm
             zg2.ScrollMaxY = 1024
             zg2.ScrollMaxY = 30
 
-            numSpan.Value = 100
+
             numSpan.Minimum = 10
             numSpan.Increment = 10
             numSpan.Maximum = ConnectionUSB.InterventiLetti.Length - 1
+            If numSpan.Maximum < 100 Then
+                numSpan.Value = numSpan.Maximum
+            Else
+                numSpan.Value = 100
+            End If
+
 
 
             Panel1.Visible = zg2.Visible
@@ -183,6 +189,17 @@ Public Class ZedGraphFrm
     Private Sub Button1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCenter.Click
         zg2.GraphPane.XAxis.Scale.Min = HScrollIntGraph.Value - numSpan.Value / 2
         zg2.GraphPane.XAxis.Scale.Max = HScrollIntGraph.Value + numSpan.Value / 2
+
+        If zg2.GraphPane.XAxis.Scale.Min < 0 Then
+            zg2.GraphPane.XAxis.Scale.Min = 0
+            zg2.GraphPane.XAxis.Scale.Max = HScrollIntGraph.Value + numSpan.Value
+        End If
+
+        If zg2.GraphPane.XAxis.Scale.Max > ConnectionUSB.InterventiLetti.IntItems.Length Then
+            zg2.GraphPane.XAxis.Scale.Max = ConnectionUSB.InterventiLetti.IntItems.Length
+            zg2.GraphPane.XAxis.Scale.Min = HScrollIntGraph.Value - numSpan.Value
+        End If
+
         zg2.Refresh()
     End Sub
 
@@ -212,31 +229,33 @@ Public Class ZedGraphFrm
 
 
         ' Make up some data points from the Sine function
-        Dim list1 = New PointPairList()
-        Dim list2 As New PointPairList
-        Dim list3 As New PointPairList
+        Dim listI1 = New PointPairList()
+        Dim listI2 As New PointPairList
+        Dim listI3 As New PointPairList
 
         Dim listV1 As New PointPairList
+        Dim listV2 As New PointPairList
+        Dim listV3 As New PointPairList
         For x = 0 To ConnectionUSB.InterventiLetti.Length - 1
-            list1.Add(x + 1, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intI1_rms), "I1")
-            list2.Add(x + 1, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intI2_rms), "I2")
-            list3.Add(x + 1, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intI3_rms), "I3")
+            listI1.Add(x + 1, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intI1_rms), "I1")
+            listI2.Add(x + 1, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intI2_rms), "I2")
+            listI3.Add(x + 1, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intI3_rms), "I3")
             'listV1.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intVoltAv), "V12")
             listV1.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV1_rms), "V12")
-            listV1.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV2_rms), "V13")
-            listV1.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV3_rms), "V23")
+            listV2.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV2_rms), "V13")
+            listV3.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV3_rms), "V23")
         Next
 
 
         ' Generate a blue curve with circle symbols, and "My Curve 2" in the legend
         Dim myCurveI1, myCurveI2, myCurveI3 As LineItem
         Dim myCurveV1, myCurveV2, myCurveV3 As LineItem
-        myCurveI1 = myPane.AddCurve("I1", list1, Color.Blue, SymbolType.None)
-        myCurveI2 = myPane.AddCurve("I2", list2, Color.Green, SymbolType.None)
-        myCurveI3 = myPane.AddCurve("I3", list3, Color.Red, SymbolType.None)
+        myCurveI1 = myPane.AddCurve("I1", listI1, Color.Blue, SymbolType.None)
+        myCurveI2 = myPane.AddCurve("I2", listI2, Color.Green, SymbolType.None)
+        myCurveI3 = myPane.AddCurve("I3", listI3, Color.Red, SymbolType.None)
         myCurveV1 = myPane.AddCurve("V12", listV1, Color.DarkBlue, SymbolType.None)
-        myCurveV2 = myPane.AddCurve("V13", listV1, Color.DarkGreen, SymbolType.None)
-        myCurveV3 = myPane.AddCurve("V23", listV1, Color.DarkRed, SymbolType.None)
+        myCurveV2 = myPane.AddCurve("V13", listV2, Color.DarkGreen, SymbolType.None)
+        myCurveV3 = myPane.AddCurve("V23", listV3, Color.DarkRed, SymbolType.None)
         myCurveI1.IsY2Axis = False
         myCurveI2.IsY2Axis = False
         myCurveI3.IsY2Axis = False
@@ -509,6 +528,9 @@ Public Class ZedGraphFrm
         Next
     End Sub
 
+    Private Sub HScrollIntGraph_Scroll(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ScrollEventArgs) Handles HScrollIntGraph.Scroll
+
+    End Sub
 End Class
 
 

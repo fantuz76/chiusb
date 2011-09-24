@@ -50,7 +50,7 @@ Public Structure InterventSingle
     Public _intPress As Int16
     Public _intCosfi As Byte
     Public _intTemp As Byte
-    Public _Flux As UInt16
+    Public _intFlux As UInt16
 
 End Structure
 
@@ -114,7 +114,7 @@ Public Class InterventiList
         _List(_List.Length - 1)._intCosfi = numTmp And &H7F             ' 7 bit
 
         numTmp = _arrToParse(17) * 256 ^ 1 + _arrToParse(18) * 256 ^ 0
-        _List(_List.Length - 1)._Flux = numTmp
+        _List(_List.Length - 1)._intFlux = numTmp
 
         _List(_List.Length - 1)._intTemp = _arrToParse(19)
 
@@ -656,7 +656,8 @@ Public Class USBClass
                     Application.DoEvents()
                     LetturaOK = ReadPkt(ret)
                     If LetturaOK And (ret.Length > 5) Then
-                        If ret(0) >= NUM_MAX_TYPE_INT Then
+                        'If ret(0) >= NUM_MAX_TYPE_INT Then
+                        If ret(0) = &HFF Then
                             'if ret(2) = &HFF And ret(3) = &HFF And ret(4) = &HFF And ret(5) = &HFF) Then
                             _myIntArr.SortArrIntTime(False)
                             ' fine OK

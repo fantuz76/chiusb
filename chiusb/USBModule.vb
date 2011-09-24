@@ -286,7 +286,7 @@ Module USBModule
         StToAdd2 = "Description"
         StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = "Time"
+        StToAdd2 = "Date/Time"
         StToAdd = StToAdd + StToAdd2 + ","
 
         StToAdd2 = "V12[V]"
@@ -304,13 +304,16 @@ Module USBModule
         StToAdd2 = "I3[A]"
         StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = "Cosfi"
+        StToAdd2 = "Cosφ"
         StToAdd = StToAdd + StToAdd2 + ","
 
         StToAdd2 = "P[KW]"
         StToAdd = StToAdd + StToAdd2 + ","
 
         StToAdd2 = "P[bar]"
+        StToAdd = StToAdd + StToAdd2 + ","
+
+        StToAdd2 = "Flux"
         StToAdd = StToAdd + StToAdd2 + ","
 
         StToAdd2 = "T[°C]"
@@ -333,19 +336,17 @@ Module USBModule
         StToAdd2 = Intervents.GetIntStr(_intv._intType)
         StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = GetHours(_intv._intTime).ToString + "h"
-        StToAdd2 = StToAdd2 + GetMinutes(_intv._intTime).ToString("00") + "'"
-        StToAdd2 = StToAdd2 + GetSeconds(_intv._intTime).ToString("00") + """"
+
+        StToAdd2 = (2000 + GetYear(_intv._intTime)).ToString("0000") & "/" & GetMonth(_intv._intTime).ToString("00") & "/" & GetDay(_intv._intTime).ToString("00") & " "
+        StToAdd2 = StToAdd2 + GetHours(_intv._intTime).ToString("00") & "h" & GetMinutes(_intv._intTime).ToString("00") & "'" & GetSeconds(_intv._intTime).ToString("00") & "''"
         StToAdd = StToAdd + StToAdd2 + ","
 
-        'StToAdd2 = GetVoltage(_intv._intVoltAv).ToString
-        'StToAdd = StToAdd + StToAdd2 + ","
         StToAdd2 = _intv._intV1_rms.ToString
-        StToAdd = StToAdd + ","
+        StToAdd = StToAdd + StToAdd2 + ","
         StToAdd2 = _intv._intV2_rms.ToString
-        StToAdd = StToAdd + ","
+        StToAdd = StToAdd + StToAdd2 + ","
         StToAdd2 = _intv._intV3_rms.ToString
-        StToAdd = StToAdd + ","
+        StToAdd = StToAdd + StToAdd2 + ","
 
         StToAdd2 = GetCurrent(_intv._intI1_rms).ToString("F1", GetCultureInfo("en-GB"))
         StToAdd = StToAdd + StToAdd2 + ","
@@ -354,13 +355,16 @@ Module USBModule
         StToAdd2 = GetCurrent(_intv._intI3_rms).ToString("F1", GetCultureInfo("en-GB"))
         StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = GetCosfi(_intv._intCosfi).ToString("F2", GetCultureInfo("en-GB")) + ""
+        StToAdd2 = GetCosfi(_intv._intCosfi).ToString("F2", GetCultureInfo("en-GB"))
         StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = GetPower(_intv._intPower).ToString
+        StToAdd2 = GetPower(_intv._intPower).ToString("F2", GetCultureInfo("en-GB"))
         StToAdd = StToAdd + StToAdd2 + ","
 
         StToAdd2 = GetPressure(_intv._intPress).ToString("F1", GetCultureInfo("en-GB"))
+        StToAdd = StToAdd + StToAdd2 + ","
+
+        StToAdd2 = GetFlux(_intv._intFlux).ToString
         StToAdd = StToAdd + StToAdd2 + ","
 
         StToAdd2 = GetTemperature(_intv._intTemp).ToString
@@ -382,38 +386,91 @@ Module USBModule
         StToAdd = StToAdd + StToAdd2.PadLeft(5)
 
         StToAdd2 = "Description"
-        StToAdd = StToAdd + StToAdd2.PadRight(21)
+        StToAdd = StToAdd + StToAdd2.PadRight(19)
 
-        StToAdd2 = "Time"
-        StToAdd = StToAdd + StToAdd2.PadRight(9)
+        StToAdd2 = "Date/Time"
+        StToAdd = StToAdd + StToAdd2.PadRight(22)
 
-        StToAdd2 = "V12[V]"
-        StToAdd = StToAdd + StToAdd2.PadRight(6)
-        StToAdd2 = "V13[V]"
-        StToAdd = StToAdd + StToAdd2.PadRight(6)
-        StToAdd2 = "V23[V]"
-        StToAdd = StToAdd + StToAdd2.PadRight(6)
-
-        StToAdd2 = "I1[A]"
-        StToAdd = StToAdd + StToAdd2.PadRight(6)
-        StToAdd2 = "I2[A]"
-        StToAdd = StToAdd + StToAdd2.PadRight(6)
-        StToAdd2 = "I3[A]"
-        StToAdd = StToAdd + StToAdd2.PadRight(6)
-
-        StToAdd2 = "Cosfi"
-        StToAdd = StToAdd + StToAdd2.PadRight(6)
-
-        StToAdd2 = "P[KW]"
+        StToAdd2 = "V12"
+        StToAdd = StToAdd + StToAdd2.PadRight(5)
+        StToAdd2 = "V13"
+        StToAdd = StToAdd + StToAdd2.PadRight(5)
+        StToAdd2 = "V23"
         StToAdd = StToAdd + StToAdd2.PadRight(5)
 
-        StToAdd2 = "P[bar]"
+        StToAdd2 = "I1"
+        StToAdd = StToAdd + StToAdd2.PadRight(6)
+        StToAdd2 = "I2"
+        StToAdd = StToAdd + StToAdd2.PadRight(6)
+        StToAdd2 = "I3"
+        StToAdd = StToAdd + StToAdd2.PadRight(6)
+
+        StToAdd2 = "Cosφ"
+        StToAdd = StToAdd + StToAdd2.PadRight(5)
+
+        StToAdd2 = "P"
         StToAdd = StToAdd + StToAdd2.PadRight(7)
 
+        StToAdd2 = "P"
+        StToAdd = StToAdd + StToAdd2.PadRight(6)
+
+        StToAdd2 = "Flux"
+        StToAdd = StToAdd + StToAdd2.PadRight(6)
+
+        StToAdd2 = "T"
+        StToAdd = StToAdd + StToAdd2.PadRight(4)
 
 
-        StToAdd2 = "T[°C]"
+
+        Return StToAdd
+    End Function
+
+
+    Public Function CreateLineStringHeaderIntUnita() As String
+        Dim StToAdd, StToAdd2 As String
+        StToAdd = ""
+        StToAdd2 = " "
         StToAdd = StToAdd + StToAdd2.PadRight(5)
+
+        StToAdd2 = " "
+        StToAdd = StToAdd + StToAdd2.PadLeft(5)
+
+        StToAdd2 = " "
+        StToAdd = StToAdd + StToAdd2.PadRight(19)
+
+        StToAdd2 = " "
+        StToAdd = StToAdd + StToAdd2.PadRight(22)
+
+        StToAdd2 = "[V]"
+        StToAdd = StToAdd + StToAdd2.PadRight(5)
+        StToAdd2 = "[V]"
+        StToAdd = StToAdd + StToAdd2.PadRight(5)
+        StToAdd2 = "[V]"
+        StToAdd = StToAdd + StToAdd2.PadRight(5)
+
+        StToAdd2 = "[A]"
+        StToAdd = StToAdd + StToAdd2.PadRight(6)
+        StToAdd2 = "[A]"
+        StToAdd = StToAdd + StToAdd2.PadRight(6)
+        StToAdd2 = "[A]"
+        StToAdd = StToAdd + StToAdd2.PadRight(6)
+
+        StToAdd2 = ""
+        StToAdd = StToAdd + StToAdd2.PadRight(5)
+
+        StToAdd2 = "[KW]"
+        StToAdd = StToAdd + StToAdd2.PadRight(7)
+
+        StToAdd2 = "[bar]"
+        StToAdd = StToAdd + StToAdd2.PadRight(6)
+
+        StToAdd2 = ""
+        StToAdd = StToAdd + StToAdd2.PadRight(6)
+
+        StToAdd2 = "[°C]"
+        StToAdd = StToAdd + StToAdd2.PadRight(4)
+
+
 
         Return StToAdd
     End Function
@@ -430,21 +487,19 @@ Module USBModule
         StToAdd = StToAdd + StToAdd2.PadLeft(5)
 
         StToAdd2 = Intervents.GetIntStr(_intv._intType)
-        StToAdd = StToAdd + StToAdd2.PadRight(21)
+        StToAdd = StToAdd + StToAdd2.PadRight(19)
 
-        StToAdd2 = GetHours(_intv._intTime).ToString + "h"
-        StToAdd2 = StToAdd2 + GetMinutes(_intv._intTime).ToString("00") + "'"
-        StToAdd2 = StToAdd2 + GetSeconds(_intv._intTime).ToString("00") + """"
-        StToAdd = StToAdd + StToAdd2.PadRight(9)
 
-        'StToAdd2 = GetVoltage(_intv._intVoltAv).ToString
-        'StToAdd = StToAdd + StToAdd2.PadRight(6)
+        StToAdd2 = (2000 + GetYear(_intv._intTime)).ToString("0000") & "/" & GetMonth(_intv._intTime).ToString("00") & "/" & GetDay(_intv._intTime).ToString("00") & " "
+        StToAdd2 = StToAdd2 + GetHours(_intv._intTime).ToString("00") & "h" & GetMinutes(_intv._intTime).ToString("00") & "'" & GetSeconds(_intv._intTime).ToString("00") & "''"
+        StToAdd = StToAdd + StToAdd2.PadRight(22)
+
         StToAdd2 = _intv._intV1_rms.ToString
-        StToAdd = StToAdd + StToAdd2.PadRight(6)
+        StToAdd = StToAdd + StToAdd2.PadRight(5)
         StToAdd2 = _intv._intV2_rms.ToString
-        StToAdd = StToAdd + StToAdd2.PadRight(6)
+        StToAdd = StToAdd + StToAdd2.PadRight(5)
         StToAdd2 = _intv._intV3_rms.ToString
-        StToAdd = StToAdd + StToAdd2.PadRight(6)
+        StToAdd = StToAdd + StToAdd2.PadRight(5)
 
         StToAdd2 = GetCurrent(_intv._intI1_rms).ToString("F1", GetCultureInfo("en-GB"))
         StToAdd = StToAdd + StToAdd2.PadRight(6)
@@ -453,19 +508,21 @@ Module USBModule
         StToAdd2 = GetCurrent(_intv._intI3_rms).ToString("F1", GetCultureInfo("en-GB"))
         StToAdd = StToAdd + StToAdd2.PadRight(6)
 
-        StToAdd2 = GetCosfi(_intv._intCosfi).ToString("F2", GetCultureInfo("en-GB")) + ""
-        StToAdd = StToAdd + StToAdd2.PadRight(6)
-
-        StToAdd2 = GetPower(_intv._intPower).ToString
+        StToAdd2 = GetCosfi(_intv._intCosfi).ToString("F2", GetCultureInfo("en-GB"))
         StToAdd = StToAdd + StToAdd2.PadRight(5)
 
-        StToAdd2 = GetPressure(_intv._intPress).ToString("F1", GetCultureInfo("en-GB"))
+        StToAdd2 = GetPower(_intv._intPower).ToString("F2", GetCultureInfo("en-GB"))
         StToAdd = StToAdd + StToAdd2.PadRight(7)
 
+        StToAdd2 = GetPressure(_intv._intPress).ToString("F1", GetCultureInfo("en-GB"))
+        StToAdd = StToAdd + StToAdd2.PadRight(6)
+
+        StToAdd2 = GetFlux(_intv._intFlux).ToString
+        StToAdd = StToAdd + StToAdd2.PadRight(6)
 
 
         StToAdd2 = GetTemperature(_intv._intTemp).ToString
-        StToAdd = StToAdd + StToAdd2.PadRight(5)
+        StToAdd = StToAdd + StToAdd2.PadRight(4)
 
         Return StToAdd
     End Function
@@ -476,33 +533,65 @@ Module USBModule
         Return value.ToString(Globalization.CultureInfo.GetCultureInfo("en-GB"))
     End Function
 
+    Private Function restoAnno(ByVal _num As UInt32) As UInt32
+        Return (_num - GetYear(_num) * (13 * 32 * 24 * 3600))
+    End Function
+
+    Private Function restoMese(ByVal _num As UInt32) As Integer
+        Return restoAnno(_num) - GetMonth(_num) * (32 * 24 * 3600)
+    End Function
+
+    Private Function restoGiorno(ByVal _num As UInt32) As Integer
+        Return restoMese(_num) - GetDay(_num) * (24 * 3600)
+    End Function
+
+    Private Function restoOra(ByVal _num As UInt32) As Integer
+        Return restoGiorno(_num) - GetHours(_num) * 3600
+    End Function
+
+    Private Function restoMinuto(ByVal _num As UInt32) As Integer
+        Return restoOra(_num) - GetMinutes(_num) * 60
+    End Function
+
+    Public Function GetYear(ByVal _totNumSec As UInt32) As UInteger
+        Return (_totNumSec \ (13 * 32 * 24 * 3600))
+    End Function
+
+    Public Function GetMonth(ByVal _totNumSec As UInt32) As UInteger
+        Return restoAnno(_totNumSec) \ (32 * 24 * 3600)
+    End Function
+
+    Public Function GetDay(ByVal _totNumSec As UInt32) As UInteger
+        Return restoMese(_totNumSec) \ (24 * 3600)
+    End Function
+
     Public Function GetHours(ByVal _totNumSec As UInt32) As UInteger
-        Return _totNumSec \ 3600
+        Return restoGiorno(_totNumSec) \ 3600
     End Function
 
     Public Function GetMinutes(ByVal _totNumSec As UInt32) As UInteger
-        Return (_totNumSec Mod 3600) \ 60
+        Return restoOra(_totNumSec) \ 60
     End Function
 
     Public Function GetSeconds(ByVal _totNumSec As UInt32) As UInteger
-        Return ((_totNumSec Mod 3600) Mod 60) \ 1
+        Return restoMinuto(_totNumSec)
     End Function
 
-    Public Function GetVoltage(ByVal _numToConvert As Integer) As Integer
+    Public Function GetVoltage(ByVal _numToConvert As UInt16) As Integer
         'If _numToConvert < 0 Then Return 0
         Return (_numToConvert)
     End Function
 
-    Public Function GetCurrent(ByVal _numToConvert As Byte) As Double
+    Public Function GetCurrent(ByVal _numToConvert As UInt16) As Double
         Return (_numToConvert / 10)
     End Function
 
-    Public Function GetPower(ByVal _numToConvert As Integer) As Integer
+    Public Function GetPower(ByVal _numToConvert As UInt16) As Double
         'If _numToConvert < 0 Then Return 0
         Return (_numToConvert / 100)
     End Function
 
-    Public Function GetPressure(ByVal _numToConvert As Integer) As Double
+    Public Function GetPressure(ByVal _numToConvert As Int16) As Double
         If _numToConvert < 0 Then Return 0
         Return (_numToConvert / 10)
     End Function
@@ -510,6 +599,10 @@ Module USBModule
     Public Function GetCosfi(ByVal _numToConvert As Byte) As Double
         'If _numToConvert < 0 Then Return 0
         Return (_numToConvert / 100)
+    End Function
+
+    Public Function GetFlux(ByVal _numToConvert As UInt16) As UInt16
+        Return (_numToConvert)
     End Function
 
     Public Function GetTemperature(ByVal _numToConvert As Byte) As Integer

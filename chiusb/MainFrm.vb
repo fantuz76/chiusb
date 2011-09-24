@@ -139,6 +139,7 @@ Public Class MainFrm
 
         'lstInterventi.HorizontalScrollbar = True    
         lblHeaderList.Text = ""
+        lblHeaderList2.Text = ""
 
     End Sub
 
@@ -147,7 +148,9 @@ Public Class MainFrm
         lblIntTypeVal.Text = Intervents.GetIntStr(intToFill._intType)
         lblIntTypeVal.ForeColor = Intervents.returnColor(intToFill._intType)
 
-        lblIntTimeVal.Text = GetHours(intToFill._intTime).ToString & "h " & GetMinutes(intToFill._intTime).ToString("00") & "' " & GetSeconds(intToFill._intTime).ToString("00") & "''"
+        'lblIntTimeVal.Text = GetHours(intToFill._intTime).ToString & "h " & GetMinutes(intToFill._intTime).ToString("00") & "' " & GetSeconds(intToFill._intTime).ToString("00") & "''"
+        lblIntTimeVal.Text = (2000 + GetYear(intToFill._intTime)).ToString("0000") & "/" & GetMonth(intToFill._intTime).ToString("00") & "/" & GetDay(intToFill._intTime).ToString("00") & " " & GetHours(intToFill._intTime).ToString("00") & "h" & GetMinutes(intToFill._intTime).ToString("00") & "'" & GetSeconds(intToFill._intTime).ToString("00") & "''"
+
 
         'lblIntV1Val.Text = GetVoltage(intToFill._intVoltAv)
         lblIntV1Val.Text = intToFill._intV1_rms
@@ -160,6 +163,7 @@ Public Class MainFrm
 
         lblIntPowVal.Text = GetPower(intToFill._intPower)
         lblIntPressVal.Text = GetPressure(intToFill._intPress)
+        lblIntFluxVal.Text = GetFlux(intToFill._intFlux)
         lblIntCosfiVal.Text = GetCosfi(intToFill._intCosfi)
         lblIntTempVal.Text = GetTemperature(intToFill._intTemp)
 
@@ -167,6 +171,7 @@ Public Class MainFrm
 
     Private Sub FillListData()
         lblHeaderList.Text = CreateLineStringHeaderInt()
+        lblHeaderList2.Text = CreateLineStringHeaderIntUnita()
         For i = 0 To ConnectionUSB.InterventiLetti.Length - 1
             lstInterventi.Items.Add(CreateLineStringIntervento(ConnectionUSB.InterventiLetti.IntItems(i), i, ConnectionUSB.InterventiLetti.Length - 1))
         Next
@@ -229,10 +234,10 @@ Public Class MainFrm
             StatusStrip1.Items.Add("Serial number: " + ConnectionUSB.Matricola.ToUpper)
             StatusStrip1.Items.Add(New ToolStripSeparator)
 
-            StatusStrip1.Items.Add("Total time ON: " + GetHours(ConnectionUSB.TotalTime).ToString("") + "h " + GetMinutes(ConnectionUSB.TotalTime).ToString("00") + "' " + GetSeconds(ConnectionUSB.TotalTime).ToString("00") + "''")
+            StatusStrip1.Items.Add("Total time ON: " + (ConnectionUSB.TotalTime \ 3600).ToString("") + "h " + GetMinutes(ConnectionUSB.TotalTime).ToString("00") + "' " + GetSeconds(ConnectionUSB.TotalTime).ToString("00") + "''")
             StatusStrip1.Items.Add(New ToolStripSeparator)
 
-            StatusStrip1.Items.Add("Pump ON worked hours: " + GetHours(ConnectionUSB.OreLav).ToString("") + "h " + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
+            StatusStrip1.Items.Add("Pump ON worked hours: " + (ConnectionUSB.OreLav \ 3600).ToString("") + "h " + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
             StatusStrip1.Items.Add(New ToolStripSeparator)
 
             StatusStrip1.Items.Add("Pn: " + GetPower(ConnectionUSB.PotNom).ToString("") + "KW")
@@ -375,6 +380,7 @@ Public Class MainFrm
                 file.WriteLine(New String("*", 90))
 
                 file.WriteLine(CreateLineStringHeaderInt())
+                file.WriteLine(CreateLineStringHeaderIntUnita())
                 file.WriteLine()
                 For i = 0 To ConnectionUSB.InterventiLetti.Length - 1
                     file.WriteLine(CreateLineStringIntervento(ConnectionUSB.InterventiLetti.IntItems(i), i, ConnectionUSB.InterventiLetti.Length - 1))                    
