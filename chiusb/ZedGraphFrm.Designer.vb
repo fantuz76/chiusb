@@ -52,6 +52,7 @@ Partial Class ZedGraphFrm
         Me.lblIntI1Desc = New System.Windows.Forms.Label
         Me.HScrollIntGraph = New System.Windows.Forms.HScrollBar
         Me.btnSaveAs = New System.Windows.Forms.Button
+        Me.lblIntTimeVal = New System.Windows.Forms.Label
         Me.Panel1.SuspendLayout()
         CType(Me.numSpan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel6.SuspendLayout()
@@ -94,7 +95,7 @@ Partial Class ZedGraphFrm
         '
         Me.lblXPos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblXPos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblXPos.Location = New System.Drawing.Point(7, 23)
+        Me.lblXPos.Location = New System.Drawing.Point(142, 3)
         Me.lblXPos.Name = "lblXPos"
         Me.lblXPos.Size = New System.Drawing.Size(39, 15)
         Me.lblXPos.TabIndex = 20
@@ -105,6 +106,7 @@ Partial Class ZedGraphFrm
         '
         Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
+        Me.Panel1.Controls.Add(Me.lblIntTimeVal)
         Me.Panel1.Controls.Add(Me.lblSpan)
         Me.Panel1.Controls.Add(Me.lblXPosName)
         Me.Panel1.Controls.Add(Me.numSpan)
@@ -114,13 +116,13 @@ Partial Class ZedGraphFrm
         Me.Panel1.Controls.Add(Me.lblXPos)
         Me.Panel1.Location = New System.Drawing.Point(9, 454)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(684, 79)
+        Me.Panel1.Size = New System.Drawing.Size(790, 79)
         Me.Panel1.TabIndex = 23
         '
         'lblSpan
         '
         Me.lblSpan.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblSpan.Location = New System.Drawing.Point(593, 56)
+        Me.lblSpan.Location = New System.Drawing.Point(699, 54)
         Me.lblSpan.Name = "lblSpan"
         Me.lblSpan.Size = New System.Drawing.Size(39, 15)
         Me.lblSpan.TabIndex = 27
@@ -129,17 +131,18 @@ Partial Class ZedGraphFrm
         '
         'lblXPosName
         '
-        Me.lblXPosName.Location = New System.Drawing.Point(6, 6)
+        Me.lblXPosName.Location = New System.Drawing.Point(26, 1)
         Me.lblXPosName.Name = "lblXPosName"
-        Me.lblXPosName.Size = New System.Drawing.Size(44, 17)
+        Me.lblXPosName.Size = New System.Drawing.Size(110, 17)
         Me.lblXPosName.TabIndex = 25
         Me.lblXPosName.Text = "Label1"
+        Me.lblXPosName.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'numSpan
         '
         Me.numSpan.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.numSpan.Increment = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.numSpan.Location = New System.Drawing.Point(638, 51)
+        Me.numSpan.Location = New System.Drawing.Point(744, 49)
         Me.numSpan.Name = "numSpan"
         Me.numSpan.ReadOnly = True
         Me.numSpan.Size = New System.Drawing.Size(43, 20)
@@ -152,7 +155,7 @@ Partial Class ZedGraphFrm
         Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel6.Controls.Add(Me.Panel2)
         Me.Panel6.Controls.Add(Me.lblIntVolt)
-        Me.Panel6.Location = New System.Drawing.Point(52, 3)
+        Me.Panel6.Location = New System.Drawing.Point(186, 3)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(180, 71)
         Me.Panel6.TabIndex = 24
@@ -244,7 +247,7 @@ Partial Class ZedGraphFrm
         '
         Me.btnCenter.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnCenter.Image = Global.ApplicationUSB.My.Resources.Resources.Actions_zoom_fit_icon
-        Me.btnCenter.Location = New System.Drawing.Point(603, 6)
+        Me.btnCenter.Location = New System.Drawing.Point(709, 3)
         Me.btnCenter.Name = "btnCenter"
         Me.btnCenter.Size = New System.Drawing.Size(78, 40)
         Me.btnCenter.TabIndex = 25
@@ -258,7 +261,7 @@ Partial Class ZedGraphFrm
         Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel5.Controls.Add(Me.lblIntCurrent)
         Me.Panel5.Controls.Add(Me.Panel3)
-        Me.Panel5.Location = New System.Drawing.Point(231, 3)
+        Me.Panel5.Location = New System.Drawing.Point(365, 3)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(180, 71)
         Me.Panel5.TabIndex = 23
@@ -366,6 +369,18 @@ Partial Class ZedGraphFrm
         Me.btnSaveAs.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.btnSaveAs.UseVisualStyleBackColor = True
         '
+        'lblIntTimeVal
+        '
+        Me.lblIntTimeVal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblIntTimeVal.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIntTimeVal.ForeColor = System.Drawing.Color.Black
+        Me.lblIntTimeVal.Location = New System.Drawing.Point(25, 47)
+        Me.lblIntTimeVal.Name = "lblIntTimeVal"
+        Me.lblIntTimeVal.Size = New System.Drawing.Size(156, 25)
+        Me.lblIntTimeVal.TabIndex = 31
+        Me.lblIntTimeVal.Text = "1234000h 59' 60"""
+        Me.lblIntTimeVal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'ZedGraphFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -417,4 +432,5 @@ Partial Class ZedGraphFrm
     Friend WithEvents btnCenter As System.Windows.Forms.Button
     Friend WithEvents numSpan As System.Windows.Forms.NumericUpDown
     Friend WithEvents lblSpan As System.Windows.Forms.Label
+    Friend WithEvents lblIntTimeVal As System.Windows.Forms.Label
 End Class

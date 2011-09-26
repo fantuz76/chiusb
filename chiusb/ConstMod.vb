@@ -62,7 +62,7 @@
     Public Const TYPE_HALT_DIFF_STR = "Isolation Fault" + " OFF"
     Public Const TYPE_HALT_SQUILIBRIO_STR = "Current Diff" + "OFF"
     Public Const TYPE_HALT_DISSIMETRIA_STR = "Voltage Diff" + " OFF"
-    Public Const TYPE_HALT_PRESS_SENS_STR = "Press Sens alarm" + " OFF"
+    Public Const TYPE_HALT_PRESS_SENS_STR = "Press Sens" + " OFF"
     Public Const TYPE_HALT_SOVRAPRESSIONE_STR = "Over Press" + " OFF"
     Public Const TYPE_HALT_CORTO_CIRCUITO_STR = "Short Circuit" + " OFF"
 
@@ -72,57 +72,69 @@
     ' Struttura delle confiugurazioni in risposta a Hello
     ' Ogni numero è composto da 2 byte (sono int)
     ' Sono 48 posizioni da 2 byte
-
-    '	Pos # byte	# int	int //dai di funzionamento a partire dall'indirizzo 8040  della eeprom
-    '	1	1	numero_serie, //0
-    '	3	2	monofase_trifase,//0-1
-    '	5	3	potenza_nominale,// W*10
-    '	7	4	tensione_nominale,//V
-    '	9	5	limite_sovratensione,//%
-    '	11	6	limite_sottotensione,//%
-    '	13	7	tensione_restart,// %
-    '	15	8	limite_segnalazione_dissimmetria,//%
-    '	17	9	limite_intervento_dissimmetria,//%
-    '	19	10	timeout_protezione_tensione,//s
-    '	21	11	corrente_nominale,//A*10
-    '	23	12	limite_sovracorrente,//%
-    '	25	13	limite_segnalazione_squilibrio,//%
-    '	27	14	limite_intervento_squilibrio,//%
-    '	29	15	ritardo_protezione_squilibrio,//s
-    '	31	16	costante_tau_salita_temperatura,//s
-    '	33	17	taratura_temperatura_ambiente,//da modificare per la taratura
-    '	35	18	scala_temperatura_motore,//mV/°C
-    '	37	19	limite_intervento_temper_motore,//°C
-    '	39	20	scala_corrente_differenziale, //mA in /mA out
-    '	41	21	limite_corrente_differenziale,//mA
-    '	43	22	ritardo_intervento_differenziale,//ms
-    '	45	23	ritardo_funzionamento_dopo_emergenza,//min
-    '	47	24	portata_sensore_pressione,//Bar*10
-    '	49	25	pressione_emergenza,//Bar*10
-    '	51	26	potenza_minima_mandata_chiusa,//%
-    '	53	27	ritardo_stop_mandata_chiusa, //s
-    '	55	28	potenza_minima_funz_secco, //%
-    '	57	29	ritardo_stop_funzionemento_a_secco, //s
-    '	59	30	ritardo_riaccensione_mandata_chiusa,//s
-    '	61	31	modo_start_stop,//remoto o pressione
-    '	63	32	pressione_accensione,//Bar*10
-    '	65	33	pressione_spegnimento,//Bar*10
-    '	67	34	lingua,//0-1
-    '	69	35	temperatura_ambiente,//°C
-    '	71	36	abilita_sensore_pressione,//0-1
-    '	73	37	calibrazione_I1,    
-    '	75	38	calibrazione_I2,    
-    '	77	39	calibrazione_I3,    
-    '	79	40	motore_on,//0-1         
-    '	81	41	numero_segnalazione,//0-503
-    '	83	42	conta_ore[2],
-    '	85	43	
-    '	87	44	riserva[5];
-    '	89	45	
-    '	91	46	
-    '	93	47	
-    '	95	48	
-
+    '	1	1	numero_serie,//1-65535
+    '	3	2	calibrazione_I1,
+    '	5	3	calibrazione_I2,    
+    '	7	4	calibrazione_I3,    
+    '	9	5	N_tabella_potenza,//trifase .37 - 5.5KW, monofase .37 - 3 KW
+    '	11	6	potenza_nominale,// W*10
+    '	13	7	ritardo_protezione_squilibrio,//s
+    '	15	8	ritardo_protezione_tensione,//minuti
+    '	17	9	ritardo_riaccensione_da_emergenza_V,//s
+    '	19	10	ritardo_riaccensione_da_emergenza_I,//minuti
+    '	21	11	ritardo_stop_mandata_chiusa,//s
+    '	23	12	ritardo_stop_funzionamento_a_secco,//s
+    '	25	13	ritardo_riaccensione_mandata_chiusa,//s
+    '	27	14	ritardo_riaccensione_funzionamento_a_secco,//minuti
+    '	29	15	timer_ritorno_da_emergenza_sensore,//s
+    '	31	16	portata_sensore_pressione,//Bar*10
+    '	33	17	corrente_minima_sensore,//mA*10
+    '	35	18	corrente_massima_sensore,//mA*10
+    '	37	19	scala_sensore_di_flusso,//litri*1000/impulso
+    '	39	20	tipo_sonda_PT100,//numero dei fili
+    '	41	21	resistenza_PT100_a_0gradi,//Ohm*10
+    '	43	22	resistenza_PT100_a_100gradi,//Ohm*10
+    '	45	23	limite_intervento_temper_motore,//°C
+    '	47	24	pressione_emergenza,//Bar*10
+    '	49	25	pressione_spegnimento,//Bar*10
+    '	51	26	pressione_accensione,//Bar*10
+    '	53	27	limite_minimum_flow,//litri/minuto
+    '	55	28	limite_maximum_flow,//litri/minuto
+    '	57	29	potenza_minima_mandata_chiusa,//%
+    '	59	30	potenza_minima_funz_secco,//%
+    '	61	31	K_di_tempo_riscaldamento,//s
+    '	63	32	limite_sovratensione,// %
+    '	65	33	limite_sottotensione,// %
+    '	67	34	tensione_restart,// %
+    '	69	35	limite_sovracorrente,// %
+    '	71	36	limite_segnalazione_dissimmetria,// %
+    '	73	37	limite_intervento_dissimmetria,// %
+    '	75	38	limite_segnalazione_squilibrio,// %
+    '	77	39	limite_intervento_squilibrio,// %
+    '	79	40	tensione_nominale,// V
+    '	81	41	corrente_nominale,// A*10
+    '	83	42	abilita_sensore_pressione,//0-1
+    '	85	43	abilita_sensore_flusso,//0-1
+    '	87	44	abilita_sensore_temperatura,//0-1
+    '	89	45	modo_start_stop,//0=remoto o 1=pressione
+    '	91	46	motore_on,//45 //0-1
+    '	93	47	numero_segnalazione,//46 //0-6539
+    '	95	48	conta_ore[2],//47
+    '	97	49	
+    '	99	50	conta_ore_funzionamento[2],//49 //s
+    '	101	51	
+    '	103	52	energia[2],//51 //KWh
+    '	105	53	
+    '	107	54	totalizzatore_litri[2],//53
+    '	109	55	
+    '	111	56	riserva[8];//55
+    '	113	57	
+    '	115	58	
+    '	117	59	
+    '	119	60	
+    '	121	61	
+    '	123	62	
+    '	125	63	
 
 
 End Module

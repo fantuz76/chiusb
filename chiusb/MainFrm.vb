@@ -266,6 +266,8 @@ Public Class MainFrm
             StatusStrip1.Items.Add(New ToolStripSeparator)
             StatusStrip1.Items.Add("Device Not Connected")
             StatusStrip1.Items.Add(New ToolStripSeparator)
+            lblHeaderList.Text = ""
+            lblHeaderList2.Text = ""
         End If
 
 
@@ -449,5 +451,7 @@ Public Class MainFrm
 
     End Sub
 
+    Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
+    End Sub
 End Class
 
