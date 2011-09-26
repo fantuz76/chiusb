@@ -584,7 +584,6 @@ Public Class USBClass
 
 
 
-
     Public Function RequestHello() As Boolean
         Dim pkt As Byte()
         Dim ret As Byte()
@@ -604,12 +603,20 @@ Public Class USBClass
                         '_TotalTime = ret(83) * 256 ^ 3 + ret(84) * 256 ^ 2 + ret(85) * 256 ^ 1 + ret(86) * 256 ^ 0
                         '_OreLav = ret(87) * 256 ^ 3 + ret(88) * 256 ^ 2 + ret(89) * 256 ^ 1 + ret(90) * 256 ^ 0
 
+                        ' Prima versione Settembre 2011
+                        '_Matricola = ret(1) * 256 ^ 1 + ret(2) * 256 ^ 0
+                        '_TotalTime = ret(95) * 256 ^ 3 + ret(96) * 256 ^ 2 + ret(97) * 256 ^ 1 + ret(98) * 256 ^ 0
+                        '_OreLav = ret(111) * 256 ^ 3 + ret(112) * 256 ^ 2 + ret(113) * 256 ^ 1 + ret(114) * 256 ^ 0
+                        '_PotNom = ret(5) * 256 ^ 1 + ret(6) * 256 ^ 0
+                        '_CurrNom = ret(51) * 256 ^ 1 + ret(52) * 256 ^ 0
+                        '_VoltNom = ret(49) * 256 ^ 1 + ret(50) * 256 ^ 0
+
                         _Matricola = ret(1) * 256 ^ 1 + ret(2) * 256 ^ 0
                         _TotalTime = ret(95) * 256 ^ 3 + ret(96) * 256 ^ 2 + ret(97) * 256 ^ 1 + ret(98) * 256 ^ 0
                         _OreLav = ret(111) * 256 ^ 3 + ret(112) * 256 ^ 2 + ret(113) * 256 ^ 1 + ret(114) * 256 ^ 0
-                        _PotNom = ret(5) * 256 ^ 1 + ret(6) * 256 ^ 0
-                        _CurrNom = ret(51) * 256 ^ 1 + ret(52) * 256 ^ 0
-                        _VoltNom = ret(49) * 256 ^ 1 + ret(50) * 256 ^ 0
+                        _PotNom = ret(11) * 256 ^ 1 + ret(12) * 256 ^ 0
+                        _CurrNom = ret(81) * 256 ^ 1 + ret(82) * 256 ^ 0
+                        _VoltNom = ret(79) * 256 ^ 1 + ret(80) * 256 ^ 0
                         ForceClosePort()
                         Return True
                     Else

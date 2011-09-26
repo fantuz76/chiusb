@@ -313,7 +313,7 @@ Module USBModule
         StToAdd2 = "P[bar]"
         StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = "Flux"
+        StToAdd2 = "Flux[l/m]"
         StToAdd = StToAdd + StToAdd2 + ","
 
         StToAdd2 = "T[°C]"
@@ -464,7 +464,7 @@ Module USBModule
         StToAdd2 = "[bar]"
         StToAdd = StToAdd + StToAdd2.PadRight(6)
 
-        StToAdd2 = ""
+        StToAdd2 = "[l/m]"
         StToAdd = StToAdd + StToAdd2.PadRight(6)
 
         StToAdd2 = "[°C]"

@@ -98,6 +98,8 @@ Public Class ZedGraphFrm
             lblIntV1Val.Text = GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intV1_rms)
             lblIntV2Val.Text = GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intV2_rms)
             lblIntV3Val.Text = GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intV3_rms)
+
+            lblIntTimeVal.Text = (2000 + GetYear(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime)).ToString("0000") & "/" & GetMonth(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & "/" & GetDay(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & " " & GetHours(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & "h" & GetMinutes(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & "'" & GetSeconds(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & "''"
         End If
     End Sub
 
@@ -150,12 +152,11 @@ Public Class ZedGraphFrm
             numSpan.Minimum = 10
             numSpan.Increment = 10
             numSpan.Maximum = ConnectionUSB.InterventiLetti.Length - 1
-            If numSpan.Maximum < 100 Then
+            If numSpan.Maximum < 200 Then
                 numSpan.Value = numSpan.Maximum
             Else
-                numSpan.Value = 100
+                numSpan.Value = 200
             End If
-
 
 
             Panel1.Visible = zg2.Visible
@@ -240,7 +241,7 @@ Public Class ZedGraphFrm
             listI1.Add(x + 1, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intI1_rms), "I1")
             listI2.Add(x + 1, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intI2_rms), "I2")
             listI3.Add(x + 1, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intI3_rms), "I3")
-            'listV1.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intVoltAv), "V12")
+
             listV1.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV1_rms), "V12")
             listV2.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV2_rms), "V13")
             listV3.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV3_rms), "V23")
@@ -285,6 +286,14 @@ Public Class ZedGraphFrm
         zg2.IsEnableVZoom = False
         zg2.ZoomOutAll(myPane)
 
+
+        zg2.GraphPane.XAxis.Scale.Min = 0
+        If ConnectionUSB.InterventiLetti.Length - 1 < 200 Then
+            zg2.GraphPane.XAxis.Scale.Max = ConnectionUSB.InterventiLetti.Length
+        Else
+            zg2.GraphPane.XAxis.Scale.Max = 200
+        End If
+
     End Sub
 
 
@@ -298,8 +307,6 @@ Public Class ZedGraphFrm
 
 
         zg1.AutoSize = True
-
-
         zg1.GraphPane.CurveList.Clear()
         zg1.GraphPane.Title.Text = "Alarms"
 
@@ -448,89 +455,99 @@ Public Class ZedGraphFrm
 
     Private Sub CreateBarLabels(ByVal pane As GraphPane, ByVal isBarCenter As Boolean, ByVal valueFormat As String)
         Dim isVertical As Boolean = True
+        Try
+            pane.GraphObjList.Clear()
 
-        pane.GraphObjList.Clear()
-
-        '' Make the gap between the bars and the labels = 2% of the axis range
-        Dim labelOffset As Single
-        If isVertical Then
-            labelOffset = 1 ' CSng(pane.YAxis.Max - pane.YAxis.Min) * 0.02F
-        Else
-            labelOffset = 1 'CSng(pane.XAxis.Max - pane.XAxis.Min) * 0.02F
-        End If
-
-        ' keep a count of the number of BarItems
-        Dim curveIndex As Integer = 0
-
-        ' Get a valuehandler to do some calculations for us
-        Dim valueHandler As New ValueHandler(pane, True)
-
-        ' Loop through each curve in the list
-        For Each curve As CurveItem In pane.CurveList
-            ' work with BarItems only
-            Dim bar As BarItem = TryCast(curve, BarItem)
-            If bar IsNot Nothing Then
-                Dim points As IPointList = curve.Points
-
-                ' Loop through each point in the BarItem
-                For i = 0 To points.Count - 1
-                    ' Get the high, low and base values for the current bar
-                    ' note that this method will automatically calculate the "effective"
-                    ' values if the bar is stacked
-                    Dim baseVal As Double, lowVal As Double, hiVal As Double
-                    valueHandler.GetValues(curve, i, baseVal, lowVal, hiVal)
-                    If hiVal <> lowVal Then
-
-
-                        ' Get the value that corresponds to the center of the bar base
-                        ' This method figures out how the bars are positioned within a cluster
-                        Dim centerVal As Single = CSng(valueHandler.BarCenterValue(bar, bar.GetBarWidth(pane), i, baseVal, curveIndex))
-
-                        ' Create a text label -- note that we have to go back to the original point
-                        ' data for this, since hiVal and lowVal could be "effective" values from a bar stack
-                        'Dim barLabelText As String = (If(isVertical, points(i).Y, points(i).X)).ToString(valueFormat)
-                        Dim barLabelText As String = Intervents.enumNum(curveIndex)
-
-                        ' Calculate the position of the label -- this is either the X or the Y coordinate
-                        ' depending on whether they are horizontal or vertical bars, respectively
-                        Dim position As Single
-                        If isBarCenter Then
-                            position = CSng(hiVal + lowVal) / 2.0F
-                        Else
-                            position = CSng(hiVal) + labelOffset
-                        End If
-                        ' position = lowVal - 3
-
-                        ' Create the new TextItem
-                        Dim label As TextObj
-                        If isVertical Then
-                            label = New TextObj(barLabelText, centerVal, position)
-                        Else
-                            label = New TextObj(barLabelText, position, centerVal)
-                        End If
-
-                        ' Configure the TextItem
-                        label.Location.CoordinateFrame = CoordType.AxisXYScale
-                        label.FontSpec.Size = 12
-                        label.FontSpec.FontColor = Color.Black
-                        label.FontSpec.Angle = If(isVertical, 90, 0)
-                        label.Location.AlignH = If(isBarCenter, AlignH.Center, AlignH.Left)
-                        label.Location.AlignV = AlignV.Center
-                        label.FontSpec.Border.IsVisible = False
-                        label.FontSpec.Fill.IsVisible = False
-
-                        ' Add the TextItem to the GraphPane
-                        pane.GraphObjList.Add(label)
-                    End If
-                Next
+            '' Make the gap between the bars and the labels = 2% of the axis range
+            Dim labelOffset As Single
+            If isVertical Then
+                labelOffset = 1 ' CSng(pane.YAxis.Max - pane.YAxis.Min) * 0.02F
+            Else
+                labelOffset = 1 'CSng(pane.XAxis.Max - pane.XAxis.Min) * 0.02F
             End If
-            curveIndex += 1
-        Next
+
+            ' keep a count of the number of BarItems
+            Dim curveIndex As Integer = 0
+
+            ' Get a valuehandler to do some calculations for us
+            Dim valueHandler As New ValueHandler(pane, True)
+
+            ' Loop through each curve in the list
+            For Each curve As CurveItem In pane.CurveList
+                ' work with BarItems only
+                Dim bar As BarItem = TryCast(curve, BarItem)
+                If bar IsNot Nothing Then
+                    Dim points As IPointList = curve.Points
+
+                    ' Loop through each point in the BarItem
+                    For i = 0 To points.Count - 1
+                        ' Get the high, low and base values for the current bar
+                        ' note that this method will automatically calculate the "effective"
+                        ' values if the bar is stacked
+                        Dim baseVal As Double, lowVal As Double, hiVal As Double
+                        valueHandler.GetValues(curve, i, baseVal, lowVal, hiVal)
+                        If hiVal <> lowVal Then
+
+
+                            ' Get the value that corresponds to the center of the bar base
+                            ' This method figures out how the bars are positioned within a cluster
+                            Dim centerVal As Single = CSng(valueHandler.BarCenterValue(bar, bar.GetBarWidth(pane), i, baseVal, curveIndex))
+
+                            ' Create a text label -- note that we have to go back to the original point
+                            ' data for this, since hiVal and lowVal could be "effective" values from a bar stack
+                            'Dim barLabelText As String = (If(isVertical, points(i).Y, points(i).X)).ToString(valueFormat)
+                            Dim barLabelText As String = Intervents.enumNum(curveIndex)
+
+                            ' Calculate the position of the label -- this is either the X or the Y coordinate
+                            ' depending on whether they are horizontal or vertical bars, respectively
+                            Dim position As Single
+                            If isBarCenter Then
+                                position = CSng(hiVal + lowVal) / 2.0F
+                            Else
+                                position = CSng(hiVal) + labelOffset
+                            End If
+                            ' position = lowVal - 3
+
+                            ' Create the new TextItem
+                            Dim label As TextObj
+                            If isVertical Then
+                                label = New TextObj(barLabelText, centerVal, position)
+                            Else
+                                label = New TextObj(barLabelText, position, centerVal)
+                            End If
+
+                            ' Configure the TextItem
+                            label.Location.CoordinateFrame = CoordType.AxisXYScale
+                            label.FontSpec.Size = 12
+                            label.FontSpec.FontColor = Color.Black
+                            label.FontSpec.Angle = If(isVertical, 90, 0)
+                            label.Location.AlignH = If(isBarCenter, AlignH.Center, AlignH.Left)
+                            label.Location.AlignV = AlignV.Center
+                            label.FontSpec.Border.IsVisible = False
+                            label.FontSpec.Fill.IsVisible = False
+
+                            ' Add the TextItem to the GraphPane
+                            pane.GraphObjList.Add(label)
+                        End If
+                    Next
+                End If
+                curveIndex += 1
+            Next
+        Catch ex As ArgumentException
+
+            'MsgBox(ex.Message)
+
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub HScrollIntGraph_Scroll(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ScrollEventArgs) Handles HScrollIntGraph.Scroll
 
     End Sub
+
+   
 End Class
 
 
