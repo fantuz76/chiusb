@@ -94,6 +94,13 @@ Public Class InterventiList
         ' Aumenta lunghezza di un campo
         ReDim Preserve _List(_List.Length)
 
+        If _arrToParse(0) = 23 Then
+            _arrToParse(0) = _arrToParse(0)
+        End If
+
+        If _arrToParse(0) = 22 Then
+            _arrToParse(0) = _arrToParse(0)
+        End If
         _List(_List.Length - 1)._intType = _arrToParse(0)
         _List(_List.Length - 1)._intTime = _arrToParse(1) * 256 ^ 3 + _arrToParse(2) * 256 ^ 2 + _arrToParse(3) * 256 ^ 1 + _arrToParse(4) * 256 ^ 0
 
@@ -613,7 +620,7 @@ Public Class USBClass
 
                         _Matricola = ret(1) * 256 ^ 1 + ret(2) * 256 ^ 0
                         _TotalTime = ret(95) * 256 ^ 3 + ret(96) * 256 ^ 2 + ret(97) * 256 ^ 1 + ret(98) * 256 ^ 0
-                        _OreLav = ret(111) * 256 ^ 3 + ret(112) * 256 ^ 2 + ret(113) * 256 ^ 1 + ret(114) * 256 ^ 0
+                        _OreLav = ret(99) * 256 ^ 3 + ret(100) * 256 ^ 2 + ret(101) * 256 ^ 1 + ret(102) * 256 ^ 0
                         _PotNom = ret(11) * 256 ^ 1 + ret(12) * 256 ^ 0
                         _CurrNom = ret(81) * 256 ^ 1 + ret(82) * 256 ^ 0
                         _VoltNom = ret(79) * 256 ^ 1 + ret(80) * 256 ^ 0

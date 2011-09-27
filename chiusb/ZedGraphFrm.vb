@@ -136,7 +136,7 @@ Public Class ZedGraphFrm
             HScrollIntGraph.LargeChange = 1
             HScrollIntGraph.Value = HScrollIntGraph.Minimum
 
-            lblXPosName.Text = "alarms number"
+            lblXPosName.Text = "Alarms number"
             lblXPos.Text = HScrollIntGraph.Maximum - HScrollIntGraph.Value + 1 & "/" & HScrollIntGraph.Maximum  'voleva numerazione inversa
 
 
@@ -543,11 +543,7 @@ Public Class ZedGraphFrm
 
     End Sub
 
-    Private Sub HScrollIntGraph_Scroll(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ScrollEventArgs) Handles HScrollIntGraph.Scroll
 
-    End Sub
-
-   
 End Class
 
 

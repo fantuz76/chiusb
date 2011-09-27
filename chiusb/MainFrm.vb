@@ -141,6 +141,7 @@ Public Class MainFrm
         lblHeaderList.Text = ""
         lblHeaderList2.Text = ""
 
+       
     End Sub
 
     Private Sub FillIntData(ByVal intToFill As InterventSingle)
@@ -237,7 +238,7 @@ Public Class MainFrm
             StatusStrip1.Items.Add("Total time ON: " + (ConnectionUSB.TotalTime \ 3600).ToString("") + "h " + GetMinutes(ConnectionUSB.TotalTime).ToString("00") + "' " + GetSeconds(ConnectionUSB.TotalTime).ToString("00") + "''")
             StatusStrip1.Items.Add(New ToolStripSeparator)
 
-            StatusStrip1.Items.Add("Pump ON worked hours: " + (ConnectionUSB.OreLav \ 3600).ToString("") + "h " + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
+            StatusStrip1.Items.Add("Pump ON worked time: " + (ConnectionUSB.OreLav \ 3600).ToString("") + "h " + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
             StatusStrip1.Items.Add(New ToolStripSeparator)
 
             StatusStrip1.Items.Add("Pn: " + GetPower(ConnectionUSB.PotNom).ToString("") + "KW")
@@ -452,6 +453,14 @@ Public Class MainFrm
     End Sub
 
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
+    End Sub
+
+    Private Sub lblHeaderList2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lblHeaderList2.Click
+
+    End Sub
+
+    Private Sub Label1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        MsgBox("sii")
     End Sub
 End Class
 

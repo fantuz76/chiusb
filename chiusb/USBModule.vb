@@ -32,7 +32,7 @@ Module USBModule
                                             New IntOccur(TYPE_NOHALT_MANDATACH, TYPE_NOHALT_MANDATACH_STR), _
                                             New IntOccur(TYPE_NOHALT_DRYFUNC, TYPE_NOHALT_DRYFUNC_STR), _
                                             New IntOccur(TYPE_NOHALT_OVERTEMP, TYPE_NOHALT_OVERTEMP_STR), _
-                                            New IntOccur(TYPE_NOHALT_DIFF, TYPE_NOHALT_DIFF_STR), _
+                                            New IntOccur(TYPE_NOHALT_MIN_FLOW, TYPE_NOHALT_MIN_FLOW_STR), _
                                             New IntOccur(TYPE_NOHALT_SQUILIBRIO, TYPE_NOHALT_SQUILIBRIO_STR), _
                                             New IntOccur(TYPE_NOHALT_DISSIMETRIA, TYPE_NOHALT_DISSIMETRIA_STR), _
                                             New IntOccur(TYPE_NOHALT_SOVRAPRESSIONE, TYPE_NOHALT_SOVRAPRESSIONE_STR), _
@@ -42,7 +42,7 @@ Module USBModule
                                             New IntOccur(TYPE_HALT_MANDATACH, TYPE_HALT_MANDATACH_STR), _
                                             New IntOccur(TYPE_HALT_DRYFUNC, TYPE_HALT_DRYFUNC_STR), _
                                             New IntOccur(TYPE_HALT_OVERTEMP, TYPE_HALT_OVERTEMP_STR), _
-                                            New IntOccur(TYPE_HALT_DIFF, TYPE_HALT_DIFF_STR), _
+                                            New IntOccur(TYPE_HALT_MIN_FLOW, TYPE_MIN_FLOW_STR), _
                                             New IntOccur(TYPE_HALT_SQUILIBRIO, TYPE_HALT_SQUILIBRIO_STR), _
                                             New IntOccur(TYPE_HALT_DISSIMETRIA, TYPE_HALT_DISSIMETRIA_STR), _
                                             New IntOccur(TYPE_HALT_PRESS_SENS, TYPE_HALT_PRESS_SENS_STR), _
@@ -144,7 +144,7 @@ Module USBModule
                     Return Color.SeaGreen
                 Case TYPE_NOHALT_OVERTEMP
                     Return Color.Olive
-                Case TYPE_NOHALT_DIFF
+                Case TYPE_NOHALT_MIN_FLOW
                     Return Color.Orange
                 Case TYPE_NOHALT_SQUILIBRIO
                     Return Color.Gray
@@ -166,7 +166,7 @@ Module USBModule
                     Return Color.DarkSeaGreen
                 Case TYPE_HALT_OVERTEMP
                     Return Color.DarkOliveGreen
-                Case TYPE_HALT_DIFF
+                Case TYPE_HALT_MIN_FLOW
                     Return Color.DarkOrange
                 Case TYPE_HALT_SQUILIBRIO
                     Return Color.Black
@@ -286,8 +286,12 @@ Module USBModule
         StToAdd2 = "Description"
         StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = "Date/Time"
+        StToAdd2 = "Date"
         StToAdd = StToAdd + StToAdd2 + ","
+
+        StToAdd2 = "Time"
+        StToAdd = StToAdd + StToAdd2 + ","
+
 
         StToAdd2 = "V12[V]"
         StToAdd = StToAdd + StToAdd2 + ","
@@ -338,7 +342,8 @@ Module USBModule
 
 
         StToAdd2 = (2000 + GetYear(_intv._intTime)).ToString("0000") & "/" & GetMonth(_intv._intTime).ToString("00") & "/" & GetDay(_intv._intTime).ToString("00") & " "
-        StToAdd2 = StToAdd2 + GetHours(_intv._intTime).ToString("00") & "h" & GetMinutes(_intv._intTime).ToString("00") & "'" & GetSeconds(_intv._intTime).ToString("00") & "''"
+        StToAdd = StToAdd + StToAdd2 + ","
+        StToAdd2 = GetHours(_intv._intTime).ToString("00") & "h" & GetMinutes(_intv._intTime).ToString("00") & "'" & GetSeconds(_intv._intTime).ToString("00") & "''"
         StToAdd = StToAdd + StToAdd2 + ","
 
         StToAdd2 = _intv._intV1_rms.ToString
@@ -388,8 +393,11 @@ Module USBModule
         StToAdd2 = "Description"
         StToAdd = StToAdd + StToAdd2.PadRight(19)
 
-        StToAdd2 = "Date/Time"
-        StToAdd = StToAdd + StToAdd2.PadRight(22)
+        StToAdd2 = "Date"
+        StToAdd = StToAdd + StToAdd2.PadRight(11)
+
+        StToAdd2 = "Time"
+        StToAdd = StToAdd + StToAdd2.PadRight(11)
 
         StToAdd2 = "V12"
         StToAdd = StToAdd + StToAdd2.PadRight(5)
@@ -438,8 +446,11 @@ Module USBModule
         StToAdd2 = " "
         StToAdd = StToAdd + StToAdd2.PadRight(19)
 
-        StToAdd2 = " "
-        StToAdd = StToAdd + StToAdd2.PadRight(22)
+        StToAdd2 = "[Y/M/D]"
+        StToAdd = StToAdd + StToAdd2.PadRight(11)
+
+        StToAdd2 = "[h/min/sec]"
+        StToAdd = StToAdd + StToAdd2.PadRight(11)
 
         StToAdd2 = "[V]"
         StToAdd = StToAdd + StToAdd2.PadRight(5)
@@ -491,8 +502,9 @@ Module USBModule
 
 
         StToAdd2 = (2000 + GetYear(_intv._intTime)).ToString("0000") & "/" & GetMonth(_intv._intTime).ToString("00") & "/" & GetDay(_intv._intTime).ToString("00") & " "
-        StToAdd2 = StToAdd2 + GetHours(_intv._intTime).ToString("00") & "h" & GetMinutes(_intv._intTime).ToString("00") & "'" & GetSeconds(_intv._intTime).ToString("00") & "''"
-        StToAdd = StToAdd + StToAdd2.PadRight(22)
+        StToAdd = StToAdd + StToAdd2.PadRight(11)
+        StToAdd2 = GetHours(_intv._intTime).ToString("00") & "h" & GetMinutes(_intv._intTime).ToString("00") & "'" & GetSeconds(_intv._intTime).ToString("00") & "''"
+        StToAdd = StToAdd + StToAdd2.PadRight(11)
 
         StToAdd2 = _intv._intV1_rms.ToString
         StToAdd = StToAdd + StToAdd2.PadRight(5)
