@@ -18,7 +18,7 @@
     Public Const TYPE_NOHALT_MANDATACH = 13
     Public Const TYPE_NOHALT_DRYFUNC = 14
     Public Const TYPE_NOHALT_OVERTEMP = 15
-    Public Const TYPE_NOHALT_DIFF = 16
+    Public Const TYPE_NOHALT_MIN_FLOW = 16
     Public Const TYPE_NOHALT_SQUILIBRIO = 17
     Public Const TYPE_NOHALT_DISSIMETRIA = 18
     Public Const TYPE_NOHALT_SOVRAPRESSIONE = 19
@@ -29,7 +29,7 @@
     Public Const TYPE_HALT_MANDATACH = 13 + 10
     Public Const TYPE_HALT_DRYFUNC = 14 + 10
     Public Const TYPE_HALT_OVERTEMP = 15 + 10
-    Public Const TYPE_HALT_DIFF = 16 + 10
+    Public Const TYPE_HALT_MIN_FLOW = 16 + 10
     Public Const TYPE_HALT_SQUILIBRIO = 17 + 10
     Public Const TYPE_HALT_DISSIMETRIA = 18 + 10
     Public Const TYPE_HALT_PRESS_SENS = 19 + 10
@@ -42,28 +42,28 @@
     ' Descrizione stringa dei vari tipi di intervento
     Public Const TYPE_ON_STR = "ON  "
     Public Const TYPE_OFF_STR = "OFF "
-    Public Const TYPE_NOHALT_OVERCURR_STR = "OverCurr" + " ON"
-    Public Const TYPE_NOHALT_OVERVOLT_STR = "OverVolt" + " ON"
-    Public Const TYPE_NOHALT_UNDERVOLT_STR = "UnderVolt" + " ON"
+    Public Const TYPE_NOHALT_OVERCURR_STR = "Over Current" + " ON"
+    Public Const TYPE_NOHALT_OVERVOLT_STR = "Over Voltage" + " ON"
+    Public Const TYPE_NOHALT_UNDERVOLT_STR = "Under Voltage" + " ON"
     Public Const TYPE_NOHALT_MANDATACH_STR = "Min. Flow" + " ON"
     Public Const TYPE_NOHALT_DRYFUNC_STR = "Dry Operating" + " ON"
     Public Const TYPE_NOHALT_OVERTEMP_STR = "Pump OverTemp" + " ON"
-    Public Const TYPE_NOHALT_DIFF_STR = "Isolation Fault" + " ON"
+    Public Const TYPE_NOHALT_MIN_FLOW_STR = "Minimum flow" + " ON"
     Public Const TYPE_NOHALT_SQUILIBRIO_STR = "Current Diff" + " ON"
     Public Const TYPE_NOHALT_DISSIMETRIA_STR = "Voltage Diff" + " ON"
-    Public Const TYPE_NOHALT_SOVRAPRESSIONE_STR = "Over Press" + " ON"
+    Public Const TYPE_NOHALT_SOVRAPRESSIONE_STR = "Over Pressure" + " ON"
 
-    Public Const TYPE_HALT_OVERCURR_STR = "OverCurr" + " OFF"
-    Public Const TYPE_HALT_OVERVOLT_STR = "OverVolt" + " OFF"
-    Public Const TYPE_HALT_UNDERVOLT_STR = "UnderVolt" + " OFF"
+    Public Const TYPE_HALT_OVERCURR_STR = "Over Current" + " OFF"
+    Public Const TYPE_HALT_OVERVOLT_STR = "Over Voltage" + " OFF"
+    Public Const TYPE_HALT_UNDERVOLT_STR = "Under Voltage" + " OFF"
     Public Const TYPE_HALT_MANDATACH_STR = "Min. Flow" + " OFF"
     Public Const TYPE_HALT_DRYFUNC_STR = "Dry Operating" + " OFF"
     Public Const TYPE_HALT_OVERTEMP_STR = "Pump OverTemp" + " OFF"
-    Public Const TYPE_HALT_DIFF_STR = "Isolation Fault" + " OFF"
+    Public Const TYPE_MIN_FLOW_STR = "Minimum Flow" + " OFF"
     Public Const TYPE_HALT_SQUILIBRIO_STR = "Current Diff" + "OFF"
     Public Const TYPE_HALT_DISSIMETRIA_STR = "Voltage Diff" + " OFF"
     Public Const TYPE_HALT_PRESS_SENS_STR = "Press Sens" + " OFF"
-    Public Const TYPE_HALT_SOVRAPRESSIONE_STR = "Over Press" + " OFF"
+    Public Const TYPE_HALT_SOVRAPRESSIONE_STR = "Over Pressure" + " OFF"
     Public Const TYPE_HALT_CORTO_CIRCUITO_STR = "Short Circuit" + " OFF"
 
 
