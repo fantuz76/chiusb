@@ -92,7 +92,7 @@ Public Class MainFrm
             Me.Text = System.IO.Path.GetFileNameWithoutExtension(My.Application.Info.AssemblyName)
         End If
         ' Blocca dimensione minima finestra
-        Me.MinimumSize = Me.Size
+        Me.MinimumSize = TabPage1.Size
 
         TabControl1.TabPages.Remove(TabControl1.TabPages(1))
         lblGenericTmp.Text = "Program developing " + Environment.NewLine _
@@ -164,7 +164,7 @@ Public Class MainFrm
 
         lblIntPowVal.Text = GetPower(intToFill._intPower)
         lblIntPressVal.Text = GetPressure(intToFill._intPress)
-        lblIntFluxVal.Text = GetFlux(intToFill._intFlux)
+        lblIntFlowVal.Text = GetFlow(intToFill._intFlow)
         lblIntCosfiVal.Text = GetCosfi(intToFill._intCosfi)
         lblIntTempVal.Text = GetTemperature(intToFill._intTemp)
 
@@ -192,7 +192,7 @@ Public Class MainFrm
             HscrollInterventi.SmallChange = 1
             HscrollInterventi.LargeChange = 1
             HscrollInterventi.Value = HscrollInterventi.Minimum
-            lblNumIntTitle.Text = "alarms number"
+            lblNumIntTitle.Text = "Alarms number"
             lblNumInt.Text = HscrollInterventi.Maximum - HscrollInterventi.Value + 1 & "/" & HscrollInterventi.Maximum  'voleva numerazione inversa
             'lblNumInt.Text = HscrollInterventi.Value & "/" & HscrollInterventi.Maximum
             FillListData()
@@ -232,7 +232,7 @@ Public Class MainFrm
             StatusStrip1.Items.Clear()
             StatusStrip1.Items.Add(Date.Now)
             StatusStrip1.Items.Add(New ToolStripSeparator)
-            StatusStrip1.Items.Add("Serial number: " + ConnectionUSB.Matricola.ToUpper)
+            StatusStrip1.Items.Add("Serial number: " + ConnectionUSB.Matricola.ToUpper.PadRight(7))
             StatusStrip1.Items.Add(New ToolStripSeparator)
 
             StatusStrip1.Items.Add("Total time ON: " + (ConnectionUSB.TotalTime \ 3600).ToString("") + "h " + GetMinutes(ConnectionUSB.TotalTime).ToString("00") + "' " + GetSeconds(ConnectionUSB.TotalTime).ToString("00") + "''")
@@ -241,7 +241,7 @@ Public Class MainFrm
             StatusStrip1.Items.Add("Pump ON worked time: " + (ConnectionUSB.OreLav \ 3600).ToString("") + "h " + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
             StatusStrip1.Items.Add(New ToolStripSeparator)
 
-            StatusStrip1.Items.Add("Pn: " + GetPower(ConnectionUSB.PotNom).ToString("") + "KW")
+            StatusStrip1.Items.Add("Pn: " + GetPower(ConnectionUSB.PotNom).ToString("") + "W")
             StatusStrip1.Items.Add(New ToolStripSeparator)
 
             StatusStrip1.Items.Add("Vn: " + GetVoltage(ConnectionUSB.VoltNom).ToString("") + "V")
@@ -365,7 +365,7 @@ Public Class MainFrm
 
                 Next
             Else
-                file.WriteLine(New String("*", 90))
+                file.WriteLine(New String("*", 100))
                 file.WriteLine("* Alarms recorded")
                 file.WriteLine("* Date: " + Date.Now)
                 file.WriteLine("* Serial number:" + ConnectionUSB.Matricola.ToUpper)
@@ -376,11 +376,11 @@ Public Class MainFrm
                 file.WriteLine("* Pump ON worked hours: " + GetHours(ConnectionUSB.OreLav).ToString + "h" + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
 
 
-                file.WriteLine("* Pnom: " + GetPower(ConnectionUSB.PotNom).ToString("") + "KW")
+                file.WriteLine("* Pnom: " + GetPower(ConnectionUSB.PotNom).ToString("") + "W")
                 file.WriteLine("* Vnom: " + GetVoltage(ConnectionUSB.VoltNom).ToString("") + "V")
                 file.WriteLine("* Inom: " + GetCurrent(ConnectionUSB.CurrNom).ToString("") + "A")
 
-                file.WriteLine(New String("*", 90))
+                file.WriteLine(New String("*", 100))
 
                 file.WriteLine(CreateLineStringHeaderInt())
                 file.WriteLine(CreateLineStringHeaderIntUnita())
@@ -405,7 +405,7 @@ Public Class MainFrm
 
 
     Private Sub PictureLogo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureLogo.Click
-        Process.Start("http://www.electroil.it/inglese/index.html")
+        Process.Start("http://www.electroil.it")
     End Sub
 
    

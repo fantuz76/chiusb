@@ -50,7 +50,7 @@ Public Structure InterventSingle
     Public _intPress As Int16
     Public _intCosfi As Byte
     Public _intTemp As Byte
-    Public _intFlux As UInt16
+    Public _intFlow As UInt16
 
 End Structure
 
@@ -121,7 +121,7 @@ Public Class InterventiList
         _List(_List.Length - 1)._intCosfi = numTmp And &H7F             ' 7 bit
 
         numTmp = _arrToParse(17) * 256 ^ 1 + _arrToParse(18) * 256 ^ 0
-        _List(_List.Length - 1)._intFlux = numTmp
+        _List(_List.Length - 1)._intFlow = numTmp
 
         _List(_List.Length - 1)._intTemp = _arrToParse(19)
 
