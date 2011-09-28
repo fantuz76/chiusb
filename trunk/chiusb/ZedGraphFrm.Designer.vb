@@ -53,6 +53,7 @@ Partial Class ZedGraphFrm
         Me.lblIntI1Desc = New System.Windows.Forms.Label
         Me.HScrollIntGraph = New System.Windows.Forms.HScrollBar
         Me.btnSaveAs = New System.Windows.Forms.Button
+        Me.lblIntDescription = New System.Windows.Forms.Label
         Me.Panel1.SuspendLayout()
         CType(Me.numSpan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel6.SuspendLayout()
@@ -95,17 +96,18 @@ Partial Class ZedGraphFrm
         '
         Me.lblXPos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblXPos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblXPos.Location = New System.Drawing.Point(121, 3)
+        Me.lblXPos.Location = New System.Drawing.Point(118, 6)
         Me.lblXPos.Name = "lblXPos"
-        Me.lblXPos.Size = New System.Drawing.Size(60, 31)
+        Me.lblXPos.Size = New System.Drawing.Size(67, 19)
         Me.lblXPos.TabIndex = 20
-        Me.lblXPos.Text = "99999"
+        Me.lblXPos.Text = "00000"
         Me.lblXPos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel1
         '
         Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
+        Me.Panel1.Controls.Add(Me.lblIntDescription)
         Me.Panel1.Controls.Add(Me.lblIntTimeVal)
         Me.Panel1.Controls.Add(Me.lblSpan)
         Me.Panel1.Controls.Add(Me.lblXPosName)
@@ -116,7 +118,7 @@ Partial Class ZedGraphFrm
         Me.Panel1.Controls.Add(Me.lblXPos)
         Me.Panel1.Location = New System.Drawing.Point(9, 454)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(790, 79)
+        Me.Panel1.Size = New System.Drawing.Size(738, 79)
         Me.Panel1.TabIndex = 23
         '
         'lblIntTimeVal
@@ -124,28 +126,28 @@ Partial Class ZedGraphFrm
         Me.lblIntTimeVal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblIntTimeVal.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblIntTimeVal.ForeColor = System.Drawing.Color.Black
-        Me.lblIntTimeVal.Location = New System.Drawing.Point(29, 41)
+        Me.lblIntTimeVal.Location = New System.Drawing.Point(16, 49)
         Me.lblIntTimeVal.Name = "lblIntTimeVal"
-        Me.lblIntTimeVal.Size = New System.Drawing.Size(156, 31)
+        Me.lblIntTimeVal.Size = New System.Drawing.Size(169, 23)
         Me.lblIntTimeVal.TabIndex = 31
-        Me.lblIntTimeVal.Text = "1234000h 59' 60"""
+        Me.lblIntTimeVal.Text = "000000h 00' 00"""
         Me.lblIntTimeVal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblSpan
         '
         Me.lblSpan.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblSpan.Location = New System.Drawing.Point(692, 53)
+        Me.lblSpan.Location = New System.Drawing.Point(642, 53)
         Me.lblSpan.Name = "lblSpan"
-        Me.lblSpan.Size = New System.Drawing.Size(39, 15)
+        Me.lblSpan.Size = New System.Drawing.Size(38, 15)
         Me.lblSpan.TabIndex = 27
         Me.lblSpan.Text = "Span:"
         Me.lblSpan.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lblXPosName
         '
-        Me.lblXPosName.Location = New System.Drawing.Point(26, 3)
+        Me.lblXPosName.Location = New System.Drawing.Point(16, 4)
         Me.lblXPosName.Name = "lblXPosName"
-        Me.lblXPosName.Size = New System.Drawing.Size(89, 31)
+        Me.lblXPosName.Size = New System.Drawing.Size(99, 19)
         Me.lblXPosName.TabIndex = 25
         Me.lblXPosName.Text = "Alarms number"
         Me.lblXPosName.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -154,10 +156,10 @@ Partial Class ZedGraphFrm
         '
         Me.numSpan.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.numSpan.Increment = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.numSpan.Location = New System.Drawing.Point(737, 49)
+        Me.numSpan.Location = New System.Drawing.Point(681, 49)
         Me.numSpan.Name = "numSpan"
         Me.numSpan.ReadOnly = True
-        Me.numSpan.Size = New System.Drawing.Size(50, 20)
+        Me.numSpan.Size = New System.Drawing.Size(54, 20)
         Me.numSpan.TabIndex = 26
         Me.numSpan.Value = New Decimal(New Integer() {100, 0, 0, 0})
         '
@@ -167,9 +169,9 @@ Partial Class ZedGraphFrm
         Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel6.Controls.Add(Me.Panel2)
         Me.Panel6.Controls.Add(Me.lblIntVolt)
-        Me.Panel6.Location = New System.Drawing.Point(186, 3)
+        Me.Panel6.Location = New System.Drawing.Point(190, 3)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(180, 71)
+        Me.Panel6.Size = New System.Drawing.Size(225, 71)
         Me.Panel6.TabIndex = 24
         '
         'Panel2
@@ -182,15 +184,15 @@ Partial Class ZedGraphFrm
         Me.Panel2.Controls.Add(Me.lblIntV1Desc)
         Me.Panel2.Location = New System.Drawing.Point(-1, 37)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(176, 30)
+        Me.Panel2.Size = New System.Drawing.Size(221, 30)
         Me.Panel2.TabIndex = 4
         '
         'lblIntV3Val
         '
         Me.lblIntV3Val.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblIntV3Val.Location = New System.Drawing.Point(140, 6)
+        Me.lblIntV3Val.Location = New System.Drawing.Point(174, 6)
         Me.lblIntV3Val.Name = "lblIntV3Val"
-        Me.lblIntV3Val.Size = New System.Drawing.Size(35, 17)
+        Me.lblIntV3Val.Size = New System.Drawing.Size(39, 17)
         Me.lblIntV3Val.TabIndex = 9
         Me.lblIntV3Val.Text = "0000"
         Me.lblIntV3Val.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -198,19 +200,19 @@ Partial Class ZedGraphFrm
         'lblIntV3Desc
         '
         Me.lblIntV3Desc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIntV3Desc.Location = New System.Drawing.Point(119, 6)
+        Me.lblIntV3Desc.Location = New System.Drawing.Point(142, 6)
         Me.lblIntV3Desc.Name = "lblIntV3Desc"
-        Me.lblIntV3Desc.Size = New System.Drawing.Size(22, 17)
+        Me.lblIntV3Desc.Size = New System.Drawing.Size(30, 17)
         Me.lblIntV3Desc.TabIndex = 8
-        Me.lblIntV3Desc.Text = "V3"
+        Me.lblIntV3Desc.Text = "V23"
         Me.lblIntV3Desc.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lblIntV2Val
         '
         Me.lblIntV2Val.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblIntV2Val.Location = New System.Drawing.Point(79, 6)
+        Me.lblIntV2Val.Location = New System.Drawing.Point(102, 6)
         Me.lblIntV2Val.Name = "lblIntV2Val"
-        Me.lblIntV2Val.Size = New System.Drawing.Size(35, 17)
+        Me.lblIntV2Val.Size = New System.Drawing.Size(39, 17)
         Me.lblIntV2Val.TabIndex = 7
         Me.lblIntV2Val.Text = "0000"
         Me.lblIntV2Val.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -218,19 +220,19 @@ Partial Class ZedGraphFrm
         'lblIntV2Desc
         '
         Me.lblIntV2Desc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIntV2Desc.Location = New System.Drawing.Point(59, 6)
+        Me.lblIntV2Desc.Location = New System.Drawing.Point(70, 6)
         Me.lblIntV2Desc.Name = "lblIntV2Desc"
-        Me.lblIntV2Desc.Size = New System.Drawing.Size(22, 17)
+        Me.lblIntV2Desc.Size = New System.Drawing.Size(30, 17)
         Me.lblIntV2Desc.TabIndex = 6
-        Me.lblIntV2Desc.Text = "V12"
+        Me.lblIntV2Desc.Text = "V13"
         Me.lblIntV2Desc.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lblIntV1Val
         '
         Me.lblIntV1Val.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblIntV1Val.Location = New System.Drawing.Point(20, 6)
+        Me.lblIntV1Val.Location = New System.Drawing.Point(32, 6)
         Me.lblIntV1Val.Name = "lblIntV1Val"
-        Me.lblIntV1Val.Size = New System.Drawing.Size(35, 17)
+        Me.lblIntV1Val.Size = New System.Drawing.Size(39, 17)
         Me.lblIntV1Val.TabIndex = 5
         Me.lblIntV1Val.Text = "0000"
         Me.lblIntV1Val.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -240,7 +242,7 @@ Partial Class ZedGraphFrm
         Me.lblIntV1Desc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblIntV1Desc.Location = New System.Drawing.Point(1, 6)
         Me.lblIntV1Desc.Name = "lblIntV1Desc"
-        Me.lblIntV1Desc.Size = New System.Drawing.Size(22, 17)
+        Me.lblIntV1Desc.Size = New System.Drawing.Size(30, 17)
         Me.lblIntV1Desc.TabIndex = 4
         Me.lblIntV1Desc.Text = "V12"
         Me.lblIntV1Desc.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -259,7 +261,7 @@ Partial Class ZedGraphFrm
         '
         Me.btnCenter.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnCenter.Image = Global.ApplicationUSB.My.Resources.Resources.Actions_zoom_fit_icon
-        Me.btnCenter.Location = New System.Drawing.Point(709, 3)
+        Me.btnCenter.Location = New System.Drawing.Point(657, 3)
         Me.btnCenter.Name = "btnCenter"
         Me.btnCenter.Size = New System.Drawing.Size(78, 40)
         Me.btnCenter.TabIndex = 25
@@ -273,9 +275,9 @@ Partial Class ZedGraphFrm
         Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel5.Controls.Add(Me.lblIntCurrent)
         Me.Panel5.Controls.Add(Me.Panel3)
-        Me.Panel5.Location = New System.Drawing.Point(365, 3)
+        Me.Panel5.Location = New System.Drawing.Point(422, 3)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(195, 71)
+        Me.Panel5.Size = New System.Drawing.Size(217, 71)
         Me.Panel5.TabIndex = 23
         '
         'lblIntCurrent
@@ -298,15 +300,15 @@ Partial Class ZedGraphFrm
         Me.Panel3.Controls.Add(Me.lblIntI1Desc)
         Me.Panel3.Location = New System.Drawing.Point(0, 37)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(191, 30)
+        Me.Panel3.Size = New System.Drawing.Size(212, 30)
         Me.Panel3.TabIndex = 5
         '
         'lblIntI3Val
         '
         Me.lblIntI3Val.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblIntI3Val.Location = New System.Drawing.Point(145, 6)
+        Me.lblIntI3Val.Location = New System.Drawing.Point(156, 6)
         Me.lblIntI3Val.Name = "lblIntI3Val"
-        Me.lblIntI3Val.Size = New System.Drawing.Size(40, 17)
+        Me.lblIntI3Val.Size = New System.Drawing.Size(48, 17)
         Me.lblIntI3Val.TabIndex = 9
         Me.lblIntI3Val.Text = "000.0"
         Me.lblIntI3Val.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -314,7 +316,7 @@ Partial Class ZedGraphFrm
         'lblIntI3Desc
         '
         Me.lblIntI3Desc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIntI3Desc.Location = New System.Drawing.Point(128, 6)
+        Me.lblIntI3Desc.Location = New System.Drawing.Point(138, 6)
         Me.lblIntI3Desc.Name = "lblIntI3Desc"
         Me.lblIntI3Desc.Size = New System.Drawing.Size(18, 17)
         Me.lblIntI3Desc.TabIndex = 8
@@ -324,9 +326,9 @@ Partial Class ZedGraphFrm
         'lblIntI2Val
         '
         Me.lblIntI2Val.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblIntI2Val.Location = New System.Drawing.Point(83, 6)
+        Me.lblIntI2Val.Location = New System.Drawing.Point(89, 6)
         Me.lblIntI2Val.Name = "lblIntI2Val"
-        Me.lblIntI2Val.Size = New System.Drawing.Size(40, 17)
+        Me.lblIntI2Val.Size = New System.Drawing.Size(48, 17)
         Me.lblIntI2Val.TabIndex = 7
         Me.lblIntI2Val.Text = "000.0"
         Me.lblIntI2Val.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -334,7 +336,7 @@ Partial Class ZedGraphFrm
         'lblIntI2Desc
         '
         Me.lblIntI2Desc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIntI2Desc.Location = New System.Drawing.Point(66, 6)
+        Me.lblIntI2Desc.Location = New System.Drawing.Point(71, 6)
         Me.lblIntI2Desc.Name = "lblIntI2Desc"
         Me.lblIntI2Desc.Size = New System.Drawing.Size(18, 17)
         Me.lblIntI2Desc.TabIndex = 6
@@ -344,9 +346,9 @@ Partial Class ZedGraphFrm
         'lblIntI1Val
         '
         Me.lblIntI1Val.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblIntI1Val.Location = New System.Drawing.Point(18, 6)
+        Me.lblIntI1Val.Location = New System.Drawing.Point(19, 6)
         Me.lblIntI1Val.Name = "lblIntI1Val"
-        Me.lblIntI1Val.Size = New System.Drawing.Size(40, 17)
+        Me.lblIntI1Val.Size = New System.Drawing.Size(48, 17)
         Me.lblIntI1Val.TabIndex = 5
         Me.lblIntI1Val.Text = "000.0"
         Me.lblIntI1Val.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -380,6 +382,16 @@ Partial Class ZedGraphFrm
         Me.btnSaveAs.TabIndex = 17
         Me.btnSaveAs.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.btnSaveAs.UseVisualStyleBackColor = True
+        '
+        'lblIntDescription
+        '
+        Me.lblIntDescription.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblIntDescription.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIntDescription.Location = New System.Drawing.Point(16, 25)
+        Me.lblIntDescription.Name = "lblIntDescription"
+        Me.lblIntDescription.Size = New System.Drawing.Size(169, 24)
+        Me.lblIntDescription.TabIndex = 32
+        Me.lblIntDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'ZedGraphFrm
         '
@@ -433,4 +445,5 @@ Partial Class ZedGraphFrm
     Friend WithEvents numSpan As System.Windows.Forms.NumericUpDown
     Friend WithEvents lblSpan As System.Windows.Forms.Label
     Friend WithEvents lblIntTimeVal As System.Windows.Forms.Label
+    Friend WithEvents lblIntDescription As System.Windows.Forms.Label
 End Class

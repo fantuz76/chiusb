@@ -99,7 +99,10 @@ Public Class ZedGraphFrm
             lblIntV2Val.Text = GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intV2_rms)
             lblIntV3Val.Text = GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intV3_rms)
 
-            lblIntTimeVal.Text = (2000 + GetYear(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime)).ToString("0000") & "/" & GetMonth(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & "/" & GetDay(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & " " & GetHours(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & "h" & GetMinutes(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & "'" & GetSeconds(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & "''"
+            lblIntTimeVal.Text = (2000 + GetYear(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime)).ToString("0000") & "/" & GetMonth(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & "/" & GetDay(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00")
+            lblIntTimeVal.Text = lblIntTimeVal.Text + "  "
+            lblIntTimeVal.Text = lblIntTimeVal.Text + GetHours(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & "h" & GetMinutes(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & "'" & GetSeconds(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & "''"
+            lblIntDescription.Text = Intervents.GetIntStr(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intType)
         End If
     End Sub
 

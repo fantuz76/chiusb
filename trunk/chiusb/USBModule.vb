@@ -311,13 +311,13 @@ Module USBModule
         StToAdd2 = "Cosφ"
         StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = "P[KW]"
+        StToAdd2 = "P[Watt]"
         StToAdd = StToAdd + StToAdd2 + ","
 
         StToAdd2 = "P[bar]"
         StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = "Flux[l/m]"
+        StToAdd2 = "Flow[l/m]"
         StToAdd = StToAdd + StToAdd2 + ","
 
         StToAdd2 = "T[°C]"
@@ -363,13 +363,13 @@ Module USBModule
         StToAdd2 = GetCosfi(_intv._intCosfi).ToString("F2", GetCultureInfo("en-GB"))
         StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = GetPower(_intv._intPower).ToString("F2", GetCultureInfo("en-GB"))
+        StToAdd2 = GetPower(_intv._intPower).ToString()
         StToAdd = StToAdd + StToAdd2 + ","
 
         StToAdd2 = GetPressure(_intv._intPress).ToString("F1", GetCultureInfo("en-GB"))
         StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = GetFlux(_intv._intFlux).ToString
+        StToAdd2 = GetFlow(_intv._intFlow).ToString
         StToAdd = StToAdd + StToAdd2 + ","
 
         StToAdd2 = GetTemperature(_intv._intTemp).ToString
@@ -422,7 +422,7 @@ Module USBModule
         StToAdd2 = "P"
         StToAdd = StToAdd + StToAdd2.PadRight(6)
 
-        StToAdd2 = "Flux"
+        StToAdd2 = "Flow"
         StToAdd = StToAdd + StToAdd2.PadRight(6)
 
         StToAdd2 = "T"
@@ -469,7 +469,7 @@ Module USBModule
         StToAdd2 = ""
         StToAdd = StToAdd + StToAdd2.PadRight(5)
 
-        StToAdd2 = "[KW]"
+        StToAdd2 = "[Watt]"
         StToAdd = StToAdd + StToAdd2.PadRight(7)
 
         StToAdd2 = "[bar]"
@@ -523,13 +523,13 @@ Module USBModule
         StToAdd2 = GetCosfi(_intv._intCosfi).ToString("F2", GetCultureInfo("en-GB"))
         StToAdd = StToAdd + StToAdd2.PadRight(5)
 
-        StToAdd2 = GetPower(_intv._intPower).ToString("F2", GetCultureInfo("en-GB"))
+        StToAdd2 = GetPower(_intv._intPower).ToString()
         StToAdd = StToAdd + StToAdd2.PadRight(7)
 
         StToAdd2 = GetPressure(_intv._intPress).ToString("F1", GetCultureInfo("en-GB"))
         StToAdd = StToAdd + StToAdd2.PadRight(6)
 
-        StToAdd2 = GetFlux(_intv._intFlux).ToString
+        StToAdd2 = GetFlow(_intv._intFlow).ToString
         StToAdd = StToAdd + StToAdd2.PadRight(6)
 
 
@@ -600,7 +600,7 @@ Module USBModule
 
     Public Function GetPower(ByVal _numToConvert As UInt16) As Double
         'If _numToConvert < 0 Then Return 0
-        Return (_numToConvert / 100)
+        Return (_numToConvert)
     End Function
 
     Public Function GetPressure(ByVal _numToConvert As Int16) As Double
@@ -613,7 +613,7 @@ Module USBModule
         Return (_numToConvert / 100)
     End Function
 
-    Public Function GetFlux(ByVal _numToConvert As UInt16) As UInt16
+    Public Function GetFlow(ByVal _numToConvert As UInt16) As UInt16
         Return (_numToConvert)
     End Function
 
