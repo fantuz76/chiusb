@@ -95,9 +95,9 @@ Public Class ZedGraphFrm
             lblIntI3Val.Text = GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intI3_rms)
 
             'lblIntV1Val.Text = GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intVoltAv)
-            lblIntV1Val.Text = GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intV1_rms)
+            lblIntV1Val.Text = GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intV3_rms)
             lblIntV2Val.Text = GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intV2_rms)
-            lblIntV3Val.Text = GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intV3_rms)
+            lblIntV3Val.Text = GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intV1_rms)
 
             lblIntTimeVal.Text = (2000 + GetYear(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime)).ToString("0000") & "/" & GetMonth(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & "/" & GetDay(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00")
             lblIntTimeVal.Text = lblIntTimeVal.Text + "  "
@@ -136,7 +136,16 @@ Public Class ZedGraphFrm
             HScrollIntGraph.Minimum = 1
             HScrollIntGraph.Maximum = ConnectionUSB.InterventiLetti.Length
             HScrollIntGraph.SmallChange = 1
-            HScrollIntGraph.LargeChange = 1
+            If (ConnectionUSB.InterventiLetti.Length < 20) Then
+                HScrollIntGraph.LargeChange = 1
+            ElseIf (ConnectionUSB.InterventiLetti.Length < 500) Then
+                HScrollIntGraph.LargeChange = 10
+            ElseIf (ConnectionUSB.InterventiLetti.Length < 1000) Then
+                HScrollIntGraph.LargeChange = 50
+            Else
+                HScrollIntGraph.LargeChange = 50
+            End If
+
             HScrollIntGraph.Value = HScrollIntGraph.Minimum
 
             lblXPosName.Text = "Alarms number"
@@ -245,9 +254,9 @@ Public Class ZedGraphFrm
             listI2.Add(x + 1, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intI2_rms), "I2")
             listI3.Add(x + 1, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intI3_rms), "I3")
 
-            listV1.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV1_rms), "V12")
+            listV1.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV3_rms), "V12")
             listV2.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV2_rms), "V13")
-            listV3.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV3_rms), "V23")
+            listV3.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV1_rms), "V23")
         Next
 
 

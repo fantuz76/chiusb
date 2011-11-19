@@ -29,9 +29,6 @@ Partial Class MainFrm
         Me.lblHeaderList2 = New System.Windows.Forms.Label
         Me.lblHeaderList = New System.Windows.Forms.Label
         Me.pnlButAlarms = New System.Windows.Forms.Panel
-        Me.btnSaveInt = New System.Windows.Forms.Button
-        Me.btnOpenGraph = New System.Windows.Forms.Button
-        Me.btnChartXY = New System.Windows.Forms.Button
         Me.lstInterventi = New System.Windows.Forms.ListBox
         Me.lblNumIntTitle = New System.Windows.Forms.Label
         Me.lblNumInt = New System.Windows.Forms.Label
@@ -88,12 +85,17 @@ Partial Class MainFrm
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.lblNotify = New System.Windows.Forms.Label
-        Me.btnConn = New System.Windows.Forms.Button
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog
         Me.ClearLogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.PictureLogo = New System.Windows.Forms.PictureBox
+        Me.btnConn = New System.Windows.Forms.Button
+        Me.btnOpen = New System.Windows.Forms.Button
+        Me.btnSaveInt = New System.Windows.Forms.Button
+        Me.btnOpenGraph = New System.Windows.Forms.Button
+        Me.btnChartXY = New System.Windows.Forms.Button
         Me.btnExit = New System.Windows.Forms.Button
+        Me.PictureLogo = New System.Windows.Forms.PictureBox
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.pnlButAlarms.SuspendLayout()
@@ -125,6 +127,7 @@ Partial Class MainFrm
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.btnOpen)
         Me.TabPage1.Controls.Add(Me.lblHeaderList2)
         Me.TabPage1.Controls.Add(Me.lblHeaderList)
         Me.TabPage1.Controls.Add(Me.pnlButAlarms)
@@ -175,39 +178,6 @@ Partial Class MainFrm
         Me.pnlButAlarms.Name = "pnlButAlarms"
         Me.pnlButAlarms.Size = New System.Drawing.Size(87, 115)
         Me.pnlButAlarms.TabIndex = 11
-        '
-        'btnSaveInt
-        '
-        Me.btnSaveInt.Image = Global.ApplicationUSB.My.Resources.Resources.SaveAs
-        Me.btnSaveInt.Location = New System.Drawing.Point(3, 3)
-        Me.btnSaveInt.Name = "btnSaveInt"
-        Me.btnSaveInt.Size = New System.Drawing.Size(79, 39)
-        Me.btnSaveInt.TabIndex = 9
-        Me.btnSaveInt.Text = "Save"
-        Me.btnSaveInt.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.btnSaveInt.UseVisualStyleBackColor = True
-        '
-        'btnOpenGraph
-        '
-        Me.btnOpenGraph.Image = Global.ApplicationUSB.My.Resources.Resources.chart1
-        Me.btnOpenGraph.Location = New System.Drawing.Point(3, 43)
-        Me.btnOpenGraph.Name = "btnOpenGraph"
-        Me.btnOpenGraph.Size = New System.Drawing.Size(79, 37)
-        Me.btnOpenGraph.TabIndex = 10
-        Me.btnOpenGraph.Text = "Graph"
-        Me.btnOpenGraph.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.btnOpenGraph.UseVisualStyleBackColor = True
-        '
-        'btnChartXY
-        '
-        Me.btnChartXY.Image = Global.ApplicationUSB.My.Resources.Resources.GraphXY
-        Me.btnChartXY.Location = New System.Drawing.Point(3, 81)
-        Me.btnChartXY.Name = "btnChartXY"
-        Me.btnChartXY.Size = New System.Drawing.Size(78, 35)
-        Me.btnChartXY.TabIndex = 11
-        Me.btnChartXY.Text = "VI Graph"
-        Me.btnChartXY.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.btnChartXY.UseVisualStyleBackColor = True
         '
         'lstInterventi
         '
@@ -742,7 +712,7 @@ Partial Class MainFrm
         Me.GroupBox1.Controls.Add(Me.btnConn)
         Me.GroupBox1.Location = New System.Drawing.Point(5, 27)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(300, 57)
+        Me.GroupBox1.Size = New System.Drawing.Size(254, 57)
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         '
@@ -750,10 +720,21 @@ Partial Class MainFrm
         '
         Me.lblNotify.Location = New System.Drawing.Point(113, 16)
         Me.lblNotify.Name = "lblNotify"
-        Me.lblNotify.Size = New System.Drawing.Size(156, 28)
+        Me.lblNotify.Size = New System.Drawing.Size(135, 28)
         Me.lblNotify.TabIndex = 2
         Me.lblNotify.Text = "Connect and Read alarms"
         Me.lblNotify.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 500
+        '
+        'ClearLogToolStripMenuItem
+        '
+        Me.ClearLogToolStripMenuItem.Name = "ClearLogToolStripMenuItem"
+        Me.ClearLogToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
+        Me.ClearLogToolStripMenuItem.Text = "Clear Log"
         '
         'btnConn
         '
@@ -766,16 +747,60 @@ Partial Class MainFrm
         Me.btnConn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnConn.UseVisualStyleBackColor = True
         '
-        'Timer1
+        'btnOpen
         '
-        Me.Timer1.Enabled = True
-        Me.Timer1.Interval = 500
+        Me.btnOpen.Image = Global.ApplicationUSB.My.Resources.Resources.Actions_document_open_folder_icon
+        Me.btnOpen.Location = New System.Drawing.Point(729, 41)
+        Me.btnOpen.Name = "btnOpen"
+        Me.btnOpen.Size = New System.Drawing.Size(79, 39)
+        Me.btnOpen.TabIndex = 14
+        Me.btnOpen.Text = "Open"
+        Me.btnOpen.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.btnOpen.UseVisualStyleBackColor = True
         '
-        'ClearLogToolStripMenuItem
+        'btnSaveInt
         '
-        Me.ClearLogToolStripMenuItem.Name = "ClearLogToolStripMenuItem"
-        Me.ClearLogToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
-        Me.ClearLogToolStripMenuItem.Text = "Clear Log"
+        Me.btnSaveInt.Image = Global.ApplicationUSB.My.Resources.Resources.SaveAs
+        Me.btnSaveInt.Location = New System.Drawing.Point(3, 3)
+        Me.btnSaveInt.Name = "btnSaveInt"
+        Me.btnSaveInt.Size = New System.Drawing.Size(79, 39)
+        Me.btnSaveInt.TabIndex = 9
+        Me.btnSaveInt.Text = "Save"
+        Me.btnSaveInt.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.btnSaveInt.UseVisualStyleBackColor = True
+        '
+        'btnOpenGraph
+        '
+        Me.btnOpenGraph.Image = Global.ApplicationUSB.My.Resources.Resources.chart1
+        Me.btnOpenGraph.Location = New System.Drawing.Point(3, 43)
+        Me.btnOpenGraph.Name = "btnOpenGraph"
+        Me.btnOpenGraph.Size = New System.Drawing.Size(79, 37)
+        Me.btnOpenGraph.TabIndex = 10
+        Me.btnOpenGraph.Text = "Graph"
+        Me.btnOpenGraph.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.btnOpenGraph.UseVisualStyleBackColor = True
+        '
+        'btnChartXY
+        '
+        Me.btnChartXY.Image = Global.ApplicationUSB.My.Resources.Resources.GraphXY
+        Me.btnChartXY.Location = New System.Drawing.Point(3, 81)
+        Me.btnChartXY.Name = "btnChartXY"
+        Me.btnChartXY.Size = New System.Drawing.Size(78, 35)
+        Me.btnChartXY.TabIndex = 11
+        Me.btnChartXY.Text = "VI Graph"
+        Me.btnChartXY.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.btnChartXY.UseVisualStyleBackColor = True
+        '
+        'btnExit
+        '
+        Me.btnExit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnExit.Image = Global.ApplicationUSB.My.Resources.Resources.Spegni
+        Me.btnExit.Location = New System.Drawing.Point(833, 480)
+        Me.btnExit.Name = "btnExit"
+        Me.btnExit.Size = New System.Drawing.Size(60, 83)
+        Me.btnExit.TabIndex = 1
+        Me.btnExit.Text = "Exit"
+        Me.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
         '
         'PictureLogo
         '
@@ -789,16 +814,9 @@ Partial Class MainFrm
         Me.PictureLogo.TabIndex = 10
         Me.PictureLogo.TabStop = False
         '
-        'btnExit
+        'OpenFileDialog1
         '
-        Me.btnExit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnExit.Image = Global.ApplicationUSB.My.Resources.Resources.Spegni
-        Me.btnExit.Location = New System.Drawing.Point(833, 480)
-        Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(60, 83)
-        Me.btnExit.TabIndex = 1
-        Me.btnExit.Text = "Exit"
-        Me.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
         'MainFrm
         '
@@ -907,5 +925,7 @@ Partial Class MainFrm
     Friend WithEvents lblIntFlowVal As System.Windows.Forms.Label
     Friend WithEvents lblIntFlowDesc As System.Windows.Forms.Label
     Friend WithEvents lblHeaderList2 As System.Windows.Forms.Label
+    Friend WithEvents btnOpen As System.Windows.Forms.Button
+    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
 
 End Class

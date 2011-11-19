@@ -2,7 +2,7 @@
 'Imports System.Windows.Forms.DataVisualization.Charting
 Imports ZedGraph
 Imports System.Random
-
+Imports System.Globalization.CultureInfo
 Public Class MainFrm    
 
     Private Sub MainFrm_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
@@ -36,15 +36,15 @@ Public Class MainFrm
         FormWait.Show()
         FormWait.Left = Me.Left + (Me.Width - FormWait.Width) / 2
         FormWait.Top = Me.Top + (Me.Height - FormWait.Height) / 2
+        EnableControlsInterventi(False)
 
-        If ConnectionActive Then
+        If ConnectionIsActive Then
             If Not ConnectionUSB Is Nothing Then
                 ConnectionUSB.ForceClosePort()
                 ConnectionUSB.LogDisplay("Disconnect")
                 ConnectionUSB = Nothing
             End If
             SetConn(False)
-            EnableControlsInterventi(False)
         Else
             If Not ConnectionUSB Is Nothing Then ConnectionUSB = Nothing
 
@@ -56,11 +56,9 @@ Public Class MainFrm
                 Application.DoEvents()
                 If ConnectionUSB.RequestInterventi(0, 0) Then
                     lblNotify.Text = "Alarms found = " & ConnectionUSB.InterventiLetti.Length
-                    If ConnectionUSB.InterventiLetti.IntItems.Length = 0 Then
-                        EnableControlsInterventi(False)
-                    Else
-                        Intervents = New InterventiTypeClass(ConnectionUSB.InterventiLetti)                        
-                        EnableControlsInterventi(True)
+                    If ConnectionUSB.InterventiLetti.IntItems.Length > 0 Then
+                        Intervents = New InterventiTypeClass(ConnectionUSB.InterventiLetti)
+                        EnableControlsInterventi(True, ConnectionUSB)
                     End If
 
                 Else
@@ -130,6 +128,7 @@ Public Class MainFrm
         toolTip1.ShowAlways = True
 
         ' Set up the ToolTip text for the Button and Checkbox.
+        toolTip1.SetToolTip(Me.btnOpen, "Open existing csv alarms file")
         toolTip1.SetToolTip(Me.btnSaveInt, "Save all alarms on a file")
         toolTip1.SetToolTip(Me.btnConn, "Connect to Device")
         toolTip1.SetToolTip(Me.HscrollInterventi, "Scroll alarms here")
@@ -141,7 +140,7 @@ Public Class MainFrm
         lblHeaderList.Text = ""
         lblHeaderList2.Text = ""
 
-       
+
     End Sub
 
     Private Sub FillIntData(ByVal intToFill As InterventSingle)
@@ -154,9 +153,9 @@ Public Class MainFrm
 
 
         'lblIntV1Val.Text = GetVoltage(intToFill._intVoltAv)
-        lblIntV1Val.Text = intToFill._intV1_rms
+        lblIntV1Val.Text = intToFill._intV3_rms
         lblIntV2Val.Text = intToFill._intV2_rms
-        lblIntV3Val.Text = intToFill._intV3_rms
+        lblIntV3Val.Text = intToFill._intV1_rms
 
         lblIntI1Val.Text = GetCurrent(intToFill._intI1_rms)
         lblIntI2Val.Text = GetCurrent(intToFill._intI2_rms)
@@ -171,24 +170,28 @@ Public Class MainFrm
     End Sub
 
     Private Sub FillListData()
+        Dim strss As String
         lblHeaderList.Text = CreateLineStringHeaderInt()
         lblHeaderList2.Text = CreateLineStringHeaderIntUnita()
         For i = 0 To ConnectionUSB.InterventiLetti.Length - 1
+            strss = CreateLineStringIntervento(ConnectionUSB.InterventiLetti.IntItems(i), i, ConnectionUSB.InterventiLetti.Length - 1)
             lstInterventi.Items.Add(CreateLineStringIntervento(ConnectionUSB.InterventiLetti.IntItems(i), i, ConnectionUSB.InterventiLetti.Length - 1))
         Next
     End Sub
 
-    Private Sub EnableControlsInterventi(ByVal _EvConEn As Boolean)
+    Private Sub EnableControlsInterventi(ByVal _EvConEn As Boolean, Optional ByVal Connection As USBClass = Nothing)
         pnlButAlarms.Enabled = _EvConEn
         Panel1.Enabled = _EvConEn
         HscrollInterventi.Enabled = _EvConEn
         lblNumInt.Visible = _EvConEn
 
+        If Connection Is Nothing Then _EvConEn = False
+
         If _EvConEn Then
 
             HscrollInterventi.Enabled = True
             HscrollInterventi.Minimum = 1
-            HscrollInterventi.Maximum = ConnectionUSB.InterventiLetti.Length
+            HscrollInterventi.Maximum = Connection.InterventiLetti.Length
             HscrollInterventi.SmallChange = 1
             HscrollInterventi.LargeChange = 1
             HscrollInterventi.Value = HscrollInterventi.Minimum
@@ -196,7 +199,7 @@ Public Class MainFrm
             lblNumInt.Text = HscrollInterventi.Maximum - HscrollInterventi.Value + 1 & "/" & HscrollInterventi.Maximum  'voleva numerazione inversa
             'lblNumInt.Text = HscrollInterventi.Value & "/" & HscrollInterventi.Maximum
             FillListData()
-            FillIntData(ConnectionUSB.InterventiLetti.IntItems(HscrollInterventi.Value - 1))
+            FillIntData(Connection.InterventiLetti.IntItems(HscrollInterventi.Value - 1))
             lstInterventi.SelectedItem = lstInterventi.Items.Item(HscrollInterventi.Value - 1)
         Else
 
@@ -205,11 +208,11 @@ Public Class MainFrm
             lblIntV1Val.Text = ""
             lblIntV2Val.Text = ""
             lblIntV3Val.Text = ""
-            
+
             lblIntI1Val.Text = ""
             lblIntI2Val.Text = ""
             lblIntI3Val.Text = ""
-            
+
             lblIntPowVal.Text = ""
             lblIntPressVal.Text = ""
             lblIntCosfiVal.Text = ""
@@ -228,11 +231,11 @@ Public Class MainFrm
         If _ConnEnable Then
             btnConn.Image = ApplicationUSB.My.Resources.disc
             btnConn.Text = "Disconnect"
-            ConnectionActive = True
+            ConnectionIsActive = True
             StatusStrip1.Items.Clear()
             StatusStrip1.Items.Add(Date.Now)
             StatusStrip1.Items.Add(New ToolStripSeparator)
-            StatusStrip1.Items.Add("Serial number: " + ConnectionUSB.Matricola.ToUpper.PadRight(7))
+            StatusStrip1.Items.Add("Serial number: " + ConnectionUSB.Matricola.ToUpper.PadRight(8))
             StatusStrip1.Items.Add(New ToolStripSeparator)
 
             StatusStrip1.Items.Add("Total time ON: " + (ConnectionUSB.TotalTime \ 3600).ToString("") + "h " + GetMinutes(ConnectionUSB.TotalTime).ToString("00") + "' " + GetSeconds(ConnectionUSB.TotalTime).ToString("00") + "''")
@@ -241,13 +244,13 @@ Public Class MainFrm
             StatusStrip1.Items.Add("Pump ON worked time: " + (ConnectionUSB.OreLav \ 3600).ToString("") + "h " + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
             StatusStrip1.Items.Add(New ToolStripSeparator)
 
-            StatusStrip1.Items.Add("Pn: " + GetPower(ConnectionUSB.PotNom).ToString("") + "W")
+            StatusStrip1.Items.Add(("Pn: " + (ConnectionUSB.PotNom * 10 / 1000).ToString("F2", GetCultureInfo("en-GB")) + "Kw").PadRight(12))
             StatusStrip1.Items.Add(New ToolStripSeparator)
 
-            StatusStrip1.Items.Add("Vn: " + GetVoltage(ConnectionUSB.VoltNom).ToString("") + "V")
+            StatusStrip1.Items.Add(("Vn: " + GetVoltage(ConnectionUSB.VoltNom).ToString("") + "V").PadRight(12))
             StatusStrip1.Items.Add(New ToolStripSeparator)
 
-            StatusStrip1.Items.Add("In: " + GetCurrent(ConnectionUSB.CurrNom).ToString("") + "A")
+            StatusStrip1.Items.Add(("In: " + GetCurrent(ConnectionUSB.CurrNom).ToString("") + "A").PadRight(12))
             StatusStrip1.Items.Add(New ToolStripSeparator)
 
             'StatusStrip1.Items.Add("Fw Ver: " + ConnectionUSB.FwVer.ToString("X4"))
@@ -261,7 +264,7 @@ Public Class MainFrm
             lblNotify.Text = "Connect and Read alarms"
             btnConn.Image = ApplicationUSB.My.Resources.conn
             btnConn.Text = "Connect"
-            ConnectionActive = False
+            ConnectionIsActive = False
             StatusStrip1.Items.Clear()
             StatusStrip1.Items.Add(Date.Now)
             StatusStrip1.Items.Add(New ToolStripSeparator)
@@ -302,37 +305,13 @@ Public Class MainFrm
         Dim FolderStr As String
 
 
+
         FolderStr = System.IO.Path.GetDirectoryName(ReadConfigXML(UsrAppData + XMLCFG, "SistemaUtente", "CartellaSaveAlarms") + "\")
         If System.IO.Directory.Exists(FolderStr) Then
 
         Else
             FolderStr = UsrDocData
         End If
-
-
-        FileNameToSave = Strings.Right(Date.Now.Year.ToString, 2)
-        FileNameToSave = FileNameToSave + Date.Now.Month.ToString("00")
-        FileNameToSave = FileNameToSave + Date.Now.Day.ToString("00")
-
-        ' Nome file standard
-        FileNameToSave = "alarms" + "_" + FileNameToSave
-
-        ' Se sto usando estensione .txt controllo se c'è già e eventualmente aggiungo h m s 
-        If SaveFileDialog1.FilterIndex = 1 Then
-            If System.IO.File.Exists(FolderStr + "\" + FileNameToSave + ".txt") Then
-                SaveFileDialog1.FileName = FileNameToSave + "(" + Date.Now.Hour.ToString("00") + "h" + Date.Now.Minute.ToString("00") + "." + Date.Now.Second.ToString("00") + ")"
-            Else
-                SaveFileDialog1.FileName = FileNameToSave
-            End If
-        Else
-            ' Se sto usando estensione .csv controllo se c'è già e eventualmente aggiungo h m s 
-            If System.IO.File.Exists(FolderStr + "\" + FileNameToSave + ".csv") Then
-                SaveFileDialog1.FileName = FileNameToSave + "(" + Date.Now.Hour.ToString("00") + "h" + Date.Now.Minute.ToString("00") + "." + Date.Now.Second.ToString("00") + ")"
-            Else
-                SaveFileDialog1.FileName = FileNameToSave
-            End If
-        End If
-
 
         SaveFileDialog1.DefaultExt = ".csv"
         SaveFileDialog1.AddExtension = True
@@ -341,6 +320,34 @@ Public Class MainFrm
         SaveFileDialog1.Title = "Save alarms"
         SaveFileDialog1.CheckPathExists = True
         SaveFileDialog1.OverwritePrompt = True
+
+
+        FileNameToSave = "SN" + ConnectionUSB.Matricola.PadLeft(6, "0") + "_"
+        FileNameToSave = FileNameToSave + Strings.Right(Date.Now.Year.ToString, 2)
+        FileNameToSave = FileNameToSave + Date.Now.Month.ToString("00")
+        FileNameToSave = FileNameToSave + Date.Now.Day.ToString("00")
+
+        ' Nome file standard
+        FileNameToSave = "alarms" + "_" + FileNameToSave
+
+        ' Se sto usando estensione .txt controllo se c'è già e eventualmente aggiungo h m s 
+        If SaveFileDialog1.FilterIndex = 1 Then
+            If System.IO.File.Exists(FolderStr + "\" + FileNameToSave + ".csv") Then
+                SaveFileDialog1.FileName = FileNameToSave + "(" + Date.Now.Hour.ToString("00") + "h" + Date.Now.Minute.ToString("00") + "." + Date.Now.Second.ToString("00") + ")"
+            Else
+                SaveFileDialog1.FileName = FileNameToSave
+            End If
+        Else
+            ' Se sto usando estensione .csv controllo se c'è già e eventualmente aggiungo h m s 
+            If System.IO.File.Exists(FolderStr + "\" + FileNameToSave + ".txt") Then
+                SaveFileDialog1.FileName = FileNameToSave + "(" + Date.Now.Hour.ToString("00") + "h" + Date.Now.Minute.ToString("00") + "." + Date.Now.Second.ToString("00") + ")"
+            Else
+                SaveFileDialog1.FileName = FileNameToSave
+            End If
+        End If
+
+
+
 
 
         If Not (SaveFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK) Then Exit Sub
@@ -359,8 +366,9 @@ Public Class MainFrm
 
                 'file.Write(enc.GetString(ConnectionUSB.DatiSetHello()))
                 'file.WriteLine("")
+                file.WriteLine(CreateCSVStringHelloValues())
                 file.WriteLine(CreateCSVStringHeaderInt())
-                For i = 0 To ConnectionUSB.InterventiLetti.Length - 1                    
+                For i = 0 To ConnectionUSB.InterventiLetti.Length - 1
                     file.WriteLine(CreateCSVStringIntervento(ConnectionUSB.InterventiLetti.IntItems(i), i, ConnectionUSB.InterventiLetti.Length - 1))
 
                 Next
@@ -376,7 +384,7 @@ Public Class MainFrm
                 file.WriteLine("* Pump ON worked hours: " + GetHours(ConnectionUSB.OreLav).ToString + "h" + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
 
 
-                file.WriteLine("* Pnom: " + GetPower(ConnectionUSB.PotNom).ToString("") + "W")
+                file.WriteLine("* Pnom: " + (ConnectionUSB.PotNom * 10 / 10).ToString("F2", GetCultureInfo("en-GB")) + "Kw")
                 file.WriteLine("* Vnom: " + GetVoltage(ConnectionUSB.VoltNom).ToString("") + "V")
                 file.WriteLine("* Inom: " + GetCurrent(ConnectionUSB.CurrNom).ToString("") + "A")
 
@@ -386,7 +394,7 @@ Public Class MainFrm
                 file.WriteLine(CreateLineStringHeaderIntUnita())
                 file.WriteLine()
                 For i = 0 To ConnectionUSB.InterventiLetti.Length - 1
-                    file.WriteLine(CreateLineStringIntervento(ConnectionUSB.InterventiLetti.IntItems(i), i, ConnectionUSB.InterventiLetti.Length - 1))                    
+                    file.WriteLine(CreateLineStringIntervento(ConnectionUSB.InterventiLetti.IntItems(i), i, ConnectionUSB.InterventiLetti.Length - 1))
                 Next
 
             End If
@@ -408,7 +416,7 @@ Public Class MainFrm
         Process.Start("http://www.electroil.it")
     End Sub
 
-   
+
 
     Private Sub lstInterventi_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lstInterventi.SelectedIndexChanged
         HscrollInterventi.Value = lstInterventi.SelectedIndex + 1
@@ -433,7 +441,7 @@ Public Class MainFrm
         AboutBox1.Show()
     End Sub
 
-    
+
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnChartXY.Click, btnOpenGraph.Click
         If sender Is btnChartXY Then
             ZedGraphFrm.UpdateChartZ_XY()
@@ -444,7 +452,6 @@ Public Class MainFrm
             ZedGraphFrm.zg1.Visible = True
             ZedGraphFrm.zg2.Visible = False
         End If
-
         ZedGraphFrm.Panel1.Visible = ZedGraphFrm.zg2.Visible
         ZedGraphFrm.HScrollIntGraph.Visible = ZedGraphFrm.zg2.Visible
         ZedGraphFrm.DrawHeader()
@@ -461,6 +468,75 @@ Public Class MainFrm
 
     Private Sub Label1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         MsgBox("sii")
+    End Sub
+
+    Private Sub btnOpen_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnOpen.Click
+        Dim FileNameToOpen As String = ""
+        Dim FolderStr As String
+
+        FolderStr = System.IO.Path.GetDirectoryName(ReadConfigXML(UsrAppData + XMLCFG, "SistemaUtente", "CartellaSaveAlarms") + "\")
+        If System.IO.Directory.Exists(FolderStr) Then
+
+        Else
+            FolderStr = UsrDocData
+        End If
+
+        OpenFileDialog1.DefaultExt = ".csv"
+        OpenFileDialog1.AddExtension = True
+        OpenFileDialog1.Filter = "Comma separated value (*.csv)|*.csv" '+ "|" + "Text File (*.txt)|*.txt" + "|" + "All files|*.*"
+        OpenFileDialog1.InitialDirectory = FolderStr
+        OpenFileDialog1.Title = "Open alarms"
+        OpenFileDialog1.CheckPathExists = True
+        OpenFileDialog1.FileName = ""
+
+
+
+        If Not (OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK) Then Exit Sub
+
+        FileNameToOpen = OpenFileDialog1.FileName
+
+
+        If Not ConnectionUSB Is Nothing Then ConnectionUSB = Nothing
+        ConnectionUSB = New USBClass(ListBoxLog)
+
+        Try
+            ' Salva in Config.xml nuovo valore
+            WriteConfigXML(UsrAppData + XMLCFG, "SistemaUtente", "CartellaSaveAlarms", System.IO.Path.GetDirectoryName(OpenFileDialog1.FileName))
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+
+        End Try
+
+        If ConnectionUSB.RequestHelloFromFile(FileNameToOpen) Then
+            SetConn(True)
+            If ConnectionUSB.RequestInterventiFromFile(FileNameToOpen) Then
+                lblNotify.Text = "Alarms found = " & ConnectionUSB.InterventiLetti.Length
+                EnableControlsInterventi(False)
+                'ConnectionUSB.Matricola = 1
+                If ConnectionUSB.InterventiLetti.IntItems.Length > 0 Then
+                    Intervents = New InterventiTypeClass(ConnectionUSB.InterventiLetti)
+                    EnableControlsInterventi(True, ConnectionUSB)
+
+                End If
+
+            Else
+                EnableControlsInterventi(False)
+                lblNotify.Text = "No alarms"
+                SetConn(False)
+                EnableControlsInterventi(False)
+            End If
+        Else
+            SetConn(False)
+        End If
+
+
+
+
+
+
+
+
     End Sub
 End Class
 
