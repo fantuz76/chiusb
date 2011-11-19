@@ -7,7 +7,7 @@ Module USBModule
     Public Intervents As New InterventiTypeClass
     Public ConnectionUSB As USBClass
 
-    Public ConnectionActive As Boolean
+    Public ConnectionIsActive As Boolean
     Public LastCOMUsed As String
 
 
@@ -273,6 +273,33 @@ Module USBModule
         Return BitConverter.ToInt16(_ar, 0)
     End Function
 
+    Public Function CreateCSVStringHelloValues() As String
+        Dim StToAdd, StToAdd2 As String
+
+
+        StToAdd = ""
+        StToAdd2 = ConnectionUSB.Matricola.ToUpper
+        StToAdd = StToAdd + StToAdd2 + ","
+
+        StToAdd2 = ConnectionUSB.TotalTime
+        StToAdd = StToAdd + StToAdd2 + ","
+
+        StToAdd2 = ConnectionUSB.OreLav
+        StToAdd = StToAdd + StToAdd2 + ","
+
+        StToAdd2 = ConnectionUSB.PotNom
+        StToAdd = StToAdd + StToAdd2 + ","
+
+        StToAdd2 = ConnectionUSB.VoltNom
+        StToAdd = StToAdd + StToAdd2 + ","
+
+        StToAdd2 = ConnectionUSB.CurrNom
+        StToAdd = StToAdd + StToAdd2
+
+
+        Return StToAdd
+    End Function
+
 
     Public Function CreateCSVStringHeaderInt() As String
         Dim StToAdd, StToAdd2 As String
@@ -506,11 +533,11 @@ Module USBModule
         StToAdd2 = GetHours(_intv._intTime).ToString("00") & "h" & GetMinutes(_intv._intTime).ToString("00") & "'" & GetSeconds(_intv._intTime).ToString("00") & "''"
         StToAdd = StToAdd + StToAdd2.PadRight(11)
 
-        StToAdd2 = _intv._intV1_rms.ToString
+        StToAdd2 = _intv._intV3_rms.ToString
         StToAdd = StToAdd + StToAdd2.PadRight(5)
         StToAdd2 = _intv._intV2_rms.ToString
         StToAdd = StToAdd + StToAdd2.PadRight(5)
-        StToAdd2 = _intv._intV3_rms.ToString
+        StToAdd2 = _intv._intV1_rms.ToString
         StToAdd = StToAdd + StToAdd2.PadRight(5)
 
         StToAdd2 = GetCurrent(_intv._intI1_rms).ToString("F1", GetCultureInfo("en-GB"))
@@ -539,7 +566,7 @@ Module USBModule
         Return StToAdd
     End Function
 
-
+    
 
     Public Function ToGBString(ByVal value As Double)
         Return value.ToString(Globalization.CultureInfo.GetCultureInfo("en-GB"))
@@ -595,22 +622,22 @@ Module USBModule
     End Function
 
     Public Function GetCurrent(ByVal _numToConvert As UInt16) As Double
-        Return (_numToConvert / 10)
+        Return Convert.ToDouble(_numToConvert / 10, Globalization.CultureInfo.GetCultureInfo("en-GB"))
     End Function
 
     Public Function GetPower(ByVal _numToConvert As UInt16) As Double
         'If _numToConvert < 0 Then Return 0
-        Return (_numToConvert)
+        Return Convert.ToDouble(_numToConvert, Globalization.CultureInfo.GetCultureInfo("en-GB"))
     End Function
 
     Public Function GetPressure(ByVal _numToConvert As Int16) As Double
         If _numToConvert < 0 Then Return 0
-        Return (_numToConvert / 10)
+        Return Convert.ToDouble(_numToConvert / 10, Globalization.CultureInfo.GetCultureInfo("en-GB"))
     End Function
 
     Public Function GetCosfi(ByVal _numToConvert As Byte) As Double
         'If _numToConvert < 0 Then Return 0
-        Return (_numToConvert / 100)
+        Return Convert.ToDouble(_numToConvert / 100, Globalization.CultureInfo.GetCultureInfo("en-GB"))
     End Function
 
     Public Function GetFlow(ByVal _numToConvert As UInt16) As UInt16
@@ -620,5 +647,53 @@ Module USBModule
     Public Function GetTemperature(ByVal _numToConvert As Byte) As Integer
         Return (_numToConvert)
     End Function
+
+    Public Function tempoFromDataOra(ByVal _data As String, ByVal _orario As String) As UInt32
+        Dim _anno, _mese, _giorno As UInt16
+        Dim _ora, _minuto, _secondo As UInt16
+        '4 bytes = tempo = secondo + minuto*60 + ora*3600 + giorno*24*3600 + mese*32*24*3600 + anno*13*32*24*3600
+
+        _anno = Convert.ToUInt16(Convert.ToUInt16(_data.Split("/")(0)) - 2000)
+        _mese = Convert.ToUInt16(_data.Split("/")(1))
+        _giorno = Convert.ToUInt16(_data.Split("/")(2))
+        _ora = Convert.ToUInt16(_orario.Split("h")(0))
+        _minuto = Convert.ToUInt16(_orario.Split("h")(1).Split("'")(0))
+        _secondo = Convert.ToUInt16(_orario.Split("'")(1).Split("''")(0))
+
+        Return Convert.ToUInt32(_secondo + _minuto * 60 + _ora * 3600 + _giorno * 24 * 3600 + _mese * 32 * 24 * 3600 + _anno * 13 * 32 * 24 * 3600)
+    End Function
+
+    Public Function GetVoltageInv(ByVal _numToConvert As Integer) As UInt16
+        'If _numToConvert < 0 Then Return 0
+        Return (Convert.ToUInt16(_numToConvert))
+    End Function
+
+    Public Function GetCurrentInv(ByVal _numToConvert As Double) As UInt16
+        Return (Convert.ToUInt16(_numToConvert * 10))
+    End Function
+
+    Public Function GetPowerInv(ByVal _numToConvert As Double) As UInt16
+        'If _numToConvert < 0 Then Return 0
+        Return (Convert.ToUInt16(_numToConvert))
+    End Function
+
+    Public Function GetPressureInv(ByVal _numToConvert As Double) As Int16
+        If _numToConvert < 0 Then Return 0
+        Return (Convert.ToInt16(_numToConvert * 10))
+    End Function
+
+    Public Function GetCosfiInv(ByVal _numToConvert As Double) As Byte
+        'If _numToConvert < 0 Then Return 0
+        Return (Convert.ToByte(_numToConvert * 100))
+    End Function
+
+    Public Function GetFlowInv(ByVal _numToConvert As UInt16) As UInt16
+        Return (Convert.ToUInt16(_numToConvert))
+    End Function
+
+    Public Function GetTemperatureInv(ByVal _numToConvert As Integer) As Byte
+        Return (Convert.ToByte(_numToConvert))
+    End Function
+
 #End Region
 End Module

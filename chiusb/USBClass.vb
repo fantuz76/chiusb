@@ -38,9 +38,9 @@ Public Structure InterventSingle
     Public _intTime As UInt32
     Public _intVoltAv As UInt16
 
-    Public _intV1_rms As UInt16
-    Public _intV2_rms As UInt16
     Public _intV3_rms As UInt16
+    Public _intV2_rms As UInt16
+    Public _intV1_rms As UInt16
 
     Public _intI1_rms As UInt16
     Public _intI2_rms As UInt16
@@ -124,6 +124,68 @@ Public Class InterventiList
         _List(_List.Length - 1)._intFlow = numTmp
 
         _List(_List.Length - 1)._intTemp = _arrToParse(19)
+
+        Return True
+    End Function
+
+    Public Function AddArrIntFromFile(ByVal _arrToParse As String()) As Boolean
+        Dim tmpInt As Integer
+
+        If _arrToParse.Length < INTERVENTO_LENGTH Then
+            Return False
+        End If
+
+        ' Controllo che almeno i campi che interessano siano numerici, altrimenti è un file fasullo
+        If Not Integer.TryParse(_arrToParse(0), tmpInt) Then Return False
+        If Not Integer.TryParse(_arrToParse(1), tmpInt) Then Return False
+        If Not Integer.TryParse(_arrToParse(5), tmpInt) Then Return False
+        If Not Integer.TryParse(_arrToParse(6), tmpInt) Then Return False
+        If Not Integer.TryParse(_arrToParse(7), tmpInt) Then Return False
+
+
+        ' Aumenta lunghezza di un campo
+        ReDim Preserve _List(_List.Length)
+
+        'Public _intType As Byte
+        'Public _intTime As UInt32
+        'Public _intVoltAv As UInt16
+
+        'Public _intV3_rms As UInt16
+        'Public _intV2_rms As UInt16
+        'Public _intV1_rms As UInt16
+
+        'Public _intI1_rms As UInt16
+        'Public _intI2_rms As UInt16
+        'Public _intI3_rms As UInt16
+
+        'Public _intPower As UInt16
+        'Public _intPress As Int16
+        'Public _intCosfi As Byte
+        'Public _intTemp As Byte
+        'Public _intFlow As UInt16
+
+        _List(_List.Length - 1)._intType = Convert.ToByte(_arrToParse(1))
+        _List(_List.Length - 1)._intTime = tempoFromDataOra(_arrToParse(3), _arrToParse(4))
+
+        _List(_List.Length - 1)._intV1_rms = GetVoltageInv(Convert.ToInt16(_arrToParse(5)))
+        _List(_List.Length - 1)._intV2_rms = GetVoltageInv(Convert.ToInt16(_arrToParse(6)))
+        _List(_List.Length - 1)._intV3_rms = GetVoltageInv(Convert.ToInt16(_arrToParse(7)))
+
+        _List(_List.Length - 1)._intI1_rms = GetCurrentInv(Convert.ToDouble(_arrToParse(8), Globalization.CultureInfo.GetCultureInfo("en-GB")))
+        _List(_List.Length - 1)._intI2_rms = GetCurrentInv(Convert.ToDouble(_arrToParse(9), Globalization.CultureInfo.GetCultureInfo("en-GB")))
+        _List(_List.Length - 1)._intI3_rms = GetCurrentInv(Convert.ToDouble(_arrToParse(10), Globalization.CultureInfo.GetCultureInfo("en-GB")))
+
+
+        _List(_List.Length - 1)._intCosfi = GetCosfiInv(Convert.ToDouble(_arrToParse(11), Globalization.CultureInfo.GetCultureInfo("en-GB")))
+
+        _List(_List.Length - 1)._intPower = GetPowerInv(Convert.ToDouble(_arrToParse(12), Globalization.CultureInfo.GetCultureInfo("en-GB")))
+
+        _List(_List.Length - 1)._intPress = GetPressureInv(Convert.ToDouble(_arrToParse(13), Globalization.CultureInfo.GetCultureInfo("en-GB")))
+
+        _List(_List.Length - 1)._intFlow = GetFlowInv(Convert.ToUInt16(_arrToParse(14)))
+
+        _List(_List.Length - 1)._intTemp = GetTemperatureInv(Convert.ToInt32(_arrToParse(15)))
+
 
         Return True
     End Function
@@ -647,6 +709,55 @@ Public Class USBClass
     End Function
 
 
+    Public Function CreateParHelloFromFile(ByVal _arrToParse As String()) As Boolean
+        Dim tmpInt As Integer
+
+        If _arrToParse.Length < 6 Then
+            Return False
+        End If
+
+        'StToAdd = ""
+        'StToAdd2 = ConnectionUSB.Matricola.ToUpper
+        'StToAdd = StToAdd + StToAdd2 + ","
+
+        'StToAdd2 = ConnectionUSB.TotalTime
+        'StToAdd = StToAdd + StToAdd2 + ","
+
+        'StToAdd2 = ConnectionUSB.OreLav
+        'StToAdd = StToAdd + StToAdd2 + ","
+
+        'StToAdd2 = ConnectionUSB.PotNom
+        'StToAdd = StToAdd + StToAdd2 + ","
+
+        'StToAdd2 = ConnectionUSB.VoltNom
+        'StToAdd = StToAdd + StToAdd2 + ","
+
+        'StToAdd2 = ConnectionUSB.CurrNom
+        'StToAdd = StToAdd + StToAdd2
+
+
+        ' Controllo che almeno i campi che interessano siano numerici, altrimenti è un file fasullo
+        If Not Integer.TryParse(_arrToParse(0), tmpInt) Then Return False
+        If Not Integer.TryParse(_arrToParse(1), tmpInt) Then Return False
+        If Not Integer.TryParse(_arrToParse(2), tmpInt) Then Return False
+        If Not Integer.TryParse(_arrToParse(3), tmpInt) Then Return False
+        If Not Integer.TryParse(_arrToParse(4), tmpInt) Then Return False
+        If Not Integer.TryParse(_arrToParse(5), tmpInt) Then Return False
+
+
+        _Matricola = _arrToParse(0)
+        _TotalTime = _arrToParse(1)
+        _OreLav = _arrToParse(2)
+        _PotNom = _arrToParse(3)
+        _VoltNom = _arrToParse(4)
+        _CurrNom = _arrToParse(5)
+
+        Return True
+    End Function
+
+
+
+
 
     Public Function RequestInterventi(Optional ByVal _typeData1 As Byte = 0, Optional ByVal _typeData2 As Byte = 0) As Boolean
         Dim pkt As Byte()
@@ -707,6 +818,59 @@ Public Class USBClass
     End Function
 
 
+
+
+    Public Function RequestInterventiFromFile(ByVal fileNameStr As String, Optional ByVal _typeData1 As Byte = 0, Optional ByVal _typeData2 As Byte = 0) As Boolean
+        Dim file As System.IO.StreamReader
+        Dim lineIN As String
+        Dim arrReadFromFile As String()
+
+
+        Try
+            _myIntArr.ClearArrToInt()
+
+            file = New System.IO.StreamReader(fileNameStr)   ' No append
+            lineIN = file.ReadLine()
+            Do While Not file.EndOfStream
+                lineIN = file.ReadLine()
+                arrReadFromFile = lineIN.Split(",")
+                _myIntArr.AddArrIntFromFile(arrReadFromFile)
+            Loop
+
+            _myIntArr.SortArrIntTime(False)
+
+            Return True
+
+        Catch ex As Exception
+            DisplayLogData("RequestAlarmsFromFile Exception= " + ex.Message)
+            Return False
+        End Try
+
+    End Function
+
+
+    Public Function RequestHelloFromFile(ByVal fileNameStr As String, Optional ByVal _typeData1 As Byte = 0, Optional ByVal _typeData2 As Byte = 0) As Boolean
+        Dim file As System.IO.StreamReader
+        Dim lineIN As String
+        Dim arrReadFromFile As String()
+
+
+        Try
+            _myIntArr.ClearArrToInt()
+
+            file = New System.IO.StreamReader(fileNameStr)   ' No append
+            lineIN = file.ReadLine()
+            arrReadFromFile = lineIN.Split(",")
+            CreateParHelloFromFile(arrReadFromFile)            
+
+            Return True
+
+        Catch ex As Exception
+            DisplayLogData("RequestHelloFromFile Exception= " + ex.Message)
+            Return False
+        End Try
+
+    End Function
 End Class
 
 

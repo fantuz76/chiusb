@@ -167,6 +167,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ZedGraphFrm.resx">
       <DependentUpon>ZedGraphFrm.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -231,6 +232,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo_cut.ico" />
+    <None Include="Resources\Actions-document-open-folder-icon.png" />
+    <None Include="Resources\iFolder-icon.png" />
     <None Include="Resources\zoom_out_selected.png" />
     <None Include="Resources\Actions-zoom-fit-icon.png" />
     <None Include="Resources\GraphXY.png" />
