@@ -838,11 +838,12 @@ Public Class USBClass
             Loop
 
             _myIntArr.SortArrIntTime(False)
-
+            file.Close()
             Return True
 
         Catch ex As Exception
-            DisplayLogData("RequestAlarmsFromFile Exception= " + ex.Message)
+            file.Close()
+            DisplayLogData("RequestAlarmsFromFile Exception= " + ex.Message + " file: " + fileNameStr)
             Return False
         End Try
 
@@ -860,13 +861,18 @@ Public Class USBClass
 
             file = New System.IO.StreamReader(fileNameStr)   ' No append
             lineIN = file.ReadLine()
-            arrReadFromFile = lineIN.Split(",")
-            CreateParHelloFromFile(arrReadFromFile)            
+            file.Close()
 
-            Return True
+            arrReadFromFile = lineIN.Split(",")
+            If CreateParHelloFromFile(arrReadFromFile) Then
+                Return True
+            Else
+                DisplayLogData("Can't get box informations from file: " + fileNameStr)
+                Return True   ' torno TRUE così posso comunque leggere gli interventi
+            End If
 
         Catch ex As Exception
-            DisplayLogData("RequestHelloFromFile Exception= " + ex.Message)
+            DisplayLogData("RequestHelloFromFile Exception= " + ex.Message + " file: " + fileNameStr)
             Return False
         End Try
 
