@@ -3,7 +3,7 @@
     Public Const XMLCFG = "\Config.xml"
 
     Public Const NUM_MAX_TYPE_INT = 35      ' Codice tipo intervento massimo possibile (non tutti sono usati)
-    Public Const NUM_INT_TYPES = 24         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)
+    Public Const NUM_INT_TYPES = 25         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)
 
     Public Const INTERVENTO_LENGTH = 16     ' Dimensione array USB singolo intervento
 
@@ -11,6 +11,7 @@
     ' Definizione Codici dei vari tipi di intervento
     Public Const TYPE_OFF = 0
     Public Const TYPE_ON = 1
+    Public Const TYPE_CHANGE_PN = 2
 
     Public Const TYPE_NOHALT_OVERCURR = 10
     Public Const TYPE_NOHALT_OVERVOLT = 11
@@ -42,6 +43,8 @@
     ' Descrizione stringa dei vari tipi di intervento
     Public Const TYPE_ON_STR = "ON  "
     Public Const TYPE_OFF_STR = "OFF "
+    Public Const TYPE_CHANGE_PN_STR = "Nom Power Change "
+
     Public Const TYPE_NOHALT_OVERCURR_STR = "Over Current" + " ON"
     Public Const TYPE_NOHALT_OVERVOLT_STR = "Over Voltage" + " ON"
     Public Const TYPE_NOHALT_UNDERVOLT_STR = "Under Voltage" + " ON"

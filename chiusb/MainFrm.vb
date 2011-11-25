@@ -27,7 +27,7 @@ Public Class MainFrm
 
     Private Sub btnConn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnConn.Click
         Me.Cursor = Cursors.WaitCursor
-        'lblNotify.Text = "Please Wait"
+        lblNotify.Text = "Please Wait"
         GroupBox1.Enabled = False
 
 
@@ -44,7 +44,7 @@ Public Class MainFrm
                 ConnectionUSB.LogDisplay("Disconnect")
                 ConnectionUSB = Nothing
             End If
-            SetConn(False)
+            SetConn(CONNECT_NONE)
         Else
             If Not ConnectionUSB Is Nothing Then ConnectionUSB = Nothing
 
@@ -52,7 +52,7 @@ Public Class MainFrm
             If ConnectionUSB.ConnectDevice() Then
                 LastCOMUsed = ConnectionUSB.GetCOMName
                 WriteConfigXML(UsrAppData + XMLCFG, "SistemaUtente", "LastCOMUsed", LastCOMUsed)
-                SetConn(True)
+                SetConn(CONNECT_USB)
                 Application.DoEvents()
                 If ConnectionUSB.RequestInterventi(0, 0) Then
                     lblNotify.Text = "Alarms found = " & ConnectionUSB.InterventiLetti.Length
@@ -64,11 +64,11 @@ Public Class MainFrm
                 Else
                     EnableControlsInterventi(False)
                     lblNotify.Text = "No alarms"
-                    SetConn(False)
+                    SetConn(CONNECT_NONE)
                     EnableControlsInterventi(False)
                 End If
             Else
-                SetConn(False)
+                SetConn(CONNECT_NONE)
             End If
         End If
         GroupBox1.Enabled = True
@@ -117,7 +117,7 @@ Public Class MainFrm
         ListBoxLog.Items.Clear()
         lstInterventi.Items.Clear()
         EnableControlsInterventi(False)
-        SetConn(False)
+        SetConn(CONNECT_NONE)
 
 
         ' Set up the delays for the ToolTip.
@@ -227,10 +227,13 @@ Public Class MainFrm
     End Sub
 
 
-    Private Sub SetConn(ByVal _ConnEnable As Boolean)
-        If _ConnEnable Then
+    Private Sub SetConn(ByVal _ConnEnable As Integer)
+        If _ConnEnable = CONNECT_USB Then
+
             btnConn.Image = ApplicationUSB.My.Resources.disc
             btnConn.Text = "Disconnect"
+            btnOpen.Enabled = False
+
             ConnectionIsActive = True
             StatusStrip1.Items.Clear()
             StatusStrip1.Items.Add(Date.Now)
@@ -260,10 +263,37 @@ Public Class MainFrm
             'StatusStrip1.Items.Add(New ToolStripSeparator)
 
 
+        ElseIf _ConnEnable = CONNECT_FILE Then
+
+
+            StatusStrip1.Items.Clear()
+            StatusStrip1.Items.Add(Date.Now)
+            StatusStrip1.Items.Add(New ToolStripSeparator)
+            StatusStrip1.Items.Add("Serial number: " + ConnectionUSB.Matricola.ToUpper.PadRight(8))
+            StatusStrip1.Items.Add(New ToolStripSeparator)
+
+            StatusStrip1.Items.Add("Total time ON: " + (ConnectionUSB.TotalTime \ 3600).ToString("") + "h " + GetMinutes(ConnectionUSB.TotalTime).ToString("00") + "' " + GetSeconds(ConnectionUSB.TotalTime).ToString("00") + "''")
+            StatusStrip1.Items.Add(New ToolStripSeparator)
+
+            StatusStrip1.Items.Add("Pump ON worked time: " + (ConnectionUSB.OreLav \ 3600).ToString("") + "h " + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
+            StatusStrip1.Items.Add(New ToolStripSeparator)
+
+            StatusStrip1.Items.Add(("Pn: " + (ConnectionUSB.PotNom * 10 / 1000).ToString("F2", GetCultureInfo("en-GB")) + "Kw").PadRight(12))
+            StatusStrip1.Items.Add(New ToolStripSeparator)
+
+            StatusStrip1.Items.Add(("Vn: " + GetVoltage(ConnectionUSB.VoltNom).ToString("") + "V").PadRight(12))
+            StatusStrip1.Items.Add(New ToolStripSeparator)
+
+            StatusStrip1.Items.Add(("In: " + GetCurrent(ConnectionUSB.CurrNom).ToString("") + "A").PadRight(12))
+            StatusStrip1.Items.Add(New ToolStripSeparator)
+
         Else
-            lblNotify.Text = "Connect and Read alarms"
+            lblNotify.Text = "Connect or open file"
+
+            btnOpen.Enabled = True
             btnConn.Image = ApplicationUSB.My.Resources.conn
             btnConn.Text = "Connect"
+
             ConnectionIsActive = False
             StatusStrip1.Items.Clear()
             StatusStrip1.Items.Add(Date.Now)
@@ -272,7 +302,9 @@ Public Class MainFrm
             StatusStrip1.Items.Add(New ToolStripSeparator)
             lblHeaderList.Text = ""
             lblHeaderList2.Text = ""
+
         End If
+
 
 
     End Sub
@@ -509,7 +541,7 @@ Public Class MainFrm
         End Try
 
         If ConnectionUSB.RequestHelloFromFile(FileNameToOpen) Then
-            SetConn(True)
+            SetConn(CONNECT_FILE)
             If ConnectionUSB.RequestInterventiFromFile(FileNameToOpen) Then
                 lblNotify.Text = "Alarms found = " & ConnectionUSB.InterventiLetti.Length
                 EnableControlsInterventi(False)
@@ -523,11 +555,11 @@ Public Class MainFrm
             Else
                 EnableControlsInterventi(False)
                 lblNotify.Text = "No alarms"
-                SetConn(False)
+                SetConn(CONNECT_NONE)
                 EnableControlsInterventi(False)
             End If
         Else
-            SetConn(False)
+            SetConn(CONNECT_NONE)
         End If
 
 

@@ -1,6 +1,10 @@
 ﻿Imports System.Globalization.CultureInfo
 
 Module USBModule
+    Public Const CONNECT_NONE = 0
+    Public Const CONNECT_USB = 1
+    Public Const CONNECT_FILE = 2
+
 
     Public UsrAppData As String
     Public UsrDocData As String
@@ -26,6 +30,7 @@ Module USBModule
         ' array di struttura con 2 elementi uno è il tipo e l'altro è il numero occorrenze inizializzate a 0
         Private _ArrIntOccur() As IntOccur = {New IntOccur(TYPE_ON, TYPE_ON_STR), _
                                             New IntOccur(TYPE_OFF, TYPE_OFF_STR), _
+                                            New IntOccur(TYPE_CHANGE_PN, TYPE_CHANGE_PN_STR), _
                                             New IntOccur(TYPE_NOHALT_OVERCURR, TYPE_NOHALT_OVERCURR_STR), _
                                             New IntOccur(TYPE_NOHALT_OVERVOLT, TYPE_NOHALT_OVERVOLT_STR), _
                                             New IntOccur(TYPE_NOHALT_UNDERVOLT, TYPE_NOHALT_UNDERVOLT_STR), _
@@ -131,6 +136,8 @@ Module USBModule
                     Return Color.Green
                 Case TYPE_OFF
                     Return Color.Red
+                Case TYPE_CHANGE_PN
+                    Return Color.Bisque
 
                 Case TYPE_NOHALT_OVERCURR
                     Return Color.Violet
@@ -326,7 +333,7 @@ Module USBModule
         StToAdd = StToAdd + StToAdd2 + ","
         StToAdd2 = "V23[V]"
         StToAdd = StToAdd + StToAdd2 + ","
-        
+
 
         StToAdd2 = "I1[A]"
         StToAdd = StToAdd + StToAdd2 + ","
@@ -566,7 +573,7 @@ Module USBModule
         Return StToAdd
     End Function
 
-    
+
 
     Public Function ToGBString(ByVal value As Double)
         Return value.ToString(Globalization.CultureInfo.GetCultureInfo("en-GB"))
