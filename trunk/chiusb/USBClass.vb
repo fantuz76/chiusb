@@ -106,9 +106,9 @@ Public Class InterventiList
 
         ''_List(_List.Length - 1)._intVoltAv = Conv_num_Int16(_arrToParse(5), _arrToParse(6))
         numTmp = _arrToParse(5) * 256 ^ 3 + _arrToParse(6) * 256 ^ 2 + _arrToParse(7) * 256 ^ 1 + _arrToParse(8) * 256 ^ 0
-        _List(_List.Length - 1)._intV1_rms = (numTmp >> 20) And &H3FF   ' 10 bit
+        _List(_List.Length - 1)._intV3_rms = (numTmp >> 20) And &H3FF   ' 10 bit
         _List(_List.Length - 1)._intV2_rms = (numTmp >> 10) And &H3FF   ' 10 bit
-        _List(_List.Length - 1)._intV3_rms = numTmp And &H3FF           ' 10 bit
+        _List(_List.Length - 1)._intV1_rms = numTmp And &H3FF           ' 10 bit
 
         numTmp = _arrToParse(9) * 256 ^ 3 + _arrToParse(10) * 256 ^ 2 + _arrToParse(11) * 256 ^ 1 + _arrToParse(12) * 256 ^ 0
         _List(_List.Length - 1)._intI1_rms = (numTmp >> 20) And &H3FF   ' 10 bit
@@ -167,9 +167,9 @@ Public Class InterventiList
         _List(_List.Length - 1)._intType = Convert.ToByte(_arrToParse(1))
         _List(_List.Length - 1)._intTime = tempoFromDataOra(_arrToParse(3), _arrToParse(4))
 
-        _List(_List.Length - 1)._intV1_rms = GetVoltageInv(Convert.ToInt16(_arrToParse(5)))
+        _List(_List.Length - 1)._intV3_rms = GetVoltageInv(Convert.ToInt16(_arrToParse(5)))
         _List(_List.Length - 1)._intV2_rms = GetVoltageInv(Convert.ToInt16(_arrToParse(6)))
-        _List(_List.Length - 1)._intV3_rms = GetVoltageInv(Convert.ToInt16(_arrToParse(7)))
+        _List(_List.Length - 1)._intV1_rms = GetVoltageInv(Convert.ToInt16(_arrToParse(7)))
 
         _List(_List.Length - 1)._intI1_rms = GetCurrentInv(Convert.ToDouble(_arrToParse(8), Globalization.CultureInfo.GetCultureInfo("en-GB")))
         _List(_List.Length - 1)._intI2_rms = GetCurrentInv(Convert.ToDouble(_arrToParse(9), Globalization.CultureInfo.GetCultureInfo("en-GB")))
@@ -178,7 +178,11 @@ Public Class InterventiList
 
         _List(_List.Length - 1)._intCosfi = GetCosfiInv(Convert.ToDouble(_arrToParse(11), Globalization.CultureInfo.GetCultureInfo("en-GB")))
 
-        _List(_List.Length - 1)._intPower = GetPowerInv(Convert.ToDouble(_arrToParse(12), Globalization.CultureInfo.GetCultureInfo("en-GB")))
+        If _List(_List.Length - 1)._intType = TYPE_CHANGE_PN Then
+            _List(_List.Length - 1)._intPower = GetNomPowerWattInv(Convert.ToDouble(_arrToParse(12), Globalization.CultureInfo.GetCultureInfo("en-GB")))
+        Else
+            _List(_List.Length - 1)._intPower = GetPowerInv(Convert.ToDouble(_arrToParse(12), Globalization.CultureInfo.GetCultureInfo("en-GB")))
+        End If
 
         _List(_List.Length - 1)._intPress = GetPressureInv(Convert.ToDouble(_arrToParse(13), Globalization.CultureInfo.GetCultureInfo("en-GB")))
 
@@ -681,11 +685,11 @@ Public Class USBClass
                         '_VoltNom = ret(49) * 256 ^ 1 + ret(50) * 256 ^ 0
 
                         _Matricola = ret(1) * 256 ^ 1 + ret(2) * 256 ^ 0
-                        _TotalTime = ret(95) * 256 ^ 3 + ret(96) * 256 ^ 2 + ret(97) * 256 ^ 1 + ret(98) * 256 ^ 0
-                        _OreLav = ret(99) * 256 ^ 3 + ret(100) * 256 ^ 2 + ret(101) * 256 ^ 1 + ret(102) * 256 ^ 0
-                        _PotNom = ret(11) * 256 ^ 1 + ret(12) * 256 ^ 0
-                        _CurrNom = ret(81) * 256 ^ 1 + ret(82) * 256 ^ 0
-                        _VoltNom = ret(79) * 256 ^ 1 + ret(80) * 256 ^ 0
+                        _TotalTime = ret(85) * 256 ^ 3 + ret(86) * 256 ^ 2 + ret(87) * 256 ^ 1 + ret(88) * 256 ^ 0
+                        _OreLav = ret(89) * 256 ^ 3 + ret(90) * 256 ^ 2 + ret(91) * 256 ^ 1 + ret(92) * 256 ^ 0
+                        _PotNom = ret(3) * 256 ^ 1 + ret(4) * 256 ^ 0
+                        _CurrNom = ret(71) * 256 ^ 1 + ret(72) * 256 ^ 0
+                        _VoltNom = ret(69) * 256 ^ 1 + ret(70) * 256 ^ 0
                         ForceClosePort()
                         Return True
                     Else
