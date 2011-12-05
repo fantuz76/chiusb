@@ -397,7 +397,11 @@ Module USBModule
         StToAdd2 = GetCosfi(_intv._intCosfi).ToString("F2", GetCultureInfo("en-GB"))
         StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = GetPower(_intv._intPower).ToString()
+        If _intv._intType = TYPE_CHANGE_PN Then
+            StToAdd2 = GetNomPowerWatt(_intv._intPower).ToString()
+        Else
+            StToAdd2 = GetPower(_intv._intPower).ToString()
+        End If
         StToAdd = StToAdd + StToAdd2 + ","
 
         StToAdd2 = GetPressure(_intv._intPress).ToString("F1", GetCultureInfo("en-GB"))
@@ -557,7 +561,11 @@ Module USBModule
         StToAdd2 = GetCosfi(_intv._intCosfi).ToString("F2", GetCultureInfo("en-GB"))
         StToAdd = StToAdd + StToAdd2.PadRight(5)
 
-        StToAdd2 = GetPower(_intv._intPower).ToString()
+        If _intv._intType = TYPE_CHANGE_PN Then
+            StToAdd2 = GetNomPowerWatt(_intv._intPower).ToString()
+        Else
+            StToAdd2 = GetPower(_intv._intPower).ToString()
+        End If
         StToAdd = StToAdd + StToAdd2.PadRight(7)
 
         StToAdd2 = GetPressure(_intv._intPress).ToString("F1", GetCultureInfo("en-GB"))
@@ -637,6 +645,11 @@ Module USBModule
         Return Convert.ToDouble(_numToConvert, Globalization.CultureInfo.GetCultureInfo("en-GB"))
     End Function
 
+    Public Function GetNomPowerWatt(ByVal _numToConvert As UInt16) As UInt16
+        'If _numToConvert < 0 Then Return 0
+        Return Convert.ToUInt16(_numToConvert * 10, Globalization.CultureInfo.GetCultureInfo("en-GB"))
+    End Function
+
     Public Function GetPressure(ByVal _numToConvert As Int16) As Double
         If _numToConvert < 0 Then Return 0
         Return Convert.ToDouble(_numToConvert / 10, Globalization.CultureInfo.GetCultureInfo("en-GB"))
@@ -683,7 +696,10 @@ Module USBModule
         'If _numToConvert < 0 Then Return 0
         Return (Convert.ToUInt16(_numToConvert))
     End Function
-
+    Public Function GetNomPowerWattInv(ByVal _numToConvert As Double) As UInt16
+        'If _numToConvert < 0 Then Return 0
+        Return (Convert.ToUInt16(_numToConvert / 10))
+    End Function
     Public Function GetPressureInv(ByVal _numToConvert As Double) As Int16
         If _numToConvert < 0 Then Return 0
         Return (Convert.ToInt16(_numToConvert * 10))
