@@ -37,7 +37,7 @@ Module USBModule
                                             New IntOccur(TYPE_NOHALT_MANDATACH, TYPE_NOHALT_MANDATACH_STR), _
                                             New IntOccur(TYPE_NOHALT_DRYFUNC, TYPE_NOHALT_DRYFUNC_STR), _
                                             New IntOccur(TYPE_NOHALT_OVERTEMP, TYPE_NOHALT_OVERTEMP_STR), _
-                                            New IntOccur(TYPE_NOHALT_MIN_FLOW, TYPE_NOHALT_MIN_FLOW_STR), _
+                                            New IntOccur(TYPE_NOHALT_MAX_FLOW, TYPE_NOHALT_MAX_FLOW_STR), _
                                             New IntOccur(TYPE_NOHALT_SQUILIBRIO, TYPE_NOHALT_SQUILIBRIO_STR), _
                                             New IntOccur(TYPE_NOHALT_DISSIMETRIA, TYPE_NOHALT_DISSIMETRIA_STR), _
                                             New IntOccur(TYPE_NOHALT_SOVRAPRESSIONE, TYPE_NOHALT_SOVRAPRESSIONE_STR), _
@@ -47,7 +47,7 @@ Module USBModule
                                             New IntOccur(TYPE_HALT_MANDATACH, TYPE_HALT_MANDATACH_STR), _
                                             New IntOccur(TYPE_HALT_DRYFUNC, TYPE_HALT_DRYFUNC_STR), _
                                             New IntOccur(TYPE_HALT_OVERTEMP, TYPE_HALT_OVERTEMP_STR), _
-                                            New IntOccur(TYPE_HALT_MIN_FLOW, TYPE_MIN_FLOW_STR), _
+                                            New IntOccur(TYPE_HALT_MAX_FLOW, TYPE_MAX_FLOW_STR), _
                                             New IntOccur(TYPE_HALT_SQUILIBRIO, TYPE_HALT_SQUILIBRIO_STR), _
                                             New IntOccur(TYPE_HALT_DISSIMETRIA, TYPE_HALT_DISSIMETRIA_STR), _
                                             New IntOccur(TYPE_HALT_PRESS_SENS, TYPE_HALT_PRESS_SENS_STR), _
@@ -151,7 +151,7 @@ Module USBModule
                     Return Color.SeaGreen
                 Case TYPE_NOHALT_OVERTEMP
                     Return Color.Olive
-                Case TYPE_NOHALT_MIN_FLOW
+                Case TYPE_NOHALT_MAX_FLOW
                     Return Color.Orange
                 Case TYPE_NOHALT_SQUILIBRIO
                     Return Color.Gray
@@ -173,7 +173,7 @@ Module USBModule
                     Return Color.DarkSeaGreen
                 Case TYPE_HALT_OVERTEMP
                     Return Color.DarkOliveGreen
-                Case TYPE_HALT_MIN_FLOW
+                Case TYPE_HALT_MAX_FLOW
                     Return Color.DarkOrange
                 Case TYPE_HALT_SQUILIBRIO
                     Return Color.Black
@@ -429,7 +429,7 @@ Module USBModule
         StToAdd = StToAdd + StToAdd2.PadLeft(5)
 
         StToAdd2 = "Description"
-        StToAdd = StToAdd + StToAdd2.PadRight(19)
+        StToAdd = StToAdd + StToAdd2.PadRight(20)
 
         StToAdd2 = "Date"
         StToAdd = StToAdd + StToAdd2.PadRight(11)
@@ -482,7 +482,7 @@ Module USBModule
         StToAdd = StToAdd + StToAdd2.PadLeft(5)
 
         StToAdd2 = " "
-        StToAdd = StToAdd + StToAdd2.PadRight(19)
+        StToAdd = StToAdd + StToAdd2.PadRight(20)
 
         StToAdd2 = "[Y/M/D]"
         StToAdd = StToAdd + StToAdd2.PadRight(11)
@@ -536,7 +536,7 @@ Module USBModule
         StToAdd = StToAdd + StToAdd2.PadLeft(5)
 
         StToAdd2 = Intervents.GetIntStr(_intv._intType)
-        StToAdd = StToAdd + StToAdd2.PadRight(19)
+        StToAdd = StToAdd + StToAdd2.PadRight(20)
 
 
         StToAdd2 = (2000 + GetYear(_intv._intTime)).ToString("0000") & "/" & GetMonth(_intv._intTime).ToString("00") & "/" & GetDay(_intv._intTime).ToString("00") & " "
