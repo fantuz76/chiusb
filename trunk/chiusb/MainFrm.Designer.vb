@@ -122,7 +122,7 @@ Partial Class MainFrm
         Me.TabControl1.Location = New System.Drawing.Point(5, 84)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(822, 417)
+        Me.TabControl1.Size = New System.Drawing.Size(845, 417)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage1
@@ -138,7 +138,7 @@ Partial Class MainFrm
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(814, 391)
+        Me.TabPage1.Size = New System.Drawing.Size(837, 391)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Alarms"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -152,7 +152,7 @@ Partial Class MainFrm
         Me.lblHeaderList2.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHeaderList2.Location = New System.Drawing.Point(3, 169)
         Me.lblHeaderList2.Name = "lblHeaderList2"
-        Me.lblHeaderList2.Size = New System.Drawing.Size(805, 14)
+        Me.lblHeaderList2.Size = New System.Drawing.Size(828, 14)
         Me.lblHeaderList2.TabIndex = 13
         Me.lblHeaderList2.Text = "xx"
         '
@@ -164,7 +164,7 @@ Partial Class MainFrm
         Me.lblHeaderList.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHeaderList.Location = New System.Drawing.Point(3, 155)
         Me.lblHeaderList.Name = "lblHeaderList"
-        Me.lblHeaderList.Size = New System.Drawing.Size(805, 14)
+        Me.lblHeaderList.Size = New System.Drawing.Size(828, 14)
         Me.lblHeaderList.TabIndex = 12
         Me.lblHeaderList.Text = "xx"
         '
@@ -221,7 +221,7 @@ Partial Class MainFrm
         Me.lstInterventi.ItemHeight = 14
         Me.lstInterventi.Location = New System.Drawing.Point(3, 183)
         Me.lstInterventi.Name = "lstInterventi"
-        Me.lstInterventi.Size = New System.Drawing.Size(805, 200)
+        Me.lstInterventi.Size = New System.Drawing.Size(828, 200)
         Me.lstInterventi.TabIndex = 4
         '
         'lblNumIntTitle
@@ -659,7 +659,7 @@ Partial Class MainFrm
         Me.ListBoxLog.FormattingEnabled = True
         Me.ListBoxLog.Location = New System.Drawing.Point(5, 507)
         Me.ListBoxLog.Name = "ListBoxLog"
-        Me.ListBoxLog.Size = New System.Drawing.Size(822, 56)
+        Me.ListBoxLog.Size = New System.Drawing.Size(845, 56)
         Me.ListBoxLog.TabIndex = 7
         '
         'ContextMenuLog
@@ -697,7 +697,7 @@ Partial Class MainFrm
         '
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 571)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(897, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(920, 22)
         Me.StatusStrip1.TabIndex = 3
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -706,7 +706,7 @@ Partial Class MainFrm
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem1, Me.ToolStripMenuItem3})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(897, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(920, 24)
         Me.MenuStrip1.TabIndex = 4
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -795,7 +795,7 @@ Partial Class MainFrm
         '
         Me.btnExit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnExit.Image = Global.ApplicationUSB.My.Resources.Resources.Spegni
-        Me.btnExit.Location = New System.Drawing.Point(833, 480)
+        Me.btnExit.Location = New System.Drawing.Point(856, 480)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(60, 83)
         Me.btnExit.TabIndex = 1
@@ -807,7 +807,7 @@ Partial Class MainFrm
         Me.PictureLogo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureLogo.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureLogo.Image = Global.ApplicationUSB.My.Resources.Resources.logo
-        Me.PictureLogo.Location = New System.Drawing.Point(659, 27)
+        Me.PictureLogo.Location = New System.Drawing.Point(682, 27)
         Me.PictureLogo.Name = "PictureLogo"
         Me.PictureLogo.Size = New System.Drawing.Size(168, 57)
         Me.PictureLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -822,7 +822,7 @@ Partial Class MainFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(897, 593)
+        Me.ClientSize = New System.Drawing.Size(920, 593)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.ListBoxLog)
         Me.Controls.Add(Me.GroupBox1)

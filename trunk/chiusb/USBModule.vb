@@ -31,6 +31,9 @@ Module USBModule
         Private _ArrIntOccur() As IntOccur = {New IntOccur(TYPE_ON, TYPE_ON_STR), _
                                             New IntOccur(TYPE_OFF, TYPE_OFF_STR), _
                                             New IntOccur(TYPE_CHANGE_PN, TYPE_CHANGE_PN_STR), _
+                                            New IntOccur(TYPE_REMOTE_OFF, TYPE_REMOTE_OFF_STR), _
+                                            New IntOccur(TYPE_REMOTE_ON, TYPE_REMOTE_ON_STR), _
+                                            New IntOccur(TYPE_AUTO_ON, TYPE_AUTO_ON_STR), _
                                             New IntOccur(TYPE_NOHALT_OVERCURR, TYPE_NOHALT_OVERCURR_STR), _
                                             New IntOccur(TYPE_NOHALT_OVERVOLT, TYPE_NOHALT_OVERVOLT_STR), _
                                             New IntOccur(TYPE_NOHALT_UNDERVOLT, TYPE_NOHALT_UNDERVOLT_STR), _
@@ -138,6 +141,14 @@ Module USBModule
                     Return Color.Red
                 Case TYPE_CHANGE_PN
                     Return Color.Bisque
+                Case TYPE_REMOTE_OFF
+                    Return Color.DarkRed
+                Case TYPE_REMOTE_ON
+                    Return Color.DarkGreen
+
+                Case TYPE_AUTO_ON
+                    Return Color.LightGreen
+
 
                 Case TYPE_NOHALT_OVERCURR
                     Return Color.Violet
@@ -429,7 +440,7 @@ Module USBModule
         StToAdd = StToAdd + StToAdd2.PadLeft(5)
 
         StToAdd2 = "Description"
-        StToAdd = StToAdd + StToAdd2.PadRight(20)
+        StToAdd = StToAdd + StToAdd2.PadRight(MAXLEN_STR + 1)
 
         StToAdd2 = "Date"
         StToAdd = StToAdd + StToAdd2.PadRight(11)
@@ -482,7 +493,7 @@ Module USBModule
         StToAdd = StToAdd + StToAdd2.PadLeft(5)
 
         StToAdd2 = " "
-        StToAdd = StToAdd + StToAdd2.PadRight(20)
+        StToAdd = StToAdd + StToAdd2.PadRight(MAXLEN_STR + 1)
 
         StToAdd2 = "[Y/M/D]"
         StToAdd = StToAdd + StToAdd2.PadRight(11)
@@ -536,7 +547,7 @@ Module USBModule
         StToAdd = StToAdd + StToAdd2.PadLeft(5)
 
         StToAdd2 = Intervents.GetIntStr(_intv._intType)
-        StToAdd = StToAdd + StToAdd2.PadRight(20)
+        StToAdd = StToAdd + StToAdd2.PadRight(MAXLEN_STR + 1)
 
 
         StToAdd2 = (2000 + GetYear(_intv._intTime)).ToString("0000") & "/" & GetMonth(_intv._intTime).ToString("00") & "/" & GetDay(_intv._intTime).ToString("00") & " "
