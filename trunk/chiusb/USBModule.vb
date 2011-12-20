@@ -31,6 +31,7 @@ Module USBModule
         Private _ArrIntOccur() As IntOccur = {New IntOccur(TYPE_ON, TYPE_ON_STR), _
                                             New IntOccur(TYPE_OFF, TYPE_OFF_STR), _
                                             New IntOccur(TYPE_CHANGE_PN, TYPE_CHANGE_PN_STR), _
+                                            New IntOccur(TYPE_CHANGE_CN, TYPE_CHANGE_CN_STR), _
                                             New IntOccur(TYPE_REMOTE_OFF, TYPE_REMOTE_OFF_STR), _
                                             New IntOccur(TYPE_REMOTE_ON, TYPE_REMOTE_ON_STR), _
                                             New IntOccur(TYPE_AUTO_ON, TYPE_AUTO_ON_STR), _
@@ -139,8 +140,12 @@ Module USBModule
                     Return Color.Green
                 Case TYPE_OFF
                     Return Color.Red
+
                 Case TYPE_CHANGE_PN
                     Return Color.Bisque
+                Case TYPE_CHANGE_CN
+                    Return Color.LightCoral
+
                 Case TYPE_REMOTE_OFF
                     Return Color.DarkRed
                 Case TYPE_REMOTE_ON
