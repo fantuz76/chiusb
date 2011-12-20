@@ -3,7 +3,7 @@
     Public Const XMLCFG = "\Config.xml"
 
     Public Const NUM_MAX_TYPE_INT = 35      ' Codice tipo intervento massimo possibile (non tutti sono usati)
-    Public Const NUM_INT_TYPES = 28         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)
+    Public Const NUM_INT_TYPES = 29         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)
 
     Public Const INTERVENTO_LENGTH = 16     ' Dimensione array USB singolo intervento
 
@@ -12,10 +12,11 @@
     Public Const TYPE_OFF = 0
     Public Const TYPE_ON = 1
     Public Const TYPE_CHANGE_PN = 2
+    Public Const TYPE_CHANGE_CN = 3
 
-    Public Const TYPE_REMOTE_OFF = 3
-    Public Const TYPE_REMOTE_ON = 4
-    Public Const TYPE_AUTO_ON = 5
+    Public Const TYPE_REMOTE_OFF = 4
+    Public Const TYPE_REMOTE_ON = 5
+    Public Const TYPE_AUTO_ON = 6
 
 
     Public Const TYPE_NOHALT_OVERCURR = 10
@@ -38,8 +39,9 @@
     Public Const TYPE_HALT_MAX_FLOW = 16 + 10
     Public Const TYPE_HALT_SQUILIBRIO = 17 + 10
     Public Const TYPE_HALT_DISSIMETRIA = 18 + 10
-    Public Const TYPE_HALT_PRESS_SENS = 19 + 10
-    Public Const TYPE_HALT_SOVRAPRESSIONE = 30
+    Public Const TYPE_HALT_SOVRAPRESSIONE = 19 + 10
+
+    Public Const TYPE_HALT_PRESS_SENS = 30
     Public Const TYPE_HALT_CORTO_CIRCUITO = 31
 
 
@@ -48,8 +50,9 @@
     ' Descrizione stringa dei vari tipi di intervento
     Public Const MAXLEN_STR = 20 + 4
     Public Const TYPE_ON_STR = "ON  "
-    Public Const TYPE_OFF_STR = "OFF "
+    Public Const TYPE_OFF_STR = "OFF "    
     Public Const TYPE_CHANGE_PN_STR = "Nom Power Change "
+    Public Const TYPE_CHANGE_CN_STR = "Nom Current Change"
     Public Const TYPE_REMOTE_OFF_STR = "Remote OFF "
     Public Const TYPE_REMOTE_ON_STR = "Remote ON "
     Public Const TYPE_AUTO_ON_STR = "Auto ON "
