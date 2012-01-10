@@ -83,9 +83,10 @@ Public Class MainFrm
     Private Sub Draw_header()
         Dim toolTip1 As New ToolTip()
 
+        lblVer.Text = String.Format("Ver. {0}.{1}.{2}", My.Application.Info.Version.Major.ToString, My.Application.Info.Version.Minor.ToString, My.Application.Info.Version.Build.ToString, My.Application.Info.Version.MinorRevision.ToString)
 
         If My.Application.Info.Title <> "" Then
-            Me.Text = My.Application.Info.Title
+            Me.Text = My.Application.Info.Title + String.Format(" - {0}.{1}.{2}", My.Application.Info.Version.Major.ToString, My.Application.Info.Version.Minor.ToString, My.Application.Info.Version.Build.ToString, My.Application.Info.Version.MinorRevision.ToString)
         Else
             Me.Text = System.IO.Path.GetFileNameWithoutExtension(My.Application.Info.AssemblyName)
         End If
@@ -104,9 +105,9 @@ Public Class MainFrm
         lblIntCurrent.Text = "Currents [Amp]"
         lblIntCurrent.TextAlign = ContentAlignment.MiddleCenter
 
-        lblIntV1Desc.Text = "V12"
-        lblIntV2Desc.Text = "V13"
-        lblIntV3Desc.Text = "V23"
+        lblIntV1Desc.Text = "V1-2"
+        lblIntV2Desc.Text = "V1-3"
+        lblIntV3Desc.Text = "V2-3"
         lblIntI1Desc.Text = "I1"
         lblIntI2Desc.Text = "I2"
         lblIntI3Desc.Text = "I3"
@@ -495,16 +496,9 @@ Public Class MainFrm
 
     End Sub
 
-    Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
-    End Sub
 
-    Private Sub lblHeaderList2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lblHeaderList2.Click
 
-    End Sub
 
-    Private Sub Label1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        MsgBox("sii")
-    End Sub
 
     Private Sub btnOpen_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnOpen.Click
         Dim FileNameToOpen As String = ""
