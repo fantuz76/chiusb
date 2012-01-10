@@ -119,6 +119,8 @@ Public Class ZedGraphFrm
 
     Public Sub DrawHeader()
         If zg2.Visible Then
+            Me.Width = 900
+            Me.Height = 600
             lblIntI1Val.BackColor = Color.Blue
             lblIntI2Val.BackColor = Color.Green
             lblIntI3Val.BackColor = Color.Red
@@ -136,15 +138,17 @@ Public Class ZedGraphFrm
             HScrollIntGraph.Minimum = 1
             HScrollIntGraph.Maximum = ConnectionUSB.InterventiLetti.Length
             HScrollIntGraph.SmallChange = 1
-            If (ConnectionUSB.InterventiLetti.Length < 20) Then
-                HScrollIntGraph.LargeChange = 1
-            ElseIf (ConnectionUSB.InterventiLetti.Length < 500) Then
-                HScrollIntGraph.LargeChange = 10
-            ElseIf (ConnectionUSB.InterventiLetti.Length < 1000) Then
-                HScrollIntGraph.LargeChange = 50
-            Else
-                HScrollIntGraph.LargeChange = 50
-            End If
+            HScrollIntGraph.LargeChange = 1
+
+            'If (ConnectionUSB.InterventiLetti.Length < 20) Then
+            '    HScrollIntGraph.LargeChange = 1
+            'ElseIf (ConnectionUSB.InterventiLetti.Length < 500) Then
+            '    HScrollIntGraph.LargeChange = 10
+            'ElseIf (ConnectionUSB.InterventiLetti.Length < 1000) Then
+            '    HScrollIntGraph.LargeChange = 50
+            'Else
+            '    HScrollIntGraph.LargeChange = 50
+            'End If
 
             HScrollIntGraph.Value = HScrollIntGraph.Minimum
 
@@ -188,6 +192,8 @@ Public Class ZedGraphFrm
             zg2.Refresh()
 
         ElseIf zg1.Visible = True Then
+            Me.Width = 800
+            Me.Height = 700
             ' Calculate the Axis Scale Ranges
             zg1.AxisChange()
 
@@ -196,6 +202,8 @@ Public Class ZedGraphFrm
             zg1.Refresh()
 
         End If
+        Me.Top = 100
+        Me.Left = 100
     End Sub
 
 
@@ -254,9 +262,9 @@ Public Class ZedGraphFrm
             listI2.Add(x + 1, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intI2_rms), "I2")
             listI3.Add(x + 1, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intI3_rms), "I3")
 
-            listV1.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV3_rms), "V12")
-            listV2.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV2_rms), "V13")
-            listV3.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV1_rms), "V23")
+            listV1.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV3_rms), "V1-2")
+            listV2.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV2_rms), "V1-3")
+            listV3.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV1_rms), "V2-3")
         Next
 
 
@@ -266,9 +274,9 @@ Public Class ZedGraphFrm
         myCurveI1 = myPane.AddCurve("I1", listI1, Color.Blue, SymbolType.None)
         myCurveI2 = myPane.AddCurve("I2", listI2, Color.Green, SymbolType.None)
         myCurveI3 = myPane.AddCurve("I3", listI3, Color.Red, SymbolType.None)
-        myCurveV1 = myPane.AddCurve("V12", listV1, Color.DarkBlue, SymbolType.None)
-        myCurveV2 = myPane.AddCurve("V13", listV2, Color.DarkGreen, SymbolType.None)
-        myCurveV3 = myPane.AddCurve("V23", listV3, Color.DarkRed, SymbolType.None)
+        myCurveV1 = myPane.AddCurve("V1-2", listV1, Color.DarkBlue, SymbolType.None)
+        myCurveV2 = myPane.AddCurve("V1-3", listV2, Color.DarkGreen, SymbolType.None)
+        myCurveV3 = myPane.AddCurve("V2-3", listV3, Color.DarkRed, SymbolType.None)
         myCurveI1.IsY2Axis = False
         myCurveI2.IsY2Axis = False
         myCurveI3.IsY2Axis = False

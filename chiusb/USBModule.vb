@@ -343,11 +343,11 @@ Module USBModule
         StToAdd = StToAdd + StToAdd2 + ","
 
 
-        StToAdd2 = "V12[V]"
+        StToAdd2 = "V1-2[V]"
         StToAdd = StToAdd + StToAdd2 + ","
-        StToAdd2 = "V13[V]"
+        StToAdd2 = "V1-3[V]"
         StToAdd = StToAdd + StToAdd2 + ","
-        StToAdd2 = "V23[V]"
+        StToAdd2 = "V2-3[V]"
         StToAdd = StToAdd + StToAdd2 + ","
 
 
@@ -453,11 +453,11 @@ Module USBModule
         StToAdd2 = "Time"
         StToAdd = StToAdd + StToAdd2.PadRight(11)
 
-        StToAdd2 = "V12"
+        StToAdd2 = "V1-2"
         StToAdd = StToAdd + StToAdd2.PadRight(5)
-        StToAdd2 = "V13"
+        StToAdd2 = "V1-3"
         StToAdd = StToAdd + StToAdd2.PadRight(5)
-        StToAdd2 = "V23"
+        StToAdd2 = "V2-3"
         StToAdd = StToAdd + StToAdd2.PadRight(5)
 
         StToAdd2 = "I1"
