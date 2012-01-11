@@ -3,7 +3,7 @@
     Public Const XMLCFG = "\Config.xml"
 
     Public Const NUM_MAX_TYPE_INT = 35      ' Codice tipo intervento massimo possibile (non tutti sono usati)
-    Public Const NUM_INT_TYPES = 29         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)
+    Public Const NUM_INT_TYPES = 28         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)
 
     Public Const INTERVENTO_LENGTH = 16     ' Dimensione array USB singolo intervento
 
@@ -12,7 +12,7 @@
     Public Const TYPE_OFF = 0
     Public Const TYPE_ON = 1
     Public Const TYPE_CHANGE_PN = 2
-    Public Const TYPE_CHANGE_CN = 3
+    'Public Const TYPE_CHANGE_CN = 3
 
     Public Const TYPE_REMOTE_OFF = 4
     Public Const TYPE_REMOTE_ON = 5
@@ -49,13 +49,13 @@
 
     ' Descrizione stringa dei vari tipi di intervento
     Public Const MAXLEN_STR = 20 + 4
-    Public Const TYPE_ON_STR = "ON  "
-    Public Const TYPE_OFF_STR = "OFF "    
-    Public Const TYPE_CHANGE_PN_STR = "Nom Power Change "
-    Public Const TYPE_CHANGE_CN_STR = "Nom Current Change"
+    Public Const TYPE_ON_STR = "Manual ON  "
+    Public Const TYPE_OFF_STR = "Manual OFF "
+    Public Const TYPE_CHANGE_PN_STR = "Nom.P.V.I.Change "
+    'Public Const TYPE_CHANGE_CN_STR = "Nom Current Change"
     Public Const TYPE_REMOTE_OFF_STR = "Remote OFF "
     Public Const TYPE_REMOTE_ON_STR = "Remote ON "
-    Public Const TYPE_AUTO_ON_STR = "Auto ON "
+    Public Const TYPE_AUTO_ON_STR = "Automatic ON "
 
     Public Const TYPE_NOHALT_OVERCURR_STR = "Over Current" + " ON"
     Public Const TYPE_NOHALT_OVERVOLT_STR = "Over Voltage" + " ON"

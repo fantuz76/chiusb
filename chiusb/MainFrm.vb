@@ -83,7 +83,7 @@ Public Class MainFrm
     Private Sub Draw_header()
         Dim toolTip1 As New ToolTip()
 
-        lblVer.Text = String.Format("Ver. {0}.{1}.{2}", My.Application.Info.Version.Major.ToString, My.Application.Info.Version.Minor.ToString, My.Application.Info.Version.Build.ToString, My.Application.Info.Version.MinorRevision.ToString)
+
 
         If My.Application.Info.Title <> "" Then
             Me.Text = My.Application.Info.Title + String.Format(" - {0}.{1}.{2}", My.Application.Info.Version.Major.ToString, My.Application.Info.Version.Minor.ToString, My.Application.Info.Version.Build.ToString, My.Application.Info.Version.MinorRevision.ToString)
@@ -163,9 +163,9 @@ Public Class MainFrm
         lblIntI3Val.Text = GetCurrent(intToFill._intI3_rms)
 
         If intToFill._intType = TYPE_CHANGE_PN Then
-            lblIntPowVal.Text = GetNomPowerWatt(intToFill._intPower)
+            lblIntPowVal.Text = (GetNomPowerKiloWatt(intToFill._intPower)).ToString("F3", GetCultureInfo("en-GB"))
         Else
-            lblIntPowVal.Text = GetPower(intToFill._intPower)
+            lblIntPowVal.Text = (GetPowerKiloWatt(intToFill._intPower)).ToString("F3", GetCultureInfo("en-GB"))
         End If
         lblIntPressVal.Text = GetPressure(intToFill._intPress)
         lblIntFlowVal.Text = GetFlow(intToFill._intFlow)
@@ -252,7 +252,7 @@ Public Class MainFrm
             StatusStrip1.Items.Add("Pump ON worked time: " + (ConnectionUSB.OreLav \ 3600).ToString("") + "h " + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
             StatusStrip1.Items.Add(New ToolStripSeparator)
 
-            StatusStrip1.Items.Add(("Pn: " + (GetNomPowerWatt(ConnectionUSB.PotNom) / 1000).ToString("F2", GetCultureInfo("en-GB")) + "Kw").PadRight(12))
+            StatusStrip1.Items.Add(("Pn: " + (GetNomPowerKiloWatt(ConnectionUSB.PotNom)).ToString("F2", GetCultureInfo("en-GB")) + "Kw").PadRight(12))
             StatusStrip1.Items.Add(New ToolStripSeparator)
 
             StatusStrip1.Items.Add(("Vn: " + GetVoltage(ConnectionUSB.VoltNom).ToString("") + "V").PadRight(12))
@@ -283,7 +283,7 @@ Public Class MainFrm
             StatusStrip1.Items.Add("Pump ON worked time: " + (ConnectionUSB.OreLav \ 3600).ToString("") + "h " + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
             StatusStrip1.Items.Add(New ToolStripSeparator)
 
-            StatusStrip1.Items.Add(("Pn: " + (ConnectionUSB.PotNom * 10 / 1000).ToString("F2", GetCultureInfo("en-GB")) + "Kw").PadRight(12))
+            StatusStrip1.Items.Add(("Pn: " + (GetNomPowerKiloWatt(ConnectionUSB.PotNom)).ToString("F2", GetCultureInfo("en-GB")) + "Kw").PadRight(12))
             StatusStrip1.Items.Add(New ToolStripSeparator)
 
             StatusStrip1.Items.Add(("Vn: " + GetVoltage(ConnectionUSB.VoltNom).ToString("") + "V").PadRight(12))
@@ -421,7 +421,7 @@ Public Class MainFrm
                 file.WriteLine("* Pump ON worked hours: " + GetHours(ConnectionUSB.OreLav).ToString + "h" + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
 
 
-                file.WriteLine("* Pnom: " + (ConnectionUSB.PotNom * 10 / 10).ToString("F2", GetCultureInfo("en-GB")) + "Kw")
+                file.WriteLine("* Pnom: " + (GetNomPowerKiloWatt(ConnectionUSB.PotNom)).ToString("F3", GetCultureInfo("en-GB")) + "Kw")
                 file.WriteLine("* Vnom: " + GetVoltage(ConnectionUSB.VoltNom).ToString("") + "V")
                 file.WriteLine("* Inom: " + GetCurrent(ConnectionUSB.CurrNom).ToString("") + "A")
 

@@ -96,7 +96,6 @@ Partial Class MainFrm
         Me.btnExit = New System.Windows.Forms.Button
         Me.PictureLogo = New System.Windows.Forms.PictureBox
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
-        Me.lblVer = New System.Windows.Forms.Label
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.pnlButAlarms.SuspendLayout()
@@ -572,7 +571,7 @@ Partial Class MainFrm
         Me.lblIntPowDesc.Name = "lblIntPowDesc"
         Me.lblIntPowDesc.Size = New System.Drawing.Size(46, 36)
         Me.lblIntPowDesc.TabIndex = 4
-        Me.lblIntPowDesc.Text = "Power [Watt]"
+        Me.lblIntPowDesc.Text = "Power [Kw]"
         Me.lblIntPowDesc.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lblIntTimeVal
@@ -625,7 +624,7 @@ Partial Class MainFrm
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(837, 391)
+        Me.TabPage2.Size = New System.Drawing.Size(865, 391)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Other"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -819,24 +818,11 @@ Partial Class MainFrm
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'lblVer
-        '
-        Me.lblVer.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblVer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblVer.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVer.Location = New System.Drawing.Point(710, 81)
-        Me.lblVer.Name = "lblVer"
-        Me.lblVer.Size = New System.Drawing.Size(168, 15)
-        Me.lblVer.TabIndex = 11
-        Me.lblVer.Text = "Label1"
-        Me.lblVer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'MainFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(948, 593)
-        Me.Controls.Add(Me.lblVer)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.ListBoxLog)
         Me.Controls.Add(Me.GroupBox1)
@@ -941,6 +927,5 @@ Partial Class MainFrm
     Friend WithEvents btnOpen As System.Windows.Forms.Button
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents lblNotify As System.Windows.Forms.Label
-    Friend WithEvents lblVer As System.Windows.Forms.Label
 
 End Class

@@ -179,9 +179,9 @@ Public Class InterventiList
         _List(_List.Length - 1)._intCosfi = GetCosfiInv(Convert.ToDouble(_arrToParse(11), Globalization.CultureInfo.GetCultureInfo("en-GB")))
 
         If _List(_List.Length - 1)._intType = TYPE_CHANGE_PN Then
-            _List(_List.Length - 1)._intPower = GetNomPowerWattInv(Convert.ToDouble(_arrToParse(12), Globalization.CultureInfo.GetCultureInfo("en-GB")))
+            _List(_List.Length - 1)._intPower = GetNomPowerKiloWattInv(Convert.ToDouble(_arrToParse(12), Globalization.CultureInfo.GetCultureInfo("en-GB")))
         Else
-            _List(_List.Length - 1)._intPower = GetPowerInv(Convert.ToDouble(_arrToParse(12), Globalization.CultureInfo.GetCultureInfo("en-GB")))
+            _List(_List.Length - 1)._intPower = GetPowerKiloWattInv(Convert.ToDouble(_arrToParse(12), Globalization.CultureInfo.GetCultureInfo("en-GB")))
         End If
 
         _List(_List.Length - 1)._intPress = GetPressureInv(Convert.ToDouble(_arrToParse(13), Globalization.CultureInfo.GetCultureInfo("en-GB")))

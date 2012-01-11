@@ -11,7 +11,7 @@
 [ISPP]
 #define AppName "Usb Pump Control Box"
 #define ShortAppName "USB Pump Control Box"
-#define AppVersion "2.3.0"
+#define AppVersion "2.4.0"
 #define AppPublisher "Electroil"
 #define AppURL "http://www.electroil.it/"
 
@@ -101,9 +101,9 @@ Source: .\Inf_driver\HC9S08JMxx.inf; DestDir: {app}\driver_usb\; DestName: UsbJM
 
 
 [Icons]
-Name: {group}\{#AppName};                     Filename: {app}\USBConfig.exe; WorkingDir: {app}
-Name: {group}\Uninstall {#AppName};           Filename: {uninstallexe}
-Name: {userdesktop}\{#AppName}; Filename: {app}\USBConfig.exe; WorkingDir: {app}
+Name: {group}\{#AppName} {#AppVersion};                     Filename: {app}\USBConfig.exe; WorkingDir: {app}
+Name: {group}\Uninstall {#AppName} {#AppVersion};           Filename: {uninstallexe}
+Name: {userdesktop}\{#AppName} {#AppVersion}; Filename: {app}\USBConfig.exe; WorkingDir: {app}
 
 
 [Languages]

@@ -168,7 +168,6 @@ Partial Class ZedGraphFrm
         Me.numSpan.Increment = New Decimal(New Integer() {10, 0, 0, 0})
         Me.numSpan.Location = New System.Drawing.Point(681, 49)
         Me.numSpan.Name = "numSpan"
-        Me.numSpan.ReadOnly = True
         Me.numSpan.Size = New System.Drawing.Size(54, 20)
         Me.numSpan.TabIndex = 26
         Me.numSpan.Value = New Decimal(New Integer() {100, 0, 0, 0})

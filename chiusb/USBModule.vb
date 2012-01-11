@@ -31,7 +31,6 @@ Module USBModule
         Private _ArrIntOccur() As IntOccur = {New IntOccur(TYPE_ON, TYPE_ON_STR), _
                                             New IntOccur(TYPE_OFF, TYPE_OFF_STR), _
                                             New IntOccur(TYPE_CHANGE_PN, TYPE_CHANGE_PN_STR), _
-                                            New IntOccur(TYPE_CHANGE_CN, TYPE_CHANGE_CN_STR), _
                                             New IntOccur(TYPE_REMOTE_OFF, TYPE_REMOTE_OFF_STR), _
                                             New IntOccur(TYPE_REMOTE_ON, TYPE_REMOTE_ON_STR), _
                                             New IntOccur(TYPE_AUTO_ON, TYPE_AUTO_ON_STR), _
@@ -143,8 +142,8 @@ Module USBModule
 
                 Case TYPE_CHANGE_PN
                     Return Color.Bisque
-                Case TYPE_CHANGE_CN
-                    Return Color.LightCoral
+                    'Case TYPE_CHANGE_CN
+                    '    Return Color.LightCoral
 
                 Case TYPE_REMOTE_OFF
                     Return Color.DarkRed
@@ -361,10 +360,10 @@ Module USBModule
         StToAdd2 = "Cosφ"
         StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = "P[Watt]"
+        StToAdd2 = "P[Kw]"
         StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = "P[bar]"
+        StToAdd2 = "Press[bar]"
         StToAdd = StToAdd + StToAdd2 + ","
 
         StToAdd2 = "Flow[l/m]"
@@ -414,9 +413,9 @@ Module USBModule
         StToAdd = StToAdd + StToAdd2 + ","
 
         If _intv._intType = TYPE_CHANGE_PN Then
-            StToAdd2 = GetNomPowerWatt(_intv._intPower).ToString()
+            StToAdd2 = (GetNomPowerKiloWatt(_intv._intPower)).ToString("F3", GetCultureInfo("en-GB"))
         Else
-            StToAdd2 = GetPower(_intv._intPower).ToString()
+            StToAdd2 = (GetPowerKiloWatt(_intv._intPower)).ToString("F3", GetCultureInfo("en-GB"))
         End If
         StToAdd = StToAdd + StToAdd2 + ","
 
@@ -471,9 +470,9 @@ Module USBModule
         StToAdd = StToAdd + StToAdd2.PadRight(5)
 
         StToAdd2 = "P"
-        StToAdd = StToAdd + StToAdd2.PadRight(7)
+        StToAdd = StToAdd + StToAdd2.PadRight(8)
 
-        StToAdd2 = "P"
+        StToAdd2 = "Press"
         StToAdd = StToAdd + StToAdd2.PadRight(6)
 
         StToAdd2 = "Flow"
@@ -523,8 +522,8 @@ Module USBModule
         StToAdd2 = ""
         StToAdd = StToAdd + StToAdd2.PadRight(5)
 
-        StToAdd2 = "[Watt]"
-        StToAdd = StToAdd + StToAdd2.PadRight(7)
+        StToAdd2 = "[Kw]"
+        StToAdd = StToAdd + StToAdd2.PadRight(8)
 
         StToAdd2 = "[bar]"
         StToAdd = StToAdd + StToAdd2.PadRight(6)
@@ -578,11 +577,11 @@ Module USBModule
         StToAdd = StToAdd + StToAdd2.PadRight(5)
 
         If _intv._intType = TYPE_CHANGE_PN Then
-            StToAdd2 = GetNomPowerWatt(_intv._intPower).ToString()
+            StToAdd2 = (GetNomPowerKiloWatt(_intv._intPower)).ToString("F3", GetCultureInfo("en-GB"))
         Else
-            StToAdd2 = GetPower(_intv._intPower).ToString()
+            StToAdd2 = (GetPowerKiloWatt(_intv._intPower)).ToString("F3", GetCultureInfo("en-GB"))
         End If
-        StToAdd = StToAdd + StToAdd2.PadRight(7)
+        StToAdd = StToAdd + StToAdd2.PadRight(8)
 
         StToAdd2 = GetPressure(_intv._intPress).ToString("F1", GetCultureInfo("en-GB"))
         StToAdd = StToAdd + StToAdd2.PadRight(6)
@@ -656,14 +655,14 @@ Module USBModule
         Return Convert.ToDouble(_numToConvert / 10, Globalization.CultureInfo.GetCultureInfo("en-GB"))
     End Function
 
-    Public Function GetPower(ByVal _numToConvert As UInt16) As Double
+    Public Function GetPowerKiloWatt(ByVal _numToConvert As UInt16) As Double
         'If _numToConvert < 0 Then Return 0
-        Return Convert.ToDouble(_numToConvert, Globalization.CultureInfo.GetCultureInfo("en-GB"))
+        Return Convert.ToDouble(_numToConvert / 1000, Globalization.CultureInfo.GetCultureInfo("en-GB"))
     End Function
 
-    Public Function GetNomPowerWatt(ByVal _numToConvert As UInt16) As UInt16
+    Public Function GetNomPowerKiloWatt(ByVal _numToConvert As UInt16) As Double
         'If _numToConvert < 0 Then Return 0
-        Return Convert.ToUInt16(_numToConvert * 10, Globalization.CultureInfo.GetCultureInfo("en-GB"))
+        Return Convert.ToDouble((_numToConvert * 10) / 1000, Globalization.CultureInfo.GetCultureInfo("en-GB"))
     End Function
 
     Public Function GetPressure(ByVal _numToConvert As Int16) As Double
@@ -708,13 +707,13 @@ Module USBModule
         Return (Convert.ToUInt16(_numToConvert * 10))
     End Function
 
-    Public Function GetPowerInv(ByVal _numToConvert As Double) As UInt16
+    Public Function GetPowerKiloWattInv(ByVal _numToConvert As Double) As UInt16
         'If _numToConvert < 0 Then Return 0
-        Return (Convert.ToUInt16(_numToConvert))
+        Return (Convert.ToUInt16(_numToConvert * 1000))
     End Function
-    Public Function GetNomPowerWattInv(ByVal _numToConvert As Double) As UInt16
+    Public Function GetNomPowerKiloWattInv(ByVal _numToConvert As Double) As UInt16
         'If _numToConvert < 0 Then Return 0
-        Return (Convert.ToUInt16(_numToConvert / 10))
+        Return (Convert.ToUInt16(_numToConvert * 1000 / 10))
     End Function
     Public Function GetPressureInv(ByVal _numToConvert As Double) As Int16
         If _numToConvert < 0 Then Return 0
