@@ -11,7 +11,7 @@
 [ISPP]
 #define AppName "Usb Pump Control Box"
 #define ShortAppName "USB Pump Control Box"
-#define AppVersion "2.4.0"
+#define AppVersion "2.5.0"
 #define AppPublisher "Electroil"
 #define AppURL "http://www.electroil.it/"
 
@@ -29,17 +29,17 @@
 ;VersionInfoVersion=1.0
 
 ; Nome commerciale dell'applicazione
-AppName={#AppName}
-
+AppName={#AppName} {#AppVersion}
+AppVersion={#AppVersion}
 ; Nome e versione del programma (visibile nella pag di benvenuto)
-AppVerName={#ShortAppName} {#AppVersion}
+AppVerName={#ShortAppName} 
 AppPublisher={#AppPublisher}
 AppPublisherURL={#AppUrl}
 AppSupportURL={#AppUrl}
 AppUpdatesURL={#AppUrl}
 
 ; Dir di default di installazione - NON usare la cartella precedentemente usata
-DefaultDirName={pf}\{#ShortAppName}
+DefaultDirName={pf}\{#ShortAppName} {#AppVersion}
 UsePreviousAppDir=no
 
 ;Gruppo di programmi del menu AVVIO - NON usare il gruppo precedentemente usato

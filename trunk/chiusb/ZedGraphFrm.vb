@@ -564,17 +564,7 @@ Public Class ZedGraphFrm
     End Sub
 
 
-    Private Sub zg2_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles zg2.Load
-    End Sub
 
-    Private Sub zg2_ZoomEvent(ByVal sender As ZedGraph.ZedGraphControl, ByVal oldState As ZedGraph.ZoomState, ByVal newState As ZedGraph.ZoomState) Handles zg2.ZoomEvent
-        zg2.ZoomStepFraction = 1
-        zg2.ScrollMaxX = 2
-    End Sub
-
-    Private Sub numSpan_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles numSpan.ValueChanged
-
-    End Sub
 End Class
 
 

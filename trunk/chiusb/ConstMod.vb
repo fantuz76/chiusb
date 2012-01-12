@@ -51,7 +51,7 @@
     Public Const MAXLEN_STR = 20 + 4
     Public Const TYPE_ON_STR = "Manual ON  "
     Public Const TYPE_OFF_STR = "Manual OFF "
-    Public Const TYPE_CHANGE_PN_STR = "Nom.P.V.I.Change "
+    Public Const TYPE_CHANGE_PN_STR = "Previous Motor Data "
     'Public Const TYPE_CHANGE_CN_STR = "Nom Current Change"
     Public Const TYPE_REMOTE_OFF_STR = "Remote OFF "
     Public Const TYPE_REMOTE_ON_STR = "Remote ON "
