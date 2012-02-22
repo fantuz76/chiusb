@@ -9,9 +9,9 @@
 
 ; Inno Setup PreProccessor
 [ISPP]
-#define AppName "Usb Pump Control Box"
-#define ShortAppName "USB Pump Control Box"
-#define AppVersion "2.5.0"
+#define AppName "Usb Control Box"
+#define ShortAppName "USB Control Box"
+#define AppVersion "2.6.0"
 #define AppPublisher "Electroil"
 #define AppURL "http://www.electroil.it/"
 

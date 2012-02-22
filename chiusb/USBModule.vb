@@ -21,41 +21,53 @@ Module USBModule
             Public TypeNum As UInt16
             Public TypeOcc As UInt16
             Public TypeStr As String
-            Public Sub New(ByVal a As UInt16, ByVal _st As String)
+            Public TypeColor As Color
+            Public Sub New(ByVal a As UInt16, ByVal _st As String, ByVal _col As Color)
                 TypeNum = a
                 TypeOcc = 0
                 TypeStr = _st
+                TypeColor = _col
             End Sub
         End Structure
+
+
+
+
         ' array di struttura con 2 elementi uno è il tipo e l'altro è il numero occorrenze inizializzate a 0
-        Private _ArrIntOccur() As IntOccur = {New IntOccur(TYPE_ON, TYPE_ON_STR), _
-                                            New IntOccur(TYPE_OFF, TYPE_OFF_STR), _
-                                            New IntOccur(TYPE_CHANGE_PN, TYPE_CHANGE_PN_STR), _
-                                            New IntOccur(TYPE_REMOTE_OFF, TYPE_REMOTE_OFF_STR), _
-                                            New IntOccur(TYPE_REMOTE_ON, TYPE_REMOTE_ON_STR), _
-                                            New IntOccur(TYPE_AUTO_ON, TYPE_AUTO_ON_STR), _
-                                            New IntOccur(TYPE_NOHALT_OVERCURR, TYPE_NOHALT_OVERCURR_STR), _
-                                            New IntOccur(TYPE_NOHALT_OVERVOLT, TYPE_NOHALT_OVERVOLT_STR), _
-                                            New IntOccur(TYPE_NOHALT_UNDERVOLT, TYPE_NOHALT_UNDERVOLT_STR), _
-                                            New IntOccur(TYPE_NOHALT_MANDATACH, TYPE_NOHALT_MANDATACH_STR), _
-                                            New IntOccur(TYPE_NOHALT_DRYFUNC, TYPE_NOHALT_DRYFUNC_STR), _
-                                            New IntOccur(TYPE_NOHALT_OVERTEMP, TYPE_NOHALT_OVERTEMP_STR), _
-                                            New IntOccur(TYPE_NOHALT_MAX_FLOW, TYPE_NOHALT_MAX_FLOW_STR), _
-                                            New IntOccur(TYPE_NOHALT_SQUILIBRIO, TYPE_NOHALT_SQUILIBRIO_STR), _
-                                            New IntOccur(TYPE_NOHALT_DISSIMETRIA, TYPE_NOHALT_DISSIMETRIA_STR), _
-                                            New IntOccur(TYPE_NOHALT_SOVRAPRESSIONE, TYPE_NOHALT_SOVRAPRESSIONE_STR), _
-                                            New IntOccur(TYPE_HALT_OVERCURR, TYPE_HALT_OVERCURR_STR), _
-                                            New IntOccur(TYPE_HALT_OVERVOLT, TYPE_HALT_OVERVOLT_STR), _
-                                            New IntOccur(TYPE_HALT_UNDERVOLT, TYPE_HALT_UNDERVOLT_STR), _
-                                            New IntOccur(TYPE_HALT_MANDATACH, TYPE_HALT_MANDATACH_STR), _
-                                            New IntOccur(TYPE_HALT_DRYFUNC, TYPE_HALT_DRYFUNC_STR), _
-                                            New IntOccur(TYPE_HALT_OVERTEMP, TYPE_HALT_OVERTEMP_STR), _
-                                            New IntOccur(TYPE_HALT_MAX_FLOW, TYPE_MAX_FLOW_STR), _
-                                            New IntOccur(TYPE_HALT_SQUILIBRIO, TYPE_HALT_SQUILIBRIO_STR), _
-                                            New IntOccur(TYPE_HALT_DISSIMETRIA, TYPE_HALT_DISSIMETRIA_STR), _
-                                            New IntOccur(TYPE_HALT_PRESS_SENS, TYPE_HALT_PRESS_SENS_STR), _
-                                            New IntOccur(TYPE_HALT_SOVRAPRESSIONE, TYPE_HALT_SOVRAPRESSIONE_STR), _
-                                            New IntOccur(TYPE_HALT_CORTO_CIRCUITO, TYPE_HALT_CORTO_CIRCUITO_STR)}
+        Private _ArrIntOccur() As IntOccur = {New IntOccur(TYPE_OFF, TYPE_OFF_STR, Color.Red), _
+                                            New IntOccur(TYPE_ON, TYPE_ON_STR, Color.Green), _
+                                            New IntOccur(TYPE_CHANGE_PN, TYPE_CHANGE_PN_STR, Color.Bisque), _
+                                            New IntOccur(TYPE_3, TYPE_CHANGE_PN_STR, Color.Bisque), _
+                                            New IntOccur(TYPE_REMOTE_OFF, TYPE_REMOTE_OFF_STR, Color.DarkRed), _
+                                            New IntOccur(TYPE_REMOTE_ON, TYPE_REMOTE_ON_STR, Color.DarkGreen), _
+                                            New IntOccur(TYPE_AUTO_ON, TYPE_AUTO_ON_STR, Color.LightGreen), _
+                                            New IntOccur(TYPE_AUTO_OFF, TYPE_AUTO_OFF_STR, Color.LightCoral), _
+                                            New IntOccur(TYPE_8, TYPE_MAX_FLOW_STR, Color.DarkOrange), _
+                                            New IntOccur(TYPE_9, TYPE_HALT_SOVRAPRESSIONE_STR, Color.LightSalmon), _
+                                            New IntOccur(TYPE_NOHALT_OVERCURR, TYPE_NOHALT_OVERCURR_STR, Color.Violet), _
+                                            New IntOccur(TYPE_NOHALT_OVERVOLT, TYPE_NOHALT_OVERVOLT_STR, Color.Brown), _
+                                            New IntOccur(TYPE_NOHALT_UNDERVOLT, TYPE_NOHALT_UNDERVOLT_STR, Color.Turquoise), _
+                                            New IntOccur(TYPE_NOHALT_MANDATACH, TYPE_NOHALT_MANDATACH_STR, Color.Pink), _
+                                            New IntOccur(TYPE_NOHALT_DRYFUNC, TYPE_NOHALT_DRYFUNC_STR, Color.SeaGreen), _
+                                            New IntOccur(TYPE_NOHALT_OVERTEMP, TYPE_NOHALT_OVERTEMP_STR, Color.Olive), _
+                                            New IntOccur(TYPE_NOHALT_MAX_FLOW, TYPE_NOHALT_MAX_FLOW_STR, Color.Orange), _
+                                            New IntOccur(TYPE_NOHALT_SQUILIBRIO, TYPE_NOHALT_SQUILIBRIO_STR, Color.Gray), _
+                                            New IntOccur(TYPE_NOHALT_DISSIMETRIA, TYPE_NOHALT_DISSIMETRIA_STR, Color.Blue), _
+                                            New IntOccur(TYPE_NOHALT_SOVRAPRESSIONE, TYPE_NOHALT_SOVRAPRESSIONE_STR, Color.DarkSalmon), _
+                                            New IntOccur(TYPE_NOHALT_LEAKAGE, TYPE_NOHALT_LEAKAGE_STR, Color.DarkOrchid), _
+                                            New IntOccur(TYPE_HALT_OVERCURR, TYPE_HALT_OVERCURR_STR, Color.DarkViolet), _
+                                            New IntOccur(TYPE_HALT_OVERVOLT, TYPE_HALT_OVERVOLT_STR, Color.SaddleBrown), _
+                                            New IntOccur(TYPE_HALT_UNDERVOLT, TYPE_HALT_UNDERVOLT_STR, Color.DarkTurquoise), _
+                                            New IntOccur(TYPE_HALT_MANDATACH, TYPE_HALT_MANDATACH_STR, Color.DeepPink), _
+                                            New IntOccur(TYPE_HALT_DRYFUNC, TYPE_HALT_DRYFUNC_STR, Color.DarkSeaGreen), _
+                                            New IntOccur(TYPE_HALT_OVERTEMP, TYPE_HALT_OVERTEMP_STR, Color.DarkOliveGreen), _
+                                            New IntOccur(TYPE_HALT_MAX_FLOW, TYPE_MAX_FLOW_STR, Color.DarkOrange), _
+                                            New IntOccur(TYPE_HALT_SQUILIBRIO, TYPE_HALT_SQUILIBRIO_STR, Color.Black), _
+                                            New IntOccur(TYPE_HALT_DISSIMETRIA, TYPE_HALT_DISSIMETRIA_STR, Color.DarkBlue), _
+                                            New IntOccur(TYPE_HALT_SOVRAPRESSIONE, TYPE_HALT_SOVRAPRESSIONE_STR, Color.LightSalmon), _
+                                            New IntOccur(TYPE_HALT_LEAKAGE, TYPE_HALT_LEAKAGE_STR, Color.Orchid), _
+                                            New IntOccur(TYPE_HALT_PRESS_SENS, TYPE_HALT_PRESS_SENS_STR, Color.RosyBrown), _
+                                            New IntOccur(TYPE_HALT_CORTO_CIRCUITO, TYPE_HALT_CORTO_CIRCUITO_STR, Color.Crimson)}
 
         Public Sub New()
             ' Solo per controllo verifico che costante e init array siano OK
@@ -111,6 +123,16 @@ Module USBModule
             Return ""
         End Function
 
+        Public Function GetIntColor(ByVal _typeToGetColor) As Color
+            For i = 0 To _ArrIntOccur.Length - 1
+                If _ArrIntOccur(i).TypeNum = _typeToGetColor Then
+                    Return _ArrIntOccur(i).TypeColor
+                End If
+            Next
+            ' errore non trovato
+            Return (Color.Black)
+        End Function
+
         Public Function TypeExist(ByVal _typeToFind) As Boolean
             For i = 0 To _ArrIntOccur.Length - 1
                 If _ArrIntOccur(i).TypeNum = _typeToFind Then
@@ -133,78 +155,78 @@ Module USBModule
             Return _ArrIntOccur(_pos).TypeNum
         End Function
 
-        Public Function returnColor(ByVal _typeToFindColor) As Color
-            Select Case _typeToFindColor
-                Case TYPE_ON
-                    Return Color.Green
-                Case TYPE_OFF
-                    Return Color.Red
+        'Public Function returnColor(ByVal _typeToFindColor) As Color
+        '    Select Case _typeToFindColor
+        '        Case TYPE_ON
+        '            Return Color.Green
+        '        Case TYPE_OFF
+        '            Return Color.Red
 
-                Case TYPE_CHANGE_PN
-                    Return Color.Bisque
-                    'Case TYPE_CHANGE_CN
-                    '    Return Color.LightCoral
+        '        Case TYPE_CHANGE_PN
+        '            Return Color.Bisque
+        '            'Case TYPE_CHANGE_CN
+        '            '    Return Color.LightCoral
 
-                Case TYPE_REMOTE_OFF
-                    Return Color.DarkRed
-                Case TYPE_REMOTE_ON
-                    Return Color.DarkGreen
+        '        Case TYPE_REMOTE_OFF
+        '            Return Color.DarkRed
+        '        Case TYPE_REMOTE_ON
+        '            Return Color.DarkGreen
 
-                Case TYPE_AUTO_ON
-                    Return Color.LightGreen
-
-
-                Case TYPE_NOHALT_OVERCURR
-                    Return Color.Violet
-                Case TYPE_NOHALT_OVERVOLT
-                    Return Color.Brown
-                Case TYPE_NOHALT_UNDERVOLT
-                    Return Color.Turquoise
-                Case TYPE_NOHALT_MANDATACH
-                    Return Color.Pink
-                Case TYPE_NOHALT_DRYFUNC
-                    Return Color.SeaGreen
-                Case TYPE_NOHALT_OVERTEMP
-                    Return Color.Olive
-                Case TYPE_NOHALT_MAX_FLOW
-                    Return Color.Orange
-                Case TYPE_NOHALT_SQUILIBRIO
-                    Return Color.Gray
-                Case TYPE_NOHALT_DISSIMETRIA
-                    Return Color.Blue
-                Case TYPE_NOHALT_SOVRAPRESSIONE
-                    Return Color.DarkSalmon
+        '        Case TYPE_AUTO_ON
+        '            Return Color.LightGreen
 
 
-                Case TYPE_HALT_OVERCURR
-                    Return Color.DarkViolet
-                Case TYPE_HALT_OVERVOLT
-                    Return Color.SaddleBrown
-                Case TYPE_HALT_UNDERVOLT
-                    Return Color.DarkTurquoise
-                Case TYPE_HALT_MANDATACH
-                    Return Color.DeepPink
-                Case TYPE_HALT_DRYFUNC
-                    Return Color.DarkSeaGreen
-                Case TYPE_HALT_OVERTEMP
-                    Return Color.DarkOliveGreen
-                Case TYPE_HALT_MAX_FLOW
-                    Return Color.DarkOrange
-                Case TYPE_HALT_SQUILIBRIO
-                    Return Color.Black
-                Case TYPE_HALT_DISSIMETRIA
-                    Return Color.DarkBlue
-                Case TYPE_HALT_PRESS_SENS
-                    Return Color.RosyBrown
-                Case TYPE_HALT_SOVRAPRESSIONE
-                    Return Color.LightSalmon
-                Case TYPE_HALT_CORTO_CIRCUITO
-                    Return Color.Crimson
+        '        Case TYPE_NOHALT_OVERCURR
+        '            Return Color.Violet
+        '        Case TYPE_NOHALT_OVERVOLT
+        '            Return Color.Brown
+        '        Case TYPE_NOHALT_UNDERVOLT
+        '            Return Color.Turquoise
+        '        Case TYPE_NOHALT_MANDATACH
+        '            Return Color.Pink
+        '        Case TYPE_NOHALT_DRYFUNC
+        '            Return Color.SeaGreen
+        '        Case TYPE_NOHALT_OVERTEMP
+        '            Return Color.Olive
+        '        Case TYPE_NOHALT_MAX_FLOW
+        '            Return Color.Orange
+        '        Case TYPE_NOHALT_SQUILIBRIO
+        '            Return Color.Gray
+        '        Case TYPE_NOHALT_DISSIMETRIA
+        '            Return Color.Blue
+        '        Case TYPE_NOHALT_SOVRAPRESSIONE
+        '            Return Color.DarkSalmon
 
-                Case Else
-                    Return (Color.Black)
-            End Select
-        End Function
+
+        '        Case TYPE_HALT_OVERCURR
+        '            Return Color.DarkViolet
+        '        Case TYPE_HALT_OVERVOLT
+        '            Return Color.SaddleBrown
+        '        Case TYPE_HALT_UNDERVOLT
+        '            Return Color.DarkTurquoise
+        '        Case TYPE_HALT_MANDATACH
+        '            Return Color.DeepPink
+        '        Case TYPE_HALT_DRYFUNC
+        '            Return Color.DarkSeaGreen
+        '        Case TYPE_HALT_OVERTEMP
+        '            Return Color.DarkOliveGreen
+        '        Case TYPE_HALT_MAX_FLOW
+        '            Return Color.DarkOrange
+        '        Case TYPE_HALT_SQUILIBRIO
+        '            Return Color.Black
+        '        Case TYPE_HALT_DISSIMETRIA
+        '            Return Color.DarkBlue
+        '        Case TYPE_HALT_PRESS_SENS
+        '            Return Color.RosyBrown
+        '        Case TYPE_HALT_SOVRAPRESSIONE
+        '            Return Color.LightSalmon
+        '        Case TYPE_HALT_CORTO_CIRCUITO
+        '            Return Color.Crimson
+
+        '        Case Else
+        '            Return (Color.Black)
+        '    End Select
+        'End Function
 
     End Class
 

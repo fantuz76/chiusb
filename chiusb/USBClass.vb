@@ -671,25 +671,34 @@ Public Class USBClass
                     If ret(0) = &H21 Then
                         _DatiSetHello = ret
 
-                        ' Versione precedente a Settembre 2011  
-                        '_Matricola = ret(1) * 256 ^ 1 + ret(2) * 256 ^ 0
-                        '_TotalTime = ret(83) * 256 ^ 3 + ret(84) * 256 ^ 2 + ret(85) * 256 ^ 1 + ret(86) * 256 ^ 0
-                        '_OreLav = ret(87) * 256 ^ 3 + ret(88) * 256 ^ 2 + ret(89) * 256 ^ 1 + ret(90) * 256 ^ 0
+                        '' Versione precedente a Settembre 2011  
+                        ''_Matricola = ret(1) * 256 ^ 1 + ret(2) * 256 ^ 0
+                        ''_TotalTime = ret(83) * 256 ^ 3 + ret(84) * 256 ^ 2 + ret(85) * 256 ^ 1 + ret(86) * 256 ^ 0
+                        ''_OreLav = ret(87) * 256 ^ 3 + ret(88) * 256 ^ 2 + ret(89) * 256 ^ 1 + ret(90) * 256 ^ 0
 
-                        ' Prima versione Settembre 2011
+                        '' Prima versione Settembre 2011
+                        ''_Matricola = ret(1) * 256 ^ 1 + ret(2) * 256 ^ 0
+                        ''_TotalTime = ret(95) * 256 ^ 3 + ret(96) * 256 ^ 2 + ret(97) * 256 ^ 1 + ret(98) * 256 ^ 0
+                        ''_OreLav = ret(111) * 256 ^ 3 + ret(112) * 256 ^ 2 + ret(113) * 256 ^ 1 + ret(114) * 256 ^ 0
+                        ''_PotNom = ret(5) * 256 ^ 1 + ret(6) * 256 ^ 0
+                        ''_CurrNom = ret(51) * 256 ^ 1 + ret(52) * 256 ^ 0
+                        ''_VoltNom = ret(49) * 256 ^ 1 + ret(50) * 256 ^ 0
+
                         '_Matricola = ret(1) * 256 ^ 1 + ret(2) * 256 ^ 0
-                        '_TotalTime = ret(95) * 256 ^ 3 + ret(96) * 256 ^ 2 + ret(97) * 256 ^ 1 + ret(98) * 256 ^ 0
-                        '_OreLav = ret(111) * 256 ^ 3 + ret(112) * 256 ^ 2 + ret(113) * 256 ^ 1 + ret(114) * 256 ^ 0
-                        '_PotNom = ret(5) * 256 ^ 1 + ret(6) * 256 ^ 0
-                        '_CurrNom = ret(51) * 256 ^ 1 + ret(52) * 256 ^ 0
-                        '_VoltNom = ret(49) * 256 ^ 1 + ret(50) * 256 ^ 0
+                        '_TotalTime = ret(85) * 256 ^ 3 + ret(86) * 256 ^ 2 + ret(87) * 256 ^ 1 + ret(88) * 256 ^ 0
+                        '_OreLav = ret(89) * 256 ^ 3 + ret(90) * 256 ^ 2 + ret(91) * 256 ^ 1 + ret(92) * 256 ^ 0
+                        '_PotNom = ret(3) * 256 ^ 1 + ret(4) * 256 ^ 0
+                        '_CurrNom = ret(71) * 256 ^ 1 + ret(72) * 256 ^ 0
+                        '_VoltNom = ret(69) * 256 ^ 1 + ret(70) * 256 ^ 0
+
 
                         _Matricola = ret(1) * 256 ^ 1 + ret(2) * 256 ^ 0
-                        _TotalTime = ret(85) * 256 ^ 3 + ret(86) * 256 ^ 2 + ret(87) * 256 ^ 1 + ret(88) * 256 ^ 0
-                        _OreLav = ret(89) * 256 ^ 3 + ret(90) * 256 ^ 2 + ret(91) * 256 ^ 1 + ret(92) * 256 ^ 0
+                        _TotalTime = ret(81) * 256 ^ 3 + ret(82) * 256 ^ 2 + ret(83) * 256 ^ 1 + ret(84) * 256 ^ 0
+                        _OreLav = ret(85) * 256 ^ 3 + ret(86) * 256 ^ 2 + ret(87) * 256 ^ 1 + ret(88) * 256 ^ 0
                         _PotNom = ret(3) * 256 ^ 1 + ret(4) * 256 ^ 0
-                        _CurrNom = ret(71) * 256 ^ 1 + ret(72) * 256 ^ 0
-                        _VoltNom = ret(69) * 256 ^ 1 + ret(70) * 256 ^ 0
+                        _CurrNom = ret(77) * 256 ^ 1 + ret(78) * 256 ^ 0
+                        _VoltNom = ret(75) * 256 ^ 1 + ret(76) * 256 ^ 0
+
                         ForceClosePort()
                         Return True
                     Else

@@ -3,7 +3,9 @@
     Public Const XMLCFG = "\Config.xml"
 
     Public Const NUM_MAX_TYPE_INT = 35      ' Codice tipo intervento massimo possibile (non tutti sono usati)
-    Public Const NUM_INT_TYPES = 28         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)
+
+    'Public Const NUM_INT_TYPES = 28         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)
+    Public Const NUM_INT_TYPES = 34         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)
 
     Public Const INTERVENTO_LENGTH = 16     ' Dimensione array USB singolo intervento
 
@@ -12,11 +14,17 @@
     Public Const TYPE_OFF = 0
     Public Const TYPE_ON = 1
     Public Const TYPE_CHANGE_PN = 2
-    'Public Const TYPE_CHANGE_CN = 3
+
+    Public Const TYPE_3 = 3
 
     Public Const TYPE_REMOTE_OFF = 4
     Public Const TYPE_REMOTE_ON = 5
     Public Const TYPE_AUTO_ON = 6
+
+    Public Const TYPE_AUTO_OFF = 7
+    Public Const TYPE_8 = 8
+    Public Const TYPE_9 = 9
+
 
 
     Public Const TYPE_NOHALT_OVERCURR = 10
@@ -29,20 +37,22 @@
     Public Const TYPE_NOHALT_SQUILIBRIO = 17
     Public Const TYPE_NOHALT_DISSIMETRIA = 18
     Public Const TYPE_NOHALT_SOVRAPRESSIONE = 19
+    Public Const TYPE_NOHALT_LEAKAGE = 20
 
-    Public Const TYPE_HALT_OVERCURR = 10 + 10
-    Public Const TYPE_HALT_OVERVOLT = 11 + 10
-    Public Const TYPE_HALT_UNDERVOLT = 12 + 10
-    Public Const TYPE_HALT_MANDATACH = 13 + 10
-    Public Const TYPE_HALT_DRYFUNC = 14 + 10
-    Public Const TYPE_HALT_OVERTEMP = 15 + 10
-    Public Const TYPE_HALT_MAX_FLOW = 16 + 10
-    Public Const TYPE_HALT_SQUILIBRIO = 17 + 10
-    Public Const TYPE_HALT_DISSIMETRIA = 18 + 10
-    Public Const TYPE_HALT_SOVRAPRESSIONE = 19 + 10
+    Public Const TYPE_HALT_OVERCURR = 21
+    Public Const TYPE_HALT_OVERVOLT = 22
+    Public Const TYPE_HALT_UNDERVOLT = 23
+    Public Const TYPE_HALT_MANDATACH = 24
+    Public Const TYPE_HALT_DRYFUNC = 25
+    Public Const TYPE_HALT_OVERTEMP = 26
+    Public Const TYPE_HALT_MAX_FLOW = 27
+    Public Const TYPE_HALT_SQUILIBRIO = 28
+    Public Const TYPE_HALT_DISSIMETRIA = 29
+    Public Const TYPE_HALT_SOVRAPRESSIONE = 30
+    Public Const TYPE_HALT_LEAKAGE = 31
 
-    Public Const TYPE_HALT_PRESS_SENS = 30
-    Public Const TYPE_HALT_CORTO_CIRCUITO = 31
+    Public Const TYPE_HALT_PRESS_SENS = 32
+    Public Const TYPE_HALT_CORTO_CIRCUITO = 33
 
 
 
@@ -56,6 +66,7 @@
     Public Const TYPE_REMOTE_OFF_STR = "Remote OFF "
     Public Const TYPE_REMOTE_ON_STR = "Remote ON "
     Public Const TYPE_AUTO_ON_STR = "Automatic ON "
+    Public Const TYPE_AUTO_OFF_STR = "Automatic OFF "
 
     Public Const TYPE_NOHALT_OVERCURR_STR = "Over Current" + " ON"
     Public Const TYPE_NOHALT_OVERVOLT_STR = "Over Voltage" + " ON"
@@ -67,6 +78,7 @@
     Public Const TYPE_NOHALT_SQUILIBRIO_STR = "Unbalanced Current" + " ON"
     Public Const TYPE_NOHALT_DISSIMETRIA_STR = "Dissymmetric Voltage" + " ON"
     Public Const TYPE_NOHALT_SOVRAPRESSIONE_STR = "Over Pressure" + " ON"
+    Public Const TYPE_NOHALT_LEAKAGE_STR = "Leakage Current" + " ON"
 
     Public Const TYPE_HALT_OVERCURR_STR = "Over Current" + " OFF"
     Public Const TYPE_HALT_OVERVOLT_STR = "Over Voltage" + " OFF"
@@ -77,10 +89,11 @@
     Public Const TYPE_MAX_FLOW_STR = "Maximum Flow" + " OFF"
     Public Const TYPE_HALT_SQUILIBRIO_STR = "Unbalanced Current" + "OFF"
     Public Const TYPE_HALT_DISSIMETRIA_STR = "Disymmetric Voltage" + " OFF"
-    Public Const TYPE_HALT_PRESS_SENS_STR = "Press Sens" + " OFF"
     Public Const TYPE_HALT_SOVRAPRESSIONE_STR = "Over Pressure" + " OFF"
-    Public Const TYPE_HALT_CORTO_CIRCUITO_STR = "Short Circuit" + " OFF"
+    Public Const TYPE_HALT_LEAKAGE_STR = "Leakage Current" + " OFF"
 
+    Public Const TYPE_HALT_PRESS_SENS_STR = "Press Sens" + " OFF"
+    Public Const TYPE_HALT_CORTO_CIRCUITO_STR = "Short Circuit" + " OFF"
 
 
 

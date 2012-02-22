@@ -147,7 +147,9 @@ Public Class MainFrm
     Private Sub FillIntData(ByVal intToFill As InterventSingle)
 
         lblIntTypeVal.Text = Intervents.GetIntStr(intToFill._intType)
-        lblIntTypeVal.ForeColor = Intervents.returnColor(intToFill._intType)
+        'lblIntTypeVal.ForeColor = Intervents.returnColor(intToFill._intType)
+        lblIntTypeVal.ForeColor = Intervents.GetIntColor(intToFill._intType)
+
 
         'lblIntTimeVal.Text = GetHours(intToFill._intTime).ToString & "h " & GetMinutes(intToFill._intTime).ToString("00") & "' " & GetSeconds(intToFill._intTime).ToString("00") & "''"
         lblIntTimeVal.Text = (2000 + GetYear(intToFill._intTime)).ToString("0000") & "/" & GetMonth(intToFill._intTime).ToString("00") & "/" & GetDay(intToFill._intTime).ToString("00") & " " & GetHours(intToFill._intTime).ToString("00") & "h" & GetMinutes(intToFill._intTime).ToString("00") & "'" & GetSeconds(intToFill._intTime).ToString("00") & "''"
