@@ -335,7 +335,9 @@ Public Class ZedGraphFrm
             myZList.Clear()
             myZList.Add(Intervents.enumNum(i), Intervents.GetOcc(Intervents.enumNum(i)), 111)
             x(i) = (Intervents.enumNum(i))
-            Dim myCurve As CurveItem = myPane.AddBar(Intervents.enumNum(i).ToString + " " + Intervents.GetIntStr(Intervents.enumNum(i)), myZList, Intervents.returnColor(Intervents.enumNum(i)))
+            'Dim myCurve As CurveItem = myPane.AddBar(Intervents.enumNum(i).ToString + " " + Intervents.GetIntStr(Intervents.enumNum(i)), myZList, Intervents.returnColor(Intervents.enumNum(i)))
+            Dim myCurve As CurveItem = myPane.AddBar(Intervents.enumNum(i).ToString + " " + Intervents.GetIntStr(Intervents.enumNum(i)), myZList, Intervents.GetIntColor(Intervents.enumNum(i)))
+
 
             ' Dim label As TextObj = New TextObj(Intervents.GetOcc(Intervents.enumNum(i)), myCurve.Points.Item(0).X, myCurve.Points.Item(0).Y)
             ' myPane.GraphObjList.Add(label)

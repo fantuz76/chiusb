@@ -98,3 +98,23 @@ h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.vbproj.GenerateR
 h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.TrustInfo.xml
 h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.exe.manifest
 h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.application
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.exe.config
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.exe
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.xml
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.pdb
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.AboutBox1.resources
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.FormWait.resources
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.MainFrm.resources
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.Resources.resources
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.ZedGraphFrm.resources
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.vbproj.GenerateResource.Cache
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.exe.manifest
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.application
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.exe
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.pdb
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.xml
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\ZedGraph.xml
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.TrustInfo.xml
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.exe.manifest
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.application
