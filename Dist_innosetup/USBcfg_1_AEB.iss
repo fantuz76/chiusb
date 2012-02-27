@@ -20,7 +20,7 @@
 
 ; Inno Setup Script Includes routines, devono essere installate.
 [ISSI]
-#define ISSI_IncludePath "C:\Programmi\ISSI"
+#define ISSI_IncludePath "C:\ISSI"
 #include ISSI_IncludePath+"\_issi.isi"
 
 
@@ -56,8 +56,8 @@ PrivilegesRequired=admin
 AppCopyright=Copyright© {#AppPublisher} 2010
 
 ; Immagini personalizzate
-WizardImageFile=C:\Programmi\Inno Setup 5\WizModernImage-IS.bmp
-WizardSmallImageFile=C:\Programmi\Inno Setup 5\WizModernSmallImage-IS.bmp
+WizardImageFile=C:\Program Files\Inno Setup 5\WizModernImage-IS.bmp
+WizardSmallImageFile=C:\Program Files\Inno Setup 5\WizModernSmallImage-IS.bmp
 ;WizardSmallImageFile=.\logo.bmp
 
 ; Nome programma di installazione

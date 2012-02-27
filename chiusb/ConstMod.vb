@@ -5,7 +5,7 @@
     Public Const NUM_MAX_TYPE_INT = 35      ' Codice tipo intervento massimo possibile (non tutti sono usati)
 
     'Public Const NUM_INT_TYPES = 28         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)
-    Public Const NUM_INT_TYPES = 34         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)
+    Public Const NUM_INT_TYPES = 33         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)
 
     Public Const INTERVENTO_LENGTH = 16     ' Dimensione array USB singolo intervento
 
@@ -15,7 +15,7 @@
     Public Const TYPE_ON = 1
     Public Const TYPE_CHANGE_PN = 2
 
-    Public Const TYPE_3 = 3
+    'Public Const TYPE_3 = 3
 
     Public Const TYPE_REMOTE_OFF = 4
     Public Const TYPE_REMOTE_ON = 5

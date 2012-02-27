@@ -37,7 +37,6 @@ Module USBModule
         Private _ArrIntOccur() As IntOccur = {New IntOccur(TYPE_OFF, TYPE_OFF_STR, Color.Red), _
                                             New IntOccur(TYPE_ON, TYPE_ON_STR, Color.Green), _
                                             New IntOccur(TYPE_CHANGE_PN, TYPE_CHANGE_PN_STR, Color.Bisque), _
-                                            New IntOccur(TYPE_3, TYPE_CHANGE_PN_STR, Color.Bisque), _
                                             New IntOccur(TYPE_REMOTE_OFF, TYPE_REMOTE_OFF_STR, Color.DarkRed), _
                                             New IntOccur(TYPE_REMOTE_ON, TYPE_REMOTE_ON_STR, Color.DarkGreen), _
                                             New IntOccur(TYPE_AUTO_ON, TYPE_AUTO_ON_STR, Color.LightGreen), _
@@ -417,11 +416,11 @@ Module USBModule
         StToAdd2 = GetHours(_intv._intTime).ToString("00") & "h" & GetMinutes(_intv._intTime).ToString("00") & "'" & GetSeconds(_intv._intTime).ToString("00") & "''"
         StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = _intv._intV1_rms.ToString
+        StToAdd2 = _intv._intV3_rms.ToString
         StToAdd = StToAdd + StToAdd2 + ","
         StToAdd2 = _intv._intV2_rms.ToString
         StToAdd = StToAdd + StToAdd2 + ","
-        StToAdd2 = _intv._intV3_rms.ToString
+        StToAdd2 = _intv._intV1_rms.ToString
         StToAdd = StToAdd + StToAdd2 + ","
 
         StToAdd2 = GetCurrent(_intv._intI1_rms).ToString("F1", GetCultureInfo("en-GB"))
