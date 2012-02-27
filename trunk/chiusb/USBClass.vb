@@ -107,8 +107,8 @@ Public Class InterventiList
         ''_List(_List.Length - 1)._intVoltAv = Conv_num_Int16(_arrToParse(5), _arrToParse(6))
         numTmp = _arrToParse(5) * 256 ^ 3 + _arrToParse(6) * 256 ^ 2 + _arrToParse(7) * 256 ^ 1 + _arrToParse(8) * 256 ^ 0
         _List(_List.Length - 1)._intV3_rms = (numTmp >> 20) And &H3FF   ' 10 bit
-        _List(_List.Length - 1)._intV1_rms = (numTmp >> 10) And &H3FF   ' 10 bit
-        _List(_List.Length - 1)._intV2_rms = numTmp And &H3FF           ' 10 bit
+        _List(_List.Length - 1)._intV2_rms = (numTmp >> 10) And &H3FF   ' 10 bit
+        _List(_List.Length - 1)._intV1_rms = numTmp And &H3FF           ' 10 bit
 
         numTmp = _arrToParse(9) * 256 ^ 3 + _arrToParse(10) * 256 ^ 2 + _arrToParse(11) * 256 ^ 1 + _arrToParse(12) * 256 ^ 0
         _List(_List.Length - 1)._intI1_rms = (numTmp >> 20) And &H3FF   ' 10 bit
@@ -168,8 +168,8 @@ Public Class InterventiList
         _List(_List.Length - 1)._intTime = tempoFromDataOra(_arrToParse(3), _arrToParse(4))
 
         _List(_List.Length - 1)._intV3_rms = GetVoltageInv(Convert.ToInt16(_arrToParse(5)))
-        _List(_List.Length - 1)._intV1_rms = GetVoltageInv(Convert.ToInt16(_arrToParse(6)))
-        _List(_List.Length - 1)._intV2_rms = GetVoltageInv(Convert.ToInt16(_arrToParse(7)))
+        _List(_List.Length - 1)._intV2_rms = GetVoltageInv(Convert.ToInt16(_arrToParse(6)))
+        _List(_List.Length - 1)._intV1_rms = GetVoltageInv(Convert.ToInt16(_arrToParse(7)))
 
         _List(_List.Length - 1)._intI1_rms = GetCurrentInv(Convert.ToDouble(_arrToParse(8), Globalization.CultureInfo.GetCultureInfo("en-GB")))
         _List(_List.Length - 1)._intI2_rms = GetCurrentInv(Convert.ToDouble(_arrToParse(9), Globalization.CultureInfo.GetCultureInfo("en-GB")))
