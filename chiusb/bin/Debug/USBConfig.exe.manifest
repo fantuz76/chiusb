@@ -4,7 +4,7 @@
   <description asmv2:iconFile="logo_cut.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="USBConfig" version="2.7.0.0" language="neutral" processorArchitecture="x86" />
+    <assemblyIdentity name="USBConfig" version="2.8.0.0" language="neutral" processorArchitecture="x86" />
     <commandLine file="USBConfig.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -75,14 +75,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="USBConfig.exe" size="773632">
-      <assemblyIdentity name="USBConfig" version="2.7.0.0" language="neutral" processorArchitecture="x86" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="USBConfig.exe" size="774144">
+      <assemblyIdentity name="USBConfig" version="2.8.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>72jsHI+0h3QQ5+rHKOk2N42tBOw=</dsig:DigestValue>
+        <dsig:DigestValue>AqfCrTO7OTCSnr71P6IaBWDXbxg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

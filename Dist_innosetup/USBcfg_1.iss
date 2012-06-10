@@ -11,7 +11,7 @@
 [ISPP]
 #define AppName "Usb Control Box"
 #define ShortAppName "USB Control Box"
-#define AppVersion "2.7.0"
+#define AppVersion "2.8.0"
 #define AppPublisher "Electroil"
 #define AppURL "http://www.electroil.it/"
 
