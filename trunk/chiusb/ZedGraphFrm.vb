@@ -90,15 +90,22 @@ Public Class ZedGraphFrm
 
 
             lblXPos.Text = _Xval
-            lblIntI1Val.Text = GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intI1_rms)
-            lblIntI2Val.Text = GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intI2_rms)
-            lblIntI3Val.Text = GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intI3_rms)
 
-            'lblIntV1Val.Text = GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intVoltAv)
-            lblIntV1Val.Text = GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intV3_rms)
-            lblIntV2Val.Text = GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intV2_rms)
-            lblIntV3Val.Text = GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intV1_rms)
+            If ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intType = TYPE_CHANGE_PN Then
+                lblIntI1Val.Text = "0"
+                lblIntI2Val.Text = "0"
+                lblIntI3Val.Text = "0"
 
+            Else
+                lblIntI1Val.Text = GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intI1_rms)
+                lblIntI2Val.Text = GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intI2_rms)
+                lblIntI3Val.Text = GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intI3_rms)
+
+                lblIntV1Val.Text = GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intV3_rms)
+                lblIntV2Val.Text = GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intV2_rms)
+                lblIntV3Val.Text = GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intV1_rms)
+            End If
+            
             lblIntTimeVal.Text = (2000 + GetYear(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime)).ToString("0000") & "/" & GetMonth(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & "/" & GetDay(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00")
             lblIntTimeVal.Text = lblIntTimeVal.Text + "  "
             lblIntTimeVal.Text = lblIntTimeVal.Text + GetHours(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & "h" & GetMinutes(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & "'" & GetSeconds(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & "''"
@@ -257,14 +264,32 @@ Public Class ZedGraphFrm
         Dim listV1 As New PointPairList
         Dim listV2 As New PointPairList
         Dim listV3 As New PointPairList
-        For x = 0 To ConnectionUSB.InterventiLetti.Length - 1
-            listI1.Add(x + 1, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intI1_rms), "I1")
-            listI2.Add(x + 1, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intI2_rms), "I2")
-            listI3.Add(x + 1, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intI3_rms), "I3")
 
-            listV1.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV3_rms), "V1-2")
-            listV2.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV2_rms), "V1-3")
-            listV3.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV1_rms), "V2-3")
+        Dim V12_prec As Integer = 0
+        Dim V13_prec As Integer = 0
+        Dim V23_prec As Integer = 0
+        For x = 0 To ConnectionUSB.InterventiLetti.Length - 1
+
+            If ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intType = TYPE_CHANGE_PN Then
+                listI1.Add(x + 1, 0, "I1")
+                listI2.Add(x + 1, 0, "I2")
+                listI3.Add(x + 1, 0, "I3")
+
+                listV1.Add(x + 1, V12_prec, "V1-2")
+                listV2.Add(x + 1, V13_prec, "V1-3")
+                listV3.Add(x + 1, V23_prec, "V2-3")
+            Else
+                listI1.Add(x + 1, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intI1_rms), "I1")
+                listI2.Add(x + 1, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intI2_rms), "I2")
+                listI3.Add(x + 1, GetCurrent(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intI3_rms), "I3")
+
+                listV1.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV3_rms), "V1-2")
+                listV2.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV2_rms), "V1-3")
+                listV3.Add(x + 1, GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV1_rms), "V2-3")
+                V12_prec = GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV3_rms)
+                V13_prec = GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV2_rms)
+                V23_prec = GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - 1 - x)._intV1_rms)
+            End If
         Next
 
 
@@ -564,6 +589,7 @@ Public Class ZedGraphFrm
         End Try
 
     End Sub
+
 
 
 
