@@ -66,7 +66,8 @@ Module USBModule
                                             New IntOccur(TYPE_HALT_SOVRAPRESSIONE, TYPE_HALT_SOVRAPRESSIONE_STR, Color.LightSalmon), _
                                             New IntOccur(TYPE_HALT_LEAKAGE, TYPE_HALT_LEAKAGE_STR, Color.Orchid), _
                                             New IntOccur(TYPE_HALT_PRESS_SENS, TYPE_HALT_PRESS_SENS_STR, Color.RosyBrown), _
-                                            New IntOccur(TYPE_HALT_CORTO_CIRCUITO, TYPE_HALT_CORTO_CIRCUITO_STR, Color.Crimson)}
+                                            New IntOccur(TYPE_HALT_CORTO_CIRCUITO, TYPE_HALT_CORTO_CIRCUITO_STR, Color.Crimson), _
+                                            New IntOccur(TYPE_LOGGING, TYPE_LOGGING_STR, Color.Black)}
 
         Public Sub New()
             ' Solo per controllo verifico che costante e init array siano OK
