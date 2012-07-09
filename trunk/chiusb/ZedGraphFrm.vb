@@ -197,20 +197,21 @@ Public Class ZedGraphFrm
             zg2.Invalidate()
             FillDataGraphVI(HScrollIntGraph.Value)
             zg2.Refresh()
-
+            Me.Top = 100
+            Me.Left = 100
         ElseIf zg1.Visible = True Then
             Me.Width = 800
-            Me.Height = 700
+            Me.Height = 750
             ' Calculate the Axis Scale Ranges
             zg1.AxisChange()
 
             ' Make sure the Graph gets redrawn
             zg1.Invalidate()
             zg1.Refresh()
-
+            Me.Top = 50
+            Me.Left = 100
         End If
-        Me.Top = 100
-        Me.Left = 100
+
     End Sub
 
 

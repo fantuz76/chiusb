@@ -5,7 +5,7 @@
     Public Const NUM_MAX_TYPE_INT = 35      ' Codice tipo intervento massimo possibile (non tutti sono usati)
 
     'Public Const NUM_INT_TYPES = 28         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)
-    Public Const NUM_INT_TYPES = 34         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)
+    Public Const NUM_INT_TYPES = 35         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)
 
     Public Const INTERVENTO_LENGTH = 16     ' Dimensione array USB singolo intervento
 
@@ -54,6 +54,7 @@
     Public Const TYPE_HALT_PRESS_SENS = 32
     Public Const TYPE_HALT_CORTO_CIRCUITO = 33
     Public Const TYPE_LOGGING = 34
+    Public Const TYPE_UNAUTHORIZED_START = 35
 
 
 
@@ -97,6 +98,8 @@
     Public Const TYPE_HALT_CORTO_CIRCUITO_STR = "Short Circuit" + " OFF"
 
     Public Const TYPE_LOGGING_STR = "Logging"
+    Public Const TYPE_UNAUTHORIZED_START_STR = "Unauthorized Start"
+
 
 
 
