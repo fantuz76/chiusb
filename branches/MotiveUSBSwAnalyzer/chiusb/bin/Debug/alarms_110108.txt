@@ -1,0 +1,1861 @@
+********************************************************************************
+* Alarms recorded
+* Date: 08/01/2011 17.17.50
+* Serial number:1
+* Worked hours:34h17' 44''
+********************************************************************************
+
+
+--------------------------------------------------
+Alarm Type: OverTemperature  OFF     Alarm Time: 0h 03' 33''      
+Volt:338V   Curr:2,4A   
+Power:4497W   Pressure:0bar   
+Cosfi:0,2    Temp:17453°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 0h 03' 34''      
+Volt:338V   Curr:2,4A   
+Power:2673W   Pressure:0bar   
+Cosfi:0,34    Temp:17840°C   
+
+--------------------------------------------------
+Alarm Type: Isolation Fault  OFF     Alarm Time: 0h 03' 36''      
+Volt:337V   Curr:2,4A   
+Power:7482W   Pressure:0bar   
+Cosfi:0,36    Temp:17860°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 0h 03' 38''      
+Volt:338V   Curr:2,4A   
+Power:64087W   Pressure:0bar   
+Cosfi:0,16    Temp:17966°C   
+
+--------------------------------------------------
+Alarm Type: Isolation Fault  OFF     Alarm Time: 0h 03' 40''      
+Volt:338V   Curr:2,4A   
+Power:981W   Pressure:0bar   
+Cosfi:0,12    Temp:18372°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 0h 03' 43''      
+Volt:339V   Curr:2,4A   
+Power:1347W   Pressure:0bar   
+Cosfi:0,59    Temp:20222°C   
+
+--------------------------------------------------
+Alarm Type: OverTemperature  OFF     Alarm Time: 0h 03' 44''      
+Volt:338V   Curr:2,3A   
+Power:4427W   Pressure:0bar   
+Cosfi:0,13    Temp:18320°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 0h 03' 46''      
+Volt:338V   Curr:2,3A   
+Power:61086W   Pressure:0bar   
+Cosfi:0,71    Temp:17628°C   
+
+--------------------------------------------------
+Alarm Type: OverTemperature  OFF     Alarm Time: 0h 03' 48''      
+Volt:338V   Curr:2,4A   
+Power:3600W   Pressure:0bar   
+Cosfi:0,18    Temp:17664°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 0h 03' 50''      
+Volt:338V   Curr:2,4A   
+Power:2597W   Pressure:0bar   
+Cosfi:0,35    Temp:17404°C   
+
+--------------------------------------------------
+Alarm Type: OverTemperature  OFF     Alarm Time: 0h 03' 52''      
+Volt:338V   Curr:2,3A   
+Power:373W   Pressure:0bar   
+Cosfi:0,37    Temp:17716°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 0h 04' 00''      
+Volt:338V   Curr:2,3A   
+Power:2724W   Pressure:0bar   
+Cosfi:0,07    Temp:18413°C   
+
+--------------------------------------------------
+Alarm Type: OverTemperature  OFF     Alarm Time: 0h 04' 01''      
+Volt:339V   Curr:2,3A   
+Power:5013W   Pressure:0bar   
+Cosfi:0,11    Temp:17554°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 0h 04' 07''      
+Volt:338V   Curr:2,3A   
+Power:527W   Pressure:0bar   
+Cosfi:0,15    Temp:19911°C   
+
+--------------------------------------------------
+Alarm Type: OverTemperature  OFF     Alarm Time: 0h 16' 09''      
+Volt:338V   Curr:37,5A   
+Power:5410W   Pressure:0bar   
+Cosfi:0,07    Temp:4592°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 0h 16' 21''      
+Volt:338V   Curr:19,3A   
+Power:7706W   Pressure:0bar   
+Cosfi:0,33    Temp:2347°C   
+
+--------------------------------------------------
+Alarm Type: Isolation Fault  OFF     Alarm Time: 0h 16' 22''      
+Volt:338V   Curr:18,4A   
+Power:5876W   Pressure:0bar   
+Cosfi:0,23    Temp:7378°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 1h 38' 46''      
+Volt:333V   Curr:12,9A   
+Power:11775W   Pressure:0bar   
+Cosfi:0,52    Temp:2495°C   
+
+--------------------------------------------------
+Alarm Type: OverTemperature  OFF     Alarm Time: 2h 24' 10''      
+Volt:1V   Curr:34,2A   
+Power:351W   Pressure:0bar   
+Cosfi:0,02    Temp:2365°C   
+
+--------------------------------------------------
+Alarm Type: OverTemperature  OFF     Alarm Time: 7h 22' 24''      
+Volt:1V   Curr:83,3A   
+Power:595W   Pressure:0bar   
+Cosfi:0,02    Temp:4429°C   
+
+--------------------------------------------------
+Alarm Type: Current Diff.  OFF     Alarm Time: 9h 45' 30''      
+Volt:78V   Curr:0,7A   
+Power:0W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 9h 49' 48''      
+Volt:224V   Curr:2,8A   
+Power:35W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Current Diff.  OFF     Alarm Time: 9h 49' 49''      
+Volt:224V   Curr:2,8A   
+Power:35W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 9h 49' 50''      
+Volt:224V   Curr:2,8A   
+Power:37W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Current Diff.  OFF     Alarm Time: 9h 49' 51''      
+Volt:224V   Curr:2,8A   
+Power:36W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Current Diff.  OFF     Alarm Time: 9h 50' 29''      
+Volt:232V   Curr:0,9A   
+Power:2W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Isolation Fault  OFF     Alarm Time: 9h 53' 21''      
+Volt:230V   Curr:3,6A   
+Power:5W   Pressure:0bar   
+Cosfi:0,01    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Isolation Fault  OFF     Alarm Time: 9h 54' 17''      
+Volt:0V   Curr:59,2A   
+Power:92W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 9h 56' 30''      
+Volt:222V   Curr:3,1A   
+Power:43W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Current Diff.  OFF     Alarm Time: 9h 56' 32''      
+Volt:224V   Curr:3,1A   
+Power:42W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 10h 26' 46''      
+Volt:0V   Curr:34,3A   
+Power:50W   Pressure:0bar   
+Cosfi:0,01    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: ON       Alarm Time: 10h 26' 47''      
+Volt:0V   Curr:33,1A   
+Power:47W   Pressure:0bar   
+Cosfi:0,01    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Isolation Fault  OFF     Alarm Time: 10h 26' 47''      
+Volt:0V   Curr:33A   
+Power:47W   Pressure:0bar   
+Cosfi:0,01    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 10h 30' 58''      
+Volt:0V   Curr:23,9A   
+Power:25W   Pressure:0bar   
+Cosfi:0,01    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: ON       Alarm Time: 10h 30' 59''      
+Volt:0V   Curr:22,9A   
+Power:23W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Isolation Fault  OFF     Alarm Time: 10h 30' 59''      
+Volt:0V   Curr:22,9A   
+Power:23W   Pressure:0bar   
+Cosfi:0,01    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 10h 31' 44''      
+Volt:0V   Curr:43,2A   
+Power:80W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: ON       Alarm Time: 10h 31' 46''      
+Volt:0V   Curr:41,2A   
+Power:72W   Pressure:0bar   
+Cosfi:0,01    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Isolation Fault  OFF     Alarm Time: 10h 31' 46''      
+Volt:0V   Curr:41,1A   
+Power:71W   Pressure:0bar   
+Cosfi:0,01    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Isolation Fault  OFF     Alarm Time: 10h 39' 52''      
+Volt:0V   Curr:54,9A   
+Power:92W   Pressure:0bar   
+Cosfi:0,01    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 10h 40' 00''      
+Volt:0V   Curr:38,7A   
+Power:64W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: ON       Alarm Time: 10h 40' 03''      
+Volt:0V   Curr:34,3A   
+Power:50W   Pressure:0bar   
+Cosfi:0,01    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Isolation Fault  OFF     Alarm Time: 10h 40' 03''      
+Volt:0V   Curr:34,3A   
+Power:50W   Pressure:0bar   
+Cosfi:0,01    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Isolation Fault  OFF     Alarm Time: 10h 58' 53''      
+Volt:0V   Curr:54,9A   
+Power:96W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Current Diff.  OFF     Alarm Time: 11h 04' 54''      
+Volt:0V   Curr:54,9A   
+Power:102W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 11h 06' 24''      
+Volt:0V   Curr:1,4A   
+Power:0W   Pressure:0bar   
+Cosfi:0,01    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: ON       Alarm Time: 11h 06' 25''      
+Volt:0V   Curr:1,4A   
+Power:0W   Pressure:0bar   
+Cosfi:0,01    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Current Diff.  OFF     Alarm Time: 11h 06' 25''      
+Volt:0V   Curr:1,4A   
+Power:0W   Pressure:0bar   
+Cosfi:0,01    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 11h 13' 55''      
+Volt:0V   Curr:54,9A   
+Power:97W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Overvoltage  OFF     Alarm Time: 11h 13' 57''      
+Volt:224V   Curr:3,1A   
+Power:52W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Overvoltage  OFF     Alarm Time: 11h 13' 59''      
+Volt:224V   Curr:3,1A   
+Power:44W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 11h 14' 01''      
+Volt:0V   Curr:54,9A   
+Power:99W   Pressure:0bar   
+Cosfi:0,01    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 11h 21' 02''      
+Volt:228V   Curr:3A   
+Power:42W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 11h 21' 04''      
+Volt:234V   Curr:0,1A   
+Power:5W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 11h 21' 37''      
+Volt:234V   Curr:0A   
+Power:1W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: ON       Alarm Time: 11h 22' 25''      
+Volt:236V   Curr:0A   
+Power:1W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 11h 22' 25''      
+Volt:236V   Curr:0A   
+Power:1W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 11h 22' 27''      
+Volt:236V   Curr:0,1A   
+Power:9W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 11h 22' 29''      
+Volt:228V   Curr:3,1A   
+Power:48W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 11h 22' 31''      
+Volt:234V   Curr:0A   
+Power:1W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 11h 22' 33''      
+Volt:228V   Curr:3,1A   
+Power:46W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 11h 22' 35''      
+Volt:228V   Curr:3,1A   
+Power:36W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 11h 22' 37''      
+Volt:230V   Curr:0,1A   
+Power:3W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: MinimumFlow  OFF     Alarm Time: 11h 30' 38''      
+Volt:232V   Curr:0,1A   
+Power:16W   Pressure:6,9bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 11h 30' 40''      
+Volt:0V   Curr:54,9A   
+Power:92W   Pressure:0bar   
+Cosfi:0,01    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 11h 30' 42''      
+Volt:234V   Curr:0,1A   
+Power:7W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 11h 30' 44''      
+Volt:228V   Curr:3,2A   
+Power:43W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 11h 30' 46''      
+Volt:230V   Curr:3,1A   
+Power:34W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 11h 30' 48''      
+Volt:0V   Curr:54,9A   
+Power:96W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 11h 44' 49''      
+Volt:228V   Curr:3,1A   
+Power:46W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 11h 44' 51''      
+Volt:236V   Curr:0,1A   
+Power:1W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 11h 54' 52''      
+Volt:0V   Curr:54,9A   
+Power:99W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 11h 54' 54''      
+Volt:0V   Curr:54,9A   
+Power:96W   Pressure:0bar   
+Cosfi:0,36    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 12h 02' 55''      
+Volt:0V   Curr:54,9A   
+Power:99W   Pressure:0bar   
+Cosfi:0,37    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 12h 04' 56''      
+Volt:0V   Curr:54,9A   
+Power:98W   Pressure:0bar   
+Cosfi:0,36    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 12h 04' 58''      
+Volt:0V   Curr:54,9A   
+Power:99W   Pressure:0bar   
+Cosfi:0,36    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 12h 14' 59''      
+Volt:226V   Curr:3A   
+Power:39W   Pressure:0bar   
+Cosfi:0,2    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 12h 15' 01''      
+Volt:0V   Curr:54,9A   
+Power:96W   Pressure:0bar   
+Cosfi:0,35    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 12h 27' 02''      
+Volt:226V   Curr:2,9A   
+Power:52W   Pressure:0bar   
+Cosfi:0,41    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 12h 34' 03''      
+Volt:0V   Curr:54,9A   
+Power:99W   Pressure:0bar   
+Cosfi:0,56    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 12h 34' 05''      
+Volt:0V   Curr:55A   
+Power:84W   Pressure:0bar   
+Cosfi:0,95    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 12h 34' 07''      
+Volt:226V   Curr:3A   
+Power:40W   Pressure:0bar   
+Cosfi:0,38    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 12h 37' 08''      
+Volt:0V   Curr:55A   
+Power:89W   Pressure:0bar   
+Cosfi:0,95    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 12h 37' 10''      
+Volt:226V   Curr:3A   
+Power:44W   Pressure:0bar   
+Cosfi:0,57    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 12h 39' 11''      
+Volt:0V   Curr:55A   
+Power:88W   Pressure:0bar   
+Cosfi:0,98    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 12h 39' 13''      
+Volt:0V   Curr:55A   
+Power:30W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 12h 39' 15''      
+Volt:228V   Curr:3,1A   
+Power:5W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 12h 39' 17''      
+Volt:0V   Curr:55A   
+Power:30W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 12h 41' 18''      
+Volt:228V   Curr:3,1A   
+Power:65535W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 12h 41' 20''      
+Volt:0V   Curr:55A   
+Power:26W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 12h 46' 21''      
+Volt:228V   Curr:3,1A   
+Power:36W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 12h 48' 22''      
+Volt:0V   Curr:55A   
+Power:89W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 12h 48' 24''      
+Volt:228V   Curr:3,1A   
+Power:38W   Pressure:0bar   
+Cosfi:0,05    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 12h 49' 25''      
+Volt:0V   Curr:55A   
+Power:88W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 12h 49' 27''      
+Volt:228V   Curr:3,1A   
+Power:410W   Pressure:0bar   
+Cosfi:0,58    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 12h 49' 29''      
+Volt:152V   Curr:3,2A   
+Power:1370W   Pressure:0bar   
+Cosfi:0,25    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 12h 49' 31''      
+Volt:228V   Curr:3,2A   
+Power:380W   Pressure:0bar   
+Cosfi:0,52    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 12h 50' 32''      
+Volt:228V   Curr:3,1A   
+Power:430W   Pressure:0bar   
+Cosfi:0,6    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 12h 50' 34''      
+Volt:0V   Curr:55A   
+Power:850W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 12h 50' 36''      
+Volt:0V   Curr:55A   
+Power:85W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 12h 51' 37''      
+Volt:228V   Curr:3,2A   
+Power:65506W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 12h 51' 39''      
+Volt:228V   Curr:3,2A   
+Power:50W   Pressure:0bar   
+Cosfi:0,06    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 12h 52' 40''      
+Volt:0V   Curr:55A   
+Power:87W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 13h 01' 41''      
+Volt:226V   Curr:3A   
+Power:47W   Pressure:0bar   
+Cosfi:0,06    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 13h 03' 42''      
+Volt:0V   Curr:54,9A   
+Power:105W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 13h 11' 43''      
+Volt:50V   Curr:0,7A   
+Power:0W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 13h 11' 45''      
+Volt:50V   Curr:0,7A   
+Power:0W   Pressure:0bar   
+Cosfi:0    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 13h 12' 46''      
+Volt:50V   Curr:0,7A   
+Power:32W   Pressure:0bar   
+Cosfi:0,91    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 13h 24' 47''      
+Volt:202V   Curr:3A   
+Power:224W   Pressure:0bar   
+Cosfi:0,36    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 13h 45' 48''      
+Volt:202V   Curr:3A   
+Power:558W   Pressure:0bar   
+Cosfi:0,92    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 13h 47' 49''      
+Volt:232V   Curr:3,6A   
+Power:95W   Pressure:0bar   
+Cosfi:0,11    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 13h 49' 50''      
+Volt:0V   Curr:54,9A   
+Power:109W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 13h 49' 52''      
+Volt:228V   Curr:3,1A   
+Power:98W   Pressure:0bar   
+Cosfi:0,13    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 13h 50' 53''      
+Volt:0V   Curr:54,9A   
+Power:108W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 13h 50' 55''      
+Volt:228V   Curr:3A   
+Power:103W   Pressure:0bar   
+Cosfi:0,15    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 13h 50' 57''      
+Volt:228V   Curr:3A   
+Power:87W   Pressure:0bar   
+Cosfi:0,12    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 13h 51' 01''      
+Volt:228V   Curr:3,1A   
+Power:87W   Pressure:0bar   
+Cosfi:0,12    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: ON       Alarm Time: 13h 55' 10''      
+Volt:228V   Curr:3A   
+Power:154W   Pressure:0bar   
+Cosfi:0,22    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 13h 55' 10''      
+Volt:228V   Curr:3A   
+Power:154W   Pressure:0bar   
+Cosfi:0,22    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 13h 55' 12''      
+Volt:230V   Curr:3,2A   
+Power:164W   Pressure:0bar   
+Cosfi:0,22    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 13h 56' 13''      
+Volt:228V   Curr:3,1A   
+Power:184W   Pressure:0bar   
+Cosfi:0,26    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 13h 56' 15''      
+Volt:228V   Curr:3A   
+Power:166W   Pressure:0bar   
+Cosfi:0,24    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 13h 56' 17''      
+Volt:0V   Curr:54,9A   
+Power:102W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 13h 57' 18''      
+Volt:228V   Curr:2,8A   
+Power:187W   Pressure:0bar   
+Cosfi:0,29    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 13h 57' 20''      
+Volt:228V   Curr:2,9A   
+Power:186W   Pressure:0bar   
+Cosfi:0,28    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 13h 57' 22''      
+Volt:0V   Curr:54,9A   
+Power:104W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 13h 57' 24''      
+Volt:230V   Curr:3,1A   
+Power:330W   Pressure:0bar   
+Cosfi:0,46    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 13h 57' 26''      
+Volt:228V   Curr:3,1A   
+Power:324W   Pressure:0bar   
+Cosfi:0,45    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 13h 57' 28''      
+Volt:230V   Curr:3,1A   
+Power:342W   Pressure:0bar   
+Cosfi:0,47    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 14h 03' 29''      
+Volt:0V   Curr:54,9A   
+Power:69W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 14h 03' 31''      
+Volt:230V   Curr:3,2A   
+Power:320W   Pressure:0bar   
+Cosfi:0,43    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 14h 06' 32''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 14h 06' 34''      
+Volt:234V   Curr:0A   
+Power:4W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 14h 06' 36''      
+Volt:0V   Curr:54,9A   
+Power:65535W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 14h 06' 38''      
+Volt:0V   Curr:54,9A   
+Power:5W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 14h 06' 40''      
+Volt:230V   Curr:3,2A   
+Power:320W   Pressure:0bar   
+Cosfi:0,43    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 14h 11' 41''      
+Volt:0V   Curr:54,9A   
+Power:1W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 14h 11' 43''      
+Volt:226V   Curr:3A   
+Power:332W   Pressure:0bar   
+Cosfi:0,47    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 14h 13' 44''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 14h 13' 46''      
+Volt:228V   Curr:3,2A   
+Power:335W   Pressure:0bar   
+Cosfi:0,45    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 14h 15' 47''      
+Volt:228V   Curr:3,1A   
+Power:335W   Pressure:0bar   
+Cosfi:0,47    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 14h 17' 48''      
+Volt:230V   Curr:3,1A   
+Power:323W   Pressure:0bar   
+Cosfi:0,45    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 14h 18' 49''      
+Volt:228V   Curr:3A   
+Power:322W   Pressure:0bar   
+Cosfi:0,47    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 14h 18' 51''      
+Volt:226V   Curr:3A   
+Power:327W   Pressure:0bar   
+Cosfi:0,48    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 14h 18' 53''      
+Volt:230V   Curr:3,2A   
+Power:324W   Pressure:0bar   
+Cosfi:0,44    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 14h 19' 54''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 14h 29' 55''      
+Volt:230V   Curr:3,1A   
+Power:358W   Pressure:0bar   
+Cosfi:0,5    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 14h 30' 56''      
+Volt:228V   Curr:3,1A   
+Power:356W   Pressure:0bar   
+Cosfi:0,5    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 14h 33' 57''      
+Volt:238V   Curr:0A   
+Power:4W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 14h 33' 59''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  ON     Alarm Time: 14h 34' 01''      
+Volt:226V   Curr:3A   
+Power:343W   Pressure:0bar   
+Cosfi:0,5    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  ON     Alarm Time: 14h 34' 03''      
+Volt:230V   Curr:3,1A   
+Power:334W   Pressure:0bar   
+Cosfi:0,48    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  ON     Alarm Time: 14h 34' 05''      
+Volt:230V   Curr:3,1A   
+Power:338W   Pressure:0bar   
+Cosfi:0,47    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  ON     Alarm Time: 14h 34' 07''      
+Volt:228V   Curr:3A   
+Power:347W   Pressure:0bar   
+Cosfi:0,5    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  ON     Alarm Time: 14h 34' 09''      
+Volt:226V   Curr:2,9A   
+Power:331W   Pressure:0bar   
+Cosfi:0,5    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  ON     Alarm Time: 14h 34' 11''      
+Volt:228V   Curr:3,1A   
+Power:355W   Pressure:0bar   
+Cosfi:0,5    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 14h 34' 51''      
+Volt:230V   Curr:3A   
+Power:331W   Pressure:0bar   
+Cosfi:0,47    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  ON     Alarm Time: 14h 34' 53''      
+Volt:228V   Curr:3,1A   
+Power:336W   Pressure:0bar   
+Cosfi:0,47    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  ON     Alarm Time: 14h 34' 55''      
+Volt:228V   Curr:3,1A   
+Power:338W   Pressure:0bar   
+Cosfi:0,47    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  ON     Alarm Time: 14h 34' 57''      
+Volt:228V   Curr:3,1A   
+Power:337W   Pressure:0bar   
+Cosfi:0,47    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  ON     Alarm Time: 14h 34' 59''      
+Volt:226V   Curr:3A   
+Power:333W   Pressure:0bar   
+Cosfi:0,49    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  ON     Alarm Time: 14h 35' 01''      
+Volt:228V   Curr:3A   
+Power:336W   Pressure:0bar   
+Cosfi:0,49    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  ON     Alarm Time: 14h 35' 03''      
+Volt:228V   Curr:3,1A   
+Power:343W   Pressure:0bar   
+Cosfi:0,48    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 14h 35' 23''      
+Volt:228V   Curr:3A   
+Power:320W   Pressure:0bar   
+Cosfi:0,46    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: ON       Alarm Time: 14h 35' 24''      
+Volt:228V   Curr:3A   
+Power:322W   Pressure:0bar   
+Cosfi:0,47    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  ON     Alarm Time: 14h 35' 24''      
+Volt:228V   Curr:3A   
+Power:322W   Pressure:0bar   
+Cosfi:0,47    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 14h 35' 43''      
+Volt:226V   Curr:2,9A   
+Power:343W   Pressure:0bar   
+Cosfi:0,52    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  ON     Alarm Time: 14h 35' 45''      
+Volt:228V   Curr:3A   
+Power:333W   Pressure:0bar   
+Cosfi:0,48    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 14h 36' 25''      
+Volt:228V   Curr:3A   
+Power:324W   Pressure:0bar   
+Cosfi:0,47    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 14h 36' 27''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  ON     Alarm Time: 14h 36' 29''      
+Volt:226V   Curr:2,9A   
+Power:338W   Pressure:0bar   
+Cosfi:0,51    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 14h 37' 09''      
+Volt:228V   Curr:3A   
+Power:321W   Pressure:0bar   
+Cosfi:0,46    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  ON     Alarm Time: 14h 37' 11''      
+Volt:226V   Curr:3A   
+Power:315W   Pressure:0bar   
+Cosfi:0,46    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 14h 37' 51''      
+Volt:228V   Curr:3,1A   
+Power:343W   Pressure:0bar   
+Cosfi:0,48    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 14h 37' 56''      
+Volt:228V   Curr:3A   
+Power:324W   Pressure:0bar   
+Cosfi:0,47    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: ON       Alarm Time: 14h 37' 58''      
+Volt:228V   Curr:3A   
+Power:318W   Pressure:0bar   
+Cosfi:0,46    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 14h 37' 58''      
+Volt:228V   Curr:3A   
+Power:318W   Pressure:0bar   
+Cosfi:0,46    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 14h 38' 00''      
+Volt:230V   Curr:3A   
+Power:321W   Pressure:0bar   
+Cosfi:0,46    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: ON       Alarm Time: 14h 38' 03''      
+Volt:230V   Curr:3A   
+Power:335W   Pressure:0bar   
+Cosfi:0,48    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 14h 38' 03''      
+Volt:230V   Curr:3A   
+Power:335W   Pressure:0bar   
+Cosfi:0,48    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  ON     Alarm Time: 14h 38' 05''      
+Volt:230V   Curr:3A   
+Power:328W   Pressure:0bar   
+Cosfi:0,47    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  ON     Alarm Time: 14h 38' 07''      
+Volt:226V   Curr:3A   
+Power:338W   Pressure:0bar   
+Cosfi:0,49    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 14h 38' 11''      
+Volt:224V   Curr:2,9A   
+Power:320W   Pressure:0bar   
+Cosfi:0,49    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: ON       Alarm Time: 14h 38' 23''      
+Volt:228V   Curr:2,9A   
+Power:326W   Pressure:0bar   
+Cosfi:0,49    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  ON     Alarm Time: 14h 38' 23''      
+Volt:228V   Curr:2,9A   
+Power:326W   Pressure:0bar   
+Cosfi:0,49    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 14h 39' 03''      
+Volt:228V   Curr:2,9A   
+Power:335W   Pressure:0bar   
+Cosfi:0,5    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 14h 39' 06''      
+Volt:228V   Curr:2,9A   
+Power:335W   Pressure:0bar   
+Cosfi:0,5    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: ON       Alarm Time: 14h 39' 07''      
+Volt:228V   Curr:2,9A   
+Power:336W   Pressure:0bar   
+Cosfi:0,5    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  ON     Alarm Time: 14h 39' 07''      
+Volt:228V   Curr:2,9A   
+Power:336W   Pressure:0bar   
+Cosfi:0,5    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  ON     Alarm Time: 14h 39' 09''      
+Volt:232V   Curr:3,3A   
+Power:394W   Pressure:0bar   
+Cosfi:0,53    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 14h 39' 49''      
+Volt:232V   Curr:3,2A   
+Power:361W   Pressure:0bar   
+Cosfi:0,48    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 14h 41' 14''      
+Volt:230V   Curr:3,2A   
+Power:371W   Pressure:0bar   
+Cosfi:0,5    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  ON     Alarm Time: 14h 41' 42''      
+Volt:232V   Curr:3,2A   
+Power:373W   Pressure:0bar   
+Cosfi:0,5    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 14h 42' 22''      
+Volt:230V   Curr:3,2A   
+Power:347W   Pressure:0bar   
+Cosfi:0,47    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  ON     Alarm Time: 14h 42' 24''      
+Volt:230V   Curr:3,2A   
+Power:364W   Pressure:0bar   
+Cosfi:0,49    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Dry Operating  OFF     Alarm Time: 14h 43' 04''      
+Volt:232V   Curr:3,2A   
+Power:379W   Pressure:0bar   
+Cosfi:0,51    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 14h 45' 25''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 14h 45' 33''      
+Volt:0V   Curr:39,3A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: ON       Alarm Time: 14h 49' 46''      
+Volt:0V   Curr:29,1A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 14h 49' 46''      
+Volt:0V   Curr:29A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 14h 50' 16''      
+Volt:0V   Curr:8,9A   
+Power:1W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: ON       Alarm Time: 14h 50' 21''      
+Volt:0V   Curr:7,2A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 14h 50' 21''      
+Volt:0V   Curr:7,2A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 14h 50' 25''      
+Volt:0V   Curr:6,1A   
+Power:1W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: ON       Alarm Time: 14h 50' 32''      
+Volt:0V   Curr:4,5A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 14h 50' 32''      
+Volt:0V   Curr:4,5A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 14h 52' 32''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 14h 52' 34''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 14h 52' 36''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 14h 53' 37''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 14h 53' 39''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 14h 53' 41''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 14h 53' 43''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 14h 53' 45''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 14h 53' 47''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 15h 04' 48''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 15h 05' 49''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 15h 05' 51''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 15h 05' 53''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 15h 17' 54''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 15h 17' 56''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 15h 24' 57''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 15h 24' 59''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 15h 31' 00''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 15h 31' 02''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 16h 24' 20''      
+Volt:0V   Curr:0A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: ON       Alarm Time: 16h 24' 25''      
+Volt:0V   Curr:0A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 16h 24' 25''      
+Volt:0V   Curr:0A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 16h 24' 33''      
+Volt:0V   Curr:0A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: ON       Alarm Time: 16h 24' 45''      
+Volt:0V   Curr:0A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 16h 24' 45''      
+Volt:0V   Curr:0A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 16h 24' 47''      
+Volt:0V   Curr:0A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 16h 24' 57''      
+Volt:0V   Curr:0A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 16h 25' 01''      
+Volt:0V   Curr:0A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: ON       Alarm Time: 17h 28' 25''      
+Volt:0V   Curr:33A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 17h 28' 25''      
+Volt:0V   Curr:32,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 17h 28' 27''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 17h 29' 13''      
+Volt:0V   Curr:8,4A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: ON       Alarm Time: 17h 29' 15''      
+Volt:0V   Curr:7,7A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 17h 29' 15''      
+Volt:0V   Curr:7,7A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 17h 29' 17''      
+Volt:0V   Curr:7,2A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: ON       Alarm Time: 18h 23' 50''      
+Volt:0V   Curr:0A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 18h 23' 50''      
+Volt:0V   Curr:0A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 18h 24' 31''      
+Volt:0V   Curr:0A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 18h 24' 34''      
+Volt:0V   Curr:0A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 18h 31' 49''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 18h 33' 50''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 18h 38' 46''      
+Volt:0V   Curr:0A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 18h 39' 10''      
+Volt:0V   Curr:0A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 18h 46' 51''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 20h 13' 52''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 20h 17' 53''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 20h 17' 55''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 20h 18' 56''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 20h 19' 57''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 20h 22' 58''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 20h 27' 59''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 20h 42' 00''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 20h 42' 02''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 20h 47' 03''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 20h 49' 04''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 20h 53' 05''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 20h 54' 06''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 20h 59' 07''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 21h 02' 08''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 21h 02' 10''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 21h 03' 11''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 21h 09' 12''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 21h 14' 13''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 21h 15' 14''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 22h 18' 15''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 22h 20' 16''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 22h 23' 17''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 22h 24' 18''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 22h 25' 19''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 22h 25' 21''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 22h 25' 23''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 22h 39' 24''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 22h 39' 26''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 22h 39' 28''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 22h 41' 29''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 22h 52' 30''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 22h 54' 31''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 22h 54' 33''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 22h 54' 35''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 22h 56' 36''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 23h 55' 37''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 23h 59' 38''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 24h 20' 39''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 25h 27' 40''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 25h 41' 41''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 26h 11' 42''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 26h 21' 43''      
+Volt:0V   Curr:0,5A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 26h 21' 45''      
+Volt:0V   Curr:0,5A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 26h 21' 47''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 26h 24' 48''      
+Volt:0V   Curr:0,5A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 26h 44' 49''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 26h 49' 50''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 26h 50' 51''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 26h 50' 53''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 26h 54' 54''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 26h 54' 56''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 26h 58' 57''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 26h 58' 59''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 27h 02' 00''      
+Volt:0V   Curr:54,9A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 27h 04' 37''      
+Volt:0V   Curr:0A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: ON       Alarm Time: 27h 05' 39''      
+Volt:0V   Curr:0A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: Undervoltage  OFF     Alarm Time: 27h 05' 39''      
+Volt:0V   Curr:0A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   
+
+--------------------------------------------------
+Alarm Type: OFF      Alarm Time: 27h 05' 40''      
+Volt:0V   Curr:0A   
+Power:0W   Pressure:0bar   
+Cosfi:2,55    Temp:0°C   

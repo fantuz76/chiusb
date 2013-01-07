@@ -1,0 +1,33 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+USBConfig
+</name>
+</assembly>
+<members>
+<member name="M:ApplicationUSB.InterventiList.#ctor">
+ Constructor to set the properties of our    
+
+</member><member name="M:ApplicationUSB.USBClass.#ctor(System.Object)">
+ Constructor to set the properties of our Manager Class
+
+</member><member name="M:ApplicationUSB.USBClass.#ctor">
+ Constructor to set the properties of our serial port communicator to nothing
+
+</member><member name="P:ApplicationUSB.My.Resources.Resources.ResourceManager">
+	<summary>
+  Restituisce l'istanza di ResourceManager nella cache utilizzata da questa classe.
+</summary>
+</member><member name="P:ApplicationUSB.My.Resources.Resources.Culture">
+	<summary>
+  Esegue l'override della proprietà CurrentUICulture del thread corrente per tutte le
+  ricerche di risorse eseguite utilizzando questa classe di risorse fortemente tipizzata.
+</summary>
+</member><member name="T:ApplicationUSB.My.Resources.Resources">
+	<summary>
+  Classe di risorse fortemente tipizzata per la ricerca di stringhe localizzate e così via.
+</summary>
+</member>
+</members>
+</doc>

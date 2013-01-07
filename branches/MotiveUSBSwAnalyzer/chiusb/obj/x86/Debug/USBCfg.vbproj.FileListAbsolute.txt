@@ -1,0 +1,120 @@
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.exe.config
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.exe.manifest
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.application
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.exe
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.pdb
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.xml
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.MainFrm.resources
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.Resources.resources
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.ZedGraphFrm.resources
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.vbproj.GenerateResource.Cache
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.TrustInfo.xml
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.exe.manifest
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.application
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.exe
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.xml
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.pdb
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\ZedGraph.xml
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ResolveAssemblyReference.cache
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.vbproj.GenerateResource.Cache
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.exe.config
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.exe
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.xml
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.pdb
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.exe.manifest
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.application
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.exe
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.pdb
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.xml
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\ZedGraph.xml
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.MainFrm.resources
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.Resources.resources
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.ZedGraphFrm.resources
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.vbproj.GenerateResource.Cache
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.TrustInfo.xml
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.exe.manifest
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.application
+C:\Documents and Settings\Simone\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.FormWait.resources
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.AboutBox1.resources
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.FormWait.resources
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.MainFrm.resources
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.Resources.resources
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.ZedGraphFrm.resources
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.exe.config
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.exe.manifest
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.application
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.exe
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.pdb
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.xml
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.TrustInfo.xml
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.exe.manifest
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.application
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.exe
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.xml
+i:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.pdb
+C:\Documents and Settings\usermed\Desktop\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.exe.config
+C:\Documents and Settings\usermed\Desktop\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.exe
+C:\Documents and Settings\usermed\Desktop\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.xml
+C:\Documents and Settings\usermed\Desktop\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.pdb
+C:\Documents and Settings\usermed\Desktop\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.exe.manifest
+C:\Documents and Settings\usermed\Desktop\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.application
+C:\Documents and Settings\usermed\Desktop\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.exe
+C:\Documents and Settings\usermed\Desktop\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.pdb
+C:\Documents and Settings\usermed\Desktop\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.xml
+C:\Documents and Settings\usermed\Desktop\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\ZedGraph.xml
+C:\Documents and Settings\usermed\Desktop\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\usermed\Desktop\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.AboutBox1.resources
+C:\Documents and Settings\usermed\Desktop\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.FormWait.resources
+C:\Documents and Settings\usermed\Desktop\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.MainFrm.resources
+C:\Documents and Settings\usermed\Desktop\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.Resources.resources
+C:\Documents and Settings\usermed\Desktop\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.ZedGraphFrm.resources
+C:\Documents and Settings\usermed\Desktop\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.vbproj.GenerateResource.Cache
+C:\Documents and Settings\usermed\Desktop\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.TrustInfo.xml
+C:\Documents and Settings\usermed\Desktop\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.exe.manifest
+C:\Documents and Settings\usermed\Desktop\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.application
+F:\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.exe.config
+F:\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.exe
+F:\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.xml
+F:\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.pdb
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.exe.config
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.exe
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.xml
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.pdb
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.exe.manifest
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.application
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.exe
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.pdb
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.xml
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\ZedGraph.xml
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ResolveAssemblyReference.cache
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.AboutBox1.resources
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.FormWait.resources
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.MainFrm.resources
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.Resources.resources
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.ZedGraphFrm.resources
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.vbproj.GenerateResource.Cache
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.TrustInfo.xml
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.exe.manifest
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.application
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.exe.config
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.exe
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.xml
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.pdb
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.AboutBox1.resources
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.FormWait.resources
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.MainFrm.resources
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.Resources.resources
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationUSB.ZedGraphFrm.resources
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBCfg.vbproj.GenerateResource.Cache
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.exe.manifest
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.application
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.exe
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.pdb
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\USBConfig.xml
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\ZedGraph.xml
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.TrustInfo.xml
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.exe.manifest
+C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.application

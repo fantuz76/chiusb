@@ -1,0 +1,49 @@
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\chiusb.exe
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\chiusb.pdb
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\chiusb.xml
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ResolveAssemblyReference.cache
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\GenerateResource.read.1.tlog
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\GenerateResource.write.1.tlog
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\chiusb.exe
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\chiusb.xml
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\chiusb.pdb
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\chiusb.exe
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\chiusb.xml
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\chiusb.pdb
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\chiusb.exe
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\chiusb.pdb
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\chiusb.xml
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\chiusb.exe.config
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\chiusb.exe.config
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\GenerateResource-ResGen.read.4.tlog
+h:\documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+h:\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\GenerateResource-ResGen.read.6.tlog
+h:\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.MainFrm.resources
+h:\Documenti\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.Resources.resources
+h:\Documenti\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\ZedGraph.xml
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\ChiUSB.exe.config
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ChiUSB.exe
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ChiUSB.xml
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ChiUSB.pdb
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\ChiUSB.exe
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\ChiUSB.pdb
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\ChiUSB.xml
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\bin\Debug\ZedGraph.xml
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.MainFrm.resources
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.Resources.resources
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\chiusb.vbproj.GenerateResource.Cache
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\Electronic\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.ZedGraphFrm.resources
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\ZedGraph.xml
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.MainFrm.resources
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.Resources.resources
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\ApplicationChiUSB.ZedGraphFrm.resources
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\chiusb.vbproj.GenerateResource.Cache
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\ChiUSB.exe.manifest
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\ChiUSB.application
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\ChiUSB.TrustInfo.xml
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\ChiUSB.exe.manifest
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\ChiUSB.application
+c:\Documents and Settings\sfantu.LANDIR\Documenti\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Debug\USBCfg.exe.config
