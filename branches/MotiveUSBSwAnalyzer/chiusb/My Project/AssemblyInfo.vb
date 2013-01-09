@@ -8,11 +8,11 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("USB Control Box")> 
-<Assembly: AssemblyDescription("Utility for USB communication , setup, configuration etc... on Control Box")> 
-<Assembly: AssemblyCompany("Electroil")> 
-<Assembly: AssemblyProduct("USB Control Box")> 
-<Assembly: AssemblyCopyright("Copyright ©  2011")> 
+<Assembly: AssemblyTitle("USB Motor Analyzer")> 
+<Assembly: AssemblyDescription("Utility for USB communication , setup, configuration etc... on Motor Analyzer")> 
+<Assembly: AssemblyCompany("Motive")> 
+<Assembly: AssemblyProduct("USB Motor Analyzer")> 
+<Assembly: AssemblyCopyright("Copyright ©  2013")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("2.9.0.0")> 
-<Assembly: AssemblyFileVersion("2.9.0.0")> 
+<Assembly: AssemblyVersion("1.0.0.0")> 
+<Assembly: AssemblyFileVersion("1.0.0.0")> 

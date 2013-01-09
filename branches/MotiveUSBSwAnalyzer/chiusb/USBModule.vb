@@ -34,41 +34,16 @@ Module USBModule
 
 
         ' array di struttura con 2 elementi uno è il tipo e l'altro è il numero occorrenze inizializzate a 0
-        Private _ArrIntOccur() As IntOccur = {New IntOccur(TYPE_OFF, TYPE_OFF_STR, Color.Red), _
-                                            New IntOccur(TYPE_ON, TYPE_ON_STR, Color.Green), _
-                                            New IntOccur(TYPE_CHANGE_PN, TYPE_CHANGE_PN_STR, Color.Bisque), _
-                                            New IntOccur(TYPE_REMOTE_OFF, TYPE_REMOTE_OFF_STR, Color.DarkRed), _
-                                            New IntOccur(TYPE_REMOTE_ON, TYPE_REMOTE_ON_STR, Color.DarkGreen), _
-                                            New IntOccur(TYPE_AUTO_ON, TYPE_AUTO_ON_STR, Color.LightGreen), _
-                                            New IntOccur(TYPE_AUTO_OFF, TYPE_AUTO_OFF_STR, Color.LightCoral), _
-                                            New IntOccur(TYPE_8, TYPE_MAX_FLOW_STR, Color.DarkOrange), _
-                                            New IntOccur(TYPE_9, TYPE_HALT_SOVRAPRESSIONE_STR, Color.LightSalmon), _
-                                            New IntOccur(TYPE_NOHALT_OVERCURR, TYPE_NOHALT_OVERCURR_STR, Color.Violet), _
-                                            New IntOccur(TYPE_NOHALT_OVERVOLT, TYPE_NOHALT_OVERVOLT_STR, Color.Brown), _
-                                            New IntOccur(TYPE_NOHALT_UNDERVOLT, TYPE_NOHALT_UNDERVOLT_STR, Color.Turquoise), _
-                                            New IntOccur(TYPE_NOHALT_MANDATACH, TYPE_NOHALT_MANDATACH_STR, Color.Pink), _
-                                            New IntOccur(TYPE_NOHALT_DRYFUNC, TYPE_NOHALT_DRYFUNC_STR, Color.SeaGreen), _
-                                            New IntOccur(TYPE_NOHALT_OVERTEMP, TYPE_NOHALT_OVERTEMP_STR, Color.Olive), _
-                                            New IntOccur(TYPE_NOHALT_MAX_FLOW, TYPE_NOHALT_MAX_FLOW_STR, Color.Orange), _
-                                            New IntOccur(TYPE_NOHALT_SQUILIBRIO, TYPE_NOHALT_SQUILIBRIO_STR, Color.Gray), _
-                                            New IntOccur(TYPE_NOHALT_DISSIMETRIA, TYPE_NOHALT_DISSIMETRIA_STR, Color.Blue), _
-                                            New IntOccur(TYPE_NOHALT_SOVRAPRESSIONE, TYPE_NOHALT_SOVRAPRESSIONE_STR, Color.DarkSalmon), _
-                                            New IntOccur(TYPE_NOHALT_LEAKAGE, TYPE_NOHALT_LEAKAGE_STR, Color.DarkOrchid), _
-                                            New IntOccur(TYPE_HALT_OVERCURR, TYPE_HALT_OVERCURR_STR, Color.DarkViolet), _
-                                            New IntOccur(TYPE_HALT_OVERVOLT, TYPE_HALT_OVERVOLT_STR, Color.SaddleBrown), _
-                                            New IntOccur(TYPE_HALT_UNDERVOLT, TYPE_HALT_UNDERVOLT_STR, Color.DarkTurquoise), _
-                                            New IntOccur(TYPE_HALT_MANDATACH, TYPE_HALT_MANDATACH_STR, Color.DeepPink), _
-                                            New IntOccur(TYPE_HALT_DRYFUNC, TYPE_HALT_DRYFUNC_STR, Color.DarkSeaGreen), _
-                                            New IntOccur(TYPE_HALT_OVERTEMP, TYPE_HALT_OVERTEMP_STR, Color.DarkOliveGreen), _
-                                            New IntOccur(TYPE_HALT_MAX_FLOW, TYPE_MAX_FLOW_STR, Color.DarkOrange), _
-                                            New IntOccur(TYPE_HALT_SQUILIBRIO, TYPE_HALT_SQUILIBRIO_STR, Color.Black), _
-                                            New IntOccur(TYPE_HALT_DISSIMETRIA, TYPE_HALT_DISSIMETRIA_STR, Color.DarkBlue), _
-                                            New IntOccur(TYPE_HALT_SOVRAPRESSIONE, TYPE_HALT_SOVRAPRESSIONE_STR, Color.LightSalmon), _
-                                            New IntOccur(TYPE_HALT_LEAKAGE, TYPE_HALT_LEAKAGE_STR, Color.Orchid), _
-                                            New IntOccur(TYPE_HALT_PRESS_SENS, TYPE_HALT_PRESS_SENS_STR, Color.RosyBrown), _
-                                            New IntOccur(TYPE_HALT_CORTO_CIRCUITO, TYPE_HALT_CORTO_CIRCUITO_STR, Color.Crimson), _
-                                            New IntOccur(TYPE_LOGGING, TYPE_LOGGING_STR, Color.MidnightBlue), _
-                                            New IntOccur(TYPE_UNAUTHORIZED_START, TYPE_UNAUTHORIZED_START_STR, Color.Black)}
+        Private _ArrIntOccur() As IntOccur = {New IntOccur(TYPE_CURRENT_PEAK, TYPE_CURRENT_PEAK_STR, Color.Red), _
+                                            New IntOccur(TYPE_OVERVOLTAGE, TYPE_OVERVOLTAGE_STR, Color.Green), _
+                                            New IntOccur(TYPE_INVERTER_TEMPER, TYPE_INVERTER_TEMPER_STR, Color.Bisque), _
+                                            New IntOccur(TYPE_THERMAL_PROTECT, TYPE_THERMAL_PROTECT_STR, Color.DarkRed), _
+                                            New IntOccur(TYPE_ENCODER_ERROR, TYPE_ENCODER_ERROR_STR, Color.DarkGreen), _
+                                            New IntOccur(TYPE_ENABLE_OFF, TYPE_ENABLE_OFF_STR, Color.LightGreen), _
+                                            New IntOccur(TYPE_OVERCURRENT, TYPE_OVERCURRENT_STR, Color.LightCoral), _
+                                            New IntOccur(TYPE_INOUT_INVERTED, TYPE_INOUT_INVERTED_STR, Color.DarkOrange), _
+                                            New IntOccur(TYPE_UNDERVOLTAGE, TYPE_UNDERVOLTAGE_STR, Color.LightSalmon), _
+                                            New IntOccur(TYPE_COMUNICAT_ERROR, TYPE_COMUNICAT_ERROR_STR, Color.Violet)}
 
         Public Sub New()
             ' Solo per controllo verifico che costante e init array siano OK
@@ -326,12 +301,6 @@ Module USBModule
         StToAdd2 = ConnectionUSB.Matricola.ToUpper
         StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = ConnectionUSB.TotalTime
-        StToAdd = StToAdd + StToAdd2 + ","
-
-        StToAdd2 = ConnectionUSB.OreLav
-        StToAdd = StToAdd + StToAdd2 + ","
-
         StToAdd2 = ConnectionUSB.PotNom
         StToAdd = StToAdd + StToAdd2 + ","
 
@@ -358,8 +327,8 @@ Module USBModule
         StToAdd2 = "Description"
         StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = "Date"
-        StToAdd = StToAdd + StToAdd2 + ","
+        'StToAdd2 = "Date"
+        'StToAdd = StToAdd + StToAdd2 + ","
 
         StToAdd2 = "Time"
         StToAdd = StToAdd + StToAdd2 + ","
@@ -413,16 +382,16 @@ Module USBModule
         StToAdd = StToAdd + StToAdd2 + ","
 
 
-        StToAdd2 = (2000 + GetYear(_intv._intTime)).ToString("0000") & "/" & GetMonth(_intv._intTime).ToString("00") & "/" & GetDay(_intv._intTime).ToString("00") & " "
-        StToAdd = StToAdd + StToAdd2 + ","
+        'StToAdd2 = (2000 + GetYear(_intv._intTime)).ToString("0000") & "/" & GetMonth(_intv._intTime).ToString("00") & "/" & GetDay(_intv._intTime).ToString("00") & " "
+        'StToAdd = StToAdd + StToAdd2 + ","
         StToAdd2 = GetHours(_intv._intTime).ToString("00") & "h" & GetMinutes(_intv._intTime).ToString("00") & "'" & GetSeconds(_intv._intTime).ToString("00") & "''"
         StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = _intv._intV3_rms.ToString
+        StToAdd2 = _intv._intV12_rms.ToString
         StToAdd = StToAdd + StToAdd2 + ","
-        StToAdd2 = _intv._intV2_rms.ToString
+        StToAdd2 = _intv._intV13_rms.ToString
         StToAdd = StToAdd + StToAdd2 + ","
-        StToAdd2 = _intv._intV1_rms.ToString
+        StToAdd2 = _intv._intV23_rms.ToString
         StToAdd = StToAdd + StToAdd2 + ","
 
         StToAdd2 = GetCurrent(_intv._intI1_rms).ToString("F1", GetCultureInfo("en-GB"))
@@ -435,17 +404,15 @@ Module USBModule
         StToAdd2 = GetCosfi(_intv._intCosfi).ToString("F2", GetCultureInfo("en-GB"))
         StToAdd = StToAdd + StToAdd2 + ","
 
-        If _intv._intType = TYPE_CHANGE_PN Then
-            StToAdd2 = (GetNomPowerKiloWatt(_intv._intPower)).ToString("F3", GetCultureInfo("en-GB"))
-        Else
-            StToAdd2 = (GetPowerKiloWatt(_intv._intPower)).ToString("F3", GetCultureInfo("en-GB"))
-        End If
+        
+        StToAdd2 = (GetPowerKiloWatt(_intv._intPower)).ToString("F3", GetCultureInfo("en-GB"))
+
         StToAdd = StToAdd + StToAdd2 + ","
 
         StToAdd2 = GetPressure(_intv._intPress).ToString("F1", GetCultureInfo("en-GB"))
         StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = GetFlow(_intv._intFlow).ToString
+        StToAdd2 = GetTragFreq(_intv._intTragFreq).ToString
         StToAdd = StToAdd + StToAdd2 + ","
 
         StToAdd2 = GetTemperature(_intv._intTemp).ToString
@@ -469,11 +436,11 @@ Module USBModule
         StToAdd2 = "Description"
         StToAdd = StToAdd + StToAdd2.PadRight(MAXLEN_STR + 1)
 
-        StToAdd2 = "Date"
-        StToAdd = StToAdd + StToAdd2.PadRight(11)
+        'StToAdd2 = "Date"
+        'StToAdd = StToAdd + StToAdd2.PadRight(11)
 
         StToAdd2 = "Time"
-        StToAdd = StToAdd + StToAdd2.PadRight(11)
+        StToAdd = StToAdd + StToAdd2.PadRight(15)
 
         StToAdd2 = "V1-2"
         StToAdd = StToAdd + StToAdd2.PadRight(5)
@@ -498,7 +465,7 @@ Module USBModule
         StToAdd2 = "Press"
         StToAdd = StToAdd + StToAdd2.PadRight(6)
 
-        StToAdd2 = "Flow"
+        StToAdd2 = "Freq"
         StToAdd = StToAdd + StToAdd2.PadRight(6)
 
         StToAdd2 = "T"
@@ -522,11 +489,11 @@ Module USBModule
         StToAdd2 = " "
         StToAdd = StToAdd + StToAdd2.PadRight(MAXLEN_STR + 1)
 
-        StToAdd2 = "[Y/M/D]"
-        StToAdd = StToAdd + StToAdd2.PadRight(11)
+        'StToAdd2 = "[Y/M/D]"
+        'StToAdd = StToAdd + StToAdd2.PadRight(11)
 
         StToAdd2 = "[h/min/sec]"
-        StToAdd = StToAdd + StToAdd2.PadRight(11)
+        StToAdd = StToAdd + StToAdd2.PadRight(15)
 
         StToAdd2 = "[V]"
         StToAdd = StToAdd + StToAdd2.PadRight(5)
@@ -551,7 +518,7 @@ Module USBModule
         StToAdd2 = "[bar]"
         StToAdd = StToAdd + StToAdd2.PadRight(6)
 
-        StToAdd2 = "[l/m]"
+        StToAdd2 = "[Hz]"
         StToAdd = StToAdd + StToAdd2.PadRight(6)
 
         StToAdd2 = "[°C]"
@@ -577,16 +544,16 @@ Module USBModule
         StToAdd = StToAdd + StToAdd2.PadRight(MAXLEN_STR + 1)
 
 
-        StToAdd2 = (2000 + GetYear(_intv._intTime)).ToString("0000") & "/" & GetMonth(_intv._intTime).ToString("00") & "/" & GetDay(_intv._intTime).ToString("00") & " "
-        StToAdd = StToAdd + StToAdd2.PadRight(11)
+        'StToAdd2 = (2000 + GetYear(_intv._intTime)).ToString("0000") & "/" & GetMonth(_intv._intTime).ToString("00") & "/" & GetDay(_intv._intTime).ToString("00") & " "
+        'StToAdd = StToAdd + StToAdd2.PadRight(11)
         StToAdd2 = GetHours(_intv._intTime).ToString("00") & "h" & GetMinutes(_intv._intTime).ToString("00") & "'" & GetSeconds(_intv._intTime).ToString("00") & "''"
-        StToAdd = StToAdd + StToAdd2.PadRight(11)
+        StToAdd = StToAdd + StToAdd2.PadRight(15)
 
-        StToAdd2 = _intv._intV3_rms.ToString
+        StToAdd2 = _intv._intV12_rms.ToString
         StToAdd = StToAdd + StToAdd2.PadRight(5)
-        StToAdd2 = _intv._intV2_rms.ToString
+        StToAdd2 = _intv._intV13_rms.ToString
         StToAdd = StToAdd + StToAdd2.PadRight(5)
-        StToAdd2 = _intv._intV1_rms.ToString
+        StToAdd2 = _intv._intV23_rms.ToString
         StToAdd = StToAdd + StToAdd2.PadRight(5)
 
         StToAdd2 = GetCurrent(_intv._intI1_rms).ToString("F1", GetCultureInfo("en-GB"))
@@ -599,17 +566,14 @@ Module USBModule
         StToAdd2 = GetCosfi(_intv._intCosfi).ToString("F2", GetCultureInfo("en-GB"))
         StToAdd = StToAdd + StToAdd2.PadRight(5)
 
-        If _intv._intType = TYPE_CHANGE_PN Then
-            StToAdd2 = (GetNomPowerKiloWatt(_intv._intPower)).ToString("F3", GetCultureInfo("en-GB"))
-        Else
-            StToAdd2 = (GetPowerKiloWatt(_intv._intPower)).ToString("F3", GetCultureInfo("en-GB"))
-        End If
+        StToAdd2 = (GetPowerKiloWatt(_intv._intPower)).ToString("F3", GetCultureInfo("en-GB"))
+
         StToAdd = StToAdd + StToAdd2.PadRight(8)
 
         StToAdd2 = GetPressure(_intv._intPress).ToString("F1", GetCultureInfo("en-GB"))
         StToAdd = StToAdd + StToAdd2.PadRight(6)
 
-        StToAdd2 = GetFlow(_intv._intFlow).ToString
+        StToAdd2 = GetTragFreq(_intv._intTragFreq).ToString
         StToAdd = StToAdd + StToAdd2.PadRight(6)
 
 
@@ -638,7 +602,11 @@ Module USBModule
     End Function
 
     Private Function restoOra(ByVal _num As UInt32) As Integer
-        Return restoGiorno(_num) - GetHours(_num) * 3600
+        Try
+            Return restoGiorno(_num) - GetHours(_num) * 3600
+        Catch ex As Exception
+        End Try
+
     End Function
 
     Private Function restoMinuto(ByVal _num As UInt32) As Integer
@@ -658,7 +626,7 @@ Module USBModule
     End Function
 
     Public Function GetHours(ByVal _totNumSec As UInt32) As UInteger
-        Return restoGiorno(_totNumSec) \ 3600
+        Return _totNumSec \ 3600
     End Function
 
     Public Function GetMinutes(ByVal _totNumSec As UInt32) As UInteger
@@ -698,7 +666,7 @@ Module USBModule
         Return Convert.ToDouble(_numToConvert / 100, Globalization.CultureInfo.GetCultureInfo("en-GB"))
     End Function
 
-    Public Function GetFlow(ByVal _numToConvert As UInt16) As UInt16
+    Public Function GetTragFreq(ByVal _numToConvert As UInt16) As UInt16
         Return (_numToConvert)
     End Function
 
@@ -708,15 +676,18 @@ Module USBModule
 
     Public Function tempoFromDataOra(ByVal _data As String, ByVal _orario As String) As UInt32
         Dim _anno, _mese, _giorno As UInt16
-        Dim _ora, _minuto, _secondo As UInt16
+        Dim _ora, _minuto, _secondo As UInt32
         '4 bytes = tempo = secondo + minuto*60 + ora*3600 + giorno*24*3600 + mese*32*24*3600 + anno*13*32*24*3600
 
-        _anno = Convert.ToUInt16(Convert.ToUInt16(_data.Split("/")(0)) - 2000)
-        _mese = Convert.ToUInt16(_data.Split("/")(1))
-        _giorno = Convert.ToUInt16(_data.Split("/")(2))
-        _ora = Convert.ToUInt16(_orario.Split("h")(0))
-        _minuto = Convert.ToUInt16(_orario.Split("h")(1).Split("'")(0))
-        _secondo = Convert.ToUInt16(_orario.Split("'")(1).Split("''")(0))
+        '_anno = Convert.ToUInt16(Convert.ToUInt16(_data.Split("/")(0)) - 2000)
+        '_mese = Convert.ToUInt16(_data.Split("/")(1))
+        '_giorno = Convert.ToUInt16(_data.Split("/")(2))
+        _anno = 0
+        _mese = 0
+        _giorno = 0
+        _ora = Convert.ToUInt32(_orario.Split("h")(0))
+        _minuto = Convert.ToUInt32(_orario.Split("h")(1).Split("'")(0))
+        _secondo = Convert.ToUInt32(_orario.Split("'")(1).Split("''")(0))
 
         Return Convert.ToUInt32(_secondo + _minuto * 60 + _ora * 3600 + _giorno * 24 * 3600 + _mese * 32 * 24 * 3600 + _anno * 13 * 32 * 24 * 3600)
     End Function
@@ -748,7 +719,7 @@ Module USBModule
         Return (Convert.ToByte(_numToConvert * 100))
     End Function
 
-    Public Function GetFlowInv(ByVal _numToConvert As UInt16) As UInt16
+    Public Function GetTragFreqInv(ByVal _numToConvert As UInt16) As UInt16
         Return (Convert.ToUInt16(_numToConvert))
     End Function
 

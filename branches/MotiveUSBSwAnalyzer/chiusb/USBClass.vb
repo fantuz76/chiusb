@@ -6,41 +6,15 @@ Imports System.Windows.Forms
 
 
 
-'16 bytes trasmessi per un complesso di 8K 504 registrazioni
-' 1 byte = tipo intervento  all'indirizzo binario xxxx xxxx xxxx 0000
-' 4 bytes = ora_minuto_secondo  xxxxx.xx.xx  (viene registrata come numero totale di secondi di funzionamento)
-' 2 bytes = tensione_media 0-500V
-' 1 byte = I1_rms  0-25.5A
-' 1 byte = I2_rms  0-25.5A
-' 1 byte = I3_rms  0-25.5A
-' 2 bytes = potenza  0-10000 W
-' 2 bytes = pressione  -1.0 - +50.0 Bar
-' 1 byte  = cosfi convenzionale =P/(P^2+Q^2) 0-.99
-' 1 byte = temperatura  0-255 °C
 
-'nuova versione settembre -2011
-'20 bytes trasmessi per un complesso di 6539 registrazioni  per 129510 bytes
-' 1 byte = tipo intervento 
-' 4 bytes = tempo = secondo + minuto*60 + ora*3600 + giorno*24*3600 + mese*32*24*3600 + anno*13*32*24*3600   ; valido fino al 2119
-'   processo inverso:
-'   anno(a partire dal 2000) = tempo/(13*32*24*3600); resto_anno = tempo - anno*(13*32*24*3600);
-'   mese = resto_anno/(32*24*3600); resto_mese = resto_anno - mese*(32*24*3600)
-'   giorno = resto_mese/(24*3600);  resto_giorno = resto_mese - giorno*(24*3600)
-'   ora = resto_giorno/3600;  resto_ora = resto_giorno - ora*3600;
-'   minuto = resto_ora/60;  resto_minuto = secondo = resto_ora - minuto*60;
-' 4 bytes per le 3 tensioni: tensioni = (((V12_rms<<10)+V13_rms)<<10)+V23_rms; campo 0-1023V
-' 4 bytes per le 3 correnti = (((I1<<10)+I2)<<10)+I3;  I= 0-102.3A, oppure 0-1023A
-' 4 bytes = potenza_pressione_cosfi = (((potenza<<10) + pressione)<<7) +cosfi; potenza 0-327.67KW, pressione 0-102.3Bar, cosfi= 0-99
-' 2 bytes = flusso
-' 1 byte = temperatura  0-255 °C
 Public Structure InterventSingle
     Public _intType As Byte
     Public _intTime As UInt32
     Public _intVoltAv As UInt16
 
-    Public _intV3_rms As UInt16
-    Public _intV2_rms As UInt16
-    Public _intV1_rms As UInt16
+    Public _intV12_rms As UInt16
+    Public _intV13_rms As UInt16
+    Public _intV23_rms As UInt16
 
     Public _intI1_rms As UInt16
     Public _intI2_rms As UInt16
@@ -49,8 +23,8 @@ Public Structure InterventSingle
     Public _intPower As UInt16
     Public _intPress As Int16
     Public _intCosfi As Byte
+    Public _intTragFreq As UInt16
     Public _intTemp As Byte
-    Public _intFlow As UInt16
 
 End Structure
 
@@ -104,11 +78,10 @@ Public Class InterventiList
         _List(_List.Length - 1)._intType = _arrToParse(0)
         _List(_List.Length - 1)._intTime = _arrToParse(1) * 256 ^ 3 + _arrToParse(2) * 256 ^ 2 + _arrToParse(3) * 256 ^ 1 + _arrToParse(4) * 256 ^ 0
 
-        ''_List(_List.Length - 1)._intVoltAv = Conv_num_Int16(_arrToParse(5), _arrToParse(6))
         numTmp = _arrToParse(5) * 256 ^ 3 + _arrToParse(6) * 256 ^ 2 + _arrToParse(7) * 256 ^ 1 + _arrToParse(8) * 256 ^ 0
-        _List(_List.Length - 1)._intV3_rms = (numTmp >> 20) And &H3FF   ' 10 bit
-        _List(_List.Length - 1)._intV2_rms = (numTmp >> 10) And &H3FF   ' 10 bit
-        _List(_List.Length - 1)._intV1_rms = numTmp And &H3FF           ' 10 bit
+        _List(_List.Length - 1)._intV12_rms = (numTmp >> 20) And &H3FF   ' 10 bit
+        _List(_List.Length - 1)._intV13_rms = (numTmp >> 10) And &H3FF   ' 10 bit
+        _List(_List.Length - 1)._intV23_rms = numTmp And &H3FF           ' 10 bit
 
         numTmp = _arrToParse(9) * 256 ^ 3 + _arrToParse(10) * 256 ^ 2 + _arrToParse(11) * 256 ^ 1 + _arrToParse(12) * 256 ^ 0
         _List(_List.Length - 1)._intI1_rms = (numTmp >> 20) And &H3FF   ' 10 bit
@@ -121,7 +94,7 @@ Public Class InterventiList
         _List(_List.Length - 1)._intCosfi = numTmp And &H7F             ' 7 bit
 
         numTmp = _arrToParse(17) * 256 ^ 1 + _arrToParse(18) * 256 ^ 0
-        _List(_List.Length - 1)._intFlow = numTmp
+        _List(_List.Length - 1)._intTragFreq = numTmp
 
         _List(_List.Length - 1)._intTemp = _arrToParse(19)
 
@@ -140,7 +113,6 @@ Public Class InterventiList
         If Not Integer.TryParse(_arrToParse(1), tmpInt) Then Return False
         If Not Integer.TryParse(_arrToParse(5), tmpInt) Then Return False
         If Not Integer.TryParse(_arrToParse(6), tmpInt) Then Return False
-        If Not Integer.TryParse(_arrToParse(7), tmpInt) Then Return False
 
 
         ' Aumenta lunghezza di un campo
@@ -165,30 +137,28 @@ Public Class InterventiList
         'Public _intFlow As UInt16
 
         _List(_List.Length - 1)._intType = Convert.ToByte(_arrToParse(1))
-        _List(_List.Length - 1)._intTime = tempoFromDataOra(_arrToParse(3), _arrToParse(4))
+        _List(_List.Length - 1)._intTime = tempoFromDataOra(_arrToParse(3), _arrToParse(3))
 
-        _List(_List.Length - 1)._intV3_rms = GetVoltageInv(Convert.ToInt16(_arrToParse(5)))
-        _List(_List.Length - 1)._intV2_rms = GetVoltageInv(Convert.ToInt16(_arrToParse(6)))
-        _List(_List.Length - 1)._intV1_rms = GetVoltageInv(Convert.ToInt16(_arrToParse(7)))
+        _List(_List.Length - 1)._intV12_rms = GetVoltageInv(Convert.ToInt16(_arrToParse(4)))
+        _List(_List.Length - 1)._intV13_rms = GetVoltageInv(Convert.ToInt16(_arrToParse(5)))
+        _List(_List.Length - 1)._intV23_rms = GetVoltageInv(Convert.ToInt16(_arrToParse(6)))
 
-        _List(_List.Length - 1)._intI1_rms = GetCurrentInv(Convert.ToDouble(_arrToParse(8), Globalization.CultureInfo.GetCultureInfo("en-GB")))
-        _List(_List.Length - 1)._intI2_rms = GetCurrentInv(Convert.ToDouble(_arrToParse(9), Globalization.CultureInfo.GetCultureInfo("en-GB")))
-        _List(_List.Length - 1)._intI3_rms = GetCurrentInv(Convert.ToDouble(_arrToParse(10), Globalization.CultureInfo.GetCultureInfo("en-GB")))
+        _List(_List.Length - 1)._intI1_rms = GetCurrentInv(Convert.ToDouble(_arrToParse(7), Globalization.CultureInfo.GetCultureInfo("en-GB")))
+        _List(_List.Length - 1)._intI2_rms = GetCurrentInv(Convert.ToDouble(_arrToParse(8), Globalization.CultureInfo.GetCultureInfo("en-GB")))
+        _List(_List.Length - 1)._intI3_rms = GetCurrentInv(Convert.ToDouble(_arrToParse(9), Globalization.CultureInfo.GetCultureInfo("en-GB")))
 
 
-        _List(_List.Length - 1)._intCosfi = GetCosfiInv(Convert.ToDouble(_arrToParse(11), Globalization.CultureInfo.GetCultureInfo("en-GB")))
+        _List(_List.Length - 1)._intCosfi = GetCosfiInv(Convert.ToDouble(_arrToParse(10), Globalization.CultureInfo.GetCultureInfo("en-GB")))
 
-        If _List(_List.Length - 1)._intType = TYPE_CHANGE_PN Then
-            _List(_List.Length - 1)._intPower = GetNomPowerKiloWattInv(Convert.ToDouble(_arrToParse(12), Globalization.CultureInfo.GetCultureInfo("en-GB")))
-        Else
-            _List(_List.Length - 1)._intPower = GetPowerKiloWattInv(Convert.ToDouble(_arrToParse(12), Globalization.CultureInfo.GetCultureInfo("en-GB")))
-        End If
+        
+        _List(_List.Length - 1)._intPower = GetPowerKiloWattInv(Convert.ToDouble(_arrToParse(11), Globalization.CultureInfo.GetCultureInfo("en-GB")))
 
-        _List(_List.Length - 1)._intPress = GetPressureInv(Convert.ToDouble(_arrToParse(13), Globalization.CultureInfo.GetCultureInfo("en-GB")))
 
-        _List(_List.Length - 1)._intFlow = GetFlowInv(Convert.ToUInt16(_arrToParse(14)))
+        _List(_List.Length - 1)._intPress = GetPressureInv(Convert.ToDouble(_arrToParse(12), Globalization.CultureInfo.GetCultureInfo("en-GB")))
 
-        _List(_List.Length - 1)._intTemp = GetTemperatureInv(Convert.ToInt32(_arrToParse(15)))
+        _List(_List.Length - 1)._intTragFreq = GetTragFreqInv(Convert.ToUInt16(_arrToParse(13)))
+
+        _List(_List.Length - 1)._intTemp = GetTemperatureInv(Convert.ToInt32(_arrToParse(14)))
 
 
         Return True
@@ -237,8 +207,6 @@ Public Class USBClass
     Private _logWindow As Object 'Control
     Private _DatiSetHello As Byte()
     Private _Matricola As UInt16
-    Private _TotalTime As UInt32
-    Private _OreLav As UInt32
     Private _PotNom As UInt32
     Private _CurrNom As UInt32
     Private _VoltNom As UInt32
@@ -280,17 +248,8 @@ Public Class USBClass
         End Get
     End Property
 
-    Public ReadOnly Property OreLav() As UInt32
-        Get
-            Return _OreLav
-        End Get
-    End Property
 
-    Public ReadOnly Property TotalTime() As UInt32
-        Get
-            Return _TotalTime
-        End Get
-    End Property
+
 
     Public ReadOnly Property PotNom() As String
         Get
@@ -334,7 +293,7 @@ Public Class USBClass
     Public Sub New(ByVal logcontrol As Object)
         _logWindow = logcontrol
 
-        _OreLav = 0
+
         _FwVer = 0
         _HwVer = 0
         _Matricola = 0
@@ -348,7 +307,6 @@ Public Class USBClass
     Public Sub New()
         _logWindow = Nothing
 
-        _OreLav = 0
         _FwVer = 0
         _HwVer = 0
         _Matricola = 0
@@ -671,33 +629,12 @@ Public Class USBClass
                     If ret(0) = &H21 Then
                         _DatiSetHello = ret
 
-                        '' Versione precedente a Settembre 2011  
-                        ''_Matricola = ret(1) * 256 ^ 1 + ret(2) * 256 ^ 0
-                        ''_TotalTime = ret(83) * 256 ^ 3 + ret(84) * 256 ^ 2 + ret(85) * 256 ^ 1 + ret(86) * 256 ^ 0
-                        ''_OreLav = ret(87) * 256 ^ 3 + ret(88) * 256 ^ 2 + ret(89) * 256 ^ 1 + ret(90) * 256 ^ 0
-
-                        '' Prima versione Settembre 2011
-                        ''_Matricola = ret(1) * 256 ^ 1 + ret(2) * 256 ^ 0
-                        ''_TotalTime = ret(95) * 256 ^ 3 + ret(96) * 256 ^ 2 + ret(97) * 256 ^ 1 + ret(98) * 256 ^ 0
-                        ''_OreLav = ret(111) * 256 ^ 3 + ret(112) * 256 ^ 2 + ret(113) * 256 ^ 1 + ret(114) * 256 ^ 0
-                        ''_PotNom = ret(5) * 256 ^ 1 + ret(6) * 256 ^ 0
-                        ''_CurrNom = ret(51) * 256 ^ 1 + ret(52) * 256 ^ 0
-                        ''_VoltNom = ret(49) * 256 ^ 1 + ret(50) * 256 ^ 0
-
-                        '_Matricola = ret(1) * 256 ^ 1 + ret(2) * 256 ^ 0
-                        '_TotalTime = ret(85) * 256 ^ 3 + ret(86) * 256 ^ 2 + ret(87) * 256 ^ 1 + ret(88) * 256 ^ 0
-                        '_OreLav = ret(89) * 256 ^ 3 + ret(90) * 256 ^ 2 + ret(91) * 256 ^ 1 + ret(92) * 256 ^ 0
-                        '_PotNom = ret(3) * 256 ^ 1 + ret(4) * 256 ^ 0
-                        '_CurrNom = ret(71) * 256 ^ 1 + ret(72) * 256 ^ 0
-                        '_VoltNom = ret(69) * 256 ^ 1 + ret(70) * 256 ^ 0
 
 
-                        _Matricola = ret(1) * 256 ^ 1 + ret(2) * 256 ^ 0
-                        _TotalTime = ret(81) * 256 ^ 3 + ret(82) * 256 ^ 2 + ret(83) * 256 ^ 1 + ret(84) * 256 ^ 0
-                        _OreLav = ret(85) * 256 ^ 3 + ret(86) * 256 ^ 2 + ret(87) * 256 ^ 1 + ret(88) * 256 ^ 0
-                        _PotNom = ret(3) * 256 ^ 1 + ret(4) * 256 ^ 0
-                        _CurrNom = ret(77) * 256 ^ 1 + ret(78) * 256 ^ 0
-                        _VoltNom = ret(75) * 256 ^ 1 + ret(76) * 256 ^ 0
+                        _Matricola = ret(3) * 256 ^ 1 + ret(4) * 256 ^ 0
+                        _PotNom = ret(5) * 256 ^ 1 + ret(6) * 256 ^ 0
+                        _CurrNom = ret(9) * 256 ^ 1 + ret(10) * 256 ^ 0
+                        _VoltNom = ret(7) * 256 ^ 1 + ret(8) * 256 ^ 0
 
                         ForceClosePort()
                         Return True
@@ -725,7 +662,7 @@ Public Class USBClass
     Public Function CreateParHelloFromFile(ByVal _arrToParse As String()) As Boolean
         Dim tmpInt As Integer
 
-        If _arrToParse.Length < 6 Then
+        If _arrToParse.Length < 4 Then
             Return False
         End If
 
@@ -754,16 +691,12 @@ Public Class USBClass
         If Not Integer.TryParse(_arrToParse(1), tmpInt) Then Return False
         If Not Integer.TryParse(_arrToParse(2), tmpInt) Then Return False
         If Not Integer.TryParse(_arrToParse(3), tmpInt) Then Return False
-        If Not Integer.TryParse(_arrToParse(4), tmpInt) Then Return False
-        If Not Integer.TryParse(_arrToParse(5), tmpInt) Then Return False
 
 
         _Matricola = _arrToParse(0)
-        _TotalTime = _arrToParse(1)
-        _OreLav = _arrToParse(2)
-        _PotNom = _arrToParse(3)
-        _VoltNom = _arrToParse(4)
-        _CurrNom = _arrToParse(5)
+        _PotNom = _arrToParse(1)
+        _VoltNom = _arrToParse(2)
+        _CurrNom = _arrToParse(3)
 
         Return True
     End Function

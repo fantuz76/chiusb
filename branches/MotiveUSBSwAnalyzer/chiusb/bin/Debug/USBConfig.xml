@@ -6,16 +6,7 @@ USBConfig
 </name>
 </assembly>
 <members>
-<member name="M:ApplicationUSB.InterventiList.#ctor">
- Constructor to set the properties of our    
-
-</member><member name="M:ApplicationUSB.USBClass.#ctor(System.Object)">
- Constructor to set the properties of our Manager Class
-
-</member><member name="M:ApplicationUSB.USBClass.#ctor">
- Constructor to set the properties of our serial port communicator to nothing
-
-</member><member name="P:ApplicationUSB.My.Resources.Resources.ResourceManager">
+<member name="P:ApplicationUSB.My.Resources.Resources.ResourceManager">
 	<summary>
   Restituisce l'istanza di ResourceManager nella cache utilizzata da questa classe.
 </summary>
@@ -28,6 +19,15 @@ USBConfig
 	<summary>
   Classe di risorse fortemente tipizzata per la ricerca di stringhe localizzate e così via.
 </summary>
+</member><member name="M:ApplicationUSB.InterventiList.#ctor">
+ Constructor to set the properties of our    
+
+</member><member name="M:ApplicationUSB.USBClass.#ctor(System.Object)">
+ Constructor to set the properties of our Manager Class
+
+</member><member name="M:ApplicationUSB.USBClass.#ctor">
+ Constructor to set the properties of our serial port communicator to nothing
+
 </member>
 </members>
 </doc>

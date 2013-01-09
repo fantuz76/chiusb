@@ -32,10 +32,10 @@ Public Class MainFrm
 
 
 
-        FormWait.Cursor = Cursors.WaitCursor
-        FormWait.Show()
-        FormWait.Left = Me.Left + (Me.Width - FormWait.Width) / 2
-        FormWait.Top = Me.Top + (Me.Height - FormWait.Height) / 2
+        'FormWait.Cursor = Cursors.WaitCursor
+        'FormWait.Show()
+        'FormWait.Left = Me.Left + (Me.Width - FormWait.Width) / 2
+        'FormWait.Top = Me.Top + (Me.Height - FormWait.Height) / 2
         EnableControlsInterventi(False)
 
         If ConnectionIsActive Then
@@ -151,26 +151,25 @@ Public Class MainFrm
         lblIntTypeVal.ForeColor = Intervents.GetIntColor(intToFill._intType)
 
 
-        'lblIntTimeVal.Text = GetHours(intToFill._intTime).ToString & "h " & GetMinutes(intToFill._intTime).ToString("00") & "' " & GetSeconds(intToFill._intTime).ToString("00") & "''"
-        lblIntTimeVal.Text = (2000 + GetYear(intToFill._intTime)).ToString("0000") & "/" & GetMonth(intToFill._intTime).ToString("00") & "/" & GetDay(intToFill._intTime).ToString("00") & " " & GetHours(intToFill._intTime).ToString("00") & "h" & GetMinutes(intToFill._intTime).ToString("00") & "'" & GetSeconds(intToFill._intTime).ToString("00") & "''"
+
+        'lblIntTimeVal.Text = (2000 + GetYear(intToFill._intTime)).ToString("0000") & "/" & GetMonth(intToFill._intTime).ToString("00") & "/" & GetDay(intToFill._intTime).ToString("00") & " " & GetHours(intToFill._intTime).ToString("00") & "h" & GetMinutes(intToFill._intTime).ToString("00") & "'" & GetSeconds(intToFill._intTime).ToString("00") & "''"
+        lblIntTimeVal.Text = GetHours(intToFill._intTime).ToString("00") & "h" & GetMinutes(intToFill._intTime).ToString("00") & "'" & GetSeconds(intToFill._intTime).ToString("00") & "''"
 
 
         'lblIntV1Val.Text = GetVoltage(intToFill._intVoltAv)
-        lblIntV1Val.Text = intToFill._intV3_rms
-        lblIntV2Val.Text = intToFill._intV2_rms
-        lblIntV3Val.Text = intToFill._intV1_rms
+        lblIntV1Val.Text = intToFill._intV12_rms
+        lblIntV2Val.Text = intToFill._intV13_rms
+        lblIntV3Val.Text = intToFill._intV23_rms
 
         lblIntI1Val.Text = GetCurrent(intToFill._intI1_rms)
         lblIntI2Val.Text = GetCurrent(intToFill._intI2_rms)
         lblIntI3Val.Text = GetCurrent(intToFill._intI3_rms)
 
-        If intToFill._intType = TYPE_CHANGE_PN Then
-            lblIntPowVal.Text = (GetNomPowerKiloWatt(intToFill._intPower)).ToString("F3", GetCultureInfo("en-GB"))
-        Else
-            lblIntPowVal.Text = (GetPowerKiloWatt(intToFill._intPower)).ToString("F3", GetCultureInfo("en-GB"))
-        End If
+        
+        lblIntPowVal.Text = (GetPowerKiloWatt(intToFill._intPower)).ToString("F3", GetCultureInfo("en-GB"))
+
         lblIntPressVal.Text = GetPressure(intToFill._intPress)
-        lblIntFlowVal.Text = GetFlow(intToFill._intFlow)
+        lblIntTragFreqVal.Text = GetTragFreq(intToFill._intTragFreq)
         lblIntCosfiVal.Text = GetCosfi(intToFill._intCosfi)
         lblIntTempVal.Text = GetTemperature(intToFill._intTemp)
 
@@ -248,12 +247,6 @@ Public Class MainFrm
             StatusStrip1.Items.Add("Serial number: " + ConnectionUSB.Matricola.ToUpper.PadRight(8))
             StatusStrip1.Items.Add(New ToolStripSeparator)
 
-            StatusStrip1.Items.Add("Total time ON: " + (ConnectionUSB.TotalTime \ 3600).ToString("") + "h " + GetMinutes(ConnectionUSB.TotalTime).ToString("00") + "' " + GetSeconds(ConnectionUSB.TotalTime).ToString("00") + "''")
-            StatusStrip1.Items.Add(New ToolStripSeparator)
-
-            StatusStrip1.Items.Add("Pump ON worked time: " + (ConnectionUSB.OreLav \ 3600).ToString("") + "h " + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
-            StatusStrip1.Items.Add(New ToolStripSeparator)
-
             StatusStrip1.Items.Add(("Pn: " + (GetNomPowerKiloWatt(ConnectionUSB.PotNom)).ToString("F2", GetCultureInfo("en-GB")) + "Kw").PadRight(12))
             StatusStrip1.Items.Add(New ToolStripSeparator)
 
@@ -277,12 +270,6 @@ Public Class MainFrm
             StatusStrip1.Items.Add(Date.Now)
             StatusStrip1.Items.Add(New ToolStripSeparator)
             StatusStrip1.Items.Add("Serial number: " + ConnectionUSB.Matricola.ToUpper.PadRight(8))
-            StatusStrip1.Items.Add(New ToolStripSeparator)
-
-            StatusStrip1.Items.Add("Total time ON: " + (ConnectionUSB.TotalTime \ 3600).ToString("") + "h " + GetMinutes(ConnectionUSB.TotalTime).ToString("00") + "' " + GetSeconds(ConnectionUSB.TotalTime).ToString("00") + "''")
-            StatusStrip1.Items.Add(New ToolStripSeparator)
-
-            StatusStrip1.Items.Add("Pump ON worked time: " + (ConnectionUSB.OreLav \ 3600).ToString("") + "h " + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
             StatusStrip1.Items.Add(New ToolStripSeparator)
 
             StatusStrip1.Items.Add(("Pn: " + (GetNomPowerKiloWatt(ConnectionUSB.PotNom)).ToString("F2", GetCultureInfo("en-GB")) + "Kw").PadRight(12))
@@ -419,9 +406,6 @@ Public Class MainFrm
 
                 '               + " Fw Ver:" + ConnectionUSB.FwVer.ToString("X4") _
                 '               + " Hw Ver:" + ConnectionUSB.HwVer.ToString("X4"))
-                file.WriteLine("* Total time control box ON:" + GetHours(ConnectionUSB.TotalTime).ToString + "h" + GetMinutes(ConnectionUSB.TotalTime).ToString("00") + "' " + GetSeconds(ConnectionUSB.TotalTime).ToString("00") + "''")
-                file.WriteLine("* Pump ON worked hours: " + GetHours(ConnectionUSB.OreLav).ToString + "h" + GetMinutes(ConnectionUSB.OreLav).ToString("00") + "' " + GetSeconds(ConnectionUSB.OreLav).ToString("00") + "''")
-
 
                 file.WriteLine("* Pnom: " + (GetNomPowerKiloWatt(ConnectionUSB.PotNom)).ToString("F3", GetCultureInfo("en-GB")) + "Kw")
                 file.WriteLine("* Vnom: " + GetVoltage(ConnectionUSB.VoltNom).ToString("") + "V")

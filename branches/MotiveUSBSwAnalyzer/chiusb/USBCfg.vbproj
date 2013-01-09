@@ -72,7 +72,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>logo_cut.ico</ApplicationIcon>
+    <ApplicationIcon>icon_motive.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
@@ -231,7 +231,10 @@
     <None Include="Resources\Save as.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="icon_motive.ico" />
     <Content Include="logo_cut.ico" />
+    <None Include="Resources\logo_e_scritta_Motive.jpg" />
+    <None Include="Resources\logo motive hi_def.gif" />
     <None Include="Resources\Actions-document-open-folder-icon.png" />
     <None Include="Resources\iFolder-icon.png" />
     <None Include="Resources\zoom_out_selected.png" />

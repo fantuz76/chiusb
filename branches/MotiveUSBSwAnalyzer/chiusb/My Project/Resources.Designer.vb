@@ -123,6 +123,20 @@ Namespace My.Resources
             End Get
         End Property
         
+        Friend ReadOnly Property logo_e_scritta_Motive() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("logo_e_scritta_Motive", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property logo_motive_hi_def() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("logo motive hi_def", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Friend ReadOnly Property SaveAs() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("SaveAs", resourceCulture)
