@@ -9,10 +9,10 @@
 
 ; Inno Setup PreProccessor
 [ISPP]
-#define AppName "Usb Control Box"
-#define ShortAppName "USB Control Box"
-#define AppVersion "2.9.0"
-#define AppPublisher "Electroil"
+#define AppName "USB Motor Analyzer"
+#define ShortAppName "USB Motor Analyzer"
+#define AppVersion "1.0.0"
+#define AppPublisher "Motive"
 #define AppURL "http://www.electroil.it/"
 
 #define IncludeFramework false

@@ -118,3 +118,23 @@ C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\bin\Deb
 C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.TrustInfo.xml
 C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.exe.manifest
 C:\Users\fantuzzi\Documents\Freescale\USB - JM60 - Ch\ChiUSB_SwPC\chiusb\obj\x86\Debug\USBConfig.application
+h:\documenti\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\bin\Debug\USBConfig.exe.config
+h:\documenti\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\USBConfig.exe
+h:\documenti\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\USBConfig.xml
+h:\documenti\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\USBConfig.pdb
+h:\documenti\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\bin\Debug\USBConfig.exe.manifest
+h:\documenti\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\bin\Debug\USBConfig.application
+h:\documenti\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\bin\Debug\USBConfig.exe
+h:\documenti\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\bin\Debug\USBConfig.pdb
+h:\documenti\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\bin\Debug\USBConfig.xml
+h:\documenti\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\bin\Debug\ZedGraph.xml
+h:\documenti\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\ResolveAssemblyReference.cache
+h:\documenti\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\ApplicationUSB.AboutBox1.resources
+h:\documenti\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\ApplicationUSB.FormWait.resources
+h:\documenti\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\ApplicationUSB.MainFrm.resources
+h:\documenti\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\ApplicationUSB.Resources.resources
+h:\documenti\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\ApplicationUSB.ZedGraphFrm.resources
+h:\documenti\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\USBCfg.vbproj.GenerateResource.Cache
+h:\documenti\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\USBConfig.TrustInfo.xml
+h:\documenti\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\USBConfig.exe.manifest
+h:\documenti\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\USBConfig.application
