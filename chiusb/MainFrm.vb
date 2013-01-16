@@ -155,8 +155,6 @@ Public Class MainFrm
         'lblIntTimeVal.Text = (2000 + GetYear(intToFill._intTime)).ToString("0000") & "/" & GetMonth(intToFill._intTime).ToString("00") & "/" & GetDay(intToFill._intTime).ToString("00") & " " & GetHours(intToFill._intTime).ToString("00") & "h" & GetMinutes(intToFill._intTime).ToString("00") & "'" & GetSeconds(intToFill._intTime).ToString("00") & "''"
         lblIntTimeVal.Text = GetHours(intToFill._intTime).ToString("00") & "h" & GetMinutes(intToFill._intTime).ToString("00") & "'" & GetSeconds(intToFill._intTime).ToString("00") & "''"
 
-
-        'lblIntV1Val.Text = GetVoltage(intToFill._intVoltAv)
         lblIntV1Val.Text = intToFill._intV12_rms
         lblIntV2Val.Text = intToFill._intV13_rms
         lblIntV3Val.Text = intToFill._intV23_rms
@@ -166,12 +164,14 @@ Public Class MainFrm
         lblIntI3Val.Text = GetCurrent(intToFill._intI3_rms)
 
         
-        lblIntPowVal.Text = (GetPowerKiloWatt(intToFill._intPower)).ToString("F3", GetCultureInfo("en-GB"))
+        lblIntPowVal.Text = (GetPowerKiloWatt(intToFill._intPower)).ToString("F1", GetCultureInfo("en-GB"))
 
-        lblIntPressVal.Text = GetPressure(intToFill._intPress)
-        lblIntTragFreqVal.Text = GetTragFreq(intToFill._intTragFreq)
+        lblIntRPMVal.Text = GetRPM(intToFill._intRPM)
+        lblIntTragFreqVal.Text = GetFreq(intToFill._intFreq)
         lblIntCosfiVal.Text = GetCosfi(intToFill._intCosfi)
         lblIntTempVal.Text = GetTemperature(intToFill._intTemp)
+
+        lblIntVConVal.Text = (GetVoltCond(intToFill._intVoltCond)).ToString("F1", GetCultureInfo("en-GB"))
 
     End Sub
 
@@ -220,7 +220,7 @@ Public Class MainFrm
             lblIntI3Val.Text = ""
 
             lblIntPowVal.Text = ""
-            lblIntPressVal.Text = ""
+            lblIntRPMVal.Text = ""
             lblIntCosfiVal.Text = ""
             lblIntTempVal.Text = ""
 

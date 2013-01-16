@@ -10,7 +10,7 @@ Imports System.Windows.Forms
 Public Structure InterventSingle
     Public _intType As Byte
     Public _intTime As UInt32
-    Public _intVoltAv As UInt16
+
 
     Public _intV12_rms As UInt16
     Public _intV13_rms As UInt16
@@ -20,10 +20,15 @@ Public Structure InterventSingle
     Public _intI2_rms As UInt16
     Public _intI3_rms As UInt16
 
-    Public _intPower As UInt16
-    Public _intPress As Int16
+    Public _intPower As Byte
+
+    Public _intVoltCond As Byte
+
+    Public _intFreq As Byte
     Public _intCosfi As Byte
-    Public _intTragFreq As UInt16
+
+    Public _intRPM As UInt16
+
     Public _intTemp As Byte
 
 End Structure
@@ -88,13 +93,16 @@ Public Class InterventiList
         _List(_List.Length - 1)._intI2_rms = (numTmp >> 10) And &H3FF   ' 10 bit
         _List(_List.Length - 1)._intI3_rms = numTmp And &H3FF           ' 10 bit
 
-        numTmp = _arrToParse(13) * 256 ^ 3 + _arrToParse(14) * 256 ^ 2 + _arrToParse(15) * 256 ^ 1 + _arrToParse(16) * 256 ^ 0
-        _List(_List.Length - 1)._intPower = (numTmp >> 17) And &H7FFF   ' 15 bit
-        _List(_List.Length - 1)._intPress = (numTmp >> 7) And &H3FF     ' 10 bit
-        _List(_List.Length - 1)._intCosfi = numTmp And &H7F             ' 7 bit
 
-        numTmp = _arrToParse(17) * 256 ^ 1 + _arrToParse(18) * 256 ^ 0
-        _List(_List.Length - 1)._intTragFreq = numTmp
+        _List(_List.Length - 1)._intPower = _arrToParse(13)
+
+        _List(_List.Length - 1)._intVoltCond = _arrToParse(14)
+
+        _List(_List.Length - 1)._intFreq = _arrToParse(15)
+
+        _List(_List.Length - 1)._intCosfi = _arrToParse(16)
+
+        _List(_List.Length - 1)._intRPM = _arrToParse(17) * 256 + _arrToParse(18)
 
         _List(_List.Length - 1)._intTemp = _arrToParse(19)
 
@@ -104,7 +112,7 @@ Public Class InterventiList
     Public Function AddArrIntFromFile(ByVal _arrToParse As String()) As Boolean
         Dim tmpInt As Integer
 
-        If _arrToParse.Length < INTERVENTO_LENGTH Then
+        If _arrToParse.Length < 15 Then
             Return False
         End If
 
@@ -118,23 +126,6 @@ Public Class InterventiList
         ' Aumenta lunghezza di un campo
         ReDim Preserve _List(_List.Length)
 
-        'Public _intType As Byte
-        'Public _intTime As UInt32
-        'Public _intVoltAv As UInt16
-
-        'Public _intV3_rms As UInt16
-        'Public _intV2_rms As UInt16
-        'Public _intV1_rms As UInt16
-
-        'Public _intI1_rms As UInt16
-        'Public _intI2_rms As UInt16
-        'Public _intI3_rms As UInt16
-
-        'Public _intPower As UInt16
-        'Public _intPress As Int16
-        'Public _intCosfi As Byte
-        'Public _intTemp As Byte
-        'Public _intFlow As UInt16
 
         _List(_List.Length - 1)._intType = Convert.ToByte(_arrToParse(1))
         _List(_List.Length - 1)._intTime = tempoFromDataOra(_arrToParse(3), _arrToParse(3))
@@ -154,12 +145,13 @@ Public Class InterventiList
         _List(_List.Length - 1)._intPower = GetPowerKiloWattInv(Convert.ToDouble(_arrToParse(11), Globalization.CultureInfo.GetCultureInfo("en-GB")))
 
 
-        _List(_List.Length - 1)._intPress = GetPressureInv(Convert.ToDouble(_arrToParse(12), Globalization.CultureInfo.GetCultureInfo("en-GB")))
+        _List(_List.Length - 1)._intRPM = GetRPMInv(Convert.ToDouble(_arrToParse(12), Globalization.CultureInfo.GetCultureInfo("en-GB")))
 
-        _List(_List.Length - 1)._intTragFreq = GetTragFreqInv(Convert.ToUInt16(_arrToParse(13)))
+        _List(_List.Length - 1)._intFreq = GetFreqInv(Convert.ToDouble(_arrToParse(13), Globalization.CultureInfo.GetCultureInfo("en-GB")))
 
         _List(_List.Length - 1)._intTemp = GetTemperatureInv(Convert.ToInt32(_arrToParse(14)))
 
+        _List(_List.Length - 1)._intVoltCond = GetVoltCondInv(Convert.ToDouble(_arrToParse(15), Globalization.CultureInfo.GetCultureInfo("en-GB")))
 
         Return True
     End Function
@@ -597,9 +589,9 @@ Public Class USBClass
             If Not OnlyPayload Then _arrbytes = _arrRead
 
             'If ReadOK Then
-            '    DisplayLogData("Read OK")
+            ' DisplayLogData("Read OK")
             'Else
-            '    DisplayLogData("Read Error")
+            ' DisplayLogData("Read Error")
             'End If
 
             Return ReadOK
