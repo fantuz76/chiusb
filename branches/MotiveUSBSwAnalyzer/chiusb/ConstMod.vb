@@ -2,26 +2,26 @@
 
     Public Const XMLCFG = "\Config.xml"
 
-    Public Const NUM_MAX_TYPE_INT = 20      ' Codice tipo intervento massimo possibile (non tutti sono usati)
+    Public Const NUM_MAX_TYPE_INT = 15      ' Codice tipo intervento massimo possibile (non tutti sono usati)
 
 
     'Public Const NUM_INT_TYPES = 35         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)
     Public Const NUM_INT_TYPES = 10         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)
 
-    Public Const INTERVENTO_LENGTH = 16     ' Dimensione array USB singolo intervento
+    Public Const INTERVENTO_LENGTH = 20     ' Dimensione array USB singolo intervento
 
 
     ' Definizione Codici dei vari tipi di intervento
-    Public Const TYPE_CURRENT_PEAK = 0
-    Public Const TYPE_OVERVOLTAGE = 1
-    Public Const TYPE_INVERTER_TEMPER = 2
-    Public Const TYPE_THERMAL_PROTECT = 3
-    Public Const TYPE_ENCODER_ERROR = 4
-    Public Const TYPE_ENABLE_OFF = 5
-    Public Const TYPE_OVERCURRENT = 6
-    Public Const TYPE_INOUT_INVERTED = 7
-    Public Const TYPE_UNDERVOLTAGE = 8
-    Public Const TYPE_COMUNICAT_ERROR = 9
+    Public Const TYPE_CURRENT_PEAK = 1
+    Public Const TYPE_OVERVOLTAGE = 2
+    Public Const TYPE_INVERTER_TEMPER = 3
+    Public Const TYPE_THERMAL_PROTECT = 4
+    Public Const TYPE_ENCODER_ERROR = 5
+    Public Const TYPE_ENABLE_OFF = 6
+    Public Const TYPE_OVERCURRENT = 7
+    Public Const TYPE_INOUT_INVERTED = 8
+    Public Const TYPE_UNDERVOLTAGE = 9
+    Public Const TYPE_COMUNICAT_ERROR = 10
 
 
 
@@ -39,7 +39,7 @@
     Public Const TYPE_OVERCURRENT_STR = "Over-Current "
     Public Const TYPE_INOUT_INVERTED_STR = "IN-OUT Inverted "
     Public Const TYPE_UNDERVOLTAGE_STR = "Under-Voltage "
-    Public Const TYPE_COMUNICAT_ERROR_STR = "Comunic. Error "
+    Public Const TYPE_COMUNICAT_ERROR_STR = "Comunicat. Error "
 
 
     '	Pos # byte	# int	int //dai di funzionamento a partire dall'indirizzo 8040  della eeprom

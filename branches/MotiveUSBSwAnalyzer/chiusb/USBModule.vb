@@ -355,13 +355,16 @@ Module USBModule
         StToAdd2 = "P[Kw]"
         StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = "Press[bar]"
+        StToAdd2 = "RPM[rpm]"
         StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = "Flow[l/m]"
+        StToAdd2 = "Freq[Hz]"
         StToAdd = StToAdd + StToAdd2 + ","
 
         StToAdd2 = "T[°C]"
+        StToAdd = StToAdd + StToAdd2 + ","
+
+        StToAdd2 = "CVolt[V]"
         StToAdd = StToAdd + StToAdd2 + ","
 
         Return StToAdd
@@ -404,18 +407,19 @@ Module USBModule
         StToAdd2 = GetCosfi(_intv._intCosfi).ToString("F2", GetCultureInfo("en-GB"))
         StToAdd = StToAdd + StToAdd2 + ","
 
-        
-        StToAdd2 = (GetPowerKiloWatt(_intv._intPower)).ToString("F3", GetCultureInfo("en-GB"))
-
+        StToAdd2 = (GetPowerKiloWatt(_intv._intPower)).ToString("F1", GetCultureInfo("en-GB"))
         StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = GetPressure(_intv._intPress).ToString("F1", GetCultureInfo("en-GB"))
+        StToAdd2 = GetRPM(_intv._intRPM).ToString()
         StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = GetTragFreq(_intv._intTragFreq).ToString
+        StToAdd2 = GetFreq(_intv._intFreq).ToString
         StToAdd = StToAdd + StToAdd2 + ","
 
         StToAdd2 = GetTemperature(_intv._intTemp).ToString
+        StToAdd = StToAdd + StToAdd2 + ","
+
+        StToAdd2 = GetVoltCond(_intv._intVoltCond).ToString
         StToAdd = StToAdd + StToAdd2 + ","
 
         Return StToAdd
@@ -462,15 +466,17 @@ Module USBModule
         StToAdd2 = "P"
         StToAdd = StToAdd + StToAdd2.PadRight(8)
 
-        StToAdd2 = "Press"
+        StToAdd2 = "RPM"
         StToAdd = StToAdd + StToAdd2.PadRight(6)
 
         StToAdd2 = "Freq"
         StToAdd = StToAdd + StToAdd2.PadRight(6)
 
         StToAdd2 = "T"
-        StToAdd = StToAdd + StToAdd2.PadRight(4)
+        StToAdd = StToAdd + StToAdd2.PadRight(5)
 
+        StToAdd2 = "C Volt."
+        StToAdd = StToAdd + StToAdd2.PadRight(7)
 
 
         Return StToAdd
@@ -489,8 +495,7 @@ Module USBModule
         StToAdd2 = " "
         StToAdd = StToAdd + StToAdd2.PadRight(MAXLEN_STR + 1)
 
-        'StToAdd2 = "[Y/M/D]"
-        'StToAdd = StToAdd + StToAdd2.PadRight(11)
+
 
         StToAdd2 = "[h/min/sec]"
         StToAdd = StToAdd + StToAdd2.PadRight(15)
@@ -509,22 +514,23 @@ Module USBModule
         StToAdd2 = "[A]"
         StToAdd = StToAdd + StToAdd2.PadRight(6)
 
-        StToAdd2 = ""
+        StToAdd2 = ""  ' cosfi
         StToAdd = StToAdd + StToAdd2.PadRight(5)
 
         StToAdd2 = "[Kw]"
         StToAdd = StToAdd + StToAdd2.PadRight(8)
 
-        StToAdd2 = "[bar]"
+        StToAdd2 = "[rpm]"
         StToAdd = StToAdd + StToAdd2.PadRight(6)
 
         StToAdd2 = "[Hz]"
         StToAdd = StToAdd + StToAdd2.PadRight(6)
 
         StToAdd2 = "[°C]"
-        StToAdd = StToAdd + StToAdd2.PadRight(4)
+        StToAdd = StToAdd + StToAdd2.PadRight(5)
 
-
+        StToAdd2 = "[V]"
+        StToAdd = StToAdd + StToAdd2.PadRight(7)
 
         Return StToAdd
     End Function
@@ -566,19 +572,20 @@ Module USBModule
         StToAdd2 = GetCosfi(_intv._intCosfi).ToString("F2", GetCultureInfo("en-GB"))
         StToAdd = StToAdd + StToAdd2.PadRight(5)
 
-        StToAdd2 = (GetPowerKiloWatt(_intv._intPower)).ToString("F3", GetCultureInfo("en-GB"))
-
+        StToAdd2 = (GetPowerKiloWatt(_intv._intPower)).ToString("F1", GetCultureInfo("en-GB"))
         StToAdd = StToAdd + StToAdd2.PadRight(8)
 
-        StToAdd2 = GetPressure(_intv._intPress).ToString("F1", GetCultureInfo("en-GB"))
+        StToAdd2 = GetRPM(_intv._intRPM).ToString()
         StToAdd = StToAdd + StToAdd2.PadRight(6)
 
-        StToAdd2 = GetTragFreq(_intv._intTragFreq).ToString
+        StToAdd2 = GetFreq(_intv._intFreq).ToString
         StToAdd = StToAdd + StToAdd2.PadRight(6)
-
 
         StToAdd2 = GetTemperature(_intv._intTemp).ToString
-        StToAdd = StToAdd + StToAdd2.PadRight(4)
+        StToAdd = StToAdd + StToAdd2.PadRight(5)
+
+        StToAdd2 = GetVoltCond(_intv._intVoltCond).ToString
+        StToAdd = StToAdd + StToAdd2.PadRight(7)
 
         Return StToAdd
     End Function
@@ -646,9 +653,9 @@ Module USBModule
         Return Convert.ToDouble(_numToConvert / 10, Globalization.CultureInfo.GetCultureInfo("en-GB"))
     End Function
 
-    Public Function GetPowerKiloWatt(ByVal _numToConvert As UInt16) As Double
+    Public Function GetPowerKiloWatt(ByVal _numToConvert As Byte) As Double
         'If _numToConvert < 0 Then Return 0
-        Return Convert.ToDouble(_numToConvert / 1000, Globalization.CultureInfo.GetCultureInfo("en-GB"))
+        Return Convert.ToDouble(_numToConvert / 10, Globalization.CultureInfo.GetCultureInfo("en-GB"))
     End Function
 
     Public Function GetNomPowerKiloWatt(ByVal _numToConvert As UInt16) As Double
@@ -656,9 +663,9 @@ Module USBModule
         Return Convert.ToDouble((_numToConvert * 10) / 1000, Globalization.CultureInfo.GetCultureInfo("en-GB"))
     End Function
 
-    Public Function GetPressure(ByVal _numToConvert As Int16) As Double
-        If _numToConvert < 0 Then Return 0
-        Return Convert.ToDouble(_numToConvert / 10, Globalization.CultureInfo.GetCultureInfo("en-GB"))
+    Public Function GetRPM(ByVal _numToConvert As UInt16) As UInt16
+        'If _numToConvert < 0 Then Return 0
+        Return (_numToConvert)
     End Function
 
     Public Function GetCosfi(ByVal _numToConvert As Byte) As Double
@@ -666,12 +673,16 @@ Module USBModule
         Return Convert.ToDouble(_numToConvert / 100, Globalization.CultureInfo.GetCultureInfo("en-GB"))
     End Function
 
-    Public Function GetTragFreq(ByVal _numToConvert As UInt16) As UInt16
-        Return (_numToConvert)
+    Public Function GetFreq(ByVal _numToConvert As Byte) As Double
+        Return Convert.ToDouble((_numToConvert * 2.5) / 10, Globalization.CultureInfo.GetCultureInfo("en-GB"))
     End Function
 
     Public Function GetTemperature(ByVal _numToConvert As Byte) As Integer
         Return (_numToConvert)
+    End Function
+
+    Public Function GetVoltCond(ByVal _numToConvert As Byte) As Double
+        Return Convert.ToDouble(_numToConvert / 4, Globalization.CultureInfo.GetCultureInfo("en-GB"))
     End Function
 
     Public Function tempoFromDataOra(ByVal _data As String, ByVal _orario As String) As UInt32
@@ -701,17 +712,17 @@ Module USBModule
         Return (Convert.ToUInt16(_numToConvert * 10))
     End Function
 
-    Public Function GetPowerKiloWattInv(ByVal _numToConvert As Double) As UInt16
+    Public Function GetPowerKiloWattInv(ByVal _numToConvert As Double) As Byte
         'If _numToConvert < 0 Then Return 0
-        Return (Convert.ToUInt16(_numToConvert * 1000))
+        Return (Convert.ToByte(_numToConvert * 10))
     End Function
     Public Function GetNomPowerKiloWattInv(ByVal _numToConvert As Double) As UInt16
         'If _numToConvert < 0 Then Return 0
         Return (Convert.ToUInt16(_numToConvert * 1000 / 10))
     End Function
-    Public Function GetPressureInv(ByVal _numToConvert As Double) As Int16
-        If _numToConvert < 0 Then Return 0
-        Return (Convert.ToInt16(_numToConvert * 10))
+    Public Function GetRPMInv(ByVal _numToConvert As UInt16) As UInt16
+        'If _numToConvert < 0 Then Return 0
+        Return (_numToConvert)
     End Function
 
     Public Function GetCosfiInv(ByVal _numToConvert As Double) As Byte
@@ -719,8 +730,12 @@ Module USBModule
         Return (Convert.ToByte(_numToConvert * 100))
     End Function
 
-    Public Function GetTragFreqInv(ByVal _numToConvert As UInt16) As UInt16
-        Return (Convert.ToUInt16(_numToConvert))
+    Public Function GetFreqInv(ByVal _numToConvert As Double) As Byte
+        Return (Convert.ToByte((_numToConvert * 10) / 2.5))
+    End Function
+
+    Public Function GetVoltCondInv(ByVal _numToConvert As Double) As Byte
+        Return (Convert.ToByte(_numToConvert * 4))
     End Function
 
     Public Function GetTemperatureInv(ByVal _numToConvert As Integer) As Byte
