@@ -171,7 +171,7 @@ Public Class MainFrm
         lblIntCosfiVal.Text = GetCosfi(intToFill._intCosfi)
         lblIntTempVal.Text = GetTemperature(intToFill._intTemp)
 
-        lblIntVConVal.Text = (GetVoltCond(intToFill._intVoltCond)).ToString("F1", GetCultureInfo("en-GB"))
+        lblIntVConVal.Text = GetVoltCond(intToFill._intVoltCond)
 
     End Sub
 
@@ -256,6 +256,9 @@ Public Class MainFrm
             StatusStrip1.Items.Add(("In: " + GetCurrent(ConnectionUSB.CurrNom).ToString("") + "A").PadRight(12))
             StatusStrip1.Items.Add(New ToolStripSeparator)
 
+            StatusStrip1.Items.Add(("Freq Radio: " + GetFreqRadio(ConnectionUSB.FreqRadio).ToString("") + "Hz").PadRight(17))
+            StatusStrip1.Items.Add(New ToolStripSeparator)
+
             'StatusStrip1.Items.Add("Fw Ver: " + ConnectionUSB.FwVer.ToString("X4"))
             'StatusStrip1.Items.Add(New ToolStripSeparator)
 
@@ -279,6 +282,9 @@ Public Class MainFrm
             StatusStrip1.Items.Add(New ToolStripSeparator)
 
             StatusStrip1.Items.Add(("In: " + GetCurrent(ConnectionUSB.CurrNom).ToString("") + "A").PadRight(12))
+            StatusStrip1.Items.Add(New ToolStripSeparator)
+
+            StatusStrip1.Items.Add(("Freq Radio: " + GetFreqRadio(ConnectionUSB.FreqRadio).ToString("") + "Hz").PadRight(17))
             StatusStrip1.Items.Add(New ToolStripSeparator)
 
         Else
@@ -354,7 +360,7 @@ Public Class MainFrm
         FileNameToSave = FileNameToSave + Date.Now.Day.ToString("00")
 
         ' Nome file standard
-        FileNameToSave = "alarms" + "_" + FileNameToSave
+        FileNameToSave = "InvAlarms" + "_" + FileNameToSave
 
         ' Se sto usando estensione .txt controllo se c'è già e eventualmente aggiungo h m s 
         If SaveFileDialog1.FilterIndex = 1 Then
@@ -410,6 +416,7 @@ Public Class MainFrm
                 file.WriteLine("* Pnom: " + (GetNomPowerKiloWatt(ConnectionUSB.PotNom)).ToString("F3", GetCultureInfo("en-GB")) + "Kw")
                 file.WriteLine("* Vnom: " + GetVoltage(ConnectionUSB.VoltNom).ToString("") + "V")
                 file.WriteLine("* Inom: " + GetCurrent(ConnectionUSB.CurrNom).ToString("") + "A")
+                file.WriteLine("* FRadio: " + GetFreqRadio(ConnectionUSB.FreqRadio).ToString("") + "Hz")
 
                 file.WriteLine(New String("*", 100))
 
