@@ -138,3 +138,7 @@ h:\documenti\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\USBCfg
 h:\documenti\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\USBConfig.TrustInfo.xml
 h:\documenti\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\USBConfig.exe.manifest
 h:\documenti\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\USBConfig.application
+C:\Users\fantuzzi\Documents\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\bin\Debug\USBConfig.exe.config
+C:\Users\fantuzzi\Documents\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\USBConfig.xml
+C:\Users\fantuzzi\Documents\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\USBConfig.exe
+C:\Users\fantuzzi\Documents\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\USBConfig.pdb

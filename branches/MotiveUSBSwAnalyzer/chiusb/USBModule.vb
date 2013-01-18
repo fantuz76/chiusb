@@ -308,6 +308,9 @@ Module USBModule
         StToAdd = StToAdd + StToAdd2 + ","
 
         StToAdd2 = ConnectionUSB.CurrNom
+        StToAdd = StToAdd + StToAdd2 + ","
+
+        StToAdd2 = ConnectionUSB.FreqRadio
         StToAdd = StToAdd + StToAdd2
 
 
@@ -674,15 +677,19 @@ Module USBModule
     End Function
 
     Public Function GetFreq(ByVal _numToConvert As Byte) As Double
-        Return Convert.ToDouble((_numToConvert * 2.5) / 10, Globalization.CultureInfo.GetCultureInfo("en-GB"))
+        Return Convert.ToDouble(_numToConvert / 2.5, Globalization.CultureInfo.GetCultureInfo("en-GB"))
     End Function
 
     Public Function GetTemperature(ByVal _numToConvert As Byte) As Integer
         Return (_numToConvert)
     End Function
 
-    Public Function GetVoltCond(ByVal _numToConvert As Byte) As Double
-        Return Convert.ToDouble(_numToConvert / 4, Globalization.CultureInfo.GetCultureInfo("en-GB"))
+    Public Function GetVoltCond(ByVal _numToConvert As Byte) As UInt16
+        Return Convert.ToUInt16(_numToConvert * 4)
+    End Function
+
+    Public Function GetFreqRadio(ByVal _numToConvert As Byte) As UInt16
+        Return Convert.ToUInt16(_numToConvert + 860)
     End Function
 
     Public Function tempoFromDataOra(ByVal _data As String, ByVal _orario As String) As UInt32
@@ -731,12 +738,17 @@ Module USBModule
     End Function
 
     Public Function GetFreqInv(ByVal _numToConvert As Double) As Byte
-        Return (Convert.ToByte((_numToConvert * 10) / 2.5))
+        Return (Convert.ToByte(_numToConvert * 2.5))
     End Function
 
-    Public Function GetVoltCondInv(ByVal _numToConvert As Double) As Byte
-        Return (Convert.ToByte(_numToConvert * 4))
+    Public Function GetVoltCondInv(ByVal _numToConvert As UInt16) As Byte
+        Return (Convert.ToByte(_numToConvert / 4))
     End Function
+
+    Public Function GetFreqRadioInv(ByVal _numToConvert As UInt16) As Byte
+        Return Convert.ToByte(_numToConvert - 860)
+    End Function
+
 
     Public Function GetTemperatureInv(ByVal _numToConvert As Integer) As Byte
         Return (Convert.ToByte(_numToConvert))

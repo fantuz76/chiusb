@@ -151,7 +151,7 @@ Public Class InterventiList
 
         _List(_List.Length - 1)._intTemp = GetTemperatureInv(Convert.ToInt32(_arrToParse(14)))
 
-        _List(_List.Length - 1)._intVoltCond = GetVoltCondInv(Convert.ToDouble(_arrToParse(15), Globalization.CultureInfo.GetCultureInfo("en-GB")))
+        _List(_List.Length - 1)._intVoltCond = GetVoltCondInv(Convert.ToUInt16(_arrToParse(15)))
 
         Return True
     End Function
@@ -205,6 +205,7 @@ Public Class USBClass
     Private _myIntArr As New InterventiList
     Private _FwVer As UInt16
     Private _HwVer As UInt16
+    Private _FreqRadio As Byte
 
     'global manager variables    
     Private comPort As New SerialPort()
@@ -261,6 +262,12 @@ Public Class USBClass
         End Get
     End Property
 
+    Public ReadOnly Property FreqRadio() As String
+        Get
+            Return _FreqRadio
+        End Get
+    End Property
+
     Public ReadOnly Property InterventiLetti() As InterventiList
         Get
             Return _myIntArr
@@ -289,7 +296,7 @@ Public Class USBClass
         _FwVer = 0
         _HwVer = 0
         _Matricola = 0
-        _PotNom = _CurrNom = _VoltNom = 0
+        _PotNom = _CurrNom = _VoltNom = _FreqRadio = 0
 
         'now add an event handler
         'AddHandler comPort.DataReceived, AddressOf comPort_DataReceived
@@ -302,7 +309,7 @@ Public Class USBClass
         _FwVer = 0
         _HwVer = 0
         _Matricola = 0
-        _PotNom = _CurrNom = _VoltNom = 0
+        _PotNom = _CurrNom = _VoltNom = _FreqRadio = 0
 
         'add event handler
         'AddHandler comPort.DataReceived, AddressOf comPort_DataReceived
@@ -628,6 +635,8 @@ Public Class USBClass
                         _CurrNom = ret(9) * 256 ^ 1 + ret(10) * 256 ^ 0
                         _VoltNom = ret(7) * 256 ^ 1 + ret(8) * 256 ^ 0
 
+                        _FreqRadio = ret(59) * 256 ^ 1 + ret(60) * 256 ^ 0
+
                         ForceClosePort()
                         Return True
                     Else
@@ -689,6 +698,7 @@ Public Class USBClass
         _PotNom = _arrToParse(1)
         _VoltNom = _arrToParse(2)
         _CurrNom = _arrToParse(3)
+        _FreqRadio = _arrToParse(4)
 
         Return True
     End Function
