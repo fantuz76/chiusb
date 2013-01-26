@@ -86,7 +86,11 @@ Public Class InterventiList
         numTmp = _arrToParse(5) * 256 ^ 3 + _arrToParse(6) * 256 ^ 2 + _arrToParse(7) * 256 ^ 1 + _arrToParse(8) * 256 ^ 0
         _List(_List.Length - 1)._intV12_rms = (numTmp >> 20) And &H3FF   ' 10 bit
         _List(_List.Length - 1)._intV13_rms = (numTmp >> 10) And &H3FF   ' 10 bit
-        _List(_List.Length - 1)._intV23_rms = numTmp And &H3FF           ' 10 bit
+        '_List(_List.Length - 1)._intV23_rms = numTmp And &H3FF           ' 10 bit
+
+        ' come chiesto da Chiussi causa problema Hw mettere V23 sempre uguale  a V12
+        _List(_List.Length - 1)._intV23_rms = _List(_List.Length - 1)._intV12_rms           ' 10 bit
+
 
         numTmp = _arrToParse(9) * 256 ^ 3 + _arrToParse(10) * 256 ^ 2 + _arrToParse(11) * 256 ^ 1 + _arrToParse(12) * 256 ^ 0
         _List(_List.Length - 1)._intI1_rms = (numTmp >> 20) And &H3FF   ' 10 bit
