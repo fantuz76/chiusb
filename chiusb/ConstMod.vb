@@ -29,7 +29,7 @@
 
 
     ' Descrizione stringa dei vari tipi di intervento
-    Public Const MAXLEN_STR = 20 + 4
+    Public Const MAXLEN_STR = 18 + 4
     Public Const TYPE_CURRENT_PEAK_STR = "Current Peak "
     Public Const TYPE_OVERVOLTAGE_STR = "Over-Voltage "
     Public Const TYPE_INVERTER_TEMPER_STR = "Inverter Temper. "

@@ -364,7 +364,7 @@ Module USBModule
         StToAdd2 = "Freq[Hz]"
         StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = "T[°C]"
+        StToAdd2 = "T-IGBT[°C]"
         StToAdd = StToAdd + StToAdd2 + ","
 
         StToAdd2 = "CVolt[V]"
@@ -410,7 +410,7 @@ Module USBModule
         StToAdd2 = GetCosfi(_intv._intCosfi).ToString("F2", GetCultureInfo("en-GB"))
         StToAdd = StToAdd + StToAdd2 + ","
 
-        StToAdd2 = (GetPowerKiloWatt(_intv._intPower)).ToString("F1", GetCultureInfo("en-GB"))
+        StToAdd2 = (GetPowerKiloWatt(_intv._intPower)).ToString("F2", GetCultureInfo("en-GB"))
         StToAdd = StToAdd + StToAdd2 + ","
 
         StToAdd2 = GetRPM(_intv._intRPM).ToString()
@@ -475,8 +475,8 @@ Module USBModule
         StToAdd2 = "Freq"
         StToAdd = StToAdd + StToAdd2.PadRight(6)
 
-        StToAdd2 = "T"
-        StToAdd = StToAdd + StToAdd2.PadRight(5)
+        StToAdd2 = "T-IGBT"
+        StToAdd = StToAdd + StToAdd2.PadRight(7)
 
         StToAdd2 = "C Volt."
         StToAdd = StToAdd + StToAdd2.PadRight(7)
@@ -530,7 +530,7 @@ Module USBModule
         StToAdd = StToAdd + StToAdd2.PadRight(6)
 
         StToAdd2 = "[°C]"
-        StToAdd = StToAdd + StToAdd2.PadRight(5)
+        StToAdd = StToAdd + StToAdd2.PadRight(7)
 
         StToAdd2 = "[V]"
         StToAdd = StToAdd + StToAdd2.PadRight(7)
@@ -575,7 +575,7 @@ Module USBModule
         StToAdd2 = GetCosfi(_intv._intCosfi).ToString("F2", GetCultureInfo("en-GB"))
         StToAdd = StToAdd + StToAdd2.PadRight(5)
 
-        StToAdd2 = (GetPowerKiloWatt(_intv._intPower)).ToString("F1", GetCultureInfo("en-GB"))
+        StToAdd2 = (GetPowerKiloWatt(_intv._intPower)).ToString("F2", GetCultureInfo("en-GB"))
         StToAdd = StToAdd + StToAdd2.PadRight(8)
 
         StToAdd2 = GetRPM(_intv._intRPM).ToString()
@@ -585,7 +585,7 @@ Module USBModule
         StToAdd = StToAdd + StToAdd2.PadRight(6)
 
         StToAdd2 = GetTemperature(_intv._intTemp).ToString
-        StToAdd = StToAdd + StToAdd2.PadRight(5)
+        StToAdd = StToAdd + StToAdd2.PadRight(7)
 
         StToAdd2 = GetVoltCond(_intv._intVoltCond).ToString
         StToAdd = StToAdd + StToAdd2.PadRight(7)

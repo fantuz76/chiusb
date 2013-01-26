@@ -164,7 +164,7 @@ Public Class MainFrm
         lblIntI3Val.Text = GetCurrent(intToFill._intI3_rms)
 
         
-        lblIntPowVal.Text = (GetPowerKiloWatt(intToFill._intPower)).ToString("F1", GetCultureInfo("en-GB"))
+        lblIntPowVal.Text = (GetPowerKiloWatt(intToFill._intPower)).ToString("F2", GetCultureInfo("en-GB"))
 
         lblIntRPMVal.Text = GetRPM(intToFill._intRPM)
         lblIntTragFreqVal.Text = GetFreq(intToFill._intFreq)
@@ -224,6 +224,9 @@ Public Class MainFrm
             lblIntCosfiVal.Text = ""
             lblIntTempVal.Text = ""
 
+            lblIntTragFreqVal.Text = ""
+            lblIntVConVal.Text = ""
+
             lblNumInt.Text = ""
             lblNumIntTitle.Text = ""
             lstInterventi.Items.Clear()
@@ -244,8 +247,6 @@ Public Class MainFrm
             StatusStrip1.Items.Clear()
             StatusStrip1.Items.Add(Date.Now)
             StatusStrip1.Items.Add(New ToolStripSeparator)
-            StatusStrip1.Items.Add("Serial number: " + ConnectionUSB.Matricola.ToUpper.PadRight(8))
-            StatusStrip1.Items.Add(New ToolStripSeparator)
 
             StatusStrip1.Items.Add(("Pn: " + (GetNomPowerKiloWatt(ConnectionUSB.PotNom)).ToString("F2", GetCultureInfo("en-GB")) + "Kw").PadRight(12))
             StatusStrip1.Items.Add(New ToolStripSeparator)
@@ -256,7 +257,10 @@ Public Class MainFrm
             StatusStrip1.Items.Add(("In: " + GetCurrent(ConnectionUSB.CurrNom).ToString("") + "A").PadRight(12))
             StatusStrip1.Items.Add(New ToolStripSeparator)
 
-            StatusStrip1.Items.Add(("Freq Radio: " + GetFreqRadio(ConnectionUSB.FreqRadio).ToString("") + "Hz").PadRight(17))
+            StatusStrip1.Items.Add("Radio Code: " + ConnectionUSB.Matricola.ToUpper.PadRight(8))
+            StatusStrip1.Items.Add(New ToolStripSeparator)
+
+            StatusStrip1.Items.Add(("Freq Radio: " + GetFreqRadio(ConnectionUSB.FreqRadio).ToString("") + "MHz").PadRight(17))
             StatusStrip1.Items.Add(New ToolStripSeparator)
 
             'StatusStrip1.Items.Add("Fw Ver: " + ConnectionUSB.FwVer.ToString("X4"))
@@ -272,8 +276,6 @@ Public Class MainFrm
             StatusStrip1.Items.Clear()
             StatusStrip1.Items.Add(Date.Now)
             StatusStrip1.Items.Add(New ToolStripSeparator)
-            StatusStrip1.Items.Add("Serial number: " + ConnectionUSB.Matricola.ToUpper.PadRight(8))
-            StatusStrip1.Items.Add(New ToolStripSeparator)
 
             StatusStrip1.Items.Add(("Pn: " + (GetNomPowerKiloWatt(ConnectionUSB.PotNom)).ToString("F2", GetCultureInfo("en-GB")) + "Kw").PadRight(12))
             StatusStrip1.Items.Add(New ToolStripSeparator)
@@ -284,7 +286,10 @@ Public Class MainFrm
             StatusStrip1.Items.Add(("In: " + GetCurrent(ConnectionUSB.CurrNom).ToString("") + "A").PadRight(12))
             StatusStrip1.Items.Add(New ToolStripSeparator)
 
-            StatusStrip1.Items.Add(("Freq Radio: " + GetFreqRadio(ConnectionUSB.FreqRadio).ToString("") + "Hz").PadRight(17))
+            StatusStrip1.Items.Add("Radio Code: " + ConnectionUSB.Matricola.ToUpper.PadRight(8))
+            StatusStrip1.Items.Add(New ToolStripSeparator)
+
+            StatusStrip1.Items.Add(("Freq Radio: " + GetFreqRadio(ConnectionUSB.FreqRadio).ToString("") + "MHz").PadRight(17))
             StatusStrip1.Items.Add(New ToolStripSeparator)
 
         Else
@@ -354,13 +359,13 @@ Public Class MainFrm
         SaveFileDialog1.OverwritePrompt = True
 
 
-        FileNameToSave = "SN" + ConnectionUSB.Matricola.PadLeft(6, "0") + "_"
+        FileNameToSave = "code" + ConnectionUSB.Matricola.PadLeft(6, "0") + "_"
         FileNameToSave = FileNameToSave + Strings.Right(Date.Now.Year.ToString, 2)
         FileNameToSave = FileNameToSave + Date.Now.Month.ToString("00")
         FileNameToSave = FileNameToSave + Date.Now.Day.ToString("00")
 
         ' Nome file standard
-        FileNameToSave = "InvAlarms" + "_" + FileNameToSave
+        FileNameToSave = "InvAl" + "_" + FileNameToSave
 
         ' Se sto usando estensione .txt controllo se c'è già e eventualmente aggiungo h m s 
         If SaveFileDialog1.FilterIndex = 1 Then
@@ -408,7 +413,7 @@ Public Class MainFrm
                 file.WriteLine(New String("*", 100))
                 file.WriteLine("* Alarms recorded")
                 file.WriteLine("* Date: " + Date.Now)
-                file.WriteLine("* Serial number:" + ConnectionUSB.Matricola.ToUpper)
+                file.WriteLine("* Radio Code:" + ConnectionUSB.Matricola.ToUpper)
 
                 '               + " Fw Ver:" + ConnectionUSB.FwVer.ToString("X4") _
                 '               + " Hw Ver:" + ConnectionUSB.HwVer.ToString("X4"))
@@ -416,7 +421,7 @@ Public Class MainFrm
                 file.WriteLine("* Pnom: " + (GetNomPowerKiloWatt(ConnectionUSB.PotNom)).ToString("F3", GetCultureInfo("en-GB")) + "Kw")
                 file.WriteLine("* Vnom: " + GetVoltage(ConnectionUSB.VoltNom).ToString("") + "V")
                 file.WriteLine("* Inom: " + GetCurrent(ConnectionUSB.CurrNom).ToString("") + "A")
-                file.WriteLine("* FRadio: " + GetFreqRadio(ConnectionUSB.FreqRadio).ToString("") + "Hz")
+                file.WriteLine("* FRadio: " + GetFreqRadio(ConnectionUSB.FreqRadio).ToString("") + "MHz")
 
                 file.WriteLine(New String("*", 100))
 
@@ -443,7 +448,7 @@ Public Class MainFrm
 
 
     Private Sub PictureLogo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureLogo.Click
-        Process.Start("http://www.electroil.it")
+        Process.Start("http://www.motive.it")
     End Sub
 
 
@@ -560,6 +565,10 @@ Public Class MainFrm
 
 
 
+    End Sub
+
+    Private Sub Label1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label1.Click
+        Process.Start("http://www.motive.it")
     End Sub
 End Class
 
