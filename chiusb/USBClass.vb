@@ -132,30 +132,53 @@ Public Class InterventiList
 
 
         _List(_List.Length - 1)._intType = Convert.ToByte(_arrToParse(1))
-        _List(_List.Length - 1)._intTime = tempoFromDataOra(_arrToParse(3), _arrToParse(3))
 
-        _List(_List.Length - 1)._intV12_rms = GetVoltageInv(Convert.ToInt16(_arrToParse(4)))
-        _List(_List.Length - 1)._intV13_rms = GetVoltageInv(Convert.ToInt16(_arrToParse(5)))
-        _List(_List.Length - 1)._intV23_rms = GetVoltageInv(Convert.ToInt16(_arrToParse(6)))
+        ' Modifiche richiesta da Chiussi via mail il 21/10/2013
+        Dim cntParser As Integer
+        cntParser = 3
+        If MainFrm.comboModInverter.SelectedItem = TEXT_NEO_3KW Then
+            _List(_List.Length - 1)._intTime = tempoFromDataOra(_arrToParse(3), _arrToParse(3))
+            cntParser = 3
+        ElseIf MainFrm.comboModInverter.SelectedItem = TEXT_NEO_11KW Then
+            _List(_List.Length - 1)._intTime = tempoFromDataOra(_arrToParse(3), _arrToParse(4))
+            cntParser = 4
+        End If
 
-        _List(_List.Length - 1)._intI1_rms = GetCurrentInv(Convert.ToDouble(_arrToParse(7), Globalization.CultureInfo.GetCultureInfo("en-GB")))
-        _List(_List.Length - 1)._intI2_rms = GetCurrentInv(Convert.ToDouble(_arrToParse(8), Globalization.CultureInfo.GetCultureInfo("en-GB")))
-        _List(_List.Length - 1)._intI3_rms = GetCurrentInv(Convert.ToDouble(_arrToParse(9), Globalization.CultureInfo.GetCultureInfo("en-GB")))
+        cntParser = cntParser + 1
+        _List(_List.Length - 1)._intV12_rms = GetVoltageInv(Convert.ToInt16(_arrToParse(cntParser)))
+        cntParser = cntParser + 1
+        _List(_List.Length - 1)._intV13_rms = GetVoltageInv(Convert.ToInt16(_arrToParse(cntParser)))
+        cntParser = cntParser + 1
+        _List(_List.Length - 1)._intV23_rms = GetVoltageInv(Convert.ToInt16(_arrToParse(cntParser)))
+        cntParser = cntParser + 1
+
+        _List(_List.Length - 1)._intI1_rms = GetCurrentInv(Convert.ToDouble(_arrToParse(cntParser), Globalization.CultureInfo.GetCultureInfo("en-GB")))
+        cntParser = cntParser + 1
+        _List(_List.Length - 1)._intI2_rms = GetCurrentInv(Convert.ToDouble(_arrToParse(cntParser), Globalization.CultureInfo.GetCultureInfo("en-GB")))
+        cntParser = cntParser + 1
+        _List(_List.Length - 1)._intI3_rms = GetCurrentInv(Convert.ToDouble(_arrToParse(cntParser), Globalization.CultureInfo.GetCultureInfo("en-GB")))
+        cntParser = cntParser + 1
 
 
-        _List(_List.Length - 1)._intCosfi = GetCosfiInv(Convert.ToDouble(_arrToParse(10), Globalization.CultureInfo.GetCultureInfo("en-GB")))
+        _List(_List.Length - 1)._intCosfi = GetCosfiInv(Convert.ToDouble(_arrToParse(cntParser), Globalization.CultureInfo.GetCultureInfo("en-GB")))
+        cntParser = cntParser + 1
 
         
-        _List(_List.Length - 1)._intPower = GetPowerKiloWattInv(Convert.ToDouble(_arrToParse(11), Globalization.CultureInfo.GetCultureInfo("en-GB")))
+        _List(_List.Length - 1)._intPower = GetPowerKiloWattInv(Convert.ToDouble(_arrToParse(cntParser), Globalization.CultureInfo.GetCultureInfo("en-GB")))
+        cntParser = cntParser + 1
 
 
-        _List(_List.Length - 1)._intRPM = GetRPMInv(Convert.ToDouble(_arrToParse(12), Globalization.CultureInfo.GetCultureInfo("en-GB")))
+        _List(_List.Length - 1)._intRPM = GetRPMInv(Convert.ToDouble(_arrToParse(cntParser), Globalization.CultureInfo.GetCultureInfo("en-GB")))
+        cntParser = cntParser + 1
 
-        _List(_List.Length - 1)._intFreq = GetFreqInv(Convert.ToDouble(_arrToParse(13), Globalization.CultureInfo.GetCultureInfo("en-GB")))
+        _List(_List.Length - 1)._intFreq = GetFreqInv(Convert.ToDouble(_arrToParse(cntParser), Globalization.CultureInfo.GetCultureInfo("en-GB")))
+        cntParser = cntParser + 1
 
-        _List(_List.Length - 1)._intTemp = GetTemperatureInv(Convert.ToInt32(_arrToParse(14)))
+        _List(_List.Length - 1)._intTemp = GetTemperatureInv(Convert.ToInt32(_arrToParse(cntParser)))
+        cntParser = cntParser + 1
 
-        _List(_List.Length - 1)._intVoltCond = GetVoltCondInv(Convert.ToUInt16(_arrToParse(15)))
+        _List(_List.Length - 1)._intVoltCond = GetVoltCondInv(Convert.ToUInt16(_arrToParse(cntParser)))
+        cntParser = cntParser + 1
 
         Return True
     End Function

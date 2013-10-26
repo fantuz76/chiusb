@@ -330,8 +330,14 @@ Module USBModule
         StToAdd2 = "Description"
         StToAdd = StToAdd + StToAdd2 + ","
 
-        'StToAdd2 = "Date"
-        'StToAdd = StToAdd + StToAdd2 + ","
+        ' Modifiche richiesta da Chiussi via mail il 21/10/2013
+        If MainFrm.comboModInverter.SelectedItem = TEXT_NEO_3KW Then
+        
+        ElseIf MainFrm.comboModInverter.SelectedItem = TEXT_NEO_11KW Then
+            StToAdd2 = "Date"
+            StToAdd = StToAdd + StToAdd2 + ","
+        End If
+        
 
         StToAdd2 = "Time"
         StToAdd = StToAdd + StToAdd2 + ","
@@ -388,10 +394,17 @@ Module USBModule
         StToAdd = StToAdd + StToAdd2 + ","
 
 
-        'StToAdd2 = (2000 + GetYear(_intv._intTime)).ToString("0000") & "/" & GetMonth(_intv._intTime).ToString("00") & "/" & GetDay(_intv._intTime).ToString("00") & " "
-        'StToAdd = StToAdd + StToAdd2 + ","
-        StToAdd2 = GetHours(_intv._intTime).ToString("00") & "h" & GetMinutes(_intv._intTime).ToString("00") & "'" & GetSeconds(_intv._intTime).ToString("00") & "''"
-        StToAdd = StToAdd + StToAdd2 + ","
+        ' Modifiche richiesta da Chiussi via mail il 21/10/2013
+        If MainFrm.comboModInverter.SelectedItem = TEXT_NEO_3KW Then
+            StToAdd2 = GetHours(_intv._intTime).ToString("00") & "h" & GetMinutes(_intv._intTime).ToString("00") & "'" & GetSeconds(_intv._intTime).ToString("00") & "''"
+            StToAdd = StToAdd + StToAdd2 + ","
+        ElseIf MainFrm.comboModInverter.SelectedItem = TEXT_NEO_11KW Then
+            StToAdd2 = (2000 + GetYear(_intv._intTime)).ToString("0000") & "/" & GetMonth(_intv._intTime).ToString("00") & "/" & GetDay(_intv._intTime).ToString("00") & " "
+            StToAdd = StToAdd + StToAdd2 + ","
+            StToAdd2 = GetHours(_intv._intTime).ToString("00") & "h" & GetMinutes(_intv._intTime).ToString("00") & "'" & GetSeconds(_intv._intTime).ToString("00") & "''"
+            StToAdd = StToAdd + StToAdd2 + ","
+        End If
+
 
         StToAdd2 = _intv._intV12_rms.ToString
         StToAdd = StToAdd + StToAdd2 + ","
@@ -443,11 +456,20 @@ Module USBModule
         StToAdd2 = "Description"
         StToAdd = StToAdd + StToAdd2.PadRight(MAXLEN_STR + 1)
 
-        'StToAdd2 = "Date"
-        'StToAdd = StToAdd + StToAdd2.PadRight(11)
 
-        StToAdd2 = "Time"
-        StToAdd = StToAdd + StToAdd2.PadRight(15)
+        ' Modifiche richiesta da Chiussi via mail il 21/10/2013
+        If MainFrm.comboModInverter.SelectedItem = TEXT_NEO_3KW Then
+            StToAdd2 = "Time"
+            StToAdd = StToAdd + StToAdd2.PadRight(15)
+
+        ElseIf MainFrm.comboModInverter.SelectedItem = TEXT_NEO_11KW Then
+            StToAdd2 = "Date"
+            StToAdd = StToAdd + StToAdd2.PadRight(11)
+
+            StToAdd2 = "Time"
+            StToAdd = StToAdd + StToAdd2.PadRight(11)
+        End If
+
 
         StToAdd2 = "V1-2"
         StToAdd = StToAdd + StToAdd2.PadRight(5)
@@ -499,9 +521,19 @@ Module USBModule
         StToAdd = StToAdd + StToAdd2.PadRight(MAXLEN_STR + 1)
 
 
+        ' Modifiche richiesta da Chiussi via mail il 21/10/2013
+        If MainFrm.comboModInverter.SelectedItem = TEXT_NEO_3KW Then
+            StToAdd2 = "[h/min/sec]"
+            StToAdd = StToAdd + StToAdd2.PadRight(15)
 
-        StToAdd2 = "[h/min/sec]"
-        StToAdd = StToAdd + StToAdd2.PadRight(15)
+        ElseIf MainFrm.comboModInverter.SelectedItem = TEXT_NEO_11KW Then
+            StToAdd2 = "[Y/M/D]"
+            StToAdd = StToAdd + StToAdd2.PadRight(11)
+
+            StToAdd2 = "[h/min/sec]"
+            StToAdd = StToAdd + StToAdd2.PadRight(11)
+        End If
+
 
         StToAdd2 = "[V]"
         StToAdd = StToAdd + StToAdd2.PadRight(5)
@@ -552,11 +584,16 @@ Module USBModule
         StToAdd2 = Intervents.GetIntStr(_intv._intType)
         StToAdd = StToAdd + StToAdd2.PadRight(MAXLEN_STR + 1)
 
-
-        'StToAdd2 = (2000 + GetYear(_intv._intTime)).ToString("0000") & "/" & GetMonth(_intv._intTime).ToString("00") & "/" & GetDay(_intv._intTime).ToString("00") & " "
-        'StToAdd = StToAdd + StToAdd2.PadRight(11)
-        StToAdd2 = GetHours(_intv._intTime).ToString("00") & "h" & GetMinutes(_intv._intTime).ToString("00") & "'" & GetSeconds(_intv._intTime).ToString("00") & "''"
-        StToAdd = StToAdd + StToAdd2.PadRight(15)
+        ' Modifiche richiesta da Chiussi via mail il 21/10/2013
+        If MainFrm.comboModInverter.SelectedItem = TEXT_NEO_3KW Then
+            StToAdd2 = GetHours(_intv._intTime).ToString("00") & "h" & GetMinutes(_intv._intTime).ToString("00") & "'" & GetSeconds(_intv._intTime).ToString("00") & "''"
+            StToAdd = StToAdd + StToAdd2.PadRight(15)
+        ElseIf MainFrm.comboModInverter.SelectedItem = TEXT_NEO_11KW Then
+            StToAdd2 = (2000 + GetYear(_intv._intTime)).ToString("0000") & "/" & GetMonth(_intv._intTime).ToString("00") & "/" & GetDay(_intv._intTime).ToString("00") & " "
+            StToAdd = StToAdd + StToAdd2.PadRight(11)
+            StToAdd2 = GetHours(_intv._intTime).ToString("00") & "h" & GetMinutes(_intv._intTime).ToString("00") & "'" & GetSeconds(_intv._intTime).ToString("00") & "''"
+            StToAdd = StToAdd + StToAdd2.PadRight(11)
+        End If
 
         StToAdd2 = _intv._intV12_rms.ToString
         StToAdd = StToAdd + StToAdd2.PadRight(5)
@@ -636,8 +673,14 @@ Module USBModule
     End Function
 
     Public Function GetHours(ByVal _totNumSec As UInt32) As UInteger
-        Return _totNumSec \ 3600
+        ' Modifiche richiesta da Chiussi via mail il 21/10/2013
+        If MainFrm.comboModInverter.SelectedItem = TEXT_NEO_3KW Then
+            Return _totNumSec \ 3600
+        ElseIf MainFrm.comboModInverter.SelectedItem = TEXT_NEO_11KW Then
+            Return restoGiorno(_totNumSec) \ 3600
+        End If
     End Function
+    
 
     Public Function GetMinutes(ByVal _totNumSec As UInt32) As UInteger
         Return restoOra(_totNumSec) \ 60
@@ -693,22 +736,44 @@ Module USBModule
     End Function
 
     Public Function tempoFromDataOra(ByVal _data As String, ByVal _orario As String) As UInt32
-        Dim _anno, _mese, _giorno As UInt16
-        Dim _ora, _minuto, _secondo As UInt32
-        '4 bytes = tempo = secondo + minuto*60 + ora*3600 + giorno*24*3600 + mese*32*24*3600 + anno*13*32*24*3600
 
-        '_anno = Convert.ToUInt16(Convert.ToUInt16(_data.Split("/")(0)) - 2000)
-        '_mese = Convert.ToUInt16(_data.Split("/")(1))
-        '_giorno = Convert.ToUInt16(_data.Split("/")(2))
-        _anno = 0
-        _mese = 0
-        _giorno = 0
-        _ora = Convert.ToUInt32(_orario.Split("h")(0))
-        _minuto = Convert.ToUInt32(_orario.Split("h")(1).Split("'")(0))
-        _secondo = Convert.ToUInt32(_orario.Split("'")(1).Split("''")(0))
+        ' Modifiche richiesta da Chiussi via mail il 21/10/2013
+        If MainFrm.comboModInverter.SelectedItem = TEXT_NEO_3KW Then
+            Dim _anno, _mese, _giorno As UInt16
+            Dim _ora, _minuto, _secondo As UInt32
+            '4 bytes = tempo = secondo + minuto*60 + ora*3600 + giorno*24*3600 + mese*32*24*3600 + anno*13*32*24*3600
 
-        Return Convert.ToUInt32(_secondo + _minuto * 60 + _ora * 3600 + _giorno * 24 * 3600 + _mese * 32 * 24 * 3600 + _anno * 13 * 32 * 24 * 3600)
+            '_anno = Convert.ToUInt16(Convert.ToUInt16(_data.Split("/")(0)) - 2000)
+            '_mese = Convert.ToUInt16(_data.Split("/")(1))
+            '_giorno = Convert.ToUInt16(_data.Split("/")(2))
+            _anno = 0
+            _mese = 0
+            _giorno = 0
+            _ora = Convert.ToUInt32(_orario.Split("h")(0))
+            _minuto = Convert.ToUInt32(_orario.Split("h")(1).Split("'")(0))
+            _secondo = Convert.ToUInt32(_orario.Split("'")(1).Split("''")(0))
+
+            Return Convert.ToUInt32(_secondo + _minuto * 60 + _ora * 3600 + _giorno * 24 * 3600 + _mese * 32 * 24 * 3600 + _anno * 13 * 32 * 24 * 3600)
+        ElseIf MainFrm.comboModInverter.SelectedItem = TEXT_NEO_11KW Then
+            Dim _anno, _mese, _giorno As UInt16
+            Dim _ora, _minuto, _secondo As UInt16
+            '4 bytes = tempo = secondo + minuto*60 + ora*3600 + giorno*24*3600 + mese*32*24*3600 + anno*13*32*24*3600
+
+            _anno = Convert.ToUInt16(Convert.ToUInt16(_data.Split("/")(0)) - 2000)
+            _mese = Convert.ToUInt16(_data.Split("/")(1))
+            _giorno = Convert.ToUInt16(_data.Split("/")(2))
+            _ora = Convert.ToUInt16(_orario.Split("h")(0))
+            _minuto = Convert.ToUInt16(_orario.Split("h")(1).Split("'")(0))
+            _secondo = Convert.ToUInt16(_orario.Split("'")(1).Split("''")(0))
+
+            Return Convert.ToUInt32(_secondo + _minuto * 60 + _ora * 3600 + _giorno * 24 * 3600 + _mese * 32 * 24 * 3600 + _anno * 13 * 32 * 24 * 3600)
+        End If
+
     End Function
+    
+    
+    
+    
 
     Public Function GetVoltageInv(ByVal _numToConvert As Integer) As UInt16
         'If _numToConvert < 0 Then Return 0

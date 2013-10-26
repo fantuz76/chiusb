@@ -11,7 +11,7 @@
 [ISPP]
 #define AppName "USB Motor Analyzer"
 #define ShortAppName "USB Motor Analyzer"
-#define AppVersion "1.0.4"
+#define AppVersion "1.0.5"
 #define AppPublisher "Motive"
 #define AppURL "http://www.electroil.it/"
 

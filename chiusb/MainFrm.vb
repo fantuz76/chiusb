@@ -83,7 +83,10 @@ Public Class MainFrm
     Private Sub Draw_header()
         Dim toolTip1 As New ToolTip()
 
-
+        ' Modifiche richiesta da Chiussi via mail il 21/10/2013
+        comboModInverter.Items.Add(TEXT_NEO_3KW)
+        comboModInverter.Items.Add(TEXT_NEO_11KW)
+        comboModInverter.SelectedItem = TEXT_NEO_3KW
 
         If My.Application.Info.Title <> "" Then
             Me.Text = My.Application.Info.Title + String.Format(" - {0}.{1}.{2}", My.Application.Info.Version.Major.ToString, My.Application.Info.Version.Minor.ToString, My.Application.Info.Version.Build.ToString, My.Application.Info.Version.MinorRevision.ToString)
@@ -152,8 +155,12 @@ Public Class MainFrm
 
 
 
-        'lblIntTimeVal.Text = (2000 + GetYear(intToFill._intTime)).ToString("0000") & "/" & GetMonth(intToFill._intTime).ToString("00") & "/" & GetDay(intToFill._intTime).ToString("00") & " " & GetHours(intToFill._intTime).ToString("00") & "h" & GetMinutes(intToFill._intTime).ToString("00") & "'" & GetSeconds(intToFill._intTime).ToString("00") & "''"
-        lblIntTimeVal.Text = GetHours(intToFill._intTime).ToString("00") & "h" & GetMinutes(intToFill._intTime).ToString("00") & "'" & GetSeconds(intToFill._intTime).ToString("00") & "''"
+        ' Modifiche richiesta da Chiussi via mail il 21/10/2013
+        If comboModInverter.SelectedItem = TEXT_NEO_3KW Then
+            lblIntTimeVal.Text = GetHours(intToFill._intTime).ToString("00") & "h" & GetMinutes(intToFill._intTime).ToString("00") & "'" & GetSeconds(intToFill._intTime).ToString("00") & "''"
+        ElseIf comboModInverter.SelectedItem = TEXT_NEO_11KW Then
+            lblIntTimeVal.Text = (2000 + GetYear(intToFill._intTime)).ToString("0000") & "/" & GetMonth(intToFill._intTime).ToString("00") & "/" & GetDay(intToFill._intTime).ToString("00") & " " & GetHours(intToFill._intTime).ToString("00") & "h" & GetMinutes(intToFill._intTime).ToString("00") & "'" & GetSeconds(intToFill._intTime).ToString("00") & "''"
+        End If
 
         lblIntV1Val.Text = intToFill._intV12_rms
         lblIntV2Val.Text = intToFill._intV13_rms
@@ -269,6 +276,7 @@ Public Class MainFrm
             'StatusStrip1.Items.Add("Hw Ver: " + ConnectionUSB.HwVer.ToString("X4"))
             'StatusStrip1.Items.Add(New ToolStripSeparator)
 
+            comboModInverter.Enabled = False
 
         ElseIf _ConnEnable = CONNECT_FILE Then
 
@@ -307,6 +315,8 @@ Public Class MainFrm
             StatusStrip1.Items.Add(New ToolStripSeparator)
             lblHeaderList.Text = ""
             lblHeaderList2.Text = ""
+
+            comboModInverter.Enabled = True
 
         End If
 
