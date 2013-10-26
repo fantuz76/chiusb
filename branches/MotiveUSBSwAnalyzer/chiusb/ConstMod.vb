@@ -4,6 +4,9 @@
 
     Public Const NUM_MAX_TYPE_INT = 15      ' Codice tipo intervento massimo possibile (non tutti sono usati)
 
+    ' Modifiche richiesta da Chiussi via mail il 21/10/2013
+    Public Const TEXT_NEO_3KW = "NEO 3.0 kW"
+    Public Const TEXT_NEO_11KW = "NEO 11 kW"
 
     'Public Const NUM_INT_TYPES = 35         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)
     Public Const NUM_INT_TYPES = 10         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)

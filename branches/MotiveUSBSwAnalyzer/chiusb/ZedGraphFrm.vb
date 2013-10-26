@@ -100,10 +100,20 @@ Public Class ZedGraphFrm
             lblIntV3Val.Text = GetVoltage(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intV23_rms)
 
 
-            'lblIntTimeVal.Text = (2000 + GetYear(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime)).ToString("0000") & "/" & GetMonth(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & "/" & GetDay(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00")
-            'lblIntTimeVal.Text = lblIntTimeVal.Text + "  "
-            lblIntTimeVal.Text = GetHours(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & "h" & GetMinutes(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & "'" & GetSeconds(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & "''"
-            lblIntDescription.Text = Intervents.GetIntStr(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intType)
+
+            ' Modifiche richiesta da Chiussi via mail il 21/10/2013
+            If MainFrm.comboModInverter.SelectedItem = TEXT_NEO_3KW Then
+                'lblIntTimeVal.Text = (2000 + GetYear(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime)).ToString("0000") & "/" & GetMonth(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & "/" & GetDay(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00")
+                'lblIntTimeVal.Text = lblIntTimeVal.Text + "  "
+                lblIntTimeVal.Text = GetHours(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & "h" & GetMinutes(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & "'" & GetSeconds(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & "''"
+                lblIntDescription.Text = Intervents.GetIntStr(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intType)
+            ElseIf MainFrm.comboModInverter.SelectedItem = TEXT_NEO_11KW Then
+                lblIntTimeVal.Text = (2000 + GetYear(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime)).ToString("0000") & "/" & GetMonth(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & "/" & GetDay(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00")
+                lblIntTimeVal.Text = lblIntTimeVal.Text + "  "
+                lblIntTimeVal.Text = GetHours(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & "h" & GetMinutes(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & "'" & GetSeconds(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intTime).ToString("00") & "''"
+                lblIntDescription.Text = Intervents.GetIntStr(ConnectionUSB.InterventiLetti.IntItems(ConnectionUSB.InterventiLetti.Length - _Xval)._intType)
+            End If
+
         End If
     End Sub
 
