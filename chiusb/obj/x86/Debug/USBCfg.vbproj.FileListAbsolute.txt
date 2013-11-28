@@ -142,3 +142,23 @@ C:\Users\fantuzzi\Documents\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\bin\D
 C:\Users\fantuzzi\Documents\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\USBConfig.xml
 C:\Users\fantuzzi\Documents\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\USBConfig.exe
 C:\Users\fantuzzi\Documents\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\USBConfig.pdb
+C:\Users\usermed.AEB\Documents\Visual Studio 2008\Projects\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\bin\Debug\USBConfig.exe.config
+C:\Users\usermed.AEB\Documents\Visual Studio 2008\Projects\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\USBConfig.exe
+C:\Users\usermed.AEB\Documents\Visual Studio 2008\Projects\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\USBConfig.pdb
+C:\Users\usermed.AEB\Documents\Visual Studio 2008\Projects\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\bin\Debug\USBConfig.exe.manifest
+C:\Users\usermed.AEB\Documents\Visual Studio 2008\Projects\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\bin\Debug\USBConfig.application
+C:\Users\usermed.AEB\Documents\Visual Studio 2008\Projects\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\bin\Debug\USBConfig.exe
+C:\Users\usermed.AEB\Documents\Visual Studio 2008\Projects\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\bin\Debug\USBConfig.pdb
+C:\Users\usermed.AEB\Documents\Visual Studio 2008\Projects\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\bin\Debug\USBConfig.xml
+C:\Users\usermed.AEB\Documents\Visual Studio 2008\Projects\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\bin\Debug\ZedGraph.xml
+C:\Users\usermed.AEB\Documents\Visual Studio 2008\Projects\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\usermed.AEB\Documents\Visual Studio 2008\Projects\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\ApplicationUSB.AboutBox1.resources
+C:\Users\usermed.AEB\Documents\Visual Studio 2008\Projects\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\ApplicationUSB.FormWait.resources
+C:\Users\usermed.AEB\Documents\Visual Studio 2008\Projects\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\ApplicationUSB.MainFrm.resources
+C:\Users\usermed.AEB\Documents\Visual Studio 2008\Projects\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\ApplicationUSB.Resources.resources
+C:\Users\usermed.AEB\Documents\Visual Studio 2008\Projects\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\ApplicationUSB.ZedGraphFrm.resources
+C:\Users\usermed.AEB\Documents\Visual Studio 2008\Projects\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\USBCfg.vbproj.GenerateResource.Cache
+C:\Users\usermed.AEB\Documents\Visual Studio 2008\Projects\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\USBConfig.TrustInfo.xml
+C:\Users\usermed.AEB\Documents\Visual Studio 2008\Projects\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\USBConfig.exe.manifest
+C:\Users\usermed.AEB\Documents\Visual Studio 2008\Projects\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\USBConfig.application
+C:\Users\usermed.AEB\Documents\Visual Studio 2008\Projects\Electronic\ChiUSB_SwPC_USBMotorAnalyzer\chiusb\obj\x86\Debug\USBConfig.xml

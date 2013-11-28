@@ -9,7 +9,7 @@
     Public Const TEXT_NEO_11KW = "NEO 11 kW"
 
     'Public Const NUM_INT_TYPES = 35         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)
-    Public Const NUM_INT_TYPES = 10         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)
+    Public Const NUM_INT_TYPES = 25         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)
 
     Public Const INTERVENTO_LENGTH = 20     ' Dimensione array USB singolo intervento
 
@@ -26,13 +26,28 @@
     Public Const TYPE_UNDERVOLTAGE = 9
     Public Const TYPE_COMUNICAT_ERROR = 10
 
-
-
+    Public Const TYPE_OVERCURRENT_B = 11
+    Public Const TYPE_uP_TEMPERATURE = 12
+    Public Const TYPE_OVER_CURRENT_U = 13
+    Public Const TYPE_OVER_CURRENT_V = 14
+    Public Const TYPE_OVER_CURRENT_W = 15
+    Public Const TYPE_BREAKING_I_PEAK = 16
+    Public Const TYPE_ERROR_READING_I1 = 17
+    Public Const TYPE_ERROR_READING_I2 = 18
+    Public Const TYPE_ERROR_READING_I3 = 19
+    Public Const TYPE_UNBALANCED_CURR = 20
+    Public Const TYPE_CURRENT_PEAK_U = 21
+    Public Const TYPE_CURRENT_PEAK_V = 22
+    Public Const TYPE_CURRENT_PEAK_W = 23
+    Public Const TYPE_LEAKAGE_CURRENT = 24
+    'Public Const TYPE_CURRENT_FAN_2 = 25
+    'Public Const TYPE_CURRENT_FAN_1 = 26
+    Public Const TYPE_OVER_CURRENT_FAN = 27
 
 
 
     ' Descrizione stringa dei vari tipi di intervento
-    Public Const MAXLEN_STR = 18 + 4
+    Public Const MAXLEN_STR = 19 + 4
     Public Const TYPE_CURRENT_PEAK_STR = "Current Peak "
     Public Const TYPE_OVERVOLTAGE_STR = "Over-Voltage "
     Public Const TYPE_INVERTER_TEMPER_STR = "Inverter Temper. "
@@ -43,6 +58,25 @@
     Public Const TYPE_INOUT_INVERTED_STR = "IN-OUT Inverted "
     Public Const TYPE_UNDERVOLTAGE_STR = "Under-Voltage "
     Public Const TYPE_COMUNICAT_ERROR_STR = "Comunicat. Error "
+
+    Public Const TYPE_OVERCURRENT_B_STR = "Over-Current "
+    Public Const TYPE_uP_TEMPERATURE_STR = "uP Temperature "
+    Public Const TYPE_OVER_CURRENT_U_STR = "Over-Current U "
+    Public Const TYPE_OVER_CURRENT_V_STR = "Over-Current V "
+    Public Const TYPE_OVER_CURRENT_W_STR = "Over-Current W "
+    Public Const TYPE_BREAKING_I_PEAK_STR = "Breaking I Peak "
+    Public Const TYPE_ERROR_READING_I1_STR = "Error Reading I1 "
+    Public Const TYPE_ERROR_READING_I2_STR = "Error Reading I2 "
+    Public Const TYPE_ERROR_READING_I3_STR = "Error Reading I3 "
+    Public Const TYPE_UNBALANCED_CURR_STR = "Unbalanced current "
+    Public Const TYPE_CURRENT_PEAK_U_STR = "Current Peak U "
+    Public Const TYPE_CURRENT_PEAK_V_STR = "Current Peak V "
+    Public Const TYPE_CURRENT_PEAK_W_STR = "Current Peak W "
+    Public Const TYPE_LEAKAGE_CURRENT_STR = "Leakage Current "
+    Public Const TYPE_CURRENT_FAN_2_STR = "Current Fan 2 "
+    Public Const TYPE_CURRENT_FAN_1_STR = "Current Fan 1 "
+    Public Const TYPE_OVER_CURRENT_FAN_STR = "Over-Current Fan "
+
 
 
     '	Pos # byte	# int	int //dai di funzionamento a partire dall'indirizzo 8040  della eeprom

@@ -43,7 +43,22 @@ Module USBModule
                                             New IntOccur(TYPE_OVERCURRENT, TYPE_OVERCURRENT_STR, Color.LightCoral), _
                                             New IntOccur(TYPE_INOUT_INVERTED, TYPE_INOUT_INVERTED_STR, Color.DarkOrange), _
                                             New IntOccur(TYPE_UNDERVOLTAGE, TYPE_UNDERVOLTAGE_STR, Color.LightSalmon), _
-                                            New IntOccur(TYPE_COMUNICAT_ERROR, TYPE_COMUNICAT_ERROR_STR, Color.Violet)}
+                                            New IntOccur(TYPE_COMUNICAT_ERROR, TYPE_COMUNICAT_ERROR_STR, Color.Violet), _
+                                            New IntOccur(TYPE_OVERCURRENT_B, TYPE_OVERCURRENT_B_STR, Color.Brown), _
+                                            New IntOccur(TYPE_uP_TEMPERATURE, TYPE_uP_TEMPERATURE_STR, Color.Turquoise), _
+                                            New IntOccur(TYPE_OVER_CURRENT_U, TYPE_OVER_CURRENT_U_STR, Color.Pink), _
+                                            New IntOccur(TYPE_OVER_CURRENT_V, TYPE_OVER_CURRENT_V_STR, Color.SeaGreen), _
+                                            New IntOccur(TYPE_OVER_CURRENT_W, TYPE_OVER_CURRENT_W_STR, Color.Olive), _
+                                            New IntOccur(TYPE_BREAKING_I_PEAK, TYPE_BREAKING_I_PEAK_STR, Color.Orange), _
+                                            New IntOccur(TYPE_ERROR_READING_I1, TYPE_ERROR_READING_I1_STR, Color.Gray), _
+                                            New IntOccur(TYPE_ERROR_READING_I2, TYPE_ERROR_READING_I2_STR, Color.Blue), _
+                                            New IntOccur(TYPE_ERROR_READING_I3, TYPE_ERROR_READING_I3_STR, Color.DarkSalmon), _
+                                            New IntOccur(TYPE_UNBALANCED_CURR, TYPE_UNBALANCED_CURR_STR, Color.DarkOrchid), _
+                                            New IntOccur(TYPE_CURRENT_PEAK_U, TYPE_CURRENT_PEAK_U_STR, Color.DarkViolet), _
+                                            New IntOccur(TYPE_CURRENT_PEAK_V, TYPE_CURRENT_PEAK_V_STR, Color.SaddleBrown), _
+                                            New IntOccur(TYPE_CURRENT_PEAK_W, TYPE_CURRENT_PEAK_W_STR, Color.DarkTurquoise), _
+                                            New IntOccur(TYPE_LEAKAGE_CURRENT, TYPE_LEAKAGE_CURRENT_STR, Color.DeepPink), _
+                                            New IntOccur(TYPE_OVER_CURRENT_FAN, TYPE_OVER_CURRENT_FAN_STR, Color.DarkOrange)}
 
         Public Sub New()
             ' Solo per controllo verifico che costante e init array siano OK
@@ -648,9 +663,13 @@ Module USBModule
         Return restoMese(_num) - GetDay(_num) * (24 * 3600)
     End Function
 
-    Private Function restoOra(ByVal _num As UInt32) As Integer
+    Private Function restoOra(ByVal _num As UInt32) As ULong
         Try
-            Return restoGiorno(_num) - GetHours(_num) * 3600
+            If MainFrm.comboModInverter.SelectedItem = TEXT_NEO_3KW Then
+                Return _num - GetHours(_num) * 3600
+            ElseIf MainFrm.comboModInverter.SelectedItem = TEXT_NEO_11KW Then
+                Return restoGiorno(_num) - GetHours(_num) * 3600
+            End If
         Catch ex As Exception
         End Try
 
@@ -683,7 +702,7 @@ Module USBModule
     
 
     Public Function GetMinutes(ByVal _totNumSec As UInt32) As UInteger
-        Return restoOra(_totNumSec) \ 60
+        Return (restoOra(_totNumSec) \ 60)
     End Function
 
     Public Function GetSeconds(ByVal _totNumSec As UInt32) As UInteger
