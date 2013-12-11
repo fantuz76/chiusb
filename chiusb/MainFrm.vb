@@ -83,6 +83,10 @@ Public Class MainFrm
     Private Sub Draw_header()
         Dim toolTip1 As New ToolTip()
 
+        ' Modifiche richiesta da Chiussi con biglietino 28/11/2013
+        comboModInverter.Items.Add(TEXT_LOW_POWER_MODEL)
+        comboModInverter.Items.Add(TEXT_HIGH_POWER_MODEL)
+        comboModInverter.SelectedItem = TEXT_LOW_POWER_MODEL
 
 
         If My.Application.Info.Title <> "" Then

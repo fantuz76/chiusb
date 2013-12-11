@@ -40,8 +40,7 @@ Module USBModule
                                             New IntOccur(TYPE_REMOTE_OFF, TYPE_REMOTE_OFF_STR, Color.DarkRed), _
                                             New IntOccur(TYPE_REMOTE_ON, TYPE_REMOTE_ON_STR, Color.DarkGreen), _
                                             New IntOccur(TYPE_AUTO_ON, TYPE_AUTO_ON_STR, Color.LightGreen), _
-                                            New IntOccur(TYPE_AUTO_OFF, TYPE_AUTO_OFF_STR, Color.LightCoral), _
-                                            New IntOccur(TYPE_8, TYPE_MAX_FLOW_STR, Color.DarkOrange), _
+                                            New IntOccur(TYPE_8, TYPE_MAX_VOL_OFF_STR, Color.DarkOrange), _
                                             New IntOccur(TYPE_9, TYPE_HALT_SOVRAPRESSIONE_STR, Color.LightSalmon), _
                                             New IntOccur(TYPE_NOHALT_OVERCURR, TYPE_NOHALT_OVERCURR_STR, Color.Violet), _
                                             New IntOccur(TYPE_NOHALT_OVERVOLT, TYPE_NOHALT_OVERVOLT_STR, Color.Brown), _
@@ -680,12 +679,25 @@ Module USBModule
 
     Public Function GetPowerKiloWatt(ByVal _numToConvert As UInt16) As Double
         'If _numToConvert < 0 Then Return 0
-        Return Convert.ToDouble(_numToConvert / 1000, Globalization.CultureInfo.GetCultureInfo("en-GB"))
+        If MainFrm.comboModInverter.SelectedItem = TEXT_LOW_POWER_MODEL Then
+            Return Convert.ToDouble(_numToConvert / 1000, Globalization.CultureInfo.GetCultureInfo("en-GB"))
+        ElseIf MainFrm.comboModInverter.SelectedItem = TEXT_HIGH_POWER_MODEL Then
+            Return Convert.ToDouble(_numToConvert / 100, Globalization.CultureInfo.GetCultureInfo("en-GB"))
+        Else
+            Return Convert.ToDouble(_numToConvert / 1000, Globalization.CultureInfo.GetCultureInfo("en-GB"))
+        End If
+
     End Function
 
     Public Function GetNomPowerKiloWatt(ByVal _numToConvert As UInt16) As Double
         'If _numToConvert < 0 Then Return 0
-        Return Convert.ToDouble((_numToConvert * 10) / 1000, Globalization.CultureInfo.GetCultureInfo("en-GB"))
+        If MainFrm.comboModInverter.SelectedItem = TEXT_LOW_POWER_MODEL Then
+            Return Convert.ToDouble((_numToConvert * 10) / 1000, Globalization.CultureInfo.GetCultureInfo("en-GB"))
+        ElseIf MainFrm.comboModInverter.SelectedItem = TEXT_HIGH_POWER_MODEL Then
+            Return Convert.ToDouble((_numToConvert * 10) / 100, Globalization.CultureInfo.GetCultureInfo("en-GB"))
+        Else
+            Return Convert.ToDouble((_numToConvert * 10) / 1000, Globalization.CultureInfo.GetCultureInfo("en-GB"))
+        End If        
     End Function
 
     Public Function GetPressure(ByVal _numToConvert As Int16) As Double
@@ -732,11 +744,23 @@ Module USBModule
 
     Public Function GetPowerKiloWattInv(ByVal _numToConvert As Double) As UInt16
         'If _numToConvert < 0 Then Return 0
-        Return (Convert.ToUInt16(_numToConvert * 1000))
+        If MainFrm.comboModInverter.SelectedItem = TEXT_LOW_POWER_MODEL Then
+            Return (Convert.ToUInt16(_numToConvert * 1000))
+        ElseIf MainFrm.comboModInverter.SelectedItem = TEXT_HIGH_POWER_MODEL Then
+            Return (Convert.ToUInt16(_numToConvert * 100))
+        Else
+            Return (Convert.ToUInt16(_numToConvert * 1000))
+        End If
     End Function
     Public Function GetNomPowerKiloWattInv(ByVal _numToConvert As Double) As UInt16
         'If _numToConvert < 0 Then Return 0
-        Return (Convert.ToUInt16(_numToConvert * 1000 / 10))
+        If MainFrm.comboModInverter.SelectedItem = TEXT_LOW_POWER_MODEL Then
+            Return (Convert.ToUInt16(_numToConvert * 1000 / 10))
+        ElseIf MainFrm.comboModInverter.SelectedItem = TEXT_HIGH_POWER_MODEL Then
+            Return (Convert.ToUInt16(_numToConvert * 100 / 10))
+        Else
+            Return (Convert.ToUInt16(_numToConvert * 1000 / 10))
+        End If
     End Function
     Public Function GetPressureInv(ByVal _numToConvert As Double) As Int16
         If _numToConvert < 0 Then Return 0
