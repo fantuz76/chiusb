@@ -2,10 +2,15 @@
 
     Public Const XMLCFG = "\Config.xml"
 
+    ' Modifiche richiesta da Chiussi via mail il 21/10/2013
+    Public Const TEXT_LOW_POWER_MODEL = "0 - 7.5kW"
+    Public Const TEXT_HIGH_POWER_MODEL = "1.5 - 132kW"
+
+
     Public Const NUM_MAX_TYPE_INT = 35      ' Codice tipo intervento massimo possibile (non tutti sono usati)
 
     'Public Const NUM_INT_TYPES = 28         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)
-    Public Const NUM_INT_TYPES = 35         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)
+    Public Const NUM_INT_TYPES = 34         ' Dimensione array tipo-interventi / occorrenze (è il numero effettivo di interventi)
 
     Public Const INTERVENTO_LENGTH = 16     ' Dimensione array USB singolo intervento
 
@@ -21,7 +26,7 @@
     Public Const TYPE_REMOTE_ON = 5
     Public Const TYPE_AUTO_ON = 6
 
-    Public Const TYPE_AUTO_OFF = 7
+
     Public Const TYPE_8 = 8
     Public Const TYPE_9 = 9
 
@@ -68,19 +73,20 @@
     Public Const TYPE_REMOTE_OFF_STR = "Remote OFF "
     Public Const TYPE_REMOTE_ON_STR = "Remote ON "
     Public Const TYPE_AUTO_ON_STR = "Automatic ON "
-    Public Const TYPE_AUTO_OFF_STR = "Automatic OFF "
+    'Public Const TYPE_AUTO_OFF_STR = "Automatic OFF "
+    Public Const TYPE_MAX_VOL_OFF_STR = "Max. Volume OFF"
 
-    Public Const TYPE_NOHALT_OVERCURR_STR = "Over Current" + " ON"
-    Public Const TYPE_NOHALT_OVERVOLT_STR = "Over Voltage" + " ON"
-    Public Const TYPE_NOHALT_UNDERVOLT_STR = "Under Voltage" + " ON"
-    Public Const TYPE_NOHALT_MANDATACH_STR = "Min. Flow" + " ON"
-    Public Const TYPE_NOHALT_DRYFUNC_STR = "Dry Working" + " ON"
-    Public Const TYPE_NOHALT_OVERTEMP_STR = "Pump OverTemp" + " ON"
-    Public Const TYPE_NOHALT_MAX_FLOW_STR = "Maximum flow" + " ON"
-    Public Const TYPE_NOHALT_SQUILIBRIO_STR = "Unbalanced Current" + " ON"
-    Public Const TYPE_NOHALT_DISSIMETRIA_STR = "Dissymmetric Voltage" + " ON"
-    Public Const TYPE_NOHALT_SOVRAPRESSIONE_STR = "Over Pressure" + " ON"
-    Public Const TYPE_NOHALT_LEAKAGE_STR = "Leakage Current" + " ON"
+    Public Const TYPE_NOHALT_OVERCURR_STR = "Over Current"
+    Public Const TYPE_NOHALT_OVERVOLT_STR = "Over Voltage"
+    Public Const TYPE_NOHALT_UNDERVOLT_STR = "Under Voltage"
+    Public Const TYPE_NOHALT_MANDATACH_STR = "Min. Flow"
+    Public Const TYPE_NOHALT_DRYFUNC_STR = "Dry Working"
+    Public Const TYPE_NOHALT_OVERTEMP_STR = "Pump OverTemp"
+    Public Const TYPE_NOHALT_MAX_FLOW_STR = "Maximum flow"
+    Public Const TYPE_NOHALT_SQUILIBRIO_STR = "Unbalanced Current"
+    Public Const TYPE_NOHALT_DISSIMETRIA_STR = "Dissymmetric Voltage"
+    Public Const TYPE_NOHALT_SOVRAPRESSIONE_STR = "Over Pressure"
+    Public Const TYPE_NOHALT_LEAKAGE_STR = "Leakage Current"
 
     Public Const TYPE_HALT_OVERCURR_STR = "Over Current" + " OFF"
     Public Const TYPE_HALT_OVERVOLT_STR = "Over Voltage" + " OFF"

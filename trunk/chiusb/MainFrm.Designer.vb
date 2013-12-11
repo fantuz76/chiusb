@@ -96,6 +96,7 @@ Partial Class MainFrm
         Me.btnExit = New System.Windows.Forms.Button
         Me.PictureLogo = New System.Windows.Forms.PictureBox
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
+        Me.comboModInverter = New System.Windows.Forms.ComboBox
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.pnlButAlarms.SuspendLayout()
@@ -642,7 +643,7 @@ Partial Class MainFrm
         'btnOpen
         '
         Me.btnOpen.Image = Global.ApplicationUSB.My.Resources.Resources.Actions_document_open_folder_icon
-        Me.btnOpen.Location = New System.Drawing.Point(117, 9)
+        Me.btnOpen.Location = New System.Drawing.Point(222, 8)
         Me.btnOpen.Name = "btnOpen"
         Me.btnOpen.Size = New System.Drawing.Size(107, 43)
         Me.btnOpen.TabIndex = 14
@@ -751,18 +752,19 @@ Partial Class MainFrm
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.comboModInverter)
         Me.GroupBox1.Controls.Add(Me.lblNotify)
         Me.GroupBox1.Controls.Add(Me.btnOpen)
         Me.GroupBox1.Controls.Add(Me.btnConn)
         Me.GroupBox1.Location = New System.Drawing.Point(5, 27)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(407, 57)
+        Me.GroupBox1.Size = New System.Drawing.Size(505, 57)
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         '
         'lblNotify
         '
-        Me.lblNotify.Location = New System.Drawing.Point(237, 12)
+        Me.lblNotify.Location = New System.Drawing.Point(335, 12)
         Me.lblNotify.Name = "lblNotify"
         Me.lblNotify.Size = New System.Drawing.Size(164, 42)
         Me.lblNotify.TabIndex = 15
@@ -772,7 +774,7 @@ Partial Class MainFrm
         'btnConn
         '
         Me.btnConn.Image = Global.ApplicationUSB.My.Resources.Resources.conn
-        Me.btnConn.Location = New System.Drawing.Point(4, 9)
+        Me.btnConn.Location = New System.Drawing.Point(109, 8)
         Me.btnConn.Name = "btnConn"
         Me.btnConn.Size = New System.Drawing.Size(107, 43)
         Me.btnConn.TabIndex = 1
@@ -817,6 +819,15 @@ Partial Class MainFrm
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'comboModInverter
+        '
+        Me.comboModInverter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboModInverter.FormattingEnabled = True
+        Me.comboModInverter.Location = New System.Drawing.Point(4, 12)
+        Me.comboModInverter.Name = "comboModInverter"
+        Me.comboModInverter.Size = New System.Drawing.Size(99, 21)
+        Me.comboModInverter.TabIndex = 16
         '
         'MainFrm
         '
@@ -927,5 +938,6 @@ Partial Class MainFrm
     Friend WithEvents btnOpen As System.Windows.Forms.Button
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents lblNotify As System.Windows.Forms.Label
+    Friend WithEvents comboModInverter As System.Windows.Forms.ComboBox
 
 End Class
