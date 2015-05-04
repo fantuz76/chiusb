@@ -1,0 +1,1 @@
+Software PC per configurazione via USB.
